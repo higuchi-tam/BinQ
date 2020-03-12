@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+// Padding Top マージントップ 0 ~ 300
+// ex) Class Name: u-mt10, u-mt15, u-mt20
+// --------------------------------------------------
+@for $i from 0 through 60 {
+  .u-pt#{$i * 5} {
+    padding-top:#{$i * 5}px;
+  }
+}
+
+// Padding Bottom  マージンボトム 0 ~ 300
+// ex) Class Name: u-mb10, u-mb15, u-mb20
+// --------------------------------------------------
+@for $i from 0 through 60 {
+  .u-pb#{$i * 5} {
+    padding-bottom:#{$i * 5}px;
+  }
+}
+
+// Padding Left  マージンレフト 0 ~ 300
+// ex) Class Name: u-ml10, u-ml15, u-ml20
+// --------------------------------------------------
+@for $i from 0 through 60 {
+  .u-pl#{$i * 5} {
+    padding-left:#{$i * 5}px;
+  }
+}
+
+// Padding Right  マージンライト 0 ~ 300
+// ex) Class Name: u-ml10, u-ml15, u-ml20
+// --------------------------------------------------
+@for $i from 0 through 60 {
+  .u-pr#{$i * 5} {
+    padding-right:#{$i * 5}px;
+  }
+}

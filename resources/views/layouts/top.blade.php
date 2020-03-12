@@ -16,9 +16,9 @@
 {{-- yieldは配置する場所を決めているだけ --}}
     @yield('header')
 
-    @yield('top_baner')
-
+    <div class="l-container">
         @yield('content')
+    </div>
 
     @yield('footer')
 

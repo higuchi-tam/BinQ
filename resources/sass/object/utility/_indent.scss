@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+// Indent リストアイコン付きの文章などで、改行時にアイコン１つ分の空白を加える
+// ex) Class Name: .u-indent
+// --------------------------------------------------
+.u-indent{
+  padding-left: 1em;
+  text-indent: -1em;
+}

@@ -1,0 +1,204 @@
+@charset "utf-8";
+
+// =========================================
+// Foundation
+// =========================================
+@import "../../foundation/_mixin.scss";
+@import "../../foundation/_base.scss";
+
+.p-top__item{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    background: white;
+}
+
+.p-top__itemImg{
+    margin: 0;
+}
+
+.p-top__imgTxt{
+width: 340px;
+padding-left: 3rem;
+}
+
+.p-top__imgTxt--top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.p-top__itemTitle{
+    margin-top: 0;
+    font-size: 2.2rem;
+    line-height: 1.5;
+}
+
+.p-top__itemCategory{
+    margin-top: 3rem;
+    padding: 0.5rem 2rem;
+    color: white;
+    background: #bfa34c;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.p-top__sidebar{
+    width: 300px;
+
+}
+.p-top__sidebarImg{
+    margin: 0 0 3rem 0;
+}
+
+.p-top__sidebar--title{
+    width: 300px;
+    height: 5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    vertical-align: middle;
+    background-color: #bfa34c;
+    color: white;
+    margin-bottom: 0;
+    line-height: 5rem;
+}
+.p-top__sidebarItem{
+    width: 100%;
+    height: 380px;
+}
+
+.p-top__listCategory{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.p-top__listItem{
+    width: 100%;
+    height: 5.5rem;
+    font-size: 1.4rem;
+    line-height: 5.5rem;
+    padding-left: 2rem;
+    border-bottom: 1px solid #f3f3f3;
+    background: #fff;
+    font-weight: bold;
+}
+
+.arrow{
+    position: relative;
+    display: inline-block;
+  }
+  
+  .arrow::after{
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    border: 0px;
+    border-top: solid 1px #bbb;
+    border-right: solid 1px #bbb;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    margin-top: -4px;
+  }
+
+// ページTOP戻るボタン
+.p-return__pageTop{
+    background-color: black;
+    border-radius: 50%;
+    bottom: 10px;
+    color: #fff;
+    font-size: 14px;
+    height: 50px;
+    line-height: 50px;
+    outline: 0;
+    position: fixed;
+    right: 10px;
+    text-align: center;
+    width: 50px;
+}
+
+
+//===================================
+//TABメニュー
+//===================================
+.wrap {
+    max-width: 560px;
+    margin: 40px auto;
+}
+
+.tab-block {
+    font-family: 'Roboto',sans-serif;
+    margin-bottom: 60px;
+    box-shadow: 6px 6px 30px rgba(0,0,0,.2);
+  
+    .tab-nav {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+      
+        li {
+            color: #fff;
+            background: #384455;
+            width: 100%;
+            text-align: center;
+            padding: 20px 10px;
+            cursor: pointer;
+            border-left: 1px solid #5c6673;
+            transition: background-color .3s;
+          
+            &:hover {
+                background-color: #414d5e;
+            }
+          
+            &:first-child {
+                border-left: none;
+            }
+          
+            &.active {
+                color: #374252;
+                background: #f0f4f5;
+            }
+        }
+    }
+  
+    .tab-body {
+        background: #f0f4f5;
+        list-style: none;
+        padding: 50px 20px;
+        text-align: center;
+      
+        h3 {
+            font-size: 131%;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+      
+        li {
+            display: none;
+            &.active {
+                display: block;
+                animation-duration: 1.5s;
+                animation-name: fade-in;
+            }
+        }
+    }
+}
+// @keyframes fade-in {
+//     0% {
+//         display: none;
+//         opacity: 0;
+//     }
+//     1% {
+//         display: block;
+//         opacity: 0;
+//     }
+//     100% {
+//         display: block;
+//         opacity: 1;
+//     }
+// }

@@ -10,7 +10,6 @@ class PostsController extends Controller
 {
     public function __construct()
     {
-        // ログインしていなかったらログインページに遷移する（この処理を消すとログインしなくてもページを表示する）
         $this->middleware('auth');
     }
 
@@ -20,7 +19,7 @@ class PostsController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-         // テンプレート「post/index.blade.php」を表示します。
+         //テンプレートのindex.blade.phpを表示します。
         return view('post/index', ['posts' => $posts]);
     }
 
@@ -59,5 +58,8 @@ class PostsController extends Controller
         $post = Post::find($post_id);
         $post->delete();
         return redirect('/');
+    }
+    public function contents () {
+        return view('post/contents');
     }
 }

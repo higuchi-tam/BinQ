@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+// Media Query メディアクエリ
+// ex) @include mq(md){};
+// --------------------------------------------------
+
+// Breakpoint ブレイクポイント
+$breakpoints:('sm': 'screen and (min-width: 375px)',
+  'sp-only': 'screen and (max-width: 768px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1028px)',
+  'xl': 'screen and (max-width: 1230px)',
+) !default;
+
+// @mixinでメディアクエリを呼び出す
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// Size Auto Calculation サイズ自動計算
+// --------------------------------------------------
+
+// vw function SPデザイン幅基準のサイズ(767)
+// ex) width: get_vw(100);
+@function get_vw($size, $viewport:767) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+// font-size mixin
+// ex) @include fz_vw(20);
+@mixin fz_vw($font_size:10) {
+  font-size: get_vw($font_size);
+}
+
+// margin-bottom mixin
+// ex) @include mgbtm_vw(20);
+@mixin mgbtm_vw($mg_btm:10) {
+  margin-bottom: get_vw($mg_btm);
+}
+
+// padding-bottom mixin
+// ex) @include pdbtm_vw(20);
+@mixin pdbtm_vw($pd_btm:10) {
+  padding-bottom: get_vw($pd_btm);
+}
+
+// Content Width Variable コンテンツ幅変数
+// ex) width: $cntWidth;
+// --------------------------------------------------
+$cntWidth: 1028px !default;
+
+// Font Variable フォント変数
+// ex) font-size: $baseFontSize;
+// --------------------------------------------------
+$baseFontSize: 10px !default;
+$baseFontFamily: YakuHanJP,
+"Noto Sans Japanese",
+"ヒラギノ角ゴシック Pro",
+"Hiragino Kaku Gothic Pro",
+游ゴシック体,
+"Yu Gothic",
+YuGothic,
+"ＭＳ Ｐゴシック",
+"MS PGothic",
+'Montserrat',
+Helvetica,
+Arial,
+sans-serif !default;
+
+// Color Variable カラー変数
+// ex) color: $baseColor;
+// --------------------------------------------------
+$baseColor: #444 !default;
+$blurColor: #999 !default;
+$mainColor: #FCCF00 !default;
+$accentColor: #002B69 !default;
+$linkColor: #07f !default;
+$baseBg: #f9fafb !default;
+
+// Form Reset フォームリセット
+// ブラウザ毎のデザインを初期化(_base.scssで全体初期化可能)
+// ex) @include form_reset;
+// --------------------------------------------------
+@mixin form_reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
+// Form Placeholder Color フォームプレイスホルダーカラー
+// プレイスホルダーの文字色変更
+// ex) @include placeholder_color(#07f);
+// --------------------------------------------------
+@mixin placeholder_color($color) {
+  &:placeholder-shown {
+    color: $color;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+// Hide Text テキスト非表示
+// h1ロゴ画像へ付与したテキストを非表示
+// ex) @include text_hidden;
+// --------------------------------------------------
+@mixin text_hidden {
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
+}
+
+// hover opacity
+// aタグホバー時に要素を透過させる
+// ex) @include alpha
+// --------------------------------------------------
+@mixin alpha($opacity:0.7) {
+  &:hover{
+    opacity: $opacity;
+    -moz-opacity: $opacity;
+    filter: alpha(opacity=#{$opacity * 100});
+    -ms-filter: "alpha(opacity=#{$opacity * 100})";
+  }
+}
+
+// Centering Position
+// 親要素に対してセンタリングする
+// ex) @include centerPosition(x);
+// ----------------------------------
+@mixin centerPosition($direction) {
+  position: absolute;
+
+  // 上下左右中央に配置
+  @if $direction==xy {
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+  }
+
+  // 左右中央に配置
+  @else if $direction==x {
+   left: 50%;
+   transform: translateX(-50%);
+  }
+
+  // 上下中央に配置
+   @else if $direction==y {
+   top: 50%;
+   transform: translateY(-50%);
+  }
+ }
+
+// Background Image
+// backgroundのプロパティの記述を省略
+// ex) @include background-image(bg01 + ".jpg");
+// ----------------------------------
+// 変数に画像フォルダまでのパスを設定
+$pathImg: "/assets/img/page/";
+
+@mixin background-image($fileName) {
+ // ↓ フォルダまでのパス + 画像名 でパスの記載を省略
+ background-image: url($pathImg + $fileName);
+ background-repeat: no-repeat;
+ background-position: 50% 50%;
+}
+
+// Triangle Icon 三角形
+// 疑似要素の三角形を作成
+// ex) @include triangle(right, 20px, 20px, #000 )
+// ----------------------------------
+@mixin triangle($direction, $width, $height, $color){
+  width: 0;
+  height: 0;
+  border-style: solid;
+  $valWidth: $width / 2;
+  $valHeight: $height / 2;
+  @if ($direction == top) {
+    border-width: 0 $valWidth $height $valWidth;
+    border-color: transparent transparent $color transparent;
+  }
+  @else if ($direction == left) {
+    border-width: $valHeight $width $valHeight 0;
+    border-color: transparent $color transparent transparent;
+  }
+  @else if ($direction == right) {
+    border-width: $valHeight 0 $valHeight $width;
+    border-color: transparent transparent transparent $color;
+  }
+  @else if ($direction == bottom) {
+    border-width: $height $valWidth 0 $valWidth;
+    border-color: $color transparent transparent transparent;
+  }
+}

@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'PostsController@index');
 
+//コンテンツ一覧画面
+Route::get('/contents', 'PostsController@contents');
+
+
 //ユーザー編集画面
 Route::get('/users/edit', 'UsersController@edit');
 //ユーザ更新画面
@@ -47,3 +51,5 @@ Route::post('/posts/{comment_id}/comments','CommentsController@store');
 
 //コメント取消処理
 Route::get('/comments/{comment_id}', 'CommentsController@destroy');
+
+

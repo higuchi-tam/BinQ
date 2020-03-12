@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+// =========================================
+// Foundation
+// =========================================
+@import "../../foundation/_mixin.scss";
+@import "../../foundation/_base.scss";
+
+.c-button__primary{
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    background-color:#a73b65;
+    color: #fff;
+    width: 30rem;
+    height: 4.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 4.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    &::after{
+        content: '';
+        width: 0.8rem;
+        height: 0.8rem;
+        border: 0px;
+        border-top: solid 1px #fff;
+        border-right: solid 1px #fff;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        margin-top: -4px;
+    }
+}
+.c-button__sns{
+    text-align: center;
+}
+.c-button__sns--tw{
+    display: block;
+    background-color:#1DA1F2;
+    color: #fff;
+    height: 4.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 4.5rem;
+    margin-bottom: 1rem;
+
+}
+
+.c-button__sns--ins{
+    display: block;
+    background:linear-gradient(45deg,#4C64D3, #CF2E92 70%);
+    color: #fff;
+    height: 4.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 4.5rem;
+
+}
+
+.c-button__wrap{
+    width: 100%;
+}
+
+.c-button__login{
+    width: 15rem;
+    background-color: #a73b65;
+    color: #fff;
+    height: 4.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 4.5rem;
+    -webkit-appearance: none;
+    border-radius: 0;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.c-button__register{
+    width: 100%;
+    background-color: #a73b65;
+    color: #fff;
+    height: 4.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 4.5rem;
+    // border-radius: 0.5rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+.c-button__follow{
+    width: 12rem;
+    background: #fff;
+    color:#a73b65;
+    border: 1px solid #a73b65;
+}
