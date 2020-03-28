@@ -7,12 +7,10 @@ $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$baseColor: #333 !default;
+$blurColor: #999 !default;
+$mainColor: #012b69 !default;
+$accentColor: #a73b65 !default;
+$linkColor:  #000000 !default;
+$baseBg: #fff !default;
+$subBg:#f8f8f8 !default;

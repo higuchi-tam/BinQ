@@ -6,74 +6,69 @@
 @import "foundation/_mixin.scss";
 @import "foundation/_base.scss";
 
-.l-header{
-    width: 1000px;
-    height: 100px;
-    margin: 0 auto;
-    @include mq(lg){
-        width: 100%;
-        padding: 0 5vw;
-    }
-    @include mq(md){
-        height: 15vw;
-    }
-
-}
-
-.l-header__title{
-    font-size: 3.2rem;
-    a{
-    color: #555555;
-    }
-    @include mq(lg){
-        @include fz_vw(32);
-    }
-    @include mq(md){
-        @include fz_vw(42);
-        padding-left: 3vw;
-    }
-}
-.l-header__menuWrap{
-    width: 20rem;
-}
-.l-header__nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.l-header__menu{
-    width: 100%;
-    margin: 0;
-    display: flex;
-    list-style: none;
-}
-
-.l-header__item{
-    width: 50%;
-    height: 100%;
-    text-align: center;
-    padding: 0.5rem 0;
-    transition: all .3s;
-    &:hover{
-        cursor: pointer;
-    }
-    a{
-    color: #a73b65;
-    &:hover{
-        text-decoration: underline;
-    }
-    }
-
-}
-.l-header__item--right{
-    border: 1px solid #a73b65;
-    border-radius: 2.5rem;
-    &:hover{
-        background-color: #a73b65;
-        a{
-        color: #fff;
-        text-decoration: none;
-        }
-    }
+.l-header {
+	width: 1000px;
+	height: 100px;
+	margin: 0 auto;
+	@include mq(lg) {
+		width: 100%;
+		padding: 0 5vw;
+	}
+	@include mq(md) {
+		height: 15vw;
+	}
+	&__title {
+		font-size: 3.2rem;
+		a {
+			color: #555555;
+		}
+		@include mq(lg) {
+			@include fz_vw(32);
+		}
+		@include mq(md) {
+			@include fz_vw(42);
+			padding-left: 3vw;
+		}
+	}
+	&__menuWrap {
+		width: 20rem;
+	}
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__menu {
+		width: 100%;
+		margin: 0;
+		display: flex;
+		list-style: none;
+	}
+	&__item {
+		width: 50%;
+		height: 100%;
+		text-align: center;
+		padding: 0.5rem 0;
+		transition: all 0.3s;
+		&:hover {
+			cursor: pointer;
+		}
+		a {
+			color: $accentColor;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&--right {
+			border: 1px solid $accentColor;
+			border-radius: 2.5rem;
+			&:hover {
+				background-color: $accentColor;
+				a {
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
 }

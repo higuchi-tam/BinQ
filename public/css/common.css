@@ -492,10 +492,6 @@ a {
   text-decoration: underline;
 }
 
-.l-footer li {
-  list-style: none;
-}
-
 @media screen and (max-width: 1028px) {
   .l-footer {
     padding: 0 5vw;
@@ -540,6 +536,7 @@ a {
   display: flex;
   align-items: center;
   padding-left: 0;
+  list-style: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -550,6 +547,11 @@ a {
 
 .l-footer__snsItem {
   padding-left: 1.5rem;
+  transition: all 0.3s;
+}
+
+.l-footer__snsItem:hover {
+  opacity: 0.6;
 }
 
 .l-footer__title {
@@ -1189,11 +1191,6 @@ a {
   }
 }
 
-.l-top__herobaner {
-  display: flex;
-  justify-content: center;
-}
-
 .l-2col {
   display: flex;
   justify-content: center;
@@ -1205,10 +1202,6 @@ a {
     display: block;
     justify-content: center;
   }
-}
-
-.l-top__article {
-  width: 650px;
 }
 
 .l-2col--main {
@@ -1226,6 +1219,15 @@ a {
   .l-2col--main {
     width: 100%;
   }
+}
+
+.l-top__herobaner {
+  display: flex;
+  justify-content: center;
+}
+
+.l-top__article {
+  width: 650px;
 }
 
 /* ========================================
@@ -1814,6 +1816,7 @@ a {
   height: 5rem;
   background: #a73b65;
   border-radius: 2.5rem;
+  border: 1px solid #a73b65;
   text-align: center;
   line-height: 5rem;
   position: relative;
@@ -1834,7 +1837,11 @@ a {
 .c-btn__round {
   color: #fff;
   font-size: 1.4rem;
-  letter-spacing: 0.2rem;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 2.5rem;
+  transition: all 0.3s;
 }
 
 .c-btn__round::after {
@@ -1849,6 +1856,16 @@ a {
   top: 50%;
   right: 2rem;
   margin-top: -4px;
+}
+
+.c-btn__round:hover {
+  background: #fff;
+  color: #a73b65;
+}
+
+.c-btn__round:hover::after {
+  border-top: solid 1px #a73b65;
+  border-right: solid 1px #a73b65;
 }
 
 .accordion-trigger {
@@ -2446,7 +2463,7 @@ a {
 
 .c-button__sns--tw {
   display: block;
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
   color: #fff;
   height: 4.5rem;
   font-size: 1.2rem;
@@ -2457,7 +2474,7 @@ a {
 
 .c-button__sns--ins {
   display: block;
-  background: linear-gradient(45deg, #4C64D3, #CF2E92 70%);
+  background: linear-gradient(45deg, #4c64d3, #cf2e92 70%);
   color: #fff;
   height: 4.5rem;
   font-size: 1.2rem;
@@ -3608,10 +3625,6 @@ a {
   width: 300px;
 }
 
-.p-top__sidebarImg {
-  margin: 0 0 3rem 0;
-}
-
 .p-top__sidebar--title {
   width: 300px;
   height: 5rem;
@@ -3623,6 +3636,10 @@ a {
   color: white;
   margin-bottom: 0;
   line-height: 5rem;
+}
+
+.p-top__sidebarImg {
+  margin: 0 0 3rem 0;
 }
 
 .p-top__sidebarItem {

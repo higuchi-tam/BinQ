@@ -6,38 +6,39 @@
 @import "../../foundation/_mixin.scss";
 @import "../../foundation/_base.scss";
 
-.c-3col__container{
-    width: 74rem;
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 1rem;
-    @include mq(lg){
-        width: 100%;
-        justify-content: center;
-    }
+.c-3col {
+	&__container {
+		width: 74rem;
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: 1rem;
+		@include mq(lg) {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+	&__item {
+		width: 31%;
+		margin-right: 2rem;
+		&:nth-child(3n) {
+			margin-right: 0;
+			@include mq(md) {
+				margin-right: 1rem;
+			}
+		}
+		@include mq(md) {
+			width: 48%;
+			margin-bottom: 5rem;
+			margin-right: 1rem;
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
+	}
 }
-.c-3col__item{
-    width: 31%;
-    margin-right: 2rem;
-    &:nth-child(3n){
-        margin-right: 0;
-        @include mq(md){
-            margin-right: 1rem;
-        }
-    }
-    @include mq(md){
-        width: 48%;
-        margin-bottom: 5rem;
-        margin-right: 1rem;
-        &:nth-of-type(2n){
-            margin-right: 0;
-        }
 
-    }
-}
-
-.c-contents__title{
-    @include mq(lg){
-        padding: 0 1rem;
-    }
+.c-contents__title {
+	@include mq(lg) {
+		padding: 0 1rem;
+	}
 }

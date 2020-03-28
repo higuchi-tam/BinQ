@@ -6,70 +6,71 @@
 @import "../../foundation/_mixin.scss";
 @import "../../foundation/_base.scss";
 
-.p-login__container{
-    margin-bottom: 5rem;
-}
+.p-login {
+	&__container {
+		margin-bottom: 5rem;
+	}
 
-.p-login__mainTitle{
-    text-align: center;
-    font-size: 3.2rem;
-}
+	&__mainTitle {
+		text-align: center;
+		font-size: 3.2rem;
+	}
 
-.p-login__form{
-    width: 30rem;
-    margin: 0 auto;
-    text-align: center;
-    background: #fff;
-    padding: 2rem;
-}
+	&__form {
+		width: 30rem;
+		margin: 0 auto;
+		text-align: center;
+		background: #fff;
+		padding: 2rem;
+	}
 
-.p-login__titleTxt{
-    font-size: 2.4rem;;
-}
+	&__titleTxt {
+		font-size: 2.4rem;
+	}
 
-.p-login__addressWrap{
-    margin-bottom: 1rem;
-}
+	&__addressWrap {
+		margin-bottom: 1rem;
+	}
 
-.p-login__addressTitle{
-    font-size: 1.4rem;
-}
-.p-login__formGroup{
-    width: 100%;
-}
-.p-login__formItem{
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border: 1px solid #e1e5e7;
-    font-size: 1.2rem;
-    &::placeholder{
-        color:#aaaaaa;
-      }
+	&__addressTitle {
+		font-size: 1.4rem;
+	}
+	&__formGroup {
+		width: 100%;
+	}
+	&__formItem {
+		width: 100%;
+		padding: 0.5rem 1rem;
+		border: 1px solid #e1e5e7;
+		font-size: 1.2rem;
+		&::placeholder {
+			color: #aaaaaa;
+		}
 
-    &:nth-child(1){
-        margin-bottom: 1rem;
-    }
+		&:nth-child(1) {
+			margin-bottom: 1rem;
+		}
+	}
 
-}
+	&__passRemind {
+		font-size: 1.2rem;
+		color: #aaaaaa;
+		display: block;
+		text-align: left;
+		margin-bottom: 2rem;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 
-.p-login__passRemind{
-    font-size: 1.2rem;
-    color:#aaaaaa;
-    display: block;
-    text-align: left;
-    margin-bottom: 2rem;
-    &:hover{
-        text-decoration: underline;
-    }
-}
-
-.p-login__signUp{
-    margin: 0;
-    font-size: 1.1rem;
-    a{
-    color:#aaaaaa;
-    }
-    &:hover{
-        text-decoration: underline;
-    }
+	&__signUp {
+		margin: 0;
+		font-size: 1.1rem;
+		a {
+			color: #aaaaaa;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }

@@ -6,17 +6,18 @@
 @import "../../foundation/_mixin.scss";
 @import "../../foundation/_base.scss";
 
-.c-category__list{
-    line-height: 2;
-    list-style: none;
-    padding: 0;
-}
+.c-category {
+	&__list {
+		line-height: 2;
+		list-style: none;
+		padding: 0;
+	}
 
-.c-category__title{
-    font-size: 1.6rem;
-}
+	&__title {
+		font-size: 1.6rem;
+	}
 
-.c-category__parents{
-    font-size: 1.4rem;
-
+	&__parents {
+		font-size: 1.4rem;
+	}
 }

@@ -6,6 +6,8 @@
 @import "../../foundation/_mixin.scss";
 @import "../../foundation/_base.scss";
 
-.c-article__item{
-    display: flex;
+.c-article {
+	&__item {
+		display: flex;
+	}
 }
