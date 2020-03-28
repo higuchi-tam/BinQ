@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+// =========================================
+// Foundation
+// =========================================
+@import "../../foundation/_mixin.scss";
+@import "../../foundation/_base.scss";
+
+@charset "utf-8";
+
+// =========================================
+// Foundation
+// =========================================
+@import "../../foundation/_mixin.scss";
+@import "../../foundation/_base.scss";
+
+.p-user{
+    &__news--text{
+        text-align: center;
+    }
+
+	&__news--titleWrap {
+		display: flex;
+		align-items: center;
+	}
+
+	&__news--title {
+        font-size: 3.8rem;
+
+		margin: 0;
+		@include mq(md) {
+			font-size: 3.2rem;
+			font-weight: normal;
+		}
+	}
+	&__news--cardTitle {
+        margin-bottom: 2rem;
+        font-weight: bold;
+	}
+	&__news--img {
+		width: 100%;
+		margin: 0;
+        margin-bottom: 2rem;
+        text-align: -webkit-center;
+        img{
+        border-radius: 100%;
+        }
+}
+}

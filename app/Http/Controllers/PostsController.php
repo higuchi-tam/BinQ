@@ -53,16 +53,23 @@ class PostsController extends Controller
         // 「/」 ルートにリダイレクト
         return redirect('/');
     }
+
     public function destroy($post_id)
     {
         $post = Post::find($post_id);
         $post->delete();
         return redirect('/');
     }
+
     public function contents () {
         return view('post/contents');
     }
+
     public function contents_detail () {
         return view('post/contents_detail');
+    }
+
+    public function user (){
+        return view('post/user');
     }
 }

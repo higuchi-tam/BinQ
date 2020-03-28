@@ -6,7 +6,7 @@
 @import "../../foundation/_mixin.scss";
 @import "../../foundation/_base.scss";
 
-.p-top{
+.p-top {
 	&__item {
 		width: 100%;
 		height: 200px;
@@ -20,16 +20,14 @@
 
 	&__imgTxt {
 		width: 340px;
-        padding-left: 3rem;
-        &--top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.6rem;
-        }
+		padding-left: 3rem;
+		&--top {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 1.6rem;
+		}
 	}
-
-
 
 	&__itemTitle {
 		margin-top: 0;
@@ -47,24 +45,23 @@
 	}
 
 	&__sidebar {
-        width: 300px;
-        &--title {
-            width: 300px;
-            height: 5rem;
-            width: 100%;
-            text-align: center;
-            font-size: 1.6rem;
-            vertical-align: middle;
-            background-color: #bfa34c;
-            color: white;
-            margin-bottom: 0;
-            line-height: 5rem;
-        }
+		width: 300px;
+		&--title {
+			width: 300px;
+			height: 5rem;
+			width: 100%;
+			text-align: center;
+			font-size: 1.6rem;
+			vertical-align: middle;
+			background-color: #bfa34c;
+			color: white;
+			margin-bottom: 0;
+			line-height: 5rem;
+		}
 	}
 	&__sidebarImg {
 		margin: 0 0 3rem 0;
 	}
-
 
 	&__sidebarItem {
 		width: 100%;
