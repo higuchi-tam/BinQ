@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+// =========================================
+// Foundation
+// =========================================
+@import "../../foundation/_mixin.scss";
+@import "../../foundation/_base.scss";
+
+.p-top{
+	&__news--titleWrap {
+		display: flex;
+		align-items: center;
+	}
+
+	&__news--title {
+		font-size: 3.8rem;
+		margin: 0;
+		@include mq(md) {
+			font-size: 3.2rem;
+			font-weight: normal;
+		}
+	}
+	&__news--titleSub {
+		font-size: 1.4rem;
+		margin: 0;
+		padding-left: 2rem;
+		position: relative;
+		top: 0.3rem;
+	}
+	&-news__card {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		@include mq(md) {
+			flex-wrap: wrap;
+		}
+	}
+	&__news--cardTitle {
+		margin-bottom: 2rem;
+	}
+
+	&__news--item {
+		width: 32rem;
+		margin-right: 2rem;
+		@include mq(md) {
+			width: 45%;
+			margin-bottom: 4rem;
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	&__news--img {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 2rem;
+		text-align: -webkit-center;
+	}
+	&__news--user {
+		display: flex;
+		align-content: space-around;
+	}
+	&__news--userImg {
+		margin: 0;
+		width: 4rem;
+		img {
+			border-radius: 100%;
+		}
+	}
+	&__news--userTxt {
+		padding-left: 2rem;
+		flex-direction: column;
+	}
+	&__news--useName {
+		margin: 0;
+		margin-bottom: 0.5rem;
+	}
+	&__news--date {
+		margin: 0;
+		color: #707070;
+	}
+
+	//===================
+	//Mmebers section
+	//==================
+	&__members {
+		@include mq(md) {
+			margin-bottom: 8rem;
+        }
+        &--img {
+            width: 100%;
+            margin: 0;
+            img {
+                border-radius: 100%;
+            }
+        }
+        &__useName {
+            text-align: center;
+        }
+	}
+	&__news--item {
+		img {
+			left: 0;
+			position: relative;
+		}
+	}
+
+	//============================
+	//Step section
+	//============================
+	&__step {
+		width: 100%;
+		height: 65rem;
+		background: #efefef;
+		@include mq(md) {
+			height: auto;
+		}
+	}
+	&-step__card {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		@include mq(md) {
+			display: block;
+		}
+	}
+	&__step--item {
+		width: 24rem;
+		margin-top: -8rem;
+		@include mq(md) {
+			width: 100%;
+			display: flex;
+			align-items: center;
+		}
+	}
+	&__step--imgWrap {
+		@include mq(md) {
+			margin-bottom: 3rem;
+		}
+	}
+	&__step--img {
+		margin: 0;
+		width: 100%;
+		@include mq(md) {
+			margin-bottom: 2rem;
+		}
+		img {
+			max-width: 100%;
+			@include mq(md) {
+				width: 30vw;
+			}
+		}
+	}
+	&__step--text {
+		text-align: center;
+		@include mq(md) {
+			text-align: left;
+			font-size: 1.6rem;
+			padding-left: 3vw;
+			margin: 0;
+			font-weight: bold;
+		}
+	}
+	&__step--titleWrap {
+		display: flex;
+		align-items: center;
+		padding-top: 7rem;
+		@include mq(md) {
+			padding-top: 2rem;
+			padding-bottom: 5rem;
+		}
+	}
+	&__figure--number {
+		font-size: 4.2rem;
+		font-weight: bold;
+		width: 100%;
+		position: relative;
+		top: 10rem;
+		z-index: 2;
+		@include mq(md) {
+			@include fz_vw(32);
+			top: 11vw;
+		}
+	}
+
+	&__step--btn {
+		position: relative;
+		top: -3rem;
+		margin-bottom: 3rem;
+	}
+	//==================================
+	// About Section
+	//==================================
+	&__about {
+		background: #fff;
+		margin: 6rem auto;
+		img {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__about--item {
+		width: 28rem;
+		text-align: center;
+		margin-right: 3rem;
+		&:last-child {
+			margin-right: 0;
+		}
+		@include mq(md) {
+			width: 100%;
+		}
+	}
+	&__about--titleWrap {
+		text-align: center;
+		margin: 4rem 0;
+	}
+	&__about--img {
+		width: 100%;
+		margin: 0;
+		text-align: center;
+		img {
+			margin: 0 auto;
+		}
+	}
+
+	&__figure--text {
+		font-size: 3rem;
+		text-align: center;
+		margin: 0;
+		position: relative;
+		top: 3rem;
+	}
+	&__about--textTop {
+		font-size: 1.4rem;
+		font-weight: bold;
+	}
+	&__about--textLeft {
+		text-align: left;
+		font-size: 1.2rem;
+		letter-spacing: 0.2rem;
+		@include mq(md) {
+			text-align: center;
+		}
+	}
+
+	//============
+	// 矢印　▶︎
+	//============
+	&__arrow {
+		margin: 0 3rem;
+		display: flex;
+		align-items: center;
+		@include mq(md) {
+			display: none;
+		}
+	}
+}

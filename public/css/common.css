@@ -1,0 +1,7909 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);@charset "UTF-8";
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.l-footer {
+  width: 100%;
+  height: 12rem;
+  background: #555555;
+  text-align: center;
+  margin-top: auto;
+}
+
+.l-footer a {
+  color: black;
+}
+
+.l-footer a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1028px) {
+  .l-footer {
+    padding: 0 5vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .l-footer {
+    height: 17rem;
+  }
+}
+
+.l-footer__container {
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .l-footer__container {
+    display: block;
+  }
+}
+
+.l-footer__ListLeft {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .l-footer__ListLeft {
+    justify-content: space-evenly;
+  }
+}
+
+.l-footer__listRight {
+  display: flex;
+}
+
+.l-footer__snsList {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+  .l-footer__snsList {
+    padding-top: 1rem;
+  }
+}
+
+.l-footer__snsItem {
+  padding-left: 1.5rem;
+  transition: all 0.3s;
+}
+
+.l-footer__snsItem:hover {
+  opacity: 0.6;
+}
+
+.l-footer__title {
+  color: #fff;
+  font-size: 3.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .l-footer__title {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.l-footer__listUp {
+  display: flex;
+  align-items: flex-end;
+}
+
+.l-footer__listUp a {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.l-footer__listItem {
+  padding: 0 0.5rem;
+  line-height: 1.2rem;
+}
+
+.l-footer__listItem:nth-child(-n+2) {
+  border-right: 1px solid #fff;
+}
+
+.l-footer__listItem:last-child {
+  padding-right: 0;
+}
+
+.l-footer__text--under {
+  width: 100rem;
+  text-align: right;
+  color: #fff;
+  position: relative;
+  top: -5rem;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1028px) {
+  .l-footer__text--under {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .l-footer__text--under {
+    position: static;
+    text-align: center;
+  }
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.l-header {
+  width: 1000px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1028px) {
+  .l-header {
+    width: 100%;
+    padding: 0 5vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .l-header {
+    height: 15vw;
+  }
+}
+
+.l-header__title {
+  font-size: 3.2rem;
+}
+
+.l-header__title a {
+  color: #555555;
+}
+
+@media screen and (max-width: 1028px) {
+  .l-header__title {
+    font-size: 4.1720990874vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .l-header__title {
+    font-size: 5.4758800522vw;
+    padding-left: 3vw;
+  }
+}
+
+.l-header__menuWrap {
+  width: 20rem;
+}
+
+.l-header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.l-header__menu {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  list-style: none;
+}
+
+.l-header__item {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  transition: all 0.3s;
+}
+
+.l-header__item:hover {
+  cursor: pointer;
+}
+
+.l-header__item a {
+  color: #a73b65;
+}
+
+.l-header__item a:hover {
+  text-decoration: underline;
+}
+
+.l-header__item--right {
+  border: 1px solid #a73b65;
+  border-radius: 2.5rem;
+}
+
+.l-header__item--right:hover {
+  background-color: #a73b65;
+}
+
+.l-header__item--right:hover a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.l-container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1028px) {
+  .l-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+.l-2col {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1028px) {
+  .l-2col {
+    display: block;
+    justify-content: center;
+  }
+}
+
+.l-2col--main {
+  width: 73rem;
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 1028px) {
+  .l-2col--main {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .l-2col--main {
+    width: 100%;
+  }
+}
+
+.l-top__herobaner {
+  display: flex;
+  justify-content: center;
+}
+
+.l-top__article {
+  width: 650px;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.l-sidebar {
+  width: 25rem;
+}
+
+@media screen and (max-width: 1028px) {
+  .l-sidebar {
+    width: 31rem;
+    margin: 0 auto;
+  }
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.p-topbaner__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-topbaner__container {
+    flex-direction: column-reverse;
+  }
+}
+
+.p-topbaner__titleWrap {
+  width: 26rem;
+  margin: 0 auto;
+  position: relative;
+  left: 7vw;
+}
+
+@media screen and (max-width: 1230px) {
+  .p-topbaner__titleWrap {
+    width: 26rem;
+    margin: 0 auto;
+    position: static;
+  }
+}
+
+@media screen and (max-width: 1028px) {
+  .p-topbaner__titleWrap {
+    width: 50vw;
+    padding-left: 8vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-topbaner__titleWrap {
+    width: 100%;
+    margin-bottom: 8rem;
+  }
+}
+
+.p-topbaner__title {
+  font-size: 4.2rem;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 1028px) {
+  .p-topbaner__title {
+    font-size: 4.6936114733vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-topbaner__title {
+    font-size: 9.3872229465vw;
+    margin-bottom: 1rem;
+  }
+}
+
+.p-topbaner__titleSub {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 1028px) {
+  .p-topbaner__titleSub {
+    font-size: 2.0860495437vw;
+    letter-spacing: 0.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-topbaner__titleSub {
+    font-size: 3.6505867014vw;
+    letter-spacing: 0.3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.p-topbaner__mainImg {
+  position: relative;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .p-topbaner__mainImg img {
+    position: relative;
+    padding-left: 8vw;
+  }
+}
+
+.c-btn__roundWrap {
+  width: 24rem;
+  height: 5rem;
+  background: #a73b65;
+  border-radius: 2.5rem;
+  border: 1px solid #a73b65;
+  text-align: center;
+  line-height: 5rem;
+  position: relative;
+}
+
+@media screen and (max-width: 1028px) {
+  .c-btn__roundWrap {
+    width: 25vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .c-btn__roundWrap {
+    width: 24rem;
+  }
+}
+
+.c-btn__round {
+  color: #fff;
+  font-size: 1.4rem;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 2.5rem;
+  transition: all 0.3s;
+}
+
+.c-btn__round::after {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 0px;
+  border-top: solid 1px #fff;
+  border-right: solid 1px #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  margin-top: -4px;
+}
+
+.c-btn__round:hover {
+  background: #fff;
+  color: #a73b65;
+}
+
+.c-btn__round:hover::after {
+  border-top: solid 1px #a73b65;
+  border-right: solid 1px #a73b65;
+}
+
+.accordion-trigger {
+  /* label */
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  padding: 15px;
+  padding-right: 42px;
+  /* padding + icon width */
+  border-bottom: 1px solid #ccc;
+  background-color: lightblue;
+  position: relative;
+}
+
+/* icon */
+
+.accordion-trigger::before,
+.accordion-trigger::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  margin: auto;
+  height: 2px;
+  width: 12px;
+  background-color: #000;
+  transition: all 0.1s ease-out;
+}
+
+.accordion-trigger::after {
+  transform: rotate(90deg);
+}
+
+.accordion-trigger.is-opened::after {
+  opacity: 0;
+  transform: rotate(0);
+}
+
+/* /icon */
+
+.accordion-target {
+  /* target */
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.4s ease-out;
+  text-align: left;
+}
+
+.accordion-target.list > .list__item {
+  /* target-child */
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  opacity: 1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.accordion-target.list > .list__item > a {
+  display: block;
+  margin-top: -15px;
+  margin-bottom: -15px;
+  padding: 15px;
+  color: #000;
+  text-decoration: none;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.c-article__item {
+  display: flex;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.c-button__primary {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  background-color: #a73b65;
+  border: 1px solid #a73b65;
+  color: #fff;
+  width: 30rem;
+  height: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 4.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.3rem;
+  transition: all 0.3s;
+}
+
+.c-button__primary::after {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 0px;
+  border-top: solid 1px #fff;
+  border-right: solid 1px #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  margin-top: -4px;
+}
+
+.c-button__primary:hover {
+  background: #fff;
+  color: #a73b65;
+}
+
+.c-button__primary:hover::after {
+  border-top: solid 1px #a73b65;
+  border-right: solid 1px #a73b65;
+}
+
+.c-button__sns {
+  text-align: center;
+}
+
+.c-button__sns--tw {
+  display: block;
+  background-color: #1da1f2;
+  color: #fff;
+  height: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 4.5rem;
+  margin-bottom: 1rem;
+}
+
+.c-button__sns--ins {
+  display: block;
+  background: linear-gradient(45deg, #4c64d3, #cf2e92 70%);
+  color: #fff;
+  height: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 4.5rem;
+}
+
+.c-button__wrap {
+  width: 100%;
+}
+
+.c-button__login {
+  width: 15rem;
+  background-color: #a73b65;
+  color: #fff;
+  height: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 4.5rem;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.c-button__login:hover {
+  cursor: pointer;
+}
+
+.c-button__register {
+  width: 100%;
+  background-color: #a73b65;
+  color: #fff;
+  height: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 4.5rem;
+}
+
+.c-button__register:hover {
+  cursor: pointer;
+}
+
+.c-button__follow {
+  width: 12rem;
+  background: #fff;
+  color: #a73b65;
+  border: 1px solid #a73b65;
+}
+
+.c-button__sidebar {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  background-color: #a73b65;
+  border: 1px solid #a73b65;
+  color: #fff;
+  width: 100%;
+  height: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 4.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.3rem;
+  transition: all 0.3s;
+}
+
+.c-button__sidebar::after {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 0px;
+  border-top: solid 1px #fff;
+  border-right: solid 1px #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  margin-top: -4px;
+}
+
+.c-button__sidebar:hover {
+  background: #fff;
+  color: #a73b65;
+}
+
+.c-button__sidebar:hover::after {
+  border-top: solid 1px #a73b65;
+  border-right: solid 1px #a73b65;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.c-category__list {
+  line-height: 2;
+  list-style: none;
+  padding: 0;
+}
+
+.c-category__title {
+  font-size: 1.6rem;
+}
+
+.c-category__parents {
+  font-size: 1.4rem;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.c-3col__container {
+  width: 74rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 1028px) {
+  .c-3col__container {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.c-3col__item {
+  width: 31%;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.c-3col__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .c-3col__item:nth-child(3n) {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .c-3col__item {
+    width: 48%;
+    margin-bottom: 5rem;
+    margin-right: 1rem;
+  }
+
+  .c-3col__item:nth-of-type(2n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1028px) {
+  .c-contents__title {
+    padding: 0 1rem;
+  }
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.c-members__item {
+  display: flex;
+  width: 100%;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.p-top__item {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  background: white;
+}
+
+.p-top__itemImg {
+  margin: 0;
+}
+
+.p-top__imgTxt {
+  width: 340px;
+  padding-left: 3rem;
+}
+
+.p-top__imgTxt--top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.p-top__itemTitle {
+  margin-top: 0;
+  font-size: 2.2rem;
+  line-height: 1.5;
+}
+
+.p-top__itemCategory {
+  margin-top: 3rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  background: #bfa34c;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.p-top__sidebar {
+  width: 300px;
+}
+
+.p-top__sidebar--title {
+  width: 300px;
+  height: 5rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  vertical-align: middle;
+  background-color: #bfa34c;
+  color: white;
+  margin-bottom: 0;
+  line-height: 5rem;
+}
+
+.p-top__sidebarImg {
+  margin: 0 0 3rem 0;
+}
+
+.p-top__sidebarItem {
+  width: 100%;
+  height: 380px;
+}
+
+.p-top__listCategory {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.p-top__listItem {
+  width: 100%;
+  height: 5.5rem;
+  font-size: 1.4rem;
+  line-height: 5.5rem;
+  padding-left: 2rem;
+  border-bottom: 1px solid #f3f3f3;
+  background: #fff;
+  font-weight: bold;
+}
+
+.arrow {
+  position: relative;
+  display: inline-block;
+}
+
+.arrow::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border: 0px;
+  border-top: solid 1px #bbb;
+  border-right: solid 1px #bbb;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  margin-top: -4px;
+}
+
+.p-return__pageTop {
+  background-color: black;
+  border-radius: 50%;
+  bottom: 10px;
+  color: #fff;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+  outline: 0;
+  position: fixed;
+  right: 10px;
+  text-align: center;
+  width: 50px;
+}
+
+.wrap {
+  max-width: 560px;
+  margin: 40px auto;
+}
+
+.tab-block {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 60px;
+  box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tab-block .tab-nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-block .tab-nav li {
+  color: #fff;
+  background: #384455;
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px;
+  cursor: pointer;
+  border-left: 1px solid #5c6673;
+  transition: background-color 0.3s;
+}
+
+.tab-block .tab-nav li:hover {
+  background-color: #414d5e;
+}
+
+.tab-block .tab-nav li:first-child {
+  border-left: none;
+}
+
+.tab-block .tab-nav li.active {
+  color: #374252;
+  background: #f0f4f5;
+}
+
+.tab-block .tab-body {
+  background: #f0f4f5;
+  list-style: none;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.tab-block .tab-body h3 {
+  font-size: 131%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.tab-block .tab-body li {
+  display: none;
+}
+
+.tab-block .tab-body li.active {
+  display: block;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: fade-in;
+          animation-name: fade-in;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.p-contents_detail--date {
+  text-align: right;
+}
+
+.p-contents_detail__under {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  padding: 1rem 0;
+  border-top: 1px solid #707070;
+}
+
+.p-contents_detail__shareItem {
+  list-style: none;
+  padding-right: 1.5rem;
+}
+
+.p-contents_detail__userContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .p-contents_detail__userContainer {
+    flex-wrap: wrap;
+  }
+}
+
+.p-contents_detail__userWrap {
+  display: flex;
+  width: 100%;
+}
+
+.p-contents_detail__userImg img {
+  width: 14rem;
+}
+
+.p-contents_detail__userInfo {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.p-contents_detail__snsList {
+  list-style: none;
+  position: relative;
+  top: 4rem;
+}
+
+.p-contents_detail__snsItem {
+  padding-left: 0;
+}
+
+.p-contents_detail--button {
+  height: 14rem;
+  line-height: 14rem;
+  padding-right: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-contents_detail--button {
+    height: auto;
+    line-height: normal;
+  }
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.p-top__news--titleWrap {
+  display: flex;
+  align-items: center;
+}
+
+.p-top__news--title {
+  font-size: 3.8rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__news--title {
+    font-size: 3.2rem;
+    font-weight: normal;
+  }
+}
+
+.p-top__news--titleSub {
+  font-size: 1.4rem;
+  margin: 0;
+  padding-left: 2rem;
+  position: relative;
+  top: 0.3rem;
+}
+
+.p-top-news__card {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top-news__card {
+    flex-wrap: wrap;
+  }
+}
+
+.p-top__news--cardTitle {
+  margin-bottom: 2rem;
+}
+
+.p-top__news--item {
+  width: 32rem;
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__news--item {
+    width: 45%;
+    margin-bottom: 4rem;
+  }
+
+  .p-top__news--item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+.p-top__news--item:last-child {
+  margin-right: 0;
+}
+
+.p-top__news--img {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 2rem;
+  text-align: -webkit-center;
+}
+
+.p-top__news--user {
+  display: flex;
+  align-content: space-around;
+}
+
+.p-top__news--userImg {
+  margin: 0;
+  width: 4rem;
+}
+
+.p-top__news--userImg img {
+  border-radius: 100%;
+}
+
+.p-top__news--userTxt {
+  padding-left: 2rem;
+  flex-direction: column;
+}
+
+.p-top__news--useName {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.p-top__news--date {
+  margin: 0;
+  color: #707070;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__members {
+    margin-bottom: 8rem;
+  }
+}
+
+.p-top__members--img {
+  width: 100%;
+  margin: 0;
+}
+
+.p-top__members--img img {
+  border-radius: 100%;
+}
+
+.p-top__members__useName {
+  text-align: center;
+}
+
+.p-top__news--item img {
+  left: 0;
+  position: relative;
+}
+
+.p-top__step {
+  width: 100%;
+  height: 65rem;
+  background: #efefef;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__step {
+    height: auto;
+  }
+}
+
+.p-top-step__card {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top-step__card {
+    display: block;
+  }
+}
+
+.p-top__step--item {
+  width: 24rem;
+  margin-top: -8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__step--item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__step--imgWrap {
+    margin-bottom: 3rem;
+  }
+}
+
+.p-top__step--img {
+  margin: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__step--img {
+    margin-bottom: 2rem;
+  }
+}
+
+.p-top__step--img img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__step--img img {
+    width: 30vw;
+  }
+}
+
+.p-top__step--text {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__step--text {
+    text-align: left;
+    font-size: 1.6rem;
+    padding-left: 3vw;
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.p-top__step--titleWrap {
+  display: flex;
+  align-items: center;
+  padding-top: 7rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__step--titleWrap {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.p-top__figure--number {
+  font-size: 4.2rem;
+  font-weight: bold;
+  width: 100%;
+  position: relative;
+  top: 10rem;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__figure--number {
+    font-size: 4.1720990874vw;
+    top: 11vw;
+  }
+}
+
+.p-top__step--btn {
+  position: relative;
+  top: -3rem;
+  margin-bottom: 3rem;
+}
+
+.p-top__about {
+  background: #fff;
+  margin: 6rem auto;
+}
+
+.p-top__about img {
+  margin-bottom: 2rem;
+}
+
+.p-top__about--item {
+  width: 28rem;
+  text-align: center;
+  margin-right: 3rem;
+}
+
+.p-top__about--item:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__about--item {
+    width: 100%;
+  }
+}
+
+.p-top__about--titleWrap {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.p-top__about--img {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.p-top__about--img img {
+  margin: 0 auto;
+}
+
+.p-top__figure--text {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  top: 3rem;
+}
+
+.p-top__about--textTop {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.p-top__about--textLeft {
+  text-align: left;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__about--textLeft {
+    text-align: center;
+  }
+}
+
+.p-top__arrow {
+  margin: 0 3rem;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__arrow {
+    display: none;
+  }
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.p-login__container {
+  margin-bottom: 5rem;
+}
+
+.p-login__mainTitle {
+  text-align: center;
+  font-size: 3.2rem;
+}
+
+.p-login__form {
+  width: 30rem;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  padding: 2rem;
+}
+
+.p-login__titleTxt {
+  font-size: 2.4rem;
+}
+
+.p-login__addressWrap {
+  margin-bottom: 1rem;
+}
+
+.p-login__addressTitle {
+  font-size: 1.4rem;
+}
+
+.p-login__formGroup {
+  width: 100%;
+}
+
+.p-login__formItem {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e1e5e7;
+  font-size: 1.2rem;
+}
+
+.p-login__formItem::-webkit-input-placeholder {
+  color: #aaaaaa;
+}
+
+.p-login__formItem::-moz-placeholder {
+  color: #aaaaaa;
+}
+
+.p-login__formItem:-ms-input-placeholder {
+  color: #aaaaaa;
+}
+
+.p-login__formItem::-ms-input-placeholder {
+  color: #aaaaaa;
+}
+
+.p-login__formItem::placeholder {
+  color: #aaaaaa;
+}
+
+.p-login__formItem:nth-child(1) {
+  margin-bottom: 1rem;
+}
+
+.p-login__passRemind {
+  font-size: 1.2rem;
+  color: #aaaaaa;
+  display: block;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.p-login__passRemind:hover {
+  text-decoration: underline;
+}
+
+.p-login__signUp {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.p-login__signUp a {
+  color: #aaaaaa;
+}
+
+.p-login__signUp:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.p-register__formTxt {
+  text-align: left;
+  margin: 0;
+}
+
+.p-register__radioWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-register__radioWrap a {
+  color: #aaaaaa;
+}
+
+.p-register__radioWrap a:hover {
+  text-decoration: underline;
+}
+
+.p-register__radionItem {
+  position: relative;
+  left: 1rem;
+}
+
+.p-register--border {
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.p-register__snsTtile {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.p-register__loginLink a {
+  color: #aaaaaa;
+}
+
+.p-register__loginLink a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.p-user_detail__userContainer {
+  display: flex;
+  width: 74rem;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-user_detail__userContainer {
+    flex-wrap: wrap;
+  }
+}
+
+.p-user_detail__wrap {
+  padding: 1rem 0;
+}
+
+.p-user_detail__name {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-right: 2rem;
+}
+
+.p-user_detail__nameWrap {
+  display: flex;
+  align-items: center;
+}
+
+.p-user_detail__userImg img {
+  width: 14rem;
+}
+
+.p-user_detail__snsList {
+  list-style: none;
+  position: relative;
+  margin: 0;
+}
+
+.p-user_detail__snsItem {
+  padding-left: 0;
+}
+
+.p-user_detail__userTitle {
+  margin: 0 0 1rem 0;
+}
+
+.p-user_detail__comment {
+  margin-bottom: 1rem;
+}
+
+.p-user_detail__tab {
+  width: 74rem;
+  margin-right: 1rem;
+  margin-bottom: 4rem;
+}
+
+.p-user_detail__list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+.p-user_detail__item {
+  width: calc(100%/3);
+  text-align: center;
+  padding: 1rem 0;
+  border: 1px solid #999;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.p-user__news--text {
+  text-align: center;
+}
+
+.p-user__news--titleWrap {
+  display: flex;
+  align-items: center;
+}
+
+.p-user__news--title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .p-user__news--title {
+    font-size: 3.2rem;
+    font-weight: normal;
+  }
+}
+
+.p-user__news--cardTitle {
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.p-user__news--img {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 2rem;
+  text-align: -webkit-center;
+}
+
+.p-user__news--img img {
+  border-radius: 100%;
+}
+
+.p-user__tab {
+  margin-bottom: 4rem;
+}
+
+.p-user__tab--list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+.p-user__tab--item {
+  text-align: center;
+  width: 20%;
+  padding: 1rem 2rem;
+  border: 1px solid #999;
+  border-left: none;
+}
+
+.p-user__tab--item:first-child {
+  border-left: 1px solid #999;
+}
+
+.is-active {
+  background: #444;
+  color: #fff;
+}
+
+.u-dsp-block {
+  display: block;
+}
+
+.u-dsp-none {
+  display: none;
+}
+
+.u-dsp-inline {
+  display: inline;
+}
+
+.u-dsp-ib {
+  display: inline-block;
+}
+
+.u-indent {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.u-mt0 {
+  margin-top: 0px;
+}
+
+.u-mt5 {
+  margin-top: 5px;
+}
+
+.u-mt10 {
+  margin-top: 10px;
+}
+
+.u-mt15 {
+  margin-top: 15px;
+}
+
+.u-mt20 {
+  margin-top: 20px;
+}
+
+.u-mt25 {
+  margin-top: 25px;
+}
+
+.u-mt30 {
+  margin-top: 30px;
+}
+
+.u-mt35 {
+  margin-top: 35px;
+}
+
+.u-mt40 {
+  margin-top: 40px;
+}
+
+.u-mt45 {
+  margin-top: 45px;
+}
+
+.u-mt50 {
+  margin-top: 50px;
+}
+
+.u-mt55 {
+  margin-top: 55px;
+}
+
+.u-mt60 {
+  margin-top: 60px;
+}
+
+.u-mt65 {
+  margin-top: 65px;
+}
+
+.u-mt70 {
+  margin-top: 70px;
+}
+
+.u-mt75 {
+  margin-top: 75px;
+}
+
+.u-mt80 {
+  margin-top: 80px;
+}
+
+.u-mt85 {
+  margin-top: 85px;
+}
+
+.u-mt90 {
+  margin-top: 90px;
+}
+
+.u-mt95 {
+  margin-top: 95px;
+}
+
+.u-mt100 {
+  margin-top: 100px;
+}
+
+.u-mt105 {
+  margin-top: 105px;
+}
+
+.u-mt110 {
+  margin-top: 110px;
+}
+
+.u-mt115 {
+  margin-top: 115px;
+}
+
+.u-mt120 {
+  margin-top: 120px;
+}
+
+.u-mt125 {
+  margin-top: 125px;
+}
+
+.u-mt130 {
+  margin-top: 130px;
+}
+
+.u-mt135 {
+  margin-top: 135px;
+}
+
+.u-mt140 {
+  margin-top: 140px;
+}
+
+.u-mt145 {
+  margin-top: 145px;
+}
+
+.u-mt150 {
+  margin-top: 150px;
+}
+
+.u-mt155 {
+  margin-top: 155px;
+}
+
+.u-mt160 {
+  margin-top: 160px;
+}
+
+.u-mt165 {
+  margin-top: 165px;
+}
+
+.u-mt170 {
+  margin-top: 170px;
+}
+
+.u-mt175 {
+  margin-top: 175px;
+}
+
+.u-mt180 {
+  margin-top: 180px;
+}
+
+.u-mt185 {
+  margin-top: 185px;
+}
+
+.u-mt190 {
+  margin-top: 190px;
+}
+
+.u-mt195 {
+  margin-top: 195px;
+}
+
+.u-mt200 {
+  margin-top: 200px;
+}
+
+.u-mt205 {
+  margin-top: 205px;
+}
+
+.u-mt210 {
+  margin-top: 210px;
+}
+
+.u-mt215 {
+  margin-top: 215px;
+}
+
+.u-mt220 {
+  margin-top: 220px;
+}
+
+.u-mt225 {
+  margin-top: 225px;
+}
+
+.u-mt230 {
+  margin-top: 230px;
+}
+
+.u-mt235 {
+  margin-top: 235px;
+}
+
+.u-mt240 {
+  margin-top: 240px;
+}
+
+.u-mt245 {
+  margin-top: 245px;
+}
+
+.u-mt250 {
+  margin-top: 250px;
+}
+
+.u-mt255 {
+  margin-top: 255px;
+}
+
+.u-mt260 {
+  margin-top: 260px;
+}
+
+.u-mt265 {
+  margin-top: 265px;
+}
+
+.u-mt270 {
+  margin-top: 270px;
+}
+
+.u-mt275 {
+  margin-top: 275px;
+}
+
+.u-mt280 {
+  margin-top: 280px;
+}
+
+.u-mt285 {
+  margin-top: 285px;
+}
+
+.u-mt290 {
+  margin-top: 290px;
+}
+
+.u-mt295 {
+  margin-top: 295px;
+}
+
+.u-mt300 {
+  margin-top: 300px;
+}
+
+.u-mb0 {
+  margin-bottom: 0px;
+}
+
+.u-mb5 {
+  margin-bottom: 5px;
+}
+
+.u-mb10 {
+  margin-bottom: 10px;
+}
+
+.u-mb15 {
+  margin-bottom: 15px;
+}
+
+.u-mb20 {
+  margin-bottom: 20px;
+}
+
+.u-mb25 {
+  margin-bottom: 25px;
+}
+
+.u-mb30 {
+  margin-bottom: 30px;
+}
+
+.u-mb35 {
+  margin-bottom: 35px;
+}
+
+.u-mb40 {
+  margin-bottom: 40px;
+}
+
+.u-mb45 {
+  margin-bottom: 45px;
+}
+
+.u-mb50 {
+  margin-bottom: 50px;
+}
+
+.u-mb55 {
+  margin-bottom: 55px;
+}
+
+.u-mb60 {
+  margin-bottom: 60px;
+}
+
+.u-mb65 {
+  margin-bottom: 65px;
+}
+
+.u-mb70 {
+  margin-bottom: 70px;
+}
+
+.u-mb75 {
+  margin-bottom: 75px;
+}
+
+.u-mb80 {
+  margin-bottom: 80px;
+}
+
+.u-mb85 {
+  margin-bottom: 85px;
+}
+
+.u-mb90 {
+  margin-bottom: 90px;
+}
+
+.u-mb95 {
+  margin-bottom: 95px;
+}
+
+.u-mb100 {
+  margin-bottom: 100px;
+}
+
+.u-mb105 {
+  margin-bottom: 105px;
+}
+
+.u-mb110 {
+  margin-bottom: 110px;
+}
+
+.u-mb115 {
+  margin-bottom: 115px;
+}
+
+.u-mb120 {
+  margin-bottom: 120px;
+}
+
+.u-mb125 {
+  margin-bottom: 125px;
+}
+
+.u-mb130 {
+  margin-bottom: 130px;
+}
+
+.u-mb135 {
+  margin-bottom: 135px;
+}
+
+.u-mb140 {
+  margin-bottom: 140px;
+}
+
+.u-mb145 {
+  margin-bottom: 145px;
+}
+
+.u-mb150 {
+  margin-bottom: 150px;
+}
+
+.u-mb155 {
+  margin-bottom: 155px;
+}
+
+.u-mb160 {
+  margin-bottom: 160px;
+}
+
+.u-mb165 {
+  margin-bottom: 165px;
+}
+
+.u-mb170 {
+  margin-bottom: 170px;
+}
+
+.u-mb175 {
+  margin-bottom: 175px;
+}
+
+.u-mb180 {
+  margin-bottom: 180px;
+}
+
+.u-mb185 {
+  margin-bottom: 185px;
+}
+
+.u-mb190 {
+  margin-bottom: 190px;
+}
+
+.u-mb195 {
+  margin-bottom: 195px;
+}
+
+.u-mb200 {
+  margin-bottom: 200px;
+}
+
+.u-mb205 {
+  margin-bottom: 205px;
+}
+
+.u-mb210 {
+  margin-bottom: 210px;
+}
+
+.u-mb215 {
+  margin-bottom: 215px;
+}
+
+.u-mb220 {
+  margin-bottom: 220px;
+}
+
+.u-mb225 {
+  margin-bottom: 225px;
+}
+
+.u-mb230 {
+  margin-bottom: 230px;
+}
+
+.u-mb235 {
+  margin-bottom: 235px;
+}
+
+.u-mb240 {
+  margin-bottom: 240px;
+}
+
+.u-mb245 {
+  margin-bottom: 245px;
+}
+
+.u-mb250 {
+  margin-bottom: 250px;
+}
+
+.u-mb255 {
+  margin-bottom: 255px;
+}
+
+.u-mb260 {
+  margin-bottom: 260px;
+}
+
+.u-mb265 {
+  margin-bottom: 265px;
+}
+
+.u-mb270 {
+  margin-bottom: 270px;
+}
+
+.u-mb275 {
+  margin-bottom: 275px;
+}
+
+.u-mb280 {
+  margin-bottom: 280px;
+}
+
+.u-mb285 {
+  margin-bottom: 285px;
+}
+
+.u-mb290 {
+  margin-bottom: 290px;
+}
+
+.u-mb295 {
+  margin-bottom: 295px;
+}
+
+.u-mb300 {
+  margin-bottom: 300px;
+}
+
+.u-ml0 {
+  margin-left: 0px;
+}
+
+.u-ml5 {
+  margin-left: 5px;
+}
+
+.u-ml10 {
+  margin-left: 10px;
+}
+
+.u-ml15 {
+  margin-left: 15px;
+}
+
+.u-ml20 {
+  margin-left: 20px;
+}
+
+.u-ml25 {
+  margin-left: 25px;
+}
+
+.u-ml30 {
+  margin-left: 30px;
+}
+
+.u-ml35 {
+  margin-left: 35px;
+}
+
+.u-ml40 {
+  margin-left: 40px;
+}
+
+.u-ml45 {
+  margin-left: 45px;
+}
+
+.u-ml50 {
+  margin-left: 50px;
+}
+
+.u-ml55 {
+  margin-left: 55px;
+}
+
+.u-ml60 {
+  margin-left: 60px;
+}
+
+.u-ml65 {
+  margin-left: 65px;
+}
+
+.u-ml70 {
+  margin-left: 70px;
+}
+
+.u-ml75 {
+  margin-left: 75px;
+}
+
+.u-ml80 {
+  margin-left: 80px;
+}
+
+.u-ml85 {
+  margin-left: 85px;
+}
+
+.u-ml90 {
+  margin-left: 90px;
+}
+
+.u-ml95 {
+  margin-left: 95px;
+}
+
+.u-ml100 {
+  margin-left: 100px;
+}
+
+.u-ml105 {
+  margin-left: 105px;
+}
+
+.u-ml110 {
+  margin-left: 110px;
+}
+
+.u-ml115 {
+  margin-left: 115px;
+}
+
+.u-ml120 {
+  margin-left: 120px;
+}
+
+.u-ml125 {
+  margin-left: 125px;
+}
+
+.u-ml130 {
+  margin-left: 130px;
+}
+
+.u-ml135 {
+  margin-left: 135px;
+}
+
+.u-ml140 {
+  margin-left: 140px;
+}
+
+.u-ml145 {
+  margin-left: 145px;
+}
+
+.u-ml150 {
+  margin-left: 150px;
+}
+
+.u-ml155 {
+  margin-left: 155px;
+}
+
+.u-ml160 {
+  margin-left: 160px;
+}
+
+.u-ml165 {
+  margin-left: 165px;
+}
+
+.u-ml170 {
+  margin-left: 170px;
+}
+
+.u-ml175 {
+  margin-left: 175px;
+}
+
+.u-ml180 {
+  margin-left: 180px;
+}
+
+.u-ml185 {
+  margin-left: 185px;
+}
+
+.u-ml190 {
+  margin-left: 190px;
+}
+
+.u-ml195 {
+  margin-left: 195px;
+}
+
+.u-ml200 {
+  margin-left: 200px;
+}
+
+.u-ml205 {
+  margin-left: 205px;
+}
+
+.u-ml210 {
+  margin-left: 210px;
+}
+
+.u-ml215 {
+  margin-left: 215px;
+}
+
+.u-ml220 {
+  margin-left: 220px;
+}
+
+.u-ml225 {
+  margin-left: 225px;
+}
+
+.u-ml230 {
+  margin-left: 230px;
+}
+
+.u-ml235 {
+  margin-left: 235px;
+}
+
+.u-ml240 {
+  margin-left: 240px;
+}
+
+.u-ml245 {
+  margin-left: 245px;
+}
+
+.u-ml250 {
+  margin-left: 250px;
+}
+
+.u-ml255 {
+  margin-left: 255px;
+}
+
+.u-ml260 {
+  margin-left: 260px;
+}
+
+.u-ml265 {
+  margin-left: 265px;
+}
+
+.u-ml270 {
+  margin-left: 270px;
+}
+
+.u-ml275 {
+  margin-left: 275px;
+}
+
+.u-ml280 {
+  margin-left: 280px;
+}
+
+.u-ml285 {
+  margin-left: 285px;
+}
+
+.u-ml290 {
+  margin-left: 290px;
+}
+
+.u-ml295 {
+  margin-left: 295px;
+}
+
+.u-ml300 {
+  margin-left: 300px;
+}
+
+.u-mr0 {
+  margin-right: 0px;
+}
+
+.u-mr5 {
+  margin-right: 5px;
+}
+
+.u-mr10 {
+  margin-right: 10px;
+}
+
+.u-mr15 {
+  margin-right: 15px;
+}
+
+.u-mr20 {
+  margin-right: 20px;
+}
+
+.u-mr25 {
+  margin-right: 25px;
+}
+
+.u-mr30 {
+  margin-right: 30px;
+}
+
+.u-mr35 {
+  margin-right: 35px;
+}
+
+.u-mr40 {
+  margin-right: 40px;
+}
+
+.u-mr45 {
+  margin-right: 45px;
+}
+
+.u-mr50 {
+  margin-right: 50px;
+}
+
+.u-mr55 {
+  margin-right: 55px;
+}
+
+.u-mr60 {
+  margin-right: 60px;
+}
+
+.u-mr65 {
+  margin-right: 65px;
+}
+
+.u-mr70 {
+  margin-right: 70px;
+}
+
+.u-mr75 {
+  margin-right: 75px;
+}
+
+.u-mr80 {
+  margin-right: 80px;
+}
+
+.u-mr85 {
+  margin-right: 85px;
+}
+
+.u-mr90 {
+  margin-right: 90px;
+}
+
+.u-mr95 {
+  margin-right: 95px;
+}
+
+.u-mr100 {
+  margin-right: 100px;
+}
+
+.u-mr105 {
+  margin-right: 105px;
+}
+
+.u-mr110 {
+  margin-right: 110px;
+}
+
+.u-mr115 {
+  margin-right: 115px;
+}
+
+.u-mr120 {
+  margin-right: 120px;
+}
+
+.u-mr125 {
+  margin-right: 125px;
+}
+
+.u-mr130 {
+  margin-right: 130px;
+}
+
+.u-mr135 {
+  margin-right: 135px;
+}
+
+.u-mr140 {
+  margin-right: 140px;
+}
+
+.u-mr145 {
+  margin-right: 145px;
+}
+
+.u-mr150 {
+  margin-right: 150px;
+}
+
+.u-mr155 {
+  margin-right: 155px;
+}
+
+.u-mr160 {
+  margin-right: 160px;
+}
+
+.u-mr165 {
+  margin-right: 165px;
+}
+
+.u-mr170 {
+  margin-right: 170px;
+}
+
+.u-mr175 {
+  margin-right: 175px;
+}
+
+.u-mr180 {
+  margin-right: 180px;
+}
+
+.u-mr185 {
+  margin-right: 185px;
+}
+
+.u-mr190 {
+  margin-right: 190px;
+}
+
+.u-mr195 {
+  margin-right: 195px;
+}
+
+.u-mr200 {
+  margin-right: 200px;
+}
+
+.u-mr205 {
+  margin-right: 205px;
+}
+
+.u-mr210 {
+  margin-right: 210px;
+}
+
+.u-mr215 {
+  margin-right: 215px;
+}
+
+.u-mr220 {
+  margin-right: 220px;
+}
+
+.u-mr225 {
+  margin-right: 225px;
+}
+
+.u-mr230 {
+  margin-right: 230px;
+}
+
+.u-mr235 {
+  margin-right: 235px;
+}
+
+.u-mr240 {
+  margin-right: 240px;
+}
+
+.u-mr245 {
+  margin-right: 245px;
+}
+
+.u-mr250 {
+  margin-right: 250px;
+}
+
+.u-mr255 {
+  margin-right: 255px;
+}
+
+.u-mr260 {
+  margin-right: 260px;
+}
+
+.u-mr265 {
+  margin-right: 265px;
+}
+
+.u-mr270 {
+  margin-right: 270px;
+}
+
+.u-mr275 {
+  margin-right: 275px;
+}
+
+.u-mr280 {
+  margin-right: 280px;
+}
+
+.u-mr285 {
+  margin-right: 285px;
+}
+
+.u-mr290 {
+  margin-right: 290px;
+}
+
+.u-mr295 {
+  margin-right: 295px;
+}
+
+.u-mr300 {
+  margin-right: 300px;
+}
+
+.u-newLine-pc::before {
+  content: none;
+}
+
+@media screen and (max-width: 768px) {
+  .u-newLine-pc::before {
+    content: "\A";
+    white-space: pre;
+  }
+}
+
+.u-newLine-sp::before {
+  content: "\A";
+  white-space: pre;
+}
+
+@media screen and (max-width: 768px) {
+  .u-newLine-sp::before {
+    content: none;
+  }
+}
+
+.u-pt0 {
+  padding-top: 0px;
+}
+
+.u-pt5 {
+  padding-top: 5px;
+}
+
+.u-pt10 {
+  padding-top: 10px;
+}
+
+.u-pt15 {
+  padding-top: 15px;
+}
+
+.u-pt20 {
+  padding-top: 20px;
+}
+
+.u-pt25 {
+  padding-top: 25px;
+}
+
+.u-pt30 {
+  padding-top: 30px;
+}
+
+.u-pt35 {
+  padding-top: 35px;
+}
+
+.u-pt40 {
+  padding-top: 40px;
+}
+
+.u-pt45 {
+  padding-top: 45px;
+}
+
+.u-pt50 {
+  padding-top: 50px;
+}
+
+.u-pt55 {
+  padding-top: 55px;
+}
+
+.u-pt60 {
+  padding-top: 60px;
+}
+
+.u-pt65 {
+  padding-top: 65px;
+}
+
+.u-pt70 {
+  padding-top: 70px;
+}
+
+.u-pt75 {
+  padding-top: 75px;
+}
+
+.u-pt80 {
+  padding-top: 80px;
+}
+
+.u-pt85 {
+  padding-top: 85px;
+}
+
+.u-pt90 {
+  padding-top: 90px;
+}
+
+.u-pt95 {
+  padding-top: 95px;
+}
+
+.u-pt100 {
+  padding-top: 100px;
+}
+
+.u-pt105 {
+  padding-top: 105px;
+}
+
+.u-pt110 {
+  padding-top: 110px;
+}
+
+.u-pt115 {
+  padding-top: 115px;
+}
+
+.u-pt120 {
+  padding-top: 120px;
+}
+
+.u-pt125 {
+  padding-top: 125px;
+}
+
+.u-pt130 {
+  padding-top: 130px;
+}
+
+.u-pt135 {
+  padding-top: 135px;
+}
+
+.u-pt140 {
+  padding-top: 140px;
+}
+
+.u-pt145 {
+  padding-top: 145px;
+}
+
+.u-pt150 {
+  padding-top: 150px;
+}
+
+.u-pt155 {
+  padding-top: 155px;
+}
+
+.u-pt160 {
+  padding-top: 160px;
+}
+
+.u-pt165 {
+  padding-top: 165px;
+}
+
+.u-pt170 {
+  padding-top: 170px;
+}
+
+.u-pt175 {
+  padding-top: 175px;
+}
+
+.u-pt180 {
+  padding-top: 180px;
+}
+
+.u-pt185 {
+  padding-top: 185px;
+}
+
+.u-pt190 {
+  padding-top: 190px;
+}
+
+.u-pt195 {
+  padding-top: 195px;
+}
+
+.u-pt200 {
+  padding-top: 200px;
+}
+
+.u-pt205 {
+  padding-top: 205px;
+}
+
+.u-pt210 {
+  padding-top: 210px;
+}
+
+.u-pt215 {
+  padding-top: 215px;
+}
+
+.u-pt220 {
+  padding-top: 220px;
+}
+
+.u-pt225 {
+  padding-top: 225px;
+}
+
+.u-pt230 {
+  padding-top: 230px;
+}
+
+.u-pt235 {
+  padding-top: 235px;
+}
+
+.u-pt240 {
+  padding-top: 240px;
+}
+
+.u-pt245 {
+  padding-top: 245px;
+}
+
+.u-pt250 {
+  padding-top: 250px;
+}
+
+.u-pt255 {
+  padding-top: 255px;
+}
+
+.u-pt260 {
+  padding-top: 260px;
+}
+
+.u-pt265 {
+  padding-top: 265px;
+}
+
+.u-pt270 {
+  padding-top: 270px;
+}
+
+.u-pt275 {
+  padding-top: 275px;
+}
+
+.u-pt280 {
+  padding-top: 280px;
+}
+
+.u-pt285 {
+  padding-top: 285px;
+}
+
+.u-pt290 {
+  padding-top: 290px;
+}
+
+.u-pt295 {
+  padding-top: 295px;
+}
+
+.u-pt300 {
+  padding-top: 300px;
+}
+
+.u-pb0 {
+  padding-bottom: 0px;
+}
+
+.u-pb5 {
+  padding-bottom: 5px;
+}
+
+.u-pb10 {
+  padding-bottom: 10px;
+}
+
+.u-pb15 {
+  padding-bottom: 15px;
+}
+
+.u-pb20 {
+  padding-bottom: 20px;
+}
+
+.u-pb25 {
+  padding-bottom: 25px;
+}
+
+.u-pb30 {
+  padding-bottom: 30px;
+}
+
+.u-pb35 {
+  padding-bottom: 35px;
+}
+
+.u-pb40 {
+  padding-bottom: 40px;
+}
+
+.u-pb45 {
+  padding-bottom: 45px;
+}
+
+.u-pb50 {
+  padding-bottom: 50px;
+}
+
+.u-pb55 {
+  padding-bottom: 55px;
+}
+
+.u-pb60 {
+  padding-bottom: 60px;
+}
+
+.u-pb65 {
+  padding-bottom: 65px;
+}
+
+.u-pb70 {
+  padding-bottom: 70px;
+}
+
+.u-pb75 {
+  padding-bottom: 75px;
+}
+
+.u-pb80 {
+  padding-bottom: 80px;
+}
+
+.u-pb85 {
+  padding-bottom: 85px;
+}
+
+.u-pb90 {
+  padding-bottom: 90px;
+}
+
+.u-pb95 {
+  padding-bottom: 95px;
+}
+
+.u-pb100 {
+  padding-bottom: 100px;
+}
+
+.u-pb105 {
+  padding-bottom: 105px;
+}
+
+.u-pb110 {
+  padding-bottom: 110px;
+}
+
+.u-pb115 {
+  padding-bottom: 115px;
+}
+
+.u-pb120 {
+  padding-bottom: 120px;
+}
+
+.u-pb125 {
+  padding-bottom: 125px;
+}
+
+.u-pb130 {
+  padding-bottom: 130px;
+}
+
+.u-pb135 {
+  padding-bottom: 135px;
+}
+
+.u-pb140 {
+  padding-bottom: 140px;
+}
+
+.u-pb145 {
+  padding-bottom: 145px;
+}
+
+.u-pb150 {
+  padding-bottom: 150px;
+}
+
+.u-pb155 {
+  padding-bottom: 155px;
+}
+
+.u-pb160 {
+  padding-bottom: 160px;
+}
+
+.u-pb165 {
+  padding-bottom: 165px;
+}
+
+.u-pb170 {
+  padding-bottom: 170px;
+}
+
+.u-pb175 {
+  padding-bottom: 175px;
+}
+
+.u-pb180 {
+  padding-bottom: 180px;
+}
+
+.u-pb185 {
+  padding-bottom: 185px;
+}
+
+.u-pb190 {
+  padding-bottom: 190px;
+}
+
+.u-pb195 {
+  padding-bottom: 195px;
+}
+
+.u-pb200 {
+  padding-bottom: 200px;
+}
+
+.u-pb205 {
+  padding-bottom: 205px;
+}
+
+.u-pb210 {
+  padding-bottom: 210px;
+}
+
+.u-pb215 {
+  padding-bottom: 215px;
+}
+
+.u-pb220 {
+  padding-bottom: 220px;
+}
+
+.u-pb225 {
+  padding-bottom: 225px;
+}
+
+.u-pb230 {
+  padding-bottom: 230px;
+}
+
+.u-pb235 {
+  padding-bottom: 235px;
+}
+
+.u-pb240 {
+  padding-bottom: 240px;
+}
+
+.u-pb245 {
+  padding-bottom: 245px;
+}
+
+.u-pb250 {
+  padding-bottom: 250px;
+}
+
+.u-pb255 {
+  padding-bottom: 255px;
+}
+
+.u-pb260 {
+  padding-bottom: 260px;
+}
+
+.u-pb265 {
+  padding-bottom: 265px;
+}
+
+.u-pb270 {
+  padding-bottom: 270px;
+}
+
+.u-pb275 {
+  padding-bottom: 275px;
+}
+
+.u-pb280 {
+  padding-bottom: 280px;
+}
+
+.u-pb285 {
+  padding-bottom: 285px;
+}
+
+.u-pb290 {
+  padding-bottom: 290px;
+}
+
+.u-pb295 {
+  padding-bottom: 295px;
+}
+
+.u-pb300 {
+  padding-bottom: 300px;
+}
+
+.u-pl0 {
+  padding-left: 0px;
+}
+
+.u-pl5 {
+  padding-left: 5px;
+}
+
+.u-pl10 {
+  padding-left: 10px;
+}
+
+.u-pl15 {
+  padding-left: 15px;
+}
+
+.u-pl20 {
+  padding-left: 20px;
+}
+
+.u-pl25 {
+  padding-left: 25px;
+}
+
+.u-pl30 {
+  padding-left: 30px;
+}
+
+.u-pl35 {
+  padding-left: 35px;
+}
+
+.u-pl40 {
+  padding-left: 40px;
+}
+
+.u-pl45 {
+  padding-left: 45px;
+}
+
+.u-pl50 {
+  padding-left: 50px;
+}
+
+.u-pl55 {
+  padding-left: 55px;
+}
+
+.u-pl60 {
+  padding-left: 60px;
+}
+
+.u-pl65 {
+  padding-left: 65px;
+}
+
+.u-pl70 {
+  padding-left: 70px;
+}
+
+.u-pl75 {
+  padding-left: 75px;
+}
+
+.u-pl80 {
+  padding-left: 80px;
+}
+
+.u-pl85 {
+  padding-left: 85px;
+}
+
+.u-pl90 {
+  padding-left: 90px;
+}
+
+.u-pl95 {
+  padding-left: 95px;
+}
+
+.u-pl100 {
+  padding-left: 100px;
+}
+
+.u-pl105 {
+  padding-left: 105px;
+}
+
+.u-pl110 {
+  padding-left: 110px;
+}
+
+.u-pl115 {
+  padding-left: 115px;
+}
+
+.u-pl120 {
+  padding-left: 120px;
+}
+
+.u-pl125 {
+  padding-left: 125px;
+}
+
+.u-pl130 {
+  padding-left: 130px;
+}
+
+.u-pl135 {
+  padding-left: 135px;
+}
+
+.u-pl140 {
+  padding-left: 140px;
+}
+
+.u-pl145 {
+  padding-left: 145px;
+}
+
+.u-pl150 {
+  padding-left: 150px;
+}
+
+.u-pl155 {
+  padding-left: 155px;
+}
+
+.u-pl160 {
+  padding-left: 160px;
+}
+
+.u-pl165 {
+  padding-left: 165px;
+}
+
+.u-pl170 {
+  padding-left: 170px;
+}
+
+.u-pl175 {
+  padding-left: 175px;
+}
+
+.u-pl180 {
+  padding-left: 180px;
+}
+
+.u-pl185 {
+  padding-left: 185px;
+}
+
+.u-pl190 {
+  padding-left: 190px;
+}
+
+.u-pl195 {
+  padding-left: 195px;
+}
+
+.u-pl200 {
+  padding-left: 200px;
+}
+
+.u-pl205 {
+  padding-left: 205px;
+}
+
+.u-pl210 {
+  padding-left: 210px;
+}
+
+.u-pl215 {
+  padding-left: 215px;
+}
+
+.u-pl220 {
+  padding-left: 220px;
+}
+
+.u-pl225 {
+  padding-left: 225px;
+}
+
+.u-pl230 {
+  padding-left: 230px;
+}
+
+.u-pl235 {
+  padding-left: 235px;
+}
+
+.u-pl240 {
+  padding-left: 240px;
+}
+
+.u-pl245 {
+  padding-left: 245px;
+}
+
+.u-pl250 {
+  padding-left: 250px;
+}
+
+.u-pl255 {
+  padding-left: 255px;
+}
+
+.u-pl260 {
+  padding-left: 260px;
+}
+
+.u-pl265 {
+  padding-left: 265px;
+}
+
+.u-pl270 {
+  padding-left: 270px;
+}
+
+.u-pl275 {
+  padding-left: 275px;
+}
+
+.u-pl280 {
+  padding-left: 280px;
+}
+
+.u-pl285 {
+  padding-left: 285px;
+}
+
+.u-pl290 {
+  padding-left: 290px;
+}
+
+.u-pl295 {
+  padding-left: 295px;
+}
+
+.u-pl300 {
+  padding-left: 300px;
+}
+
+.u-pr0 {
+  padding-right: 0px;
+}
+
+.u-pr5 {
+  padding-right: 5px;
+}
+
+.u-pr10 {
+  padding-right: 10px;
+}
+
+.u-pr15 {
+  padding-right: 15px;
+}
+
+.u-pr20 {
+  padding-right: 20px;
+}
+
+.u-pr25 {
+  padding-right: 25px;
+}
+
+.u-pr30 {
+  padding-right: 30px;
+}
+
+.u-pr35 {
+  padding-right: 35px;
+}
+
+.u-pr40 {
+  padding-right: 40px;
+}
+
+.u-pr45 {
+  padding-right: 45px;
+}
+
+.u-pr50 {
+  padding-right: 50px;
+}
+
+.u-pr55 {
+  padding-right: 55px;
+}
+
+.u-pr60 {
+  padding-right: 60px;
+}
+
+.u-pr65 {
+  padding-right: 65px;
+}
+
+.u-pr70 {
+  padding-right: 70px;
+}
+
+.u-pr75 {
+  padding-right: 75px;
+}
+
+.u-pr80 {
+  padding-right: 80px;
+}
+
+.u-pr85 {
+  padding-right: 85px;
+}
+
+.u-pr90 {
+  padding-right: 90px;
+}
+
+.u-pr95 {
+  padding-right: 95px;
+}
+
+.u-pr100 {
+  padding-right: 100px;
+}
+
+.u-pr105 {
+  padding-right: 105px;
+}
+
+.u-pr110 {
+  padding-right: 110px;
+}
+
+.u-pr115 {
+  padding-right: 115px;
+}
+
+.u-pr120 {
+  padding-right: 120px;
+}
+
+.u-pr125 {
+  padding-right: 125px;
+}
+
+.u-pr130 {
+  padding-right: 130px;
+}
+
+.u-pr135 {
+  padding-right: 135px;
+}
+
+.u-pr140 {
+  padding-right: 140px;
+}
+
+.u-pr145 {
+  padding-right: 145px;
+}
+
+.u-pr150 {
+  padding-right: 150px;
+}
+
+.u-pr155 {
+  padding-right: 155px;
+}
+
+.u-pr160 {
+  padding-right: 160px;
+}
+
+.u-pr165 {
+  padding-right: 165px;
+}
+
+.u-pr170 {
+  padding-right: 170px;
+}
+
+.u-pr175 {
+  padding-right: 175px;
+}
+
+.u-pr180 {
+  padding-right: 180px;
+}
+
+.u-pr185 {
+  padding-right: 185px;
+}
+
+.u-pr190 {
+  padding-right: 190px;
+}
+
+.u-pr195 {
+  padding-right: 195px;
+}
+
+.u-pr200 {
+  padding-right: 200px;
+}
+
+.u-pr205 {
+  padding-right: 205px;
+}
+
+.u-pr210 {
+  padding-right: 210px;
+}
+
+.u-pr215 {
+  padding-right: 215px;
+}
+
+.u-pr220 {
+  padding-right: 220px;
+}
+
+.u-pr225 {
+  padding-right: 225px;
+}
+
+.u-pr230 {
+  padding-right: 230px;
+}
+
+.u-pr235 {
+  padding-right: 235px;
+}
+
+.u-pr240 {
+  padding-right: 240px;
+}
+
+.u-pr245 {
+  padding-right: 245px;
+}
+
+.u-pr250 {
+  padding-right: 250px;
+}
+
+.u-pr255 {
+  padding-right: 255px;
+}
+
+.u-pr260 {
+  padding-right: 260px;
+}
+
+.u-pr265 {
+  padding-right: 265px;
+}
+
+.u-pr270 {
+  padding-right: 270px;
+}
+
+.u-pr275 {
+  padding-right: 275px;
+}
+
+.u-pr280 {
+  padding-right: 280px;
+}
+
+.u-pr285 {
+  padding-right: 285px;
+}
+
+.u-pr290 {
+  padding-right: 290px;
+}
+
+.u-pr295 {
+  padding-right: 295px;
+}
+
+.u-pr300 {
+  padding-right: 300px;
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+

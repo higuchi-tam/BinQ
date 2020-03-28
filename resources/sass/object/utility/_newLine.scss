@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+// New Line 改行
+// ex) Class Name: .u-newLine-pc, .u-newLine-sp
+// 改行したいテキストを<span>で囲い、クラスを付与する
+// 改行する位置<span class="u-newLine-pc">改行したいテキスト</span> → クラスを付与した位置で改行される
+// --------------------------------------------------
+// PCのみ改行
+.u-newLine-pc{
+  &::before{
+    content: none;
+    @include mq('md'){
+        content: "\A";
+        white-space: pre;
+    }
+  }
+}
+
+// SPのみ改行
+.u-newLine-sp{
+  &::before{
+    content: "\A";
+    white-space: pre;
+    @include mq('md'){
+        content: none;
+    }
+  }
+}
