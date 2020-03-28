@@ -5738,6 +5738,34 @@ a {
   border-radius: 100%;
 }
 
+.p-user__tab {
+  margin-bottom: 4rem;
+}
+
+.p-user__tab--list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+.p-user__tab--item {
+  text-align: center;
+  width: 20%;
+  padding: 1rem 2rem;
+  border: 1px solid #999;
+  border-left: none;
+}
+
+.p-user__tab--item:first-child {
+  border-left: 1px solid #999;
+}
+
+.is-active {
+  background: #444;
+  color: #fff;
+}
+
 .u-dsp-block {
   display: block;
 }
