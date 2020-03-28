@@ -10,7 +10,8 @@
 	&__container {
 		width: 74rem;
 		display: flex;
-		flex-wrap: wrap;
+        flex-wrap: wrap;
+        justify-content: space-between;
 		margin-right: 1rem;
 		@include mq(lg) {
 			width: 100%;

@@ -25,9 +25,12 @@ Route::get('/contents', 'PostsController@contents');
 //コンテンツ詳細画面
 Route::get('/contents_detail', 'PostsController@contents_detail');
 
-
 //ユーザー一覧画面
 Route::get('/user', 'PostsController@user');
+
+//ユーザー詳細画面
+Route::get('/user_detail', 'PostsController@user_detail');
+
 
 //ユーザー編集画面
 Route::get('/users/edit', 'UsersController@edit');

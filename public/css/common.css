@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);@charset "UTF-8";
 
 /* ========================================
   base
@@ -182,7 +182,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -420,7 +420,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -794,7 +794,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -1123,7 +1123,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -1412,7 +1412,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -1661,7 +1661,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -2117,7 +2117,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -2359,7 +2359,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -2747,7 +2747,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -2999,7 +2999,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -3059,6 +3059,7 @@ a {
   width: 74rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-right: 1rem;
 }
 
@@ -3285,7 +3286,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -3528,7 +3529,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -3947,7 +3948,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -4252,7 +4253,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -4801,7 +4802,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -5128,7 +5129,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -5407,7 +5408,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -5461,6 +5462,75 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.p-user_detail__userContainer {
+  display: flex;
+  width: 74rem;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-user_detail__userContainer {
+    flex-wrap: wrap;
+  }
+}
+
+.p-user_detail__wrap {
+  padding: 1rem 0;
+}
+
+.p-user_detail__name {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-right: 2rem;
+}
+
+.p-user_detail__nameWrap {
+  display: flex;
+  align-items: center;
+}
+
+.p-user_detail__userImg img {
+  width: 14rem;
+}
+
+.p-user_detail__snsList {
+  list-style: none;
+  position: relative;
+  margin: 0;
+}
+
+.p-user_detail__snsItem {
+  padding-left: 0;
+}
+
+.p-user_detail__userTitle {
+  margin: 0 0 1rem 0;
+}
+
+.p-user_detail__comment {
+  margin-bottom: 1rem;
+}
+
+.p-user_detail__tab {
+  width: 74rem;
+  margin-right: 1rem;
+  margin-bottom: 4rem;
+}
+
+.p-user_detail__list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+.p-user_detail__item {
+  width: calc(100%/3);
+  text-align: center;
+  padding: 1rem 0;
+  border: 1px solid #999;
 }
 
 /* ========================================
@@ -5645,7 +5715,7 @@ input,
 button,
 select,
 textarea {
-  font-family: YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -5711,7 +5781,7 @@ a {
 }
 
 .p-user__news--title {
-  font-size: 3.8rem;
+  font-size: 3rem;
   margin: 0;
 }
 

@@ -72,4 +72,7 @@ class PostsController extends Controller
     public function user (){
         return view('post/user');
     }
+    public function user_detail(){
+        return view('post/user_detail');
+    }
 }
