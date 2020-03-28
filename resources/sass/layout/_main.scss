@@ -21,9 +21,27 @@
 }
 
 .l-2col{
+    // width: 100rem;
     display: flex;
+    justify-content: center;
+    margin:0 auto;
+    @include mq(lg){
+        display: block;
+        justify-content: center;
+    }
 }
 
 .l-top__article{
     width: 650px;
+}
+
+.l-2col--main{
+    width:73rem ;
+    margin-right: 2rem;
+    @include mq(lg){
+        margin: 0 auto;
+    }
+    @include mq(md){
+        width: 100%;
+    }
 }

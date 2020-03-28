@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+// =========================================
+// Foundation
+// =========================================
+@import "../../foundation/_mixin.scss";
+@import "../../foundation/_base.scss";
+
+.c-article__item{
+    display: flex;
+}

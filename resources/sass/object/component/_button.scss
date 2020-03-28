@@ -11,6 +11,7 @@
     position: relative;
     margin: 0 auto;
     background-color:#a73b65;
+    border: 1px solid #a73b65;
     color: #fff;
     width: 30rem;
     height: 4.5rem;
@@ -20,6 +21,7 @@
     line-height: 4.5rem;
     margin-bottom: 1rem;
     letter-spacing: 0.3rem;
+    transition: all .3s;
     &::after{
         content: '';
         width: 0.8rem;
@@ -35,6 +37,14 @@
         right: 2rem;
         margin-top: -4px;
     }
+    &:hover{
+        background: #fff;
+        color: #a73b65;
+        &::after{
+            border-top: solid 1px #a73b65;
+            border-right: solid 1px #a73b65;
+        }
+        }
 }
 .c-button__sns{
     text-align: center;
@@ -101,4 +111,45 @@
     background: #fff;
     color:#a73b65;
     border: 1px solid #a73b65;
+}
+
+.c-button__sidebar{
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    background-color:#a73b65;
+    border: 1px solid #a73b65;
+    color: #fff;
+    width: 100%;
+    height: 4.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 4.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    transition: all .3s;
+    &::after{
+        content: '';
+        width: 0.8rem;
+        height: 0.8rem;
+        border: 0px;
+        border-top: solid 1px #fff;
+        border-right: solid 1px #fff;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        margin-top: -4px;
+    }
+    &:hover{
+        background: #fff;
+        color: #a73b65;
+        &::after{
+            border-top: solid 1px #a73b65;
+            border-right: solid 1px #a73b65;
+        }
+        }
 }

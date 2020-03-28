@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+// =========================================
+// Foundation
+// =========================================
+@import "foundation/_mixin.scss";
+@import "foundation/_base.scss";
+
+.l-sidebar{
+    width: 25rem;
+    @include mq(lg){
+        width: 31rem;
+        margin: 0 auto;
+    }
+}

@@ -20,7 +20,11 @@
 
         @yield('content')
 
+        {{-- 　@yield('sidebar') --}}
+
+
     @yield('footer')
+
 
 </div>
   </body>

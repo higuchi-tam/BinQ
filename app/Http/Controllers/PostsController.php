@@ -62,4 +62,7 @@ class PostsController extends Controller
     public function contents () {
         return view('post/contents');
     }
+    public function contents_detail () {
+        return view('post/contents_detail');
+    }
 }

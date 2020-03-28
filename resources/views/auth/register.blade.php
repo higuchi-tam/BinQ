@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@include('layouts.header')
-@include('layouts.footer')
+{{-- @include('layouts.header') --}}
+{{-- @include('layouts.footer') --}}
 @section('content')
 <div class="l-container">
   <div class="p-login__container">
@@ -55,7 +55,7 @@
 
       <p class="p-register__loginLink">
         アカウントをお持ちですか？
-        <a href="/users/sign_in">ログインする</a>
+        <a href="/login">ログインする</a>
       </p>
     </div>
   </div>

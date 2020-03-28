@@ -5,7 +5,7 @@
             <p class="l-footer__title">BinQ</p>
             <ul class="l-footer__snsList">
                 <li class="l-footer__snsItem">
-                    <a href=""><img src="/images/tw.svg" alt=""></a>
+                    <a href="https://twitter.com/nishimachikid" target="blank"><img src="/images/tw.svg" alt=""></a>
                 </li>
                 <li class="l-footer__snsItem">
                     <a href="/images/fv.svg"><img src="/images/fb.svg" alt=""></a>
