@@ -11,13 +11,21 @@
 |
 */
 
-Route::get('/', 'PostsController@index');
+//第一引数にURL、第二引数にはどのコントローラーでなんのメソッドを実行するかを文字列で渡している
+Route::get('/', 'PostsController@contents');
+
+// Route::get('/', 'ArticleController@index');
+
+Route::post('/login', 'LoginController@login');
+
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
 
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', 'PostsController@index');
+Route::get('/home', 'PostsController@contents');
 
 //コンテンツ一覧画面
 Route::get('/contents', 'PostsController@contents');
