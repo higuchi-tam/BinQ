@@ -1719,6 +1719,8 @@ a {
 
 .p-topbaner__container {
   width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1735,7 +1737,7 @@ a {
   width: 26rem;
   margin: 0 auto;
   position: relative;
-  left: 7vw;
+  left: 2vw;
 }
 
 @media screen and (max-width: 1230px) {
@@ -1748,7 +1750,7 @@ a {
 
 @media screen and (max-width: 1028px) {
   .p-topbaner__titleWrap {
-    width: 50vw;
+    width: 60vw;
     padding-left: 8vw;
   }
 }
@@ -2521,6 +2523,18 @@ a {
   background: #fff;
   color: #a73b65;
   border: 1px solid #a73b65;
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid #a73b65;
+  height: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 4.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.3rem;
+  transition: all 0.3s;
 }
 
 .c-button__sidebar {

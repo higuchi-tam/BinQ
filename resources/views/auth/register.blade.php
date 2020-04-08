@@ -5,6 +5,9 @@
 <div class="l-container">
   <div class="p-login__container">
     <h2 class="p-login__mainTitle">BinQ</h2>
+
+    @include('error_card_list') {{--この行を追加--}}
+
     <div class="p-login__form">
       <div class="p-login__titleWrap">
         <h3 class="p-login__titleTxt">BinQに登録する</h3>
@@ -23,6 +26,7 @@
         <div class="p-login__formGroup">
         　<p class="p-register__formTxt">ユーザーネーム（任意）</p>
           <input class="p-login__formItem" placeholder="ユーザーネーム" type="text" name="name" value="{{ old('name') }}" required autofocus>
+          <small>英数字5〜16文字(登録後の変更はできません)</small>
         </div>
 
         <div class="p-login__formGroup">
