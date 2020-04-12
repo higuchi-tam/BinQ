@@ -13,18 +13,30 @@
 
                 @guest {{--この行を追加--}}
                 <li class="l-header__item">
-                    <a class="nav-link" href="">ログイン</a>
+                    <a class="nav-link" href="/login">ログイン</a>
                 </li>
                 @endguest {{--この行を追加--}}
 
                 @auth
                 <li class="l-header__item">
-                    <a class="" href="/posts/new">投稿する</a>
+                    <a class="l-header__item--post" href="{{ route('articles.create') }}">
+                        <img src="/images/scissors-logo.svg" alt="">
+                        <span class="l-header__item--postText">投稿</span>
+                    </a>
                 </li>
-                <li class="l-header__item l-header__item--right">
-                    <button form="logout-button" type="submit">
-                        ログアウト
-                    </button>
+                <li class="l-header__item">
+                    <div class="js-dropdown">
+                        <img src="{{ asset('/images/blank_profile.png') }}" alt="記事のメイン画像" class="l-header__item--img">
+                    </div>
+                    <ul class="l-header__dropdown--menu">
+                        <li class="l-header__dropdown--item">マイページ</li>
+                        <li class="l-header__dropdown--item">
+                            <button form="logout-button" type="submit" class="l-header__button">
+                                ログアウト
+                            </button>
+                        </li>
+                        <li class="l-header__dropdown--item">アカウント設定</li>
+                    </ul>
                 </li>
                 <form id="logout-button" method="POST" action="{{ route('logout') }}"> {{--この行を編集--}}
                     @csrf {{--この行を追加--}}
