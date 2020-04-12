@@ -45,7 +45,7 @@ class RegisterController extends Controller
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+    //  * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'alpha_num', 'min:5', 'max:16', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password_confirmation' => ['required'],
         ]);
     }
 

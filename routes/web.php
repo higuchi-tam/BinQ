@@ -23,6 +23,10 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Auth::routes();
 
+Route::get('/', 'ArticleController@index') -> name('articles.index');
+Route::resource('/articles', 'ArticleController')->except(['index','show'])->middleware('auth');
+Route::resource('/articles', 'ArticleController')->only(['show']);
+
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'PostsController@contents');
@@ -52,7 +56,7 @@ Route::get('/users/{user_id}', 'UsersController@show');
 Route::get('/posts/new', 'PostsController@new')->name('new');
 
 // 投稿新規処理
-Route::post('/posts','PostsController@store');
+Route::post('/posts', 'PostsController@store');
 
 //投稿削除処理
 Route::get('/postsdelete/{post_id}', 'PostsController@destroy');
@@ -64,9 +68,7 @@ Route::get('/posts/{post_id}/likes', 'LikesController@store');
 Route::get('/likes/{like_id}', 'LikesController@destroy');
 
 //コメントの投稿処理
-Route::post('/posts/{comment_id}/comments','CommentsController@store');
+Route::post('/posts/{comment_id}/comments', 'CommentsController@store');
 
 //コメント取消処理
 Route::get('/comments/{comment_id}', 'CommentsController@destroy');
-
-

@@ -26,7 +26,7 @@
         <div class="p-login__formGroup">
         　<p class="p-register__formTxt">ユーザーネーム（任意）</p>
           <input class="p-login__formItem" placeholder="ユーザーネーム" type="text" name="name" value="{{ old('name') }}" required autofocus>
-          <small>英数字5〜16文字(登録後の変更はできません)</small>
+          {{-- <small>英数字5〜16文字(登録後の変更はできません)</small> --}}
         </div>
 
         <div class="p-login__formGroup">
@@ -43,7 +43,7 @@
           <input class="p-login__formItem" placeholder="パスワードの確認" autocomplete="off" type="password" name="password_confirmation" required>
         </div>
         <div class="p-login__formGroup p-register__radioWrap">
-            <input class="p-register__radionItem" placeholder="パスワードの確認" autocomplete="off" type="checkbox" name="password_confirmation" required>
+            <input class="p-register__radionItem" autocomplete="off" type="checkbox" required>
             　<p class=""><a href="">利用規約</a>に同意する</p>
         </div>
 
