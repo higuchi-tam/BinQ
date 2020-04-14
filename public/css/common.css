@@ -995,7 +995,6 @@ a {
 
 .l-header__dropdown--menu {
   width: 10rem;
-  display: none;
   position: absolute;
   right: 0;
   padding: 0;
@@ -1307,6 +1306,40 @@ a {
 
 .l-top__article {
   width: 650px;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1028px) {
+  #app {
+    display: block;
+    justify-content: center;
+  }
+}
+
+#app--main {
+  width: 73rem;
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 1028px) {
+  #app--main {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #app--main {
+    width: 100%;
+  }
+}
+
+.red-text {
+  background: red;
 }
 
 /* ========================================

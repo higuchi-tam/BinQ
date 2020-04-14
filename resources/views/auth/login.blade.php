@@ -39,7 +39,7 @@
 
                     <input type="hidden" name="remember" id="remember" value="on">
 
-                    <a href="" class="p-login__passRemind">パスワードを忘れた方</a>
+                    <a href="{{ route('password.request') }}" class="p-login__passRemind">パスワードを忘れた方</a>
                     <div class="c-button__wrap">
                         <input type="submit" name="remember" value="ログイン" class="c-button__login">
                     </div>

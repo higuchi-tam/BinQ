@@ -1,12 +1,15 @@
-require('./bootstrap');
+// import("./components/dropdown");
 
-require('./components/dropdown');
+import Vue from "vue";
+import ArticleLike from "./components/ArticleLike";
+import axios from 'axios';//追記
+import DropDown from "./components/dropdown.js";
 
+const app = new Vue({
+    el: "#app",
+    components: {
+        ArticleLike
+    }
+});
 
-window.Vue = require('vue');
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-// const app = new Vue({
-//     el: '#app',
-// });
+// DropDown();
