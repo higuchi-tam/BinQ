@@ -14,13 +14,17 @@
     <div class="p-top__news--user">
         <figure class="p-top__news--userImg">
             {{-- TODO:動的に切り替える --}}
-            <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像">
+            <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
+               <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像">
+            </a>
         </figure>
         <div class="p-top__news--userTxt">
-            <p class="p-top__news--useName">{{ $article->user->name }}</p>
+            <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
+                {{ $article->user->name }}
+            </a>
             <p class="p-top__news--date"> {{ $article->created_at->format('Y/m/d H:i') }}</p>
         </div>
-        <div class="card-body pt-0 pb-2 pl-3">
+        <div class="card-body pt-0 pb-2 pl-3">z
             <div class="card-text">
                 <article-like :initial-is-liked-by='@json($article->isLikedBy(Auth::user()))'
                     :initial-count-likes='@json($article->count_likes)' :authorized='@json(Auth::check())'
