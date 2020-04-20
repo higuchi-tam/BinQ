@@ -16,44 +16,16 @@ class ArticleController extends Controller
         $this->authorizeResource(Article::class, 'article');
     }
 
+    //記事一覧ページの表示アクションメソッド
     public function index()
     {
-        $articles = [
-            (object) [
-                'id' => 1,
-                'title' => 'タイトル1',
-                'body' => '本文1',
-                'created_at' => now(),
-                'user' => (object) [
-                    'id' => 1,
-                    'name' => 'ユーザー名1',
-                ],
-            ],
-            (object) [
-                'id' => 2,
-                'title' => 'タイトル2',
-                'body' => '本文2',
-                'created_at' => now(),
-                'user' => (object) [
-                    'id' => 2,
-                    'name' => 'ユーザー名2',
-                ],
-            ],
-            (object) [
-                'id' => 3,
-                'title' => 'タイトル3',
-                'body' => '本文3',
-                'created_at' => now(),
-                'user' => (object) [
-                    'id' => 3,
-                    'name' => 'ユーザー名3',
-                ],
-            ],
-        ];
+        //allメソッドでモデルの全データをコレクションで返す。
         $articles = Article::all()->sortByDesc('created_at');
-
+        // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
+        // キーを定義することでビューファイル側で$articleという変数が使用できる
         return view('articles.index', ['articles' => $articles]);
     }
+
     public function create()
     {
         $allTagNames = Tag::all()->map(function ($tag) {
@@ -64,6 +36,7 @@ class ArticleController extends Controller
             'allTagNames' => $allTagNames,
         ]);
     }
+
     public function store(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
@@ -75,6 +48,7 @@ class ArticleController extends Controller
         });
         return redirect()->route('articles.index');
     }
+
     public function edit(Article $article)
     {
         $tagNames = $article->tags->map(function ($tag) {
@@ -89,6 +63,7 @@ class ArticleController extends Controller
             'allTagNames' => $allTagNames,
         ]);
     }
+
     public function update(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all())->save();
@@ -99,6 +74,7 @@ class ArticleController extends Controller
         });
         return redirect()->route('articles.index');
     }
+
     public function destroy(Article $article)
     {
         $article->delete();

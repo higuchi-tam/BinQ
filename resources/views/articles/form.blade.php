@@ -9,7 +9,7 @@
     :initial-tags='@json($tagNames ?? [])'
     :autocomplete-items='@json($allTagNames ?? [])'
     >
-    </article-tags-input>
+    </article-ta$usergs-input>
 </div>
 
 <div class="form-group">

@@ -11,6 +11,8 @@ class ArticleRequest extends FormRequest
      *
      * @return bool
      */
+
+    //ポリシーの機能を使用するので、ここでは一律にtrueを返すようにしている。
     public function authorize()
     {
         return true;

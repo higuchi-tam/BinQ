@@ -1,50 +1,80 @@
 @extends('layouts.app')
-@include('header')
-@include('footer')
+@include('layouts.header')
+@include('layouts.footer')
 @include('common.errors')
+
 @section('content')
 <div class="col-md-offset-2 mb-4 edit-profile-wrapper">
-  <div class="row">
-    <div class="col-md-8 mx-auto">
-      <div class="profile-form-wrap">
-        <form class="edit_user" enctype="multipart/form-data" action="/users/update" accept-charset="UTF-8" method="post">
-          <input name="utf8" type="hidden" value="✓" />
-          <input type="hidden" name="id" value="{{ $user->id }}" />
-          {{csrf_field()}}
-          <div class="form-group">
-            <label for="user_profile_photo">プロフィール写真</label><br>
-                @if ($user->profile_photo)
-                    <p>
-                        <img src="{{ asset('storage/user_images/' . $user->profile_photo) }}" alt="avatar" />
-                    </p>
-                @endif
-            <input type="file" name="user_profile_photo"  value="{{ old('user_profile_photo',$user->id) }}" accept="image/jpeg,image/gif,image/png" />
-          </div>
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="profile-form-wrap">
 
-          <div class="form-group">
-            <label for="user_name">名前</label>
-            <input autofocus="autofocus" class="form-control" type="text" value="{{ old('user_name',$user->name) }}" name="user_name" />
-          </div>
+                <form class="edit_user" enctype="multipart/form-data"
+                    action="{{ route('users.update', ['name' => $user->name]) }}" accept-charset="UTF-8" method="post">
+                    <input name="utf8" type="hidden" value="✓" />
+                    <input type="hidden" name="id" value="{{ $user->id }}" />
 
-          <div class="form-group">
-            <label for="user_email">メールアドレス</label>
-            <input autofocus="autofocus" class="form-control" type="email" value="{{ old('user_email',$user->email) }}" name="user_email" />
-          </div>
+                    {{csrf_field()}}
 
-          <div class="form-group">
-            <label for="user_password">パスワード</label>
-            <input autofocus="autofocus" class="form-control" type="password" value="{{ old('user_password',$user->password) }}" name="user_password" />
-          </div>
+                    @method('PATCH')
+                    <div class="form-group">
+                        <label for="profile_photo">プロフィール写真</label><br>
+                        @if ($user->profile_photo)
+                        <p>
+                            <img src="{{ asset('storage/user_images/' . $user->profile_photo) }}" alt="avatar" />
+                        </p>
+                        @endif
+                        <input type="file" name="profile_photo" value="{{ old('profile_photo',$user->id) }}"
+                            accept="image/jpeg,image/gif,image/png" />
+                    </div>
 
-          <div class="form-group">
-            <label for="user_password_confirmation">パスワードの確認</label>
-            <input autofocus="autofocus" class="form-control" type="password" name="user_password_confirmation" />
-          </div>
+                    <div class="form-group">
+                        <label for="name">ユーザー名</label>
+                        <input autofocus="autofocus" class="form-control" type="text"
+                            value="{{ old('name',$user->name) }}" name="name" />
+                    </div>
 
-          <input type="submit" name="commit" value="変更する" class="btn btn-primary" data-disable-with="変更する" />
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input autofocus="autofocus" class="form-control" type="email"
+                            value="{{ old('email',$user->email) }}" name="email" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">パスワード</label>
+                        <input autofocus="autofocus" class="form-control" type="password"
+                            value="{{ old('password',$user->password) }}" name="password" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password_confirmation">パスワードの確認</label>
+                        <input autofocus="autofocus" class="form-control" type="password"
+                            name="password_confirmation" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">肩書き</label>
+                        <input autofocus="autofocus" class="form-control" type="text"
+                            value="{{ old('title',$user->title) }}" name="title" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">コメント</label>
+                        <input autofocus="autofocus" class="form-control" type="text"
+                            value="{{ old('comment',$user->comment) }}" name="comment" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input autofocus="autofocus" class="form-control" type="text"
+                            value="{{ old('url',$user->url) }}" name="url" />
+                    </div>
+
+                    <input type="submit" value="変更を保存する"  />
+                </div>
+
+            </form>
         </div>
-      </form>
     </div>
-  </div>
 </div>
 @endsection

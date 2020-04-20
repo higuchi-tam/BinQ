@@ -12,8 +12,10 @@ class Article extends Model
         'title',
         'body',
     ];
-    public function user()
+
+    public function user(): BelongsTo //user()はリレーションメソッド
     {
+        //記事と記事を書いたユーザ＝は多対1の関係なのでその場合は「belongsTo」メソッドを使用する。
         return $this->belongsTo('App\User');
     }
 

@@ -13,26 +13,22 @@ class UsersController extends Controller
         $user = User::where('id', $user_id)
             ->firstOrFail();
 
-         // テンプレート「user/show.blade.php」を表示します。
         return view('user/show', ['user' => $user]);
 }
 public function edit()
     {
         $user = Auth::user();
 
-         // テンプレート「user/edit.blade.php」を表示します。
         return view('user/edit', ['user' => $user]);
     }
 
 public function update(Request $request)
 {
-    //バリデーション（入力値チェック）
     $validator = Validator::make($request->all() , [
         'user_name' => 'required|string|max:255',
         'user_password' => 'required|string|min:6|confirmed',
         ]);
 
-    //バリデーションの結果がエラーの場合
     if ($validator->fails())
     {
         return redirect()->back()->withErrors($validator->errors())->withInput();
