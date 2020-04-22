@@ -25,11 +25,17 @@
                     </li>
                     <li class="l-header__item">
                         <div class="js-dropdown">
-                            <img src="{{ asset('/images/blank_profile.png') }}" alt="記事のメイン画像" class="l-header__item--img">
+                            {{-- <a href="{{ route('users.show', ['name' => $user->name]) }}" class=""> --}}
+                                {{-- @if ($user->profile_photo) --}}
+                                <img class="l-header__userImg" src="{{ asset('storage/user_images/' . $user->profile_photo) }}" />
+                                {{-- @else
+                                <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像"> --}}
+                                {{-- @endif --}}
+                            {{-- </a> --}}
                         </div>
                         <ul class="l-header__dropdown--menu">
                             <li class="l-header__dropdown--item">
-                                <button class="dropdown-item" type="button" onclick="location.href=''">
+                                <button class="dropdown-item" type="button" onclick="location.href="">
                                     マイページ
                                 </button>
                             </li>

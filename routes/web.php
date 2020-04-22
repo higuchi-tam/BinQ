@@ -23,6 +23,7 @@ Route::prefix('articles')->name('articles.')->group(function () {
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 
 Route::prefix('users')->name('users.')->group(function () {
+    Route::get('/', 'UserController@index')->name('index');
     Route::get('/{name}', 'UserController@show')->name('show');
     Route::get('/{name}/edit', 'UserController@edit')->name('edit');
     Route::patch('/{name}/update', 'UserController@update')->name('update');
@@ -34,3 +35,5 @@ Route::prefix('users')->name('users.')->group(function () {
         Route::delete('/{name}/follow', 'UserController@unfollow')->name('unfollow');
     });
 });
+
+Route::get('/post', 'PostsController@index')->name('post.index');

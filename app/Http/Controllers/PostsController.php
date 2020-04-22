@@ -15,12 +15,16 @@ class PostsController extends Controller
 
     public function index()
     {
+        $user = Auth::user();
         $posts = Post::limit(10)
             ->orderBy('created_at', 'desc')
             ->get();
 
          //テンプレートのindex.blade.phpを表示します。
-        return view('post/index', ['posts' => $posts]);
+        return view('post/index', [
+            // 'posts' => $posts,
+            'user' => $user,
+            ]);
     }
 
     public function new()

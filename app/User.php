@@ -82,4 +82,9 @@ class User extends Authenticatable
         return $this->followings->count();
     }
 
+    public function getAllUsers(Int $user_id)
+    {
+        return $this->Where('id', '<>', $user_id)->paginate(12);
+    }
+
 }

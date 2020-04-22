@@ -136,6 +136,11 @@
             translate: all 0.3s;
         }
     }
+    &__userImg{
+        width: 5rem;
+        height: 5rem;
+        border-radius: 100%;
+    }
 }
 
 //ドロップダウンメニュー

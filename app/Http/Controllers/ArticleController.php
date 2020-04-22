@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Article;
 use App\Tag;
 use App\Http\Requests\ArticleRequest;
 
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Constraint\Attribute;
+use Illuminate\Support\Facades\Auth;
+
 
 class ArticleController extends Controller
 {
@@ -21,9 +24,10 @@ class ArticleController extends Controller
     {
         //allメソッドでモデルの全データをコレクションで返す。
         $articles = Article::all()->sortByDesc('created_at');
+        $user = Auth::user();
         // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
         // キーを定義することでビューファイル側で$articleという変数が使用できる
-        return view('articles.index', ['articles' => $articles]);
+        return view('articles.index', ['articles' => $articles, 'user' => $user]);
     }
 
     public function create()
@@ -31,9 +35,11 @@ class ArticleController extends Controller
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
+        $user = Auth::user();
 
         return view('articles.create', [
             'allTagNames' => $allTagNames,
+            'user' => $user,
         ]);
     }
 
@@ -57,10 +63,14 @@ class ArticleController extends Controller
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
+        $user = Auth::user();
+
         return view('articles.edit', [
             'article' => $article,
             'tagNames' => $tagNames,
             'allTagNames' => $allTagNames,
+            'user' => $user,
+
         ]);
     }
 
@@ -80,9 +90,15 @@ class ArticleController extends Controller
         $article->delete();
         return redirect()->route('articles.index');
     }
+
     public function show(Article $article)
     {
-        return view('articles.show', ['article' => $article]);
+        $user = Auth::user();
+        return view('articles.show', [
+            'article' => $article,
+            'user' => $user,
+            ]);
+
     }
 
     public function like(Request $request, Article $article)

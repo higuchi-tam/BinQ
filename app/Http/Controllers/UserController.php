@@ -3,19 +3,40 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Article;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
-    public function show(string $name)
+
+    public function index(User $user)
+{
+    $all_users = $user->getAllUsers(auth()->user()->id);
+    $user = Auth::user();
+
+    return view('users.index', [
+        'all_users'  => $all_users,
+        'user' => $user,
+    ]);
+}
+
+
+
+    public function show(string $name, Article $article)
     {
         $user = User::where('name', $name)->first();
+        // $user = Auth::user();
         $articles = $user->articles->sortByDesc('created_at');
+        $profile_photo = $user->profile_photo;
 
         return view('users.show', [
             'user' => $user,
             'articles' => $articles,
+            'article' => $article,
+            'profile_photo' => $profile_photo,
         ]);
     }
 

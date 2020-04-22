@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    // ユーザー一覧表示
+    public function index(User $user)
+    {
+        $all_users = $user->getAllUsers(auth()->user()->id);
+
+        return view('users.index', [
+            'all_users'  => $all_users
+        ]);
+    }
+
     public function show($user_id)
     {
         $user = User::where('id', $user_id)
