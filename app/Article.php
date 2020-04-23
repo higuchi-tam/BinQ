@@ -35,8 +35,15 @@ class Article extends Model
     {
         return $this->likes->count();
     }
+
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
+
+    public function articleLikes(): BelongsToMany
+    {
+        return $this->belongsToMany('App\Like')->withTimestamps();
+    }
+
 }

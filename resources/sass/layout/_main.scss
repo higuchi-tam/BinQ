@@ -19,7 +19,8 @@
 	// width: 100rem;
 	display: flex;
 	justify-content: center;
-	margin: 0 auto;
+    margin: 0 auto;
+    max-width: 100rem;
 	@include mq(lg) {
 		display: block;
 		justify-content: center;

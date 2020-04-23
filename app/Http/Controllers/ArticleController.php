@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Article;
 use App\Tag;
+use App\Like;
+
+
 use App\Http\Requests\ArticleRequest;
 
 use Illuminate\Http\Request;
@@ -28,6 +31,14 @@ class ArticleController extends Controller
         // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
         // キーを定義することでビューファイル側で$articleという変数が使用できる
         return view('articles.index', ['articles' => $articles, 'user' => $user]);
+    }
+
+    public function likeIndex(){
+
+        $user = Auth::user();
+        $articles = Article::withCount('likes')->orderBy('likes_count','desc')->paginate(12);
+
+        return view('articles.indexLikes', ['user'=> $user,'articles'=> $articles]);
     }
 
     public function create()
@@ -121,4 +132,7 @@ class ArticleController extends Controller
             'countLikes' => $article->count_likes,
         ];
     }
+
+
+
 }
