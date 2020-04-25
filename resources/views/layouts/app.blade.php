@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-  <head>
+
+<head>
     <title>{{ config('app.name', 'BinQ') }}</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -10,26 +11,23 @@
     {{-- TODO:本番環境ではsecure_assetに切り替える --}}
     <link href="{{ asset('css/common.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <script src="https://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
-      <div class="l-wrapper">
-{{-- yieldは配置する場所を決めているだけ --}}
-    @yield('header')
+</head>
 
-    @yield('top_baner')
+<body>
+    <script src="https://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+    <div class="l-wrapper">
+        {{-- yieldは配置する場所を決めているだけ --}}
+        @yield('header')
+
+        @yield('top_baner')
         <div id="app">
             @yield('content')
         </div>
-
-        {{-- 　@yield('sidebar') --}}
-
-
-    @yield('footer')
+        @yield('footer')
 
 
-</div>
-<script src="{{ mix('js/app.js') }}"></script>
+    </div>
+    <script src="{{ mix('js/app.js') }}"></script>
+</body>
 
-  </body>
 </html>

@@ -13,17 +13,26 @@ class UserController extends Controller
 {
 
     public function index(User $user)
-{
-    $all_users = $user->getAllUsers(auth()->user()->id);
-    $user = Auth::user();
+    {
+        $user = Auth::user();
+        $all_users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(9);
 
-    return view('users.index', [
-        'all_users'  => $all_users,
-        'user' => $user,
-    ]);
-}
+        return view('users.index', [
+            'all_users'  => $all_users,
+            'user' => $user,
+        ]);
+    }
+    // public function user_side(User $user)
+    // {
 
+    //     $user = Auth::user();
+    //     $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
 
+    //     return view('users.user_side', [
+    //         'users'  => $users,
+    //         'user' => $user,
+    //     ]);
+    // }
 
     public function show(string $name, Article $article)
     {
@@ -39,6 +48,7 @@ class UserController extends Controller
             'profile_photo' => $profile_photo,
         ]);
     }
+
 
     public function edit(string $name)
     {

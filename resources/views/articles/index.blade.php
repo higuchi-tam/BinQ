@@ -30,7 +30,9 @@
         </div>
     </section>
 
-    <section class="l-sidebar l-container">
+    @include('layouts.sidebar')
+
+    {{-- <section class="l-sidebar l-container">
         <div class="c-members">
             <h4 class="c-category__title">人気の美容師</h4>
             <div class="u-mb20">
@@ -115,7 +117,7 @@
 
 
 
-    </section>
+    </section> --}}
 
 
 </div>

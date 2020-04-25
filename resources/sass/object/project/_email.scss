@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+// =========================================
+// Project Form
+// =========================================
+@import "../../foundation/_mixin.scss";
+@import "../../foundation/_base.scss";
+
+.p-email{
+    width: 30rem;
+    margin: 0 auto;
+    &__title{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    &__input{
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 4rem;
+    }
+}

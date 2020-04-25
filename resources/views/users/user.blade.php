@@ -26,9 +26,12 @@
                     <a href="/images/ins.svg"><img src="/images/ins.svg" alt=""></a>
                 </li>
             </ul>
+
+            {{-- プロフィール編集 --}}
             @if( Auth::id() == $user->id )
             <a href="{{ route("users.edit", ['name' => $user->name]) }}" class="p-user_detail__edit">変更</a>
-            　　@endif
+            @endif
+
         </div>
         　　<p class="p-user_detail__userTitle">
             {{ $user->title }}
@@ -60,7 +63,6 @@
         </follow-button>
         @endif
 
-        {{-- プロフィール編集 --}}
 
 
     </div>

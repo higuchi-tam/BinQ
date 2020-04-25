@@ -23,28 +23,38 @@ class ArticleController extends Controller
     }
 
     //記事一覧ページの表示アクションメソッド
-    public function index()
+    public function index(User $user)
     {
         //allメソッドでモデルの全データをコレクションで返す。
         $articles = Article::orderBy('created_at', 'desc')->paginate(9);
         $user = Auth::user();
+        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
+
+
         // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
         // キーを定義することでビューファイル側で$articleという変数が使用できる
-        return view('articles.index', ['articles' => $articles, 'user' => $user]);
+        return view('articles.index', [
+            'articles' => $articles,
+            'user' => $user,
+            'users'  => $users,
+
+        ]);
     }
 
-    public function likeIndex(){
+    public function likeIndex()
+    {
 
         $user = Auth::user();
-        $articles = Article::withCount('likes')->orderBy('likes_count','desc')->paginate(9);
+        $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
 
-        return view('articles.indexLikes', ['user'=> $user,'articles'=> $articles]);
+        return view('articles.indexLikes', ['user' => $user, 'articles' => $articles]);
     }
 
-    public function card_side(){
+    public function card_side()
+    {
         $user = Auth::user();
-        $articles = Article::withCount('likes')->orderBy('likes_count','desc');
-        return view('articles.card_side', ['user'=> $user,'articles'=> $articles]);
+        $articles = Article::withCount('likes')->orderBy('likes_count', 'desc');
+        return view('articles.card_side', ['user' => $user, 'articles' => $articles]);
     }
 
     public function create()
@@ -114,8 +124,7 @@ class ArticleController extends Controller
         return view('articles.show', [
             'article' => $article,
             'user' => $user,
-            ]);
-
+        ]);
     }
 
     public function detail(Article $article)
@@ -124,8 +133,7 @@ class ArticleController extends Controller
         return view('articles.detail', [
             'article' => $article,
             'user' => $user,
-            ]);
-
+        ]);
     }
 
     public function like(Request $request, Article $article)
@@ -148,7 +156,4 @@ class ArticleController extends Controller
             'countLikes' => $article->count_likes,
         ];
     }
-
-
-
 }

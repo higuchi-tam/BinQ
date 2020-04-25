@@ -4717,6 +4717,269 @@ a {
   background: rgba(167, 59, 101, 0.2);
 }
 
+.p-email {
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.p-email__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.p-email__input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #a73b65;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
 .p-form__title {
   width: 100%;
   margin-bottom: 2rem;
@@ -5957,6 +6220,275 @@ a {
 
 .p-register__loginLink a:hover {
   text-decoration: underline;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #a73b65;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+.p-tab__wrap {
+  list-style: none;
+  display: flex;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.p-tab__link {
+  display: block;
+  width: 15rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+  border: 1px solid #444;
+  color: #444;
+}
+
+.tab-active {
+  color: #fff;
+  background: #444;
 }
 
 /* ========================================
