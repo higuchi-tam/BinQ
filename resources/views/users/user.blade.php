@@ -12,13 +12,12 @@
         <div class="p-user_detail__nameWrap">
             <div class="p-user_detail__name">
                 {{-- <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark"> --}}
-                    {{ $user->name }}
+                {{ $user->name }}
                 {{-- </a> --}}
             </div>
             <ul class="l-footer__snsList p-user_detail__snsList">
                 <li class="l-footer__snsItem p-user_detail__snsItem">
-                    <a href="https://twitter.com/nishimachikid" target="blank"><img src="/images/tw.svg"
-                            alt=""></a>
+                    <a href="https://twitter.com/nishimachikid" target="blank"><img src="/images/tw.svg" alt=""></a>
                 </li>
                 <li class="l-footer__snsItem">
                     <a href="/images/fv.svg"><img src="/images/fb.svg" alt=""></a>
@@ -27,9 +26,12 @@
                     <a href="/images/ins.svg"><img src="/images/ins.svg" alt=""></a>
                 </li>
             </ul>
+            @if( Auth::id() == $user->id )
+            <a href="{{ route("users.edit", ['name' => $user->name]) }}" class="p-user_detail__edit">変更</a>
+            　　@endif
         </div>
         　　<p class="p-user_detail__userTitle">
-                {{ $user->title }}
+            {{ $user->title }}
         </p>
         <div class="p-user_detail__topicWrap">
             <span class="p-user_detail__topicNum">記事数　<span>10</span></span>
@@ -59,11 +61,7 @@
         @endif
 
         {{-- プロフィール編集 --}}
-        @if( Auth::id() == $user->id )
-           <a href="{{ route("users.edit", ['name' => $user->name]) }}">プロフィールを編集する</a>
-        @endif
+
 
     </div>
 </div>
-
-

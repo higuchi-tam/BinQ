@@ -47,6 +47,7 @@
         justify-content: flex-end;
         align-items: center;
         list-style: none;
+        font-size: 1.4rem;
         @include mq(md) {
             height: 100%;
         }
@@ -62,10 +63,7 @@
             cursor: pointer;
         }
         &:first-child{
-            margin-right: .5rem;
-        }
-        a {
-            color: $accentColor;
+            margin-right: 4rem;
             &:hover {
                 text-decoration: underline;
             }
@@ -115,6 +113,18 @@
             @include mq(md) {
                 width: 3rem;
                 height: 3rem;
+            }
+        }
+        &--register{
+            padding: 1rem;
+            background: $accentColor;
+            border: 1px solid $accentColor;
+            border-radius: .3rem;
+            color: #fff;
+            transition: all .3s;
+            &:hover{
+                background: #fff;
+                color: $accentColor;
             }
         }
     }

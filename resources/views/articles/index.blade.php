@@ -13,8 +13,7 @@
     <section class="u-mb80">
 
         <div class="p-top__news--titleWrap u-mb20">
-            <h3 class="p-top__news--title c-contents__title">カテゴリ名</h3>
-            <p class="p-top__news--titleSub">最新の記事</p>
+            <h3 class="p-top__news--title c-contents__title">最新の記事</h3>
         </div>
 　　
         <div class="c-3col__container u-mb40 l-container">
@@ -25,8 +24,9 @@
         </div>
 
 
-        <div class="c-button__sns">
-            ここにページネーションが入る。
+        {{-- ページネーション --}}
+        <div class="p-article__paginate">
+            {{ $articles -> links() }}
         </div>
     </section>
 

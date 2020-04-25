@@ -9,10 +9,10 @@
 
                 @guest
                     <li class="l-header__item">
-                        <a class="nav-link" href="{{ route('register') }}">ユーザー登録</a> {{--この行を変更--}}
+                        <a class="nav-link" href="{{ route('login') }}">ログイン</a>
                     </li>
                     <li class="l-header__item">
-                        <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+                        <a class="l-header__item--register" href="{{ route('register') }}">ユーザー登録</a> {{--この行を変更--}}
                     </li>
                 @endguest
 

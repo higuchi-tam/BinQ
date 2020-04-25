@@ -181,6 +181,7 @@ button,
 select,
 textarea {
   font-family: $baseFontFamily;
+  outline: 0;
 }
 
 body {
@@ -240,7 +241,7 @@ em {
 
 a {
   text-decoration: none;
-  color: $linkColor;
+  color: $accentColor;
   transition: opacity .3s;
 }
 
@@ -248,4 +249,8 @@ a {
     display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::selection {
+    background:rgba(167,59,101,0.2);;
 }

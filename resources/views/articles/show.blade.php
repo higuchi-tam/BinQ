@@ -9,9 +9,12 @@
 <div class="l-container">
     @include('articles.card')
 
+
     @if( Auth::id() === $article->user_id )
     <!-- dropdown -->
-    <div class="js-dropdown"></div>
+    <div class="js-dropdown">
+        <button>MENUボタン</button>
+    </div>
     <div>
         <a href="{{ route("articles.edit", ['article' => $article]) }}">
             記事を更新する

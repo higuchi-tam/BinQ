@@ -22,7 +22,7 @@
     @foreach($article->tags as $tag)
     @if($loop->first)
     <div class="card-body pt-0 pb-4 pl-3">
-        <div class="card-text line-height">
+        <div class="p-card__tag">
             @endif
             <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="border p-1 mr-1 mt-1 text-muted">
                 {{ $tag->hashtag }}
@@ -34,7 +34,6 @@
     @endforeach
 
     {{-- 投稿者の情報 --}}
-
     <div class="p-top__news--user">
         <figure class="p-top__news--userImg">
             <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
@@ -49,7 +48,7 @@
             <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
                 {{ $article->user->name }}
             </a>
-            <p class="p-top__news--date"> {{ $article->created_at->format('Y/m/d H:i') }}</p>
+            <p class="p-top__news--date"> {{ $article->created_at->format('Y/m/d') }}</p>
         </div>
 
 

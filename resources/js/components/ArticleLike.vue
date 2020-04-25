@@ -3,18 +3,20 @@ import axios from 'axios';//追記
 
 
 <template>
-  <div>
-    <button type="button" class="btn m-0 p-1 shadow-none">
+  <div class="c-button__likeWrap">
+    <button type="button" class="c-button__like">
       <!-- TODO: スタイル後から調整する -->
       <img
-        :src="'/images/heart-icon.png'"
+        :src="'/images/like-icon_w.svg'"
         style="width:2rem;height:2rem;"
         alt="いいねボタン"
         :class="{'red-text':this.isLikedBy}"
         @click="clickLike"
       />
     </button>
-    {{ countLikes }}
+    <transition name="fade">
+    <span class="c-button__like--count"> {{ countLikes }}</span>
+  </transition>
   </div>
 </template>
 

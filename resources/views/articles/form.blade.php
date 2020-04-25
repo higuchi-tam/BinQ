@@ -21,7 +21,7 @@
 
     <div id="editor" name="body">{{ $article->body ?? old('body') }}</div>
 
-    {{-- <textarea name="body" required placeholder="ご自由にお書きください。">{{ $article->body ?? old('title') }}
+    <textarea name="body" required placeholder="ご自由にお書きください。">{{ $article->body ?? old('title') }}
 
-    </textarea> --}}
+    </textarea>
 </div>

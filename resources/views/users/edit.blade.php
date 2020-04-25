@@ -4,7 +4,7 @@
 @include('common.errors')
 
 @section('content')
-<div class="col-md-offset-2 mb-4 edit-profile-wrapper">
+<div class="l-container">
     <div class="row">
         <div class="col-md-8 mx-auto">
             <div class="profile-form-wrap">

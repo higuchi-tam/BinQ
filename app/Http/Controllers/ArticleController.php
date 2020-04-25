@@ -26,7 +26,7 @@ class ArticleController extends Controller
     public function index()
     {
         //allメソッドでモデルの全データをコレクションで返す。
-        $articles = Article::all()->sortByDesc('created_at');
+        $articles = Article::orderBy('created_at', 'desc')->paginate(9);
         $user = Auth::user();
         // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
         // キーを定義することでビューファイル側で$articleという変数が使用できる
@@ -43,7 +43,7 @@ class ArticleController extends Controller
 
     public function card_side(){
         $user = Auth::user();
-        // $articles = Article::withCount('likes')->orderBy('likes_count','desc');
+        $articles = Article::withCount('likes')->orderBy('likes_count','desc');
         return view('articles.card_side', ['user'=> $user,'articles'=> $articles]);
     }
 

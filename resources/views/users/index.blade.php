@@ -50,7 +50,9 @@
         </div>
 
         <div class="c-button__sns">
-            ここにページネーションが入る。
+            <div class="p-article__paginate">
+                {{ $all_users -> links() }}
+            </div>
         </div>
     </section>
 

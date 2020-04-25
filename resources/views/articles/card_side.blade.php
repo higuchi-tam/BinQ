@@ -1,10 +1,10 @@
-<div>
-    <figure class="p-top__news--img">
+<div class="p-card__side">
+    <figure class="p-card__side--img">
         {{-- TODO:動的に切り替える --}}
         <img src="{{ asset('/images/blank_profile.png') }}" alt="記事のメイン画像">
     </figure>
-    <div>
-        <a class="p-top__news--cardTitle"
+    <div class="p-card__side--text">
+        <a class="p-card__side--title"
             href="{{ route('articles.show', ['article' => $article]) }}">{{ $article->title }}
         </a>
         <div class="card-text">

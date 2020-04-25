@@ -71,8 +71,13 @@
 		}
 	}
 	&__news--userTxt {
-		padding-left: 2rem;
-		flex-direction: column;
+        padding-left: 2rem;
+        line-height: 2rem;
+        flex-direction: column;
+        font-size: 1.2rem;
+        a{
+            color: $accentColor;
+        }
 	}
 	&__news--useName {
 		margin: 0;
@@ -81,7 +86,12 @@
 	&__news--date {
 		margin: 0;
 		color: #707070;
-	}
+
+    }
+    &__news--cardTitle{
+        font-size: 2rem;
+        color: $baseColor;
+    }
 
 	//===================
 	//Mmebers section

@@ -183,6 +183,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -228,7 +229,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -236,6 +237,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 /* ========================================
@@ -421,6 +430,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -466,7 +476,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -474,6 +484,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .l-footer {
@@ -795,6 +813,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -840,7 +859,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -848,6 +867,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .l-header {
@@ -909,6 +936,7 @@ a {
   justify-content: flex-end;
   align-items: center;
   list-style: none;
+  font-size: 1.4rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -930,14 +958,10 @@ a {
 }
 
 .l-header__item:first-child {
-  margin-right: 0.5rem;
+  margin-right: 4rem;
 }
 
-.l-header__item a {
-  color: #a73b65;
-}
-
-.l-header__item a:hover {
+.l-header__item:first-child:hover {
   text-decoration: underline;
 }
 
@@ -1000,6 +1024,20 @@ a {
     width: 3rem;
     height: 3rem;
   }
+}
+
+.l-header__item--register {
+  padding: 1rem;
+  background: #a73b65;
+  border: 1px solid #a73b65;
+  border-radius: 0.3rem;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.l-header__item--register:hover {
+  background: #fff;
+  color: #a73b65;
 }
 
 .l-header__dropdown--menu {
@@ -1220,6 +1258,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -1265,7 +1304,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -1273,6 +1312,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .l-container {
@@ -1328,7 +1375,7 @@ a {
 }
 
 .red-text {
-  background: red;
+  background-image: url("/images/like-icon.svg");
 }
 
 /* ========================================
@@ -1514,6 +1561,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -1559,7 +1607,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -1567,6 +1615,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .l-sidebar {
@@ -1763,6 +1819,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -1808,7 +1865,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -1816,6 +1873,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .p-topbaner__container {
@@ -2221,6 +2286,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -2266,7 +2332,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -2274,6 +2340,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .c-article__item {
@@ -2463,6 +2537,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -2508,7 +2583,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -2518,12 +2593,21 @@ a {
   min-height: 100vh;
 }
 
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
 .c-button__primary {
   display: inline-block;
   position: relative;
   margin: 0 auto;
   background-color: #a73b65;
   border: 1px solid #a73b65;
+  border-radius: 0.3rem;
   color: #fff;
   width: 30rem;
   height: 4.5rem;
@@ -2573,6 +2657,7 @@ a {
   font-weight: bold;
   line-height: 4.5rem;
   margin-bottom: 1rem;
+  border-radius: 0.3rem;
 }
 
 .c-button__sns--ins {
@@ -2583,6 +2668,7 @@ a {
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 4.5rem;
+  border-radius: 0.3rem;
 }
 
 .c-button__wrap {
@@ -2598,7 +2684,8 @@ a {
   font-weight: bold;
   line-height: 4.5rem;
   -webkit-appearance: none;
-  border-radius: 0;
+  border-radius: 0.3rem;
+  border: none;
 }
 
 .c-button__login:hover {
@@ -2613,6 +2700,9 @@ a {
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 4.5rem;
+  -webkit-appearance: none;
+  border-radius: 0.3rem;
+  border: none;
 }
 
 .c-button__register:hover {
@@ -2621,21 +2711,46 @@ a {
 
 .c-button__follow {
   width: 12rem;
-  background: #fff;
-  color: #a73b65;
+  background: #a73b65;
+  color: #fff;
   border: 1px solid #a73b65;
+  border-radius: 0.3rem;
   display: inline-block;
   position: relative;
   margin: 0 auto;
   border: 1px solid #a73b65;
   height: 4.5rem;
+  line-height: 4.5rem;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
-  line-height: 4.5rem;
-  margin-bottom: 1rem;
   letter-spacing: 0.3rem;
   transition: all 0.3s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.c-button__follow:hover {
+  cursor: pointer;
+}
+
+.c-button__likeWrap {
+  display: flex;
+  align-items: center;
+}
+
+.c-button__like {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.c-button__like--count {
+  position: relative;
 }
 
 .c-button__sidebar {
@@ -2644,6 +2759,7 @@ a {
   margin: 0 auto;
   background-color: #a73b65;
   border: 1px solid #a73b65;
+  border-radius: 0.3rem;
   color: #fff;
   width: 100%;
   height: 4.5rem;
@@ -2680,6 +2796,21 @@ a {
   border-right: solid 1px #a73b65;
 }
 
+.follow-state {
+  background: #fff;
+  color: #a73b65;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 /* ========================================
   base
 ======================================== */
@@ -2863,6 +2994,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -2908,7 +3040,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -2916,6 +3048,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .c-category__list {
@@ -2932,6 +3072,10 @@ a {
   font-size: 1.4rem;
 }
 
+.c-category__parents a {
+  color: #a73b65;
+}
+
 /* ========================================
   base
 ======================================== */
@@ -3115,6 +3259,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -3160,7 +3305,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -3168,6 +3313,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .c-3col__container {
@@ -3400,6 +3553,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -3445,7 +3599,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -3453,6 +3607,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .c-members__item {
@@ -3643,6 +3805,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -3688,7 +3851,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -3698,185 +3861,27 @@ a {
   min-height: 100vh;
 }
 
-.p-top__item {
-  width: 100%;
-  height: 200px;
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+.pagination {
   display: flex;
-  background: white;
-}
-
-.p-top__itemImg {
-  margin: 0;
-}
-
-.p-top__imgTxt {
-  width: 340px;
-  padding-left: 3rem;
-}
-
-.p-top__imgTxt--top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.6rem;
-}
-
-.p-top__itemTitle {
-  margin-top: 0;
-  font-size: 2.2rem;
-  line-height: 1.5;
-}
-
-.p-top__itemCategory {
-  margin-top: 3rem;
-  padding: 0.5rem 2rem;
-  color: white;
-  background: #bfa34c;
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-.p-top__sidebar {
-  width: 300px;
-}
-
-.p-top__sidebar--title {
-  width: 300px;
-  height: 5rem;
-  width: 100%;
-  text-align: center;
-  font-size: 1.6rem;
-  vertical-align: middle;
-  background-color: #bfa34c;
-  color: white;
-  margin-bottom: 0;
-  line-height: 5rem;
-}
-
-.p-top__sidebarImg {
-  margin: 0 0 3rem 0;
-}
-
-.p-top__sidebarItem {
-  width: 100%;
-  height: 380px;
-}
-
-.p-top__listCategory {
+  justify-content: center;
+  font-size: 2rem;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-.p-top__listItem {
-  width: 100%;
-  height: 5.5rem;
-  font-size: 1.4rem;
-  line-height: 5.5rem;
-  padding-left: 2rem;
-  border-bottom: 1px solid #f3f3f3;
-  background: #fff;
-  font-weight: bold;
+.pagination a:hover {
+  text-decoration: underline;
 }
 
-.arrow {
-  position: relative;
-  display: inline-block;
-}
-
-.arrow::after {
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  border: 0px;
-  border-top: solid 1px #bbb;
-  border-right: solid 1px #bbb;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  right: 2rem;
-  margin-top: -4px;
-}
-
-.p-return__pageTop {
-  background-color: black;
-  border-radius: 50%;
-  bottom: 10px;
-  color: #fff;
-  font-size: 14px;
-  height: 50px;
-  line-height: 50px;
-  outline: 0;
-  position: fixed;
-  right: 10px;
-  text-align: center;
-  width: 50px;
-}
-
-.wrap {
-  max-width: 560px;
-  margin: 40px auto;
-}
-
-.tab-block {
-  font-family: "Roboto", sans-serif;
-  margin-bottom: 60px;
-  box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
-}
-
-.tab-block .tab-nav {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-}
-
-.tab-block .tab-nav li {
-  color: #fff;
-  background: #384455;
-  width: 100%;
-  text-align: center;
-  padding: 20px 10px;
-  cursor: pointer;
-  border-left: 1px solid #5c6673;
-  transition: background-color 0.3s;
-}
-
-.tab-block .tab-nav li:hover {
-  background-color: #414d5e;
-}
-
-.tab-block .tab-nav li:first-child {
-  border-left: none;
-}
-
-.tab-block .tab-nav li.active {
-  color: #374252;
-  background: #f0f4f5;
-}
-
-.tab-block .tab-body {
-  background: #f0f4f5;
-  list-style: none;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.tab-block .tab-body h3 {
-  font-size: 131%;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.tab-block .tab-body li {
-  display: none;
-}
-
-.tab-block .tab-body li.active {
-  display: block;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-name: fade-in;
-          animation-name: fade-in;
+.page-item {
+  margin-right: 3rem;
 }
 
 /* ========================================
@@ -4062,6 +4067,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -4107,7 +4113,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -4115,6 +4121,286 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+.p-card__side {
+  display: flex;
+}
+
+.p-card__side--img {
+  width: 5rem;
+  height: 5rem;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.p-card__side--text {
+  margin-left: 1rem;
+}
+
+.p-card__side--title {
+  font-size: 1.6rem;
+  color: #444;
+}
+
+.p-card__tag a {
+  color: #444;
+  font-size: 1.2rem;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #a73b65;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .p-contents_detail--date {
@@ -4367,6 +4653,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -4412,7 +4699,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -4420,6 +4707,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .p-form__title {
@@ -4654,6 +4949,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -4699,7 +4995,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -4707,6 +5003,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .p-top__news--titleWrap {
@@ -4793,7 +5097,13 @@ a {
 
 .p-top__news--userTxt {
   padding-left: 2rem;
+  line-height: 2rem;
   flex-direction: column;
+  font-size: 1.2rem;
+}
+
+.p-top__news--userTxt a {
+  color: #a73b65;
 }
 
 .p-top__news--useName {
@@ -4804,6 +5114,11 @@ a {
 .p-top__news--date {
   margin: 0;
   color: #707070;
+}
+
+.p-top__news--cardTitle {
+  font-size: 2rem;
+  color: #444;
 }
 
 @media screen and (max-width: 768px) {
@@ -5203,6 +5518,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -5248,7 +5564,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -5256,6 +5572,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .p-login__container {
@@ -5530,6 +5854,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -5575,7 +5900,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -5583,6 +5908,14 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .p-register__formTxt {
@@ -5809,6 +6142,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -5854,7 +6188,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -5864,73 +6198,193 @@ a {
   min-height: 100vh;
 }
 
-.p-user_detail__userContainer {
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+.p-top__item {
+  width: 100%;
+  height: 200px;
   display: flex;
-  width: 74rem;
-  margin-right: 1rem;
+  background: white;
 }
 
-@media screen and (max-width: 768px) {
-  .p-user_detail__userContainer {
-    flex-wrap: wrap;
-  }
-}
-
-.p-user_detail__wrap {
-  padding: 1rem 0;
-}
-
-.p-user_detail__name {
-  font-weight: bold;
-  font-size: 1.6rem;
-  margin-right: 2rem;
-}
-
-.p-user_detail__nameWrap {
-  display: flex;
-  align-items: center;
-}
-
-.p-user_detail__userImg img {
-  width: 14rem;
-}
-
-.p-user_detail__snsList {
-  list-style: none;
-  position: relative;
+.p-top__itemImg {
   margin: 0;
 }
 
-.p-user_detail__snsItem {
-  padding-left: 0;
+.p-top__imgTxt {
+  width: 340px;
+  padding-left: 3rem;
 }
 
-.p-user_detail__userTitle {
-  margin: 0 0 1rem 0;
+.p-top__imgTxt--top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
 }
 
-.p-user_detail__comment {
-  margin-bottom: 1rem;
+.p-top__itemTitle {
+  margin-top: 0;
+  font-size: 2.2rem;
+  line-height: 1.5;
 }
 
-.p-user_detail__tab {
-  width: 74rem;
-  margin-right: 1rem;
-  margin-bottom: 4rem;
+.p-top__itemCategory {
+  margin-top: 3rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  background: #bfa34c;
+  font-weight: bold;
+  font-size: 1.4rem;
 }
 
-.p-user_detail__list {
+.p-top__sidebar {
+  width: 300px;
+}
+
+.p-top__sidebar--title {
+  width: 300px;
+  height: 5rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  vertical-align: middle;
+  background-color: #bfa34c;
+  color: white;
+  margin-bottom: 0;
+  line-height: 5rem;
+}
+
+.p-top__sidebarImg {
+  margin: 0 0 3rem 0;
+}
+
+.p-top__sidebarItem {
+  width: 100%;
+  height: 380px;
+}
+
+.p-top__listCategory {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.p-top__listItem {
+  width: 100%;
+  height: 5.5rem;
+  font-size: 1.4rem;
+  line-height: 5.5rem;
+  padding-left: 2rem;
+  border-bottom: 1px solid #f3f3f3;
+  background: #fff;
+  font-weight: bold;
+}
+
+.arrow {
+  position: relative;
+  display: inline-block;
+}
+
+.arrow::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border: 0px;
+  border-top: solid 1px #bbb;
+  border-right: solid 1px #bbb;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  margin-top: -4px;
+}
+
+.p-return__pageTop {
+  background-color: black;
+  border-radius: 50%;
+  bottom: 10px;
+  color: #fff;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+  outline: 0;
+  position: fixed;
+  right: 10px;
+  text-align: center;
+  width: 50px;
+}
+
+.wrap {
+  max-width: 560px;
+  margin: 40px auto;
+}
+
+.tab-block {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 60px;
+  box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tab-block .tab-nav {
   list-style: none;
   display: flex;
-  width: 100%;
-  padding: 0;
+  justify-content: space-between;
 }
 
-.p-user_detail__item {
-  width: calc(100%/3);
+.tab-block .tab-nav li {
+  color: #fff;
+  background: #384455;
+  width: 100%;
   text-align: center;
-  padding: 1rem 0;
-  border: 1px solid #999;
+  padding: 20px 10px;
+  cursor: pointer;
+  border-left: 1px solid #5c6673;
+  transition: background-color 0.3s;
+}
+
+.tab-block .tab-nav li:hover {
+  background-color: #414d5e;
+}
+
+.tab-block .tab-nav li:first-child {
+  border-left: none;
+}
+
+.tab-block .tab-nav li.active {
+  color: #374252;
+  background: #f0f4f5;
+}
+
+.tab-block .tab-body {
+  background: #f0f4f5;
+  list-style: none;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.tab-block .tab-body h3 {
+  font-size: 131%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.tab-block .tab-body li {
+  display: none;
+}
+
+.tab-block .tab-body li.active {
+  display: block;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: fade-in;
+          animation-name: fade-in;
 }
 
 /* ========================================
@@ -6116,6 +6570,7 @@ button,
 select,
 textarea {
   font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
 }
 
 body {
@@ -6161,7 +6616,7 @@ em {
 
 a {
   text-decoration: none;
-  color: #07f;
+  color: #a73b65;
   transition: opacity 0.3s;
 }
 
@@ -6169,6 +6624,357 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+.p-user_detail__userContainer {
+  display: flex;
+  width: 74rem;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-user_detail__userContainer {
+    flex-wrap: wrap;
+  }
+}
+
+.p-user_detail__wrap {
+  padding: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.p-user_detail__name {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-right: 2rem;
+}
+
+.p-user_detail__nameWrap {
+  display: flex;
+  align-items: center;
+}
+
+.p-user_detail__userImg img {
+  width: 14rem;
+  border-radius: 100%;
+}
+
+.p-user_detail__snsList {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  margin-right: 2rem;
+}
+
+.p-user_detail__snsItem {
+  padding-left: 0;
+}
+
+.p-user_detail__userTitle {
+  margin: 0 0 1rem 0;
+}
+
+.p-user_detail__comment {
+  margin-bottom: 1rem;
+}
+
+.p-user_detail__tab {
+  width: 74rem;
+  margin-right: 1rem;
+  margin-bottom: 4rem;
+}
+
+.p-user_detail__list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+.p-user_detail__item {
+  width: calc(100%/3);
+  text-align: center;
+  padding: 1rem 0;
+  border: 1px solid #999;
+}
+
+.p-user_detail__topicWrap a {
+  color: #a73b65;
+}
+
+.p-user_detail__topicNum {
+  margin-right: 1rem;
+}
+
+.p-user_detail__followNum {
+  margin-right: 1rem;
+}
+
+.p-user_detail__url a {
+  color: #a73b65;
+}
+
+.p-user_detail__edit {
+  padding: 0.3rem 1rem;
+  background: #fff;
+  border: 1px solid #444;
+  color: #444;
+  border-radius: 0.5rem;
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+  outline: 0;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #a73b65;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+::-moz-selection {
+  background: rgba(167, 59, 101, 0.2);
+}
+
+::selection {
+  background: rgba(167, 59, 101, 0.2);
 }
 
 .p-user__news--text {

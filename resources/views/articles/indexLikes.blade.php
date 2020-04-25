@@ -25,8 +25,8 @@
         </div>
 
 
-        <div class="c-button__sns">
-            ここにページネーションが入る。
+        <div class="p-article__paginate">
+            {{ $articles -> links() }}
         </div>
     </section>
 
