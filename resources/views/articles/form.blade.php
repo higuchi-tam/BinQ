@@ -1,18 +1,27 @@
 @csrf
-<div class="md-form">
-    <label>タイトル</label>
-    <input type="text" name="title" class="form-control" required value="{{ $article->title ?? old('title') }}">
+<div class="p-form__title">
+    <input type="text" name="title" placeholder="記事タイトル" required value="{{ $article->title ?? old('title') }}">
 </div>
 
-<div class="form-group">
-    <article-tags-input
-    :initial-tags='@json($tagNames ?? [])'
-    :autocomplete-items='@json($allTagNames ?? [])'
-    >
-    </article-ta$usergs-input>
+<div class="p-form__tag">
+    <article-tags-input :initial-tags='@json($tagNames ?? [])' :autocomplete-items='@json($allTagNames ?? [])'
+        class="p-form">
+        </article-ta$usergs-input>
 </div>
 
-<div class="form-group">
-    <label></label>
-    <textarea name="body" required class="form-control" rows="16" placeholder="本文">{{ $article->body ?? old('title') }}</textarea>
+
+<div class="p-form__textarea">
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script>
+
+    <div id="editor" name="body">{{ $article->body ?? old('body') }}</div>
+
+    {{-- <textarea name="body" required placeholder="ご自由にお書きください。">{{ $article->body ?? old('title') }}
+
+    </textarea> --}}
 </div>

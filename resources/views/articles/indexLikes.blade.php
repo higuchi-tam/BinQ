@@ -14,7 +14,7 @@
 
         <div class="p-top__news--titleWrap u-mb20">
             <h3 class="p-top__news--title c-contents__title">カテゴリ名</h3>
-            <p class="p-top__news--titleSub">最新の記事</p>
+            <p class="p-top__news--titleSub">人気の記事</p>
         </div>
 　　
         <div class="c-3col__container u-mb40 l-container">

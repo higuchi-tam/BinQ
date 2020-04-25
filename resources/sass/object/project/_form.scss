@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+// =========================================
+// Project Form
+// =========================================
+@import "../../foundation/_mixin.scss";
+@import "../../foundation/_base.scss";
+
+.p-form {
+    &__title {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        input {
+            width: 100%;
+            border: none;
+            padding: 1rem;
+
+        }
+    }
+    &__tag{
+        margin-bottom: 2rem;
+        vue-tags-input{
+            border: none;
+        }
+    }
+    &__textarea{
+        margin-bottom: 2rem;
+        width: 1000px;
+
+
+        textarea{
+            height: 50vh;
+            border: none;
+            padding: 2rem;
+        }
+    }
+    &__button{
+        width: 20rem;
+        padding: 1rem 3rem;
+        border: 1px solid $accentColor;
+        color: #fff;
+        background: $accentColor;
+        transition: all .3s;
+        &:hover{
+            cursor: pointer;
+            background: #fff;
+            color: $accentColor;
+        }
+    }
+
+}
+
+#editor{
+    width: 100%;
+
+}

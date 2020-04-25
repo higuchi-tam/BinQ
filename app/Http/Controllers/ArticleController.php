@@ -36,9 +36,15 @@ class ArticleController extends Controller
     public function likeIndex(){
 
         $user = Auth::user();
-        $articles = Article::withCount('likes')->orderBy('likes_count','desc')->paginate(12);
+        $articles = Article::withCount('likes')->orderBy('likes_count','desc')->paginate(9);
 
         return view('articles.indexLikes', ['user'=> $user,'articles'=> $articles]);
+    }
+
+    public function card_side(){
+        $user = Auth::user();
+        // $articles = Article::withCount('likes')->orderBy('likes_count','desc');
+        return view('articles.card_side', ['user'=> $user,'articles'=> $articles]);
     }
 
     public function create()
@@ -106,6 +112,16 @@ class ArticleController extends Controller
     {
         $user = Auth::user();
         return view('articles.show', [
+            'article' => $article,
+            'user' => $user,
+            ]);
+
+    }
+
+    public function detail(Article $article)
+    {
+        $user = Auth::user();
+        return view('articles.detail', [
             'article' => $article,
             'user' => $user,
             ]);

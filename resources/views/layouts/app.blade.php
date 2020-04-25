@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
+    <script src="https://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
       <div class="l-wrapper">
 {{-- yieldは配置する場所を決めているだけ --}}
     @yield('header')

@@ -72,53 +72,13 @@
 
         <div class="c-article">
             <h4 class="c-category__title">人気記事</h4>
-            <div class="u-mb20">
-                <div class="c-article__item">
-                    <figure class="c-members__img">
-                        <img src="" alt="記事画像">
-                    </figure>
-                    <div class="c-article__itemTxt">
-                        <p class="c-members__name">ユーザー名</p>
-                        <button>いいねボタン(いいね数の表示？）</button>
-                    </div>
-                </div>
-                <div class="c-article__item">
-                    <figure class="c-members__img">
-                        <img src="" alt="記事画像">
-                    </figure>
-                    <div class="c-article__itemTxt">
-                        <p class="c-members__name">ユーザー名</p>
-                        <button>いいねボタン</button>
-                    </div>
-                </div>
-                <div class="c-article__item">
-                    <figure class="c-members__img">
-                        <img src="" alt="記事画像">
-                    </figure>
-                    <div class="c-article__itemTxt">
-                        <p class="c-members__name">ユーザー名</p>
-                        <button>いいねボタン</button>
-                    </div>
-                </div>
-                <div class="c-article__item">
-                    <figure class="c-members__img">
-                        <img src="" alt="記事画像">
-                    </figure>
-                    <div class="c-article__itemTxt">
-                        <p class="c-members__name">ユーザー名</p>
-                        <button>いいねボタン</button>
-                    </div>
-                </div>
-                <div class="c-article__item">
-                    <figure class="c-members__img">
-                        <img src="" alt="記事画像">
-                    </figure>
-                    <div class="c-article__itemTxt">
-                        <p class="c-members__name">ユーザー名</p>
-                        <button>いいねボタン</button>
-                    </div>
-                </div>
-            </div>
+
+            @foreach($articles as $article)
+            　　@if ($loop->index < 5)
+                  @include('articles.card_side')
+            　　@endif
+            @endforeach
+
 
             <div class="c-button__sns">
             <a href="/likeIndex" class="c-button__sidebar">人気記事一覧</a>

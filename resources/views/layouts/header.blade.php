@@ -35,8 +35,18 @@
                         </div>
                         <ul class="l-header__dropdown--menu">
                             <li class="l-header__dropdown--item">
-                                <button class="dropdown-item" type="button" onclick="location.href="">
+                                <button class="l-header__button" type="button" onclick="">
                                     マイページ
+                                </button>
+                            </li>
+                            <li class="l-header__dropdown--item">
+                                <button class="l-header__button">
+                                    いいねした投稿
+                                </button>
+                            </li>
+                            <li class="l-header__dropdown--item">
+                                <button class="l-header__button">
+                                    アカウント設定
                                 </button>
                             </li>
                             <li class="l-header__dropdown--item">
@@ -44,7 +54,6 @@
                                     ログアウト
                                 </button>
                             </li>
-                            <li class="l-header__dropdown--item">アカウント設定</li>
                         </ul>
                     </li>
                     <form id="logout-button" method="POST" action="{{ route('logout') }}"> {{--この行を編集--}}

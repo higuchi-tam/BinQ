@@ -82,19 +82,27 @@
             }
         }
         &--post {
+            width: 10rem;
             display: flex;
             background: $accentColor;
+            justify-content: center;
             align-items: center;
             padding: 0 1rem;
             border-radius: .3rem;
-            height: 5rem;
-            fill: #fff;
+            height: 4rem;
+            margin-right: 1rem;
+            text-align:center;
+            font-size: 1.6rem;
+            transition: all .3s;
+            &:hover{
+                background: #802d4b;
+            }
             @include mq(md) {
                 height: 2.5rem;
             }
             img {
-                width: 1.5rem;
-                height: 1.5rem;
+                width: 2rem;
+                height:2rem;
                 padding-right: .5rem;
             }
         }
@@ -112,17 +120,19 @@
     }
     &__dropdown {
         &--menu {
-            width: 10rem;
-            // display: none;
+            border-radius: 5px;
+            width: 12rem;
+            display: none;
             position: absolute;
             right: 0;
-            padding: 0;
+            padding: 1rem;
             list-style: none;
-            background: rgba($accentColor, .2);
+            background: $accentColor;
+            z-index: 990;
         }
     }
     &__button {
-        color: $accentColor;
+        color: #fff;
         cursor: pointer;
         background: none;
         border: none;
@@ -141,9 +151,4 @@
         height: 5rem;
         border-radius: 100%;
     }
-}
-
-//ドロップダウンメニュー
-.js-dropdown{
-
 }

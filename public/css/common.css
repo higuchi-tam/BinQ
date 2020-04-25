@@ -956,13 +956,22 @@ a {
 }
 
 .l-header__item--post {
+  width: 10rem;
   display: flex;
   background: #a73b65;
+  justify-content: center;
   align-items: center;
   padding: 0 1rem;
   border-radius: 0.3rem;
-  height: 5rem;
-  fill: #fff;
+  height: 4rem;
+  margin-right: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  transition: all 0.3s;
+}
+
+.l-header__item--post:hover {
+  background: #802d4b;
 }
 
 @media screen and (max-width: 768px) {
@@ -972,8 +981,8 @@ a {
 }
 
 .l-header__item--post img {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   padding-right: 0.5rem;
 }
 
@@ -994,16 +1003,19 @@ a {
 }
 
 .l-header__dropdown--menu {
-  width: 10rem;
+  border-radius: 5px;
+  width: 12rem;
+  display: none;
   position: absolute;
   right: 0;
-  padding: 0;
+  padding: 1rem;
   list-style: none;
-  background: rgba(167, 59, 101, 0.2);
+  background: #a73b65;
+  z-index: 990;
 }
 
 .l-header__button {
-  color: #a73b65;
+  color: #fff;
   cursor: pointer;
   background: none;
   border: none;
@@ -4170,6 +4182,293 @@ a {
     height: auto;
     line-height: normal;
   }
+}
+
+/* ========================================
+  base
+======================================== */
+
+/* Use border-box by default, globally */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+* Consistent line spacing...
+* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+*/
+
+html {
+  line-sizing: normal;
+}
+
+/* Remove the tiny space around the edge of the page */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings
+***********/
+
+/* Switch to rem units for headings */
+
+/* @@@ Initial values are based on existing browser defaults */
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+/* Keep h1 margins consistent, even when nested */
+
+h1 {
+  margin: 0.67em 0;
+}
+
+/* Typography
+*************/
+
+/* Overflow by default is bad */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+* 1. Solid, thin horizontal rules
+* 2. Remove Firefox `color: gray`
+* 3. Remove default `1px` height, and common `overflow: hidden`
+*/
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+
+audio {
+  width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+
+img {
+  border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+
+svg {
+  overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif, YakuHanJP, "Noto Sans Japanese", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  background: #f9fafb;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #07f;
+  transition: opacity 0.3s;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.p-form__title {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.p-form__title input {
+  width: 100%;
+  border: none;
+  padding: 1rem;
+}
+
+.p-form__tag {
+  margin-bottom: 2rem;
+}
+
+.p-form__tag vue-tags-input {
+  border: none;
+}
+
+.p-form__textarea {
+  margin-bottom: 2rem;
+  width: 1000px;
+}
+
+.p-form__textarea textarea {
+  height: 50vh;
+  border: none;
+  padding: 2rem;
+}
+
+.p-form__button {
+  width: 20rem;
+  padding: 1rem 3rem;
+  border: 1px solid #a73b65;
+  color: #fff;
+  background: #a73b65;
+  transition: all 0.3s;
+}
+
+.p-form__button:hover {
+  cursor: pointer;
+  background: #fff;
+  color: #a73b65;
+}
+
+#editor {
+  width: 100%;
 }
 
 /* ========================================

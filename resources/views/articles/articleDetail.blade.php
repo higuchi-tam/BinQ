@@ -15,7 +15,7 @@
     {{-- タイトル表示 --}}
     <div class="p-top__news--text">
         <a class="p-top__news--cardTitle"
-            href="{{ route('articles.show', ['article' => $article]) }}">{{ $article->title }} </a>
+            href="{{ route('articles.detail', ['article' => $article]) }}">{{ $article->title }} </a>
     </div>
 
     {{-- タグ表示 --}}
@@ -32,8 +32,6 @@
     </div>
     @endif
     @endforeach
-
-    {{-- 投稿者の情報 --}}
 
     <div class="p-top__news--user">
         <figure class="p-top__news--userImg">
@@ -55,5 +53,43 @@
 
     </div>
 
+    {{-- @if( Auth::id() === $article->user_id )
+    <!-- dropdown -->
+    <div class="js-dropdown"></div>
+    <div>
+        <a href="{{ route("articles.edit", ['article' => $article]) }}">
+            記事を更新する
+        </a>
+        <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $article->id }}">
+            記事を削除する
+        </a>
+    </div>
+    <!-- dropdown -->
 
+    <!-- modal -->
+    <div id="modal-delete-{{ $article->id }}" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{ route('articles.destroy', ['article' => $article]) }}">
+                    @csrf
+                    @method('DELETE')
+                    <div class="modal-body">
+                        {{ $article->title }}を削除します。よろしいですか？
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <a class="btn btn-outline-grey" data-dismiss="modal">キャンセル</a>
+                        <button type="submit" class="btn btn-danger">削除する</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+    @endif --}}
+    {{-- ここまで追加 --}}
 </div>

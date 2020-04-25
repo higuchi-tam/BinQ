@@ -14,7 +14,15 @@
             @include('articles.card')
             @endforeach
         </div>
+        <div class="c-button__sns">
+            ここにページネーションが入る。
+        </div>
     </section>
+
+
+
+
+
     <section class="l-sidebar l-container">
         <div class="c-members">
             <h4 class="c-category__title">人気の美容師</h4>
