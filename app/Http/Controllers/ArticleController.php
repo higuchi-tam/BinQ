@@ -29,6 +29,8 @@ class ArticleController extends Controller
         $articles = Article::orderBy('created_at', 'desc')->paginate(9);
         $user = Auth::user();
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
+        $auth_user = Auth::user();
+
 
 
         // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
@@ -37,7 +39,7 @@ class ArticleController extends Controller
             'articles' => $articles,
             'user' => $user,
             'users'  => $users,
-
+            'auth_user' => $auth_user,
         ]);
     }
 
@@ -45,9 +47,16 @@ class ArticleController extends Controller
     {
 
         $user = Auth::user();
+        $auth_user = Auth::user();
+        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
 
-        return view('articles.indexLikes', ['user' => $user, 'articles' => $articles]);
+        return view('articles.indexLikes', [
+            'user' => $user,
+            'auth_user' => $auth_user,
+            'articles' => $articles,
+            'users'  => $users,
+            ]);
     }
 
     public function card_side()
@@ -63,10 +72,13 @@ class ArticleController extends Controller
             return ['text' => $tag->name];
         });
         $user = Auth::user();
+        $auth_user = Auth::user();
+
 
         return view('articles.create', [
             'allTagNames' => $allTagNames,
             'user' => $user,
+            'auth_user' => $auth_user,
         ]);
     }
 
@@ -121,9 +133,11 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $user = Auth::user();
+        $auth_user = Auth::user();
         return view('articles.show', [
             'article' => $article,
             'user' => $user,
+            'auth_user' => $auth_user,
         ]);
     }
 
@@ -140,10 +154,12 @@ class ArticleController extends Controller
     {
         $article->likes()->detach($request->user()->id);
         $article->likes()->attach($request->user()->id);
+        $auth_user = Auth::user();
 
         return [
             'id' => $article->id,
             'countLikes' => $article->count_likes,
+            'auth_user' => $auth_user,
         ];
     }
 

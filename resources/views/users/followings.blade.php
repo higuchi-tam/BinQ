@@ -11,8 +11,7 @@
 
 
     @include('users.user')
-    @include('users.tabs', ['hasArticles' => false, 'hasLikes' => false])
-
+    {{-- @include('users.tabs', ['hasArticles' => false, 'hasLikes' => false]) --}}
     <div class="c-3col__container u-mb40 l-container">
     @foreach($followings as $person)
       @include('users.person')

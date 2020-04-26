@@ -16,7 +16,7 @@ class Like extends Model
     return $this->belongsTo('App\Post');
   }
 
-  public function article(){
+  public function articles(){
     return $this->belongsToMany('App\Article');
   }
 }

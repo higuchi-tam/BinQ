@@ -14,7 +14,12 @@ class TagController extends Controller
     {
         $tag = Tag::where('name', $name)->first();
         $user = Auth::user();
+        $auth_user = Auth::user();
 
-        return view('tags.show', ['user' => $user,'tag' => $tag]);
+
+        return view('tags.show', [
+            'user' => $user,
+            'auth_user' => $auth_user,
+            'tag' => $tag]);
     }
 }

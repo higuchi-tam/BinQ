@@ -12,40 +12,50 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
 
-    public function index(User $user)
+    public function index(User $user,  Article $article)
+
     {
         $user = Auth::user();
+        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $all_users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(9);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(9);
+        $auth_user = Auth::user();
+
+
 
         return view('users.index', [
             'all_users'  => $all_users,
             'user' => $user,
+            'users' => $users,
+            'articles' => $articles,
+            'auth_user' => $auth_user,
         ]);
     }
-    // public function user_side(User $user)
-    // {
+    public function user_side(User $user)
+    {
 
-    //     $user = Auth::user();
-    //     $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
+        $user = Auth::user();
+        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
 
-    //     return view('users.user_side', [
-    //         'users'  => $users,
-    //         'user' => $user,
-    //     ]);
-    // }
+        return view('users.user_side', [
+            'users'  => $users,
+            'user' => $user,
+        ]);
+    }
 
     public function show(string $name, Article $article)
     {
         $user = User::where('name', $name)->first();
-        // $user = Auth::user();
+        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $articles = $user->articles->sortByDesc('created_at');
-        $profile_photo = $user->profile_photo;
+        $auth_user = Auth::user();
 
         return view('users.show', [
             'user' => $user,
+            'users' => $users,
             'articles' => $articles,
             'article' => $article,
-            'profile_photo' => $profile_photo,
+            'auth_user' => $auth_user,
         ]);
     }
 
@@ -53,14 +63,20 @@ class UserController extends Controller
     public function edit(string $name)
     {
         $user = User::where('name', $name)->first();
+        $auth_user = Auth::user();
 
-        return view('users.edit', ['user' => $user]);
+        return view('users.edit', [
+            'user' => $user,
+            'auth_user' => $auth_user,
+            ]);
     }
 
     public function update(UserRequest $request, User $user, string $name)
     {
 
         $user = User::where('name', $name)->first();
+        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
+        $auth_user = Auth::user();
         $user->title = $request->title;
         $user->comment = $request->comment;
         $user->url = $request->url;
@@ -75,17 +91,22 @@ class UserController extends Controller
         return view('users.show', [
             'user' => $user,
             'articles' => $articles,
+            'auth_user' => $auth_user,
+            'users' => $users,
         ]);
     }
 
     public function likes(string $name)
     {
         $user = User::where('name', $name)->first();
-
+        $auth_user = Auth::user();
+        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $articles = $user->likes->sortByDesc('created_at');
 
         return view('users.likes', [
             'user' => $user,
+            'auth_user' => $auth_user,
+            'users'  => $users,
             'articles' => $articles,
         ]);
     }
@@ -93,24 +114,27 @@ class UserController extends Controller
     public function followings(string $name)
     {
         $user = User::where('name', $name)->first();
-
+        $auth_user = Auth::user();
         $followings = $user->followings->sortByDesc('created_at');
 
         return view('users.followings', [
             'user' => $user,
+            'auth_user' => $auth_user,
             'followings' => $followings,
+
         ]);
     }
 
     public function followers(string $name)
     {
         $user = User::where('name', $name)->first();
-
+        $auth_user = Auth::user();
         $followers = $user->followers->sortByDesc('created_at');
 
         return view('users.followers', [
             'user' => $user,
             'followers' => $followers,
+            'auth_user' => $auth_user,
         ]);
     }
 

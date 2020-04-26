@@ -5025,6 +5025,28 @@ a {
   color: #a73b65;
 }
 
+.p-form__container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.p-form__label {
+  display: inline-block;
+}
+
+.p-form__item {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.p-form__comment {
+  min-height: 10rem;
+}
+
+.p-form__submit {
+  cursor: pointer;
+}
+
 #editor {
   width: 100%;
 }
