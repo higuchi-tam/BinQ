@@ -11,19 +11,17 @@
     <div class="p-user_detail__wrap">
         <div class="p-user_detail__nameWrap">
             <div class="p-user_detail__name">
-                {{-- <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark"> --}}
                 {{ $user->name }}
-                {{-- </a> --}}
             </div>
-            <ul class="l-footer__snsList p-user_detail__snsList">
+             <ul class="l-footer__snsList p-user_detail__snsList">
                 <li class="l-footer__snsItem p-user_detail__snsItem">
-                    <a href="https://twitter.com/nishimachikid" target="blank"><img src="/images/tw.svg" alt=""></a>
+                    <a href="{{ $user->twitter_url}}" target="blank"><img src="/images/tw.svg" alt=""></a>
+                </li>
+                <li class="l\-footer__snsItem">
+                    <a href="{{ $user->facebook_url}}" target="blank"><img src="/images/fb.svg" alt=""></a>
                 </li>
                 <li class="l-footer__snsItem">
-                    <a href="/images/fv.svg"><img src="/images/fb.svg" alt=""></a>
-                </li>
-                <li class="l-footer__snsItem">
-                    <a href="/images/ins.svg"><img src="/images/ins.svg" alt=""></a>
+                    <a href="{{ $user->instagram_url}}" target="blank"><img src="/images/ins.svg" alt=""></a>
                 </li>
             </ul>
 

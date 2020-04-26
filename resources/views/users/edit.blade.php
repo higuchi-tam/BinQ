@@ -69,6 +69,25 @@
                         name="url" />
                 </div>
 
+                <div class="u-mb10">
+                    <label for="twitter_url">Twitter</label><br>
+                    <input autofocus="autofocus" class="p-form__item" type="text" value="{{ old('twitter_url',$user->twitter_url) }}"
+                        name="twitter_url" />
+                </div>
+
+                <div class="u-mb10">
+                    <label for="facebook_url">Facebook</label><br>
+                    <input autofocus="autofocus" class="p-form__item" type="text" value="{{ old('facebook_url',$user->facebook_url) }}"
+                        name="facebook_url" />
+                </div>
+
+                <div class="u-mb10">
+                    <label for="instagram_url">Instagram</label><br>
+                    <input autofocus="autofocus" class="p-form__item" type="text" value="{{ old('instagram_url',$user->instagram_url) }}"
+                        name="instagram_url" />
+                </div>
+
+
             </div>
 
             <input type="submit" value="変更を保存する" class="c-button__primary p-form__submit" />
