@@ -49,7 +49,6 @@ class UserController extends Controller
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $articles = $user->articles->sortByDesc('created_at');
         $auth_user = Auth::user();
-        // $twitter_url = $user->twitter_url;
 
         return view('users.show', [
             'user' => $user,
@@ -57,7 +56,6 @@ class UserController extends Controller
             'articles' => $articles,
             'article' => $article,
             'auth_user' => $auth_user,
-            // 'twitter_url' => $twitter_url,
         ]);
     }
 
@@ -142,6 +140,7 @@ class UserController extends Controller
             'auth_user' => $auth_user,
         ]);
     }
+
 
     public function follow(Request $request, string $name)
     {

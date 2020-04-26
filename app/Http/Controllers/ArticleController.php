@@ -31,8 +31,6 @@ class ArticleController extends Controller
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $auth_user = Auth::user();
 
-
-
         // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
         // キーを定義することでビューファイル側で$articleという変数が使用できる
         return view('articles.index', [
@@ -63,7 +61,10 @@ class ArticleController extends Controller
     {
         $user = Auth::user();
         $articles = Article::withCount('likes')->orderBy('likes_count', 'desc');
-        return view('articles.card_side', ['user' => $user, 'articles' => $articles]);
+        return view('articles.card_side', [
+            'user' => $user,
+            'articles' => $articles
+            ]);
     }
 
     public function create()
@@ -137,10 +138,13 @@ class ArticleController extends Controller
     {
         $user = Auth::user();
         $auth_user = Auth::user();
+        $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
+
         return view('articles.show', [
             'article' => $article,
             'user' => $user,
             'auth_user' => $auth_user,
+            'articles' => $articles,
         ]);
     }
 

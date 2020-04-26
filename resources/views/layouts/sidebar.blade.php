@@ -11,7 +11,10 @@
 
         <h4 class="c-category__title">人気記事</h4>
         @foreach($articles as $article)
-        　　@if ($loop->index < 5) @include('articles.card_side') 　　@endif @endforeach <div class="c-button__sns">
+        　　@if ($loop->index < 5) @include('articles.card_side') 　　
+        @endif
+        @endforeach
+        <div class="c-button__sns">
             <a href="/likeIndex" class="c-button__sidebar">人気記事一覧</a>
     </div>
     </div>
