@@ -6,10 +6,12 @@ import ArticleTagsInput from "./components/ArticleTagsInput";
 import FollowButton from "./components/FollowButton";
 import jquery from "jquery";
 window.$ = jquery;
+import Quill from 'quill';
 // import DropDown from "./components/dropdown.js";
 
 require("./components/dropdown");
 
+//vueコンポーネントを使用する
 const app = new Vue({
     el: "#app",
     components: {
@@ -19,21 +21,35 @@ const app = new Vue({
     }
 });
 
-const editor = new EditorJS({
-    holder: "editor",
-    tools: {
-        header: Header,
-        image:{
-            class: ImageTool,
-          config: {
-          endpoints: {
-          byFile: 'http://localhost:3000/uploadFile', // Your backend file uploader endpoint
-          byUrl: 'http://localhost:3000/fetchUrl', // Your endpoint that provides uploading by Url
-        }
-      }
-        },
-        list: List,
-        quote: Quote,
+//Quilleditor
 
-    }
+// 拡張してエディタ内のHTMLを取得するfunctionを用意
+Quill.prototype.getHtml = function() {
+    return this.container.querySelector('.ql-editor').innerHTML
+}
+
+$(document).ready(() => {
+        $('.js-quill-editor').each((index, e) => {
+            const $target  = $($(e).data('target'))
+            const editor = new Quill(e, {
+                modules: {
+                    toolbar: [
+                        [{ header: [1, 2, false] }],
+                        ['bold', 'italic', 'underline',],
+                        ['image'],
+                        ['link'],                    ]
+                },
+                placeholder: 'ご自由にお書きください。',
+                theme: 'snow'
+            });
+            editor.on('text-change', (delta) => {
+                if (delta) {
+                    // Quillエディタ内のHTMLをformに設定する
+                    const html = editor.getHtml();
+                    $target.val(html)
+                }
+            })
+        })
 });
+
+

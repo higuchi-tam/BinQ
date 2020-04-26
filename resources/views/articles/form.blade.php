@@ -11,17 +11,6 @@
 
 
 <div class="p-form__textarea">
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.3.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script>
-
-    <div id="editor" name="body">{{ $article->body ?? old('body') }}</div>
-
-    <textarea name="body" required placeholder="ご自由にお書きください。">{{ $article->body ?? old('title') }}
-
-    </textarea>
+    <div class="js-quill-editor" data-target="#content" style="height: 150px;"></div>
+    <input id="content" name="body" type="hidden" value="{{ $article->title ?? old('body') }}">
 </div>

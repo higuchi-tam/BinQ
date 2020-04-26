@@ -103,13 +103,16 @@ class ArticleController extends Controller
             return ['text' => $tag->name];
         });
         $user = Auth::user();
+        $auth_user = Auth::user();
+
+
 
         return view('articles.edit', [
             'article' => $article,
             'tagNames' => $tagNames,
             'allTagNames' => $allTagNames,
             'user' => $user,
-
+            'auth_user' => $auth_user,
         ]);
     }
 
