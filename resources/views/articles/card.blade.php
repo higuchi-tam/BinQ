@@ -47,11 +47,15 @@
         <div class="p-top__news--userTxt">
             <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
                 {{ $article->user->name }}
-            </a>
             <p class="p-top__news--date"> {{ $article->created_at->format('Y/m/d') }}</p>
         </div>
 
 
+    </div>
+
+    {{--    記事の内容--}}
+    <div class="p-top__news--body">
+        {!! $article->body !!}
     </div>
 
 
