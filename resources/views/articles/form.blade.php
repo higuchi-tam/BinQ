@@ -7,11 +7,11 @@
 <div class="p-form__tag">
     <article-tags-input :initial-tags='@json($tagNames ?? [])' :autocomplete-items='@json($allTagNames ?? [])'
         class="p-form">
-        </article-ta$usergs-input>
+        </article-tags-input>
 </div>
 
 
 <div class="p-form__textarea">
-    <div class="js-quill-editor" data-target="#content" style="height: 150px;"></div>
-    <input id="content" name="body" type="hidden" value="{{ $article->title ?? old('body') }}">
+    <div class="js-quill-editor" data-target="#content" style="height: 150px;">{!! $article->body ?? old('body') !!}</div>
+    <input id="content" name="body" type="hidden" value="">
 </div>
