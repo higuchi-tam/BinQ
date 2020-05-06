@@ -79,4 +79,6 @@ $(document).ready(() => {
                 $target.val(html)
             }
     });
+    //画像追加ボタンDOM生成
+    createImgBtnDom();
 });
