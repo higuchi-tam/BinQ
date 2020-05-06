@@ -1,4 +1,5 @@
 @csrf
+<input type="hidden" id="js-articleId__for-ajax" data-article__id="{{$article->id ?? ''}}" data-cursor__index="">
 <div class="p-form__title">
     <input type="text" name="title" placeholder="記事タイトル" required value="{{ $article->title ?? old('title') }}">
 </div>
