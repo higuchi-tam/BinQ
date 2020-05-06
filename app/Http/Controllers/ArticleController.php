@@ -179,4 +179,19 @@ class ArticleController extends Controller
             'countLikes' => $article->count_likes,
         ];
     }
+
+    public function ajaxImgUpload(Request $request)
+    {
+        Log::debug('<<<<<<<< imgupload ajax>>>>>>>>>>>>>');
+
+        $Articleimg = new ArticleImg;
+        $Articleimg->article_id = $request->article_id;
+        $Articleimg->path = $request->file;
+        $path = $request->file->store('public/article_imgs');
+        $Articleimg->path = str_replace('public/', '', $path);
+
+        $Articleimg->save();
+
+        return response()->json($Articleimg->path);
+    }
 }
