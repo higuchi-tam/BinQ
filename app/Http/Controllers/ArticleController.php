@@ -26,6 +26,27 @@ class ArticleController extends Controller
         $this->authorizeResource(Article::class, 'article');
     }
 
+    //不要画像削除メソッド（Controller内で呼び出す）
+    public function deleteImg($article)
+    {
+        Log::debug('<<<  deleteImg  >>>');
+
+        //登録・更新する記事idに一致する画像をDBからランダムで10件取得する
+        $files_DB = ArticleImg::select('id', 'path')->where('article_id', $article->id)->inRandomOrder()->take(10)->get();
+
+        foreach ($files_DB as $file_DB) {
+            //取得した画像のファイル名を取得
+            $PATH_DB = str_replace('article_imgs/', '', $file_DB->path);
+            //記事本文に取得した画像ファイル名がない場合、DBレコードと画像ファイルを削除
+            if (strpos($article->body, $PATH_DB) === false) {
+                //DBレコード削除
+                ArticleImg::find($file_DB->id)->delete();
+                //画像ファイル削除
+                Storage::delete('public/article_imgs/' . $PATH_DB);
+            }
+        }
+    }
+
     //記事一覧ページの表示アクションメソッド
     public function index(User $user)
     {
@@ -58,7 +79,7 @@ class ArticleController extends Controller
             'auth_user' => $auth_user,
             'articles' => $articles,
             'users'  => $users,
-            ]);
+        ]);
     }
 
     public function card_side()
@@ -68,7 +89,7 @@ class ArticleController extends Controller
         return view('articles.card_side', [
             'user' => $user,
             'articles' => $articles
-            ]);
+        ]);
     }
 
     public function create()
@@ -138,14 +159,8 @@ class ArticleController extends Controller
             $article->tags()->attach($tag);
         });
 
-        //不要な画像削除する
-        $files_storage = Storage::files('public/article_imgs');
-        $files_DB = ArticleImg::select('path')->get();
-        LOG::debug('$files_storage');
-        LOG::debug($files_storage);
-        LOG::debug('$files_DB');
-        LOG::debug($files_DB);
-
+        //不要な画像削除する（Controller内で定義した関数を呼び出す）
+        $this->deleteImg($article);
 
         return redirect()->route('articles.index');
     }
