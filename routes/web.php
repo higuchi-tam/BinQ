@@ -21,6 +21,7 @@ Route::prefix('articles')->name('articles.')->group(function () {
     Route::delete('/{article}/like', 'ArticleController@unlike')->name('unlike')->middleware('auth');
     Route::get('/card_side', 'ArticleController@card_side')->name('card_side');
     Route::get('/detail', 'ArticleController@detail')->name('detail');
+    Route::post('/ajaxImgUpload', 'ArticleController@ajaxImgUpload')->name('ajaxImgUpload');
 
 });
 

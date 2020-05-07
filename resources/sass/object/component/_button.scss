@@ -204,3 +204,20 @@
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
 }
+
+.c-ql__imgInsert__label{
+    display: inline-block;
+    height: 100%;
+}
+.c-ql__imgInsert__input{
+    display: none;
+}
+.c-imgInsert__img{
+    display: inline-block;
+    width: 28px;
+    height: 24px;
+    padding: 3px 5px;
+}
+.ql-formats.ql-formats--imgInsert{
+    height: 24px;
+}

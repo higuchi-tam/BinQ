@@ -6,13 +6,17 @@ use App\User;
 use App\Article;
 use App\Tag;
 use App\Like;
-
+use App\ArticleImg;
 
 use App\Http\Requests\ArticleRequest;
 
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Constraint\Attribute;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\ErrorHandler\Debug;
+use function Psy\debug;
+use Illuminate\Support\Facades\Storage;
 
 
 class ArticleController extends Controller
@@ -85,7 +89,10 @@ class ArticleController extends Controller
 
     public function store(ArticleRequest $request, Article $article)
     {
-        $article->fill($request->all());
+        Log::debug('<<< store >>>>');
+        Log::debug('<<< $request >>>>');
+        Log::debug($request);
+
         $article->user_id = $request->user()->id;
         $article->save();
         $request->tags->each(function ($tagName) use ($article) {
@@ -119,12 +126,27 @@ class ArticleController extends Controller
 
     public function update(ArticleRequest $request, Article $article)
     {
-        $article->fill($request->all())->save();
+        Log::debug('<<< update >>>>');
+        Log::debug('<<< $request >>>>');
+        Log::debug($request);
+        $article->fill($request->all());
+        $article->save();
+
         $article->tags()->detach();
         $request->tags->each(function ($tagName) use ($article) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);
             $article->tags()->attach($tag);
         });
+
+        //不要な画像削除する
+        $files_storage = Storage::files('public/article_imgs');
+        $files_DB = ArticleImg::select('path')->get();
+        LOG::debug('$files_storage');
+        LOG::debug($files_storage);
+        LOG::debug('$files_DB');
+        LOG::debug($files_DB);
+
+
         return redirect()->route('articles.index');
     }
 
@@ -140,6 +162,9 @@ class ArticleController extends Controller
         $auth_user = Auth::user();
         $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
 
+        Log::debug('$article');
+        Log::debug($article);
+        Log::debug($article->uesr);
         return view('articles.show', [
             'article' => $article,
             'user' => $user,
@@ -178,5 +203,20 @@ class ArticleController extends Controller
             'id' => $article->id,
             'countLikes' => $article->count_likes,
         ];
+    }
+
+    public function ajaxImgUpload(Request $request)
+    {
+        Log::debug('<<<<<<<< imgupload ajax>>>>>>>>>>>>>');
+
+        $Articleimg = new ArticleImg;
+        $Articleimg->article_id = $request->article_id;
+        $Articleimg->path = $request->file;
+        $path = $request->file->store('public/article_imgs');
+        $Articleimg->path = str_replace('public/', '', $path);
+
+        $Articleimg->save();
+
+        return response()->json($Articleimg->path);
     }
 }
