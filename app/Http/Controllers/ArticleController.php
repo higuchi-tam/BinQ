@@ -223,15 +223,42 @@ class ArticleController extends Controller
     public function ajaxImgUpload(Request $request)
     {
         Log::debug('<<<<<<<< imgupload ajax>>>>>>>>>>>>>');
+        Log::debug('$request');
+        Log::debug($request);
+        $postType = $request->postType;
+        $articleId = $request->article_id;
+        $isDelete = $request->isDelete;
+        //記事本文画像の場合
+        if ($postType === "body") {
+            $Articleimg = new ArticleImg;
+            $Articleimg->article_id = $articleId;
+            $Articleimg->path = $request->file;
+            $path = $request->file->store('public/article_imgs');
+            $Articleimg->path = str_replace('public/', '', $path);
+            $Articleimg->save();
 
-        $Articleimg = new ArticleImg;
-        $Articleimg->article_id = $request->article_id;
-        $Articleimg->path = $request->file;
-        $path = $request->file->store('public/article_imgs');
-        $Articleimg->path = str_replace('public/', '', $path);
+            $response = $Articleimg->path;
+            //ヘッダー画像の場合
+        } else if ($postType === "header") {
+            //現在使用している画像ファイルを削除する
+            $article = Article::find($articleId);
+            Log::debug('$article');
+            Log::debug($article);
 
-        $Articleimg->save();
+            Storage::delete('public/' . $article->img);
 
-        return response()->json($Articleimg->path);
+            //削除か更新かで処理を変える
+            if ($isDelete) {
+                $article->img = null;
+            } else {
+                $path = $request->file->store('public/article_header_imgs');
+                $article->img = str_replace('public/', '', $path);
+            }
+            $article->save();
+
+            $response = $article->img;
+        }
+
+        return response()->json($response);
     }
 }

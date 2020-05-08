@@ -1,15 +1,20 @@
 import jquery from "jquery";
 window.$ = jquery;
 
+//記事本文の画像投稿
 $(document).on('change','#js-upload__img', function() {
     let $tgt = $(this);
     let file = this.files[0];
     let formData = new FormData();
     let articleId = $('#js-articleId__for-ajax').attr('data-article__id');
+    let postType = "body";
+
+   
     formData.append('file', file);
     formData.append('article_id', articleId);
+    formData.append('postType', postType);
 
-    let postData = {'FormData': formData};
+
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -66,3 +71,93 @@ $(document).on('change','#js-upload__img', function() {
         })
 })
 
+//記事のヘッダー画像登録
+$(document).on('change','#js-upload-mainImg', function() {
+    let $tgt = $(this);
+    let file = this.files[0];
+    let formData = new FormData();
+    let articleId = $('#js-articleId__for-ajax').attr('data-article__id');
+    let postType = "header";
+   
+    formData.append('file', file);
+    formData.append('article_id', articleId);
+    formData.append('postType', postType);
+
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: '/articles/ajaxImgUpload',
+        type: 'POST',
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        data: formData,
+    })
+        // Ajaxリクエストが成功した場合
+        .done(function (data) {
+            $('#js-img__prevArea').css('background-image', 'url("/storage/'+ data + '")');
+        })
+        // Ajaxリクエストが失敗した場合
+        .fail(function (data) {
+            let status = data.status;
+            let errMessage;
+
+            switch (status) {
+                case 413:
+                    errMessage = 'アップロード上限は2MBです';
+                    break;
+                case 422:
+                    errMessage = 'アップロードできるのは画像のみです';
+                    break;
+                default:
+                    errMessage = 'アップロードに失敗しました。もう一度やり直してください';
+            }
+            alert(errMessage);
+        })
+})
+
+//記事のヘッダー画像削除
+$(document).on('click', '#js-img__delete', function () {
+    let articleId = $('#js-articleId__for-ajax').attr('data-article__id');
+    let isDelete = 1;
+    let postType = "header";
+
+    let postData = {
+        "article_id" : articleId,
+        "postType":postType,
+        "isDelete": isDelete,
+    };
+
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: '/articles/ajaxImgUpload',
+        type: 'POST',
+        dataType: 'json',
+        data: postData,
+    })
+        // Ajaxリクエストが成功した場合
+        .done(function (data) {
+            console.log('成功');
+            $('#js-img__prevArea').css('background-image', '');
+        })
+        // Ajaxリクエストが失敗した場合
+        .fail(function (data) {
+            let status = data.status;
+            let errMessage;
+
+            switch (status) {
+                case 413:
+                    errMessage = 'アップロード上限は2MBです';
+                    break;
+                case 422:
+                    errMessage = 'アップロードできるのは画像のみです';
+                    break;
+                default:
+                    errMessage = 'アップロードに失敗しました。もう一度やり直してください';
+            }
+            alert(errMessage);
+        })
+});
