@@ -1,6 +1,7 @@
 @csrf
 <input type="hidden" id="js-articleId__for-ajax" data-article__id="{{$article->id ?? ''}}" data-cursor__index="">
-<div id="js-img__prevArea" class="p-form__image" style="background-image: url('/storage/{{ $article->img }}') ">
+<div id="js-img__prevArea" class="p-form__image"
+    style="background-image: url('/{{($article->img)?"storage/".$article->img:"images/blank_profile.png"}}') ">
     <label for="js-upload-mainImg" class="p-form__image__area"><input type="file" id="js-upload-mainImg"
             class="p-form__image__input"></label>
 </div>

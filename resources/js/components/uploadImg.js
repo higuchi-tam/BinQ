@@ -140,7 +140,6 @@ $(document).on('click', '#js-img__delete', function () {
     })
         // Ajaxリクエストが成功した場合
         .done(function (data) {
-            console.log('成功');
             $('#js-img__prevArea').css('background-image', '');
         })
         // Ajaxリクエストが失敗した場合

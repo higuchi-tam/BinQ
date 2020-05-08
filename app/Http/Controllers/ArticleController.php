@@ -9,6 +9,7 @@ use App\Like;
 use App\ArticleImg;
 
 use App\Http\Requests\ArticleRequest;
+use App\Http\Requests\ArticleImgRequest;
 
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Constraint\Attribute;
@@ -220,14 +221,16 @@ class ArticleController extends Controller
         ];
     }
 
-    public function ajaxImgUpload(Request $request)
+    public function ajaxImgUpload(ArticleImgRequest $request)
     {
         Log::debug('<<<<<<<< imgupload ajax>>>>>>>>>>>>>');
         Log::debug('$request');
         Log::debug($request);
+
         $postType = $request->postType;
         $articleId = $request->article_id;
         $isDelete = $request->isDelete;
+
         //記事本文画像の場合
         if ($postType === "body") {
             $Articleimg = new ArticleImg;
@@ -238,6 +241,7 @@ class ArticleController extends Controller
             $Articleimg->save();
 
             $response = $Articleimg->path;
+
             //ヘッダー画像の場合
         } else if ($postType === "header") {
             //現在使用している画像ファイルを削除する
@@ -254,8 +258,8 @@ class ArticleController extends Controller
                 $path = $request->file->store('public/article_header_imgs');
                 $article->img = str_replace('public/', '', $path);
             }
-            $article->save();
 
+            $article->save();
             $response = $article->img;
         }
 
