@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->bigInteger('user_id')->unsigned();
+            $table->string('img')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

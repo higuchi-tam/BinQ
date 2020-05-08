@@ -994,7 +994,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -1112,8 +1112,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -1176,7 +1176,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -1241,7 +1241,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -1359,8 +1359,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -1423,7 +1423,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -1511,7 +1511,7 @@ a {
 
 .l-footer__snsItem {
   padding-left: 1.5rem;
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 .l-footer__snsItem:hover {
@@ -1545,7 +1545,7 @@ a {
   line-height: 1.2rem;
 }
 
-.l-footer__listItem:nth-child(-n+2) {
+.l-footer__listItem:nth-child(-n + 2) {
   border-right: 1px solid #fff;
 }
 
@@ -1624,7 +1624,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -1742,8 +1742,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -1806,7 +1806,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -1852,13 +1852,13 @@ a {
 
 @media screen and (max-width: 1028px) {
   .l-header__title {
-    font-size: 4.1720990874vw;
+    font-size: 4.17209909vw;
   }
 }
 
 @media screen and (max-width: 768px) {
   .l-header__title {
-    font-size: 5.4758800522vw;
+    font-size: 5.47588005vw;
     padding-left: 3vw;
   }
 }
@@ -1932,12 +1932,12 @@ a {
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
-  border-radius: 0.3rem;
+  border-radius: .3rem;
   height: 4rem;
   margin-right: 1rem;
   text-align: center;
   font-size: 1.6rem;
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 .l-header__item--post:hover {
@@ -1953,7 +1953,7 @@ a {
 .l-header__item--post img {
   width: 2rem;
   height: 2rem;
-  padding-right: 0.5rem;
+  padding-right: .5rem;
 }
 
 .l-header__item--postText {
@@ -1976,9 +1976,9 @@ a {
   padding: 1rem;
   background: #a73b65;
   border: 1px solid #a73b65;
-  border-radius: 0.3rem;
+  border-radius: .3rem;
   color: #fff;
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 .l-header__item--register:hover {
@@ -2069,7 +2069,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -2187,8 +2187,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -2251,7 +2251,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -2372,7 +2372,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -2490,8 +2490,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -2554,7 +2554,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -2630,7 +2630,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -2748,8 +2748,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -2812,7 +2812,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -2881,13 +2881,13 @@ a {
 
 @media screen and (max-width: 1028px) {
   .p-topbaner__title {
-    font-size: 4.6936114733vw;
+    font-size: 4.69361147vw;
   }
 }
 
 @media screen and (max-width: 768px) {
   .p-topbaner__title {
-    font-size: 9.3872229465vw;
+    font-size: 9.38722295vw;
     margin-bottom: 1rem;
   }
 }
@@ -2900,14 +2900,14 @@ a {
 
 @media screen and (max-width: 1028px) {
   .p-topbaner__titleSub {
-    font-size: 2.0860495437vw;
+    font-size: 2.08604954vw;
     letter-spacing: 0.1rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .p-topbaner__titleSub {
-    font-size: 3.6505867014vw;
+    font-size: 3.6505867vw;
     letter-spacing: 0.3rem;
     margin-bottom: 2rem;
   }
@@ -2955,11 +2955,11 @@ a {
   width: 100%;
   height: 100%;
   border-radius: 2.5rem;
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 .c-btn__round::after {
-  content: "";
+  content: '';
   width: 0.8rem;
   height: 0.8rem;
   border: 0px;
@@ -3008,7 +3008,7 @@ a {
   height: 2px;
   width: 12px;
   background-color: #000;
-  transition: all 0.1s ease-out;
+  transition: all .1s ease-out;
 }
 
 .accordion-trigger::after {
@@ -3027,7 +3027,7 @@ a {
   box-sizing: border-box;
   overflow: hidden;
   height: 0;
-  transition: height 0.4s ease-out;
+  transition: height .4s ease-out;
   text-align: left;
 }
 
@@ -3097,7 +3097,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -3215,8 +3215,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -3279,7 +3279,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -3348,7 +3348,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -3466,8 +3466,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -3530,7 +3530,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -3647,7 +3647,7 @@ a {
   font-weight: bold;
   line-height: 4.5rem;
   -webkit-appearance: none;
-  border-radius: 0.3rem;
+  border-radius: .3rem;
   border: none;
 }
 
@@ -3660,7 +3660,7 @@ a {
   background: #a73b65;
   color: #fff;
   border: 1px solid #a73b65;
-  border-radius: 0.3rem;
+  border-radius: .3rem;
   display: inline-block;
   position: relative;
   margin: 0 auto;
@@ -3705,7 +3705,7 @@ a {
   margin: 0 auto;
   background-color: #a73b65;
   border: 1px solid #a73b65;
-  border-radius: 0.3rem;
+  border-radius: .3rem;
   color: #fff;
   width: 100%;
   height: 4.5rem;
@@ -3757,6 +3757,26 @@ a {
   opacity: 0;
 }
 
+.c-ql__imgInsert__label {
+  display: inline-block;
+  height: 100%;
+}
+
+.c-ql__imgInsert__input {
+  display: none;
+}
+
+.c-imgInsert__img {
+  display: inline-block;
+  width: 28px;
+  height: 24px;
+  padding: 3px 5px;
+}
+
+.ql-formats.ql-formats--imgInsert {
+  height: 24px;
+}
+
 /* ========================================
   base
 ======================================== */
@@ -3805,7 +3825,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -3923,8 +3943,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -3987,7 +4007,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -4070,7 +4090,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -4188,8 +4208,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -4252,7 +4272,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -4364,7 +4384,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -4482,8 +4502,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -4546,7 +4566,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -4616,7 +4636,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -4734,8 +4754,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -4798,7 +4818,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -4878,7 +4898,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -4996,8 +5016,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -5060,7 +5080,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -5150,7 +5170,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -5268,8 +5288,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -5332,7 +5352,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -5464,7 +5484,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -5582,8 +5602,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -5646,7 +5666,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -5727,7 +5747,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -5845,8 +5865,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -5909,7 +5929,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -5924,6 +5944,29 @@ a {
 
 ::selection {
   background: rgba(167, 59, 101, 0.2);
+}
+
+.p-form__image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
+.p-form__image__area {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.p-form__image__input {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.p-form__image__deleteBtn {
+  padding: 8px;
 }
 
 .p-form__title {
@@ -5962,7 +6005,7 @@ a {
   border: 1px solid #a73b65;
   color: #fff;
   background: #a73b65;
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 .p-form__button:hover {
@@ -5982,7 +6025,7 @@ a {
 
 .p-form__item {
   width: 100%;
-  padding: 0.5rem;
+  padding: .5rem;
 }
 
 .p-form__comment {
@@ -6045,7 +6088,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -6163,8 +6206,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -6227,7 +6270,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -6478,7 +6521,7 @@ a {
 
 @media screen and (max-width: 768px) {
   .p-top__figure--number {
-    font-size: 4.1720990874vw;
+    font-size: 4.17209909vw;
     top: 11vw;
   }
 }
@@ -6614,7 +6657,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -6732,8 +6775,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -6796,7 +6839,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -6950,7 +6993,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -7068,8 +7111,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -7132,7 +7175,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -7238,7 +7281,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -7356,8 +7399,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -7420,7 +7463,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -7507,7 +7550,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -7625,8 +7668,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -7689,7 +7732,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -7935,7 +7978,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -8053,8 +8096,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -8117,7 +8160,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {
@@ -8223,11 +8266,11 @@ a {
 }
 
 .p-user_detail__edit {
-  padding: 0.3rem 1rem;
+  padding: .3rem 1rem;
   background: #fff;
   border: 1px solid #444;
   color: #444;
-  border-radius: 0.5rem;
+  border-radius: .5rem;
 }
 
 /* ========================================
@@ -8278,7 +8321,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.00rem;
 }
 
 h5 {
@@ -8396,8 +8439,8 @@ section {
 * 2. Remove the padding in IE 10
 */
 
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -8460,7 +8503,7 @@ em {
 a {
   text-decoration: none;
   color: #a73b65;
-  transition: opacity 0.3s;
+  transition: opacity .3s;
 }
 
 .l-wrapper {

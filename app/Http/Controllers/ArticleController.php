@@ -9,6 +9,7 @@ use App\Like;
 use App\ArticleImg;
 
 use App\Http\Requests\ArticleRequest;
+use App\Http\Requests\ArticleImgRequest;
 
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Constraint\Attribute;
@@ -24,6 +25,27 @@ class ArticleController extends Controller
     public function __construct()
     {
         $this->authorizeResource(Article::class, 'article');
+    }
+
+    //不要画像削除メソッド（Controller内で呼び出す）
+    public function deleteImg($article)
+    {
+        Log::debug('<<<  deleteImg  >>>');
+
+        //登録・更新する記事idに一致する画像をDBからランダムで10件取得する
+        $files_DB = ArticleImg::select('id', 'path')->where('article_id', $article->id)->inRandomOrder()->take(10)->get();
+
+        foreach ($files_DB as $file_DB) {
+            //取得した画像のファイル名を取得
+            $PATH_DB = str_replace('article_imgs/', '', $file_DB->path);
+            //記事本文に取得した画像ファイル名がない場合、DBレコードと画像ファイルを削除
+            if (strpos($article->body, $PATH_DB) === false) {
+                //DBレコード削除
+                ArticleImg::find($file_DB->id)->delete();
+                //画像ファイル削除
+                Storage::delete('public/article_imgs/' . $PATH_DB);
+            }
+        }
     }
 
     //記事一覧ページの表示アクションメソッド
@@ -58,7 +80,7 @@ class ArticleController extends Controller
             'auth_user' => $auth_user,
             'articles' => $articles,
             'users'  => $users,
-            ]);
+        ]);
     }
 
     public function card_side()
@@ -68,7 +90,7 @@ class ArticleController extends Controller
         return view('articles.card_side', [
             'user' => $user,
             'articles' => $articles
-            ]);
+        ]);
     }
 
     public function create()
@@ -138,14 +160,8 @@ class ArticleController extends Controller
             $article->tags()->attach($tag);
         });
 
-        //不要な画像削除する
-        $files_storage = Storage::files('public/article_imgs');
-        $files_DB = ArticleImg::select('path')->get();
-        LOG::debug('$files_storage');
-        LOG::debug($files_storage);
-        LOG::debug('$files_DB');
-        LOG::debug($files_DB);
-
+        //不要な画像削除する（Controller内で定義した関数を呼び出す）
+        $this->deleteImg($article);
 
         return redirect()->route('articles.index');
     }
@@ -205,18 +221,48 @@ class ArticleController extends Controller
         ];
     }
 
-    public function ajaxImgUpload(Request $request)
+    public function ajaxImgUpload(ArticleImgRequest $request)
     {
         Log::debug('<<<<<<<< imgupload ajax>>>>>>>>>>>>>');
+        Log::debug('$request');
+        Log::debug($request);
 
-        $Articleimg = new ArticleImg;
-        $Articleimg->article_id = $request->article_id;
-        $Articleimg->path = $request->file;
-        $path = $request->file->store('public/article_imgs');
-        $Articleimg->path = str_replace('public/', '', $path);
+        $postType = $request->postType;
+        $articleId = $request->article_id;
+        $isDelete = $request->isDelete;
 
-        $Articleimg->save();
+        //記事本文画像の場合
+        if ($postType === "body") {
+            $Articleimg = new ArticleImg;
+            $Articleimg->article_id = $articleId;
+            $Articleimg->path = $request->file;
+            $path = $request->file->store('public/article_imgs');
+            $Articleimg->path = str_replace('public/', '', $path);
+            $Articleimg->save();
 
-        return response()->json($Articleimg->path);
+            $response = $Articleimg->path;
+
+            //ヘッダー画像の場合
+        } else if ($postType === "header") {
+            //現在使用している画像ファイルを削除する
+            $article = Article::find($articleId);
+            Log::debug('$article');
+            Log::debug($article);
+
+            Storage::delete('public/' . $article->img);
+
+            //削除か更新かで処理を変える
+            if ($isDelete) {
+                $article->img = null;
+            } else {
+                $path = $request->file->store('public/article_header_imgs');
+                $article->img = str_replace('public/', '', $path);
+            }
+
+            $article->save();
+            $response = $article->img;
+        }
+
+        return response()->json($response);
     }
 }
