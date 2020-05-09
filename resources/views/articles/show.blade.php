@@ -50,5 +50,7 @@
     </div>
     <!-- modal -->
     @endif
+
+    @include('articles.comment')
 </div>
 @endsection

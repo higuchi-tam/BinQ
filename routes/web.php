@@ -22,8 +22,11 @@ Route::prefix('articles')->name('articles.')->group(function () {
     Route::get('/card_side', 'ArticleController@card_side')->name('card_side');
     Route::get('/detail', 'ArticleController@detail')->name('detail');
     Route::post('/ajaxImgUpload', 'ArticleController@ajaxImgUpload')->name('ajaxImgUpload');
-
 });
+//コメント
+Route::post('/comment/{article_id}/store', 'CommentsController@store')->name('comments.store');
+Route::post('/comment/{id}/delete', 'CommentsController@destroy')->name('comments.destroy');
+Route::post('/comment/{id}/update', 'CommentsController@update')->name('comments.update');
 
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 

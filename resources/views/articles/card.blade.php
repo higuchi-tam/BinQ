@@ -11,7 +11,7 @@
             endpoint="{{ route('articles.like', ['article' => $article]) }}">
         </article-like>
     </div>
-　　
+    　　
     {{-- タイトル表示 --}}
     <div class="p-top__news--text">
         <a class="p-top__news--cardTitle"
@@ -37,17 +37,17 @@
     <div class="p-top__news--user">
         <figure class="p-top__news--userImg">
             {{-- <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark"> --}}
-                @if ($article->user->profile_photo)
-                <img class="round-img" src="{{ asset('storage/user_images/' . $article->user->profile_photo) }}" />
-                @else
-                <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像">
-                @endif
+            @if ($article->user->profile_photo)
+            <img class="round-img" src="{{ asset('storage/user_images/' . $article->user->profile_photo) }}" />
+            @else
+            <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像">
+            @endif
             {{-- </a> --}}
         </figure>
         <div class="p-top__news--userTxt">
             <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
                 {{ $article->user->name }}
-            <p class="p-top__news--date"> {{ $article->created_at->format('Y/m/d') }}</p>
+                <p class="p-top__news--date"> {{ $article->created_at->format('Y/m/d') }}</p>
         </div>
 
 

@@ -27,7 +27,7 @@ class Article extends Model
     public function isLikedBy(?User $user): bool
     {
         return $user
-            ? (bool)$this->likes->where('id', $user->id)->count()
+            ? (bool) $this->likes->where('id', $user->id)->count()
             : false;
     }
 
@@ -46,4 +46,8 @@ class Article extends Model
         return $this->belongsToMany('App\Like')->withTimestamps();
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

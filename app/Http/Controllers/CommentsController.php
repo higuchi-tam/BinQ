@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Comment;
+use App\Article;
 use App\Post;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CommentsController extends Controller
 {
@@ -16,22 +19,46 @@ class CommentsController extends Controller
         $this->middleware('auth');
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
+        Log::debug('<<<<  comment store  >>>>>>');
+        Log::debug('request');
+        Log::debug($request);
+        Log::debug('$id');
+        Log::debug($id);
+
+
         // Commentモデル作成
         $comment = new Comment;
         $comment->comment = $request->comment;
-        $comment->post_id = $request->post_id;
+        // $comment->article_id = $request->article_id;
+        $comment->article_id = $id;
         $comment->user_id = Auth::user()->id;
         $comment->save();
 
-        // 「/」 ルートにリダイレクト
-        return redirect('/');
+        return redirect()->back();
     }
-    public function destroy(Request $request)
+    public function update(Request $request, $id)
     {
-        $comment = Comment::find($request->comment_id);
+        Log::debug('<<<<  comment update  >>>>>>');
+        Log::debug('request');
+        Log::debug($request);
+
+        $comment = Comment::find($id);
+        $comment->comment = $request->comment;
+        $comment->save();
+
+        return redirect()->back();
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        Log::debug('<<<<  comment destroy  >>>>>>');
+        Log::debug('request');
+        Log::debug($request);
+
+        $comment = Comment::find($id);
         $comment->delete();
-        return redirect('/');
+        return redirect()->back();
     }
 }

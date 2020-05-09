@@ -178,14 +178,15 @@ class ArticleController extends Controller
         $auth_user = Auth::user();
         $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
 
-        Log::debug('$article');
-        Log::debug($article);
-        Log::debug($article->uesr);
+        $comments = $article->comments()->get();
+        Log::debug('$comments');
+        Log::debug($comments);
         return view('articles.show', [
             'article' => $article,
             'user' => $user,
             'auth_user' => $auth_user,
             'articles' => $articles,
+            'comments' => $comments,
         ]);
     }
 

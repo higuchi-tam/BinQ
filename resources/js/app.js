@@ -14,6 +14,7 @@ import createImgBtnDom from './components/createImgBtn';
 require("./components/dropdown");
 require("./components/createImgBtn");
 require("./components/uploadImg");
+require("./components/commentEdit");
 
 //vueコンポーネントを使用する
 const app = new Vue({
