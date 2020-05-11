@@ -23,10 +23,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->rememberToken();
-            $table->boolean('deleteflg');
+            $table->boolean('deleteflg')->default(0);
             $table->timestamps();
-
-
         });
     }
 

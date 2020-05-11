@@ -5443,7 +5443,7 @@ a {
   display: none;
   position: absolute;
   right: 0;
-  top: -125px;
+  top: -135px;
   z-index: 2;
   min-width: 160px;
   padding-top: 8px;
@@ -5487,6 +5487,16 @@ a {
 
 .p-comment__action__list {
   border-top: 1px solid #f2f2f2;
+}
+
+.p-comment__action__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .p-comment__icon {

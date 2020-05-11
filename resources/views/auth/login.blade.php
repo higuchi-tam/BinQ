@@ -16,8 +16,10 @@
             </div>
             <div class="c-button__sns">
                 <a href="" class="c-button__sns--tw">Twitterでログイン</a>
-                <a href="" class="c-button__sns--ins">Instagramでログイン</a>
-                {{-- <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="c-button__sns--ins">Googleでログイン</a> --}}
+                <a href="/login/facebook" class="c-button__sns--ins">Facebookでログイン</a>
+                <a href="/login/google" class="c-button__sns--ins">Googleでログイン</a>
+                {{-- <a href="{{ route('login.{provider}', ['provider' => 'google']) }}"
+                class="c-button__sns--ins">Googleでログイン</a> --}}
             </div>
             <div class="p-login__addressWrap">
                 <h4 class="p-login__addressTitle">メールアドレスでログイン</h4>
