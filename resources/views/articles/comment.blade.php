@@ -65,10 +65,11 @@
             <div class="p-comment__icon js-comment__icon">
                 <img src="/images/action-icon.svg" alt="" width="15" height="15">
             </div>
-
+            <div class="p-comment__action__overlay js-comment__action__overlay"></div>
         </div>
         @endforeach
     </div>
+
     <div class="p-comment__modal" id="js-comment__modal">
         <div class="p-comment__modal__bg js-comment__modal__close"></div>
         <div class="p-comment__modal__inner">
@@ -77,8 +78,8 @@
             <footer class="p-comment__modal__footer">
                 <ul class="p-comment__modal__btns">
                     <li>
-                        <button type="button" class="p-comment__modal__btn p-comment__modal__btn--cancel"
-                            id="js-comment__modal__close">
+                        <button type="button"
+                            class="p-comment__modal__btn p-comment__modal__btn--cancel js-comment__modal__close">
                             キャンセル
                         </button>
 
