@@ -15,9 +15,7 @@
         <div class="p-user_detail__userContainer">
             <figure class="p-user_detail__userImg">
                 <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
-                    @if ($user->profile_photo)
-                        <img class="round-img" src="{{ asset('storage/user_images/' . $user->profile_photo) }}"/>
-                    @else
+                    @include('users.icon',['target_user' => $user])
                     <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像">
                     @endif
                 </a>
@@ -87,7 +85,7 @@
                     <p class="p-top__news--category">CATEGORY</p>
                     <p class="p-top__news--cardTitle">ここにテキストが入ります。ここにタイトルテキスtが入ります。ここにタイトルテキストが入ります。</p>
                 </div>
-                    <p class="p-top__news--date">2020.3.1</p>
+                <p class="p-top__news--date">2020.3.1</p>
             </div>
             <div class="c-3col__item">
                 <figure class="p-top__news--img">
@@ -99,7 +97,7 @@
                     <p class="p-top__news--category">CATEGORY</p>
                     <p class="p-top__news--cardTitle">ここにテキストが入ります。ここにタイトルテキスtが入ります。ここにタイトルテキストが入ります。</p>
                 </div>
-                    <p class="p-top__news--date">2020.3.1</p>
+                <p class="p-top__news--date">2020.3.1</p>
             </div>
             <div class="c-3col__item">
                 <figure class="p-top__news--img">
@@ -111,7 +109,7 @@
                     <p class="p-top__news--category">CATEGORY</p>
                     <p class="p-top__news--cardTitle">ここにテキストが入ります。ここにタイトルテキスtが入ります。ここにタイトルテキストが入ります。</p>
                 </div>
-                    <p class="p-top__news--date">2020.3.1</p>
+                <p class="p-top__news--date">2020.3.1</p>
             </div>
             <div class="c-3col__item">
                 <figure class="p-top__news--img">
@@ -123,7 +121,7 @@
                     <p class="p-top__news--category">CATEGORY</p>
                     <p class="p-top__news--cardTitle">ここにテキストが入ります。ここにタイトルテキスtが入ります。ここにタイトルテキストが入ります。</p>
                 </div>
-                    <p class="p-top__news--date">2020.3.1</p>
+                <p class="p-top__news--date">2020.3.1</p>
             </div>
             <div class="c-3col__item">
                 <figure class="p-top__news--img">
@@ -135,7 +133,7 @@
                     <p class="p-top__news--category">CATEGORY</p>
                     <p class="p-top__news--cardTitle">ここにテキストが入ります。ここにタイトルテキスtが入ります。ここにタイトルテキストが入ります。</p>
                 </div>
-                    <p class="p-top__news--date">2020.3.1</p>
+                <p class="p-top__news--date">2020.3.1</p>
             </div>
             <div class="c-3col__item">
                 <figure class="p-top__news--img">
@@ -147,7 +145,7 @@
                     <p class="p-top__news--category">CATEGORY</p>
                     <p class="p-top__news--cardTitle">ここにテキストが入ります。ここにタイトルテキスtが入ります。ここにタイトルテキストが入ります。</p>
                 </div>
-                    <p class="p-top__news--date">2020.3.1</p>
+                <p class="p-top__news--date">2020.3.1</p>
             </div>
 
         </div>

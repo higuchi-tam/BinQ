@@ -14,13 +14,7 @@
             {{-- 投稿者の情報 --}}
             <div class="p-top__news--user">
                 <figure class="p-top__news--userImg">
-                    {{-- <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark"> --}}
-                    @if ($comment->user->profile_photo)
-                    <img class="round-img" src="{{ asset('storage/user_images/' . $article->user->profile_photo) }}" />
-                    @else
-                    <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像">
-                    @endif
-                    {{-- </a> --}}
+                    @include('users.icon',['target_user' => $comment->user])
                 </figure>
                 <div class="p-top__news--userTxt">
                     <a href="{{ route('users.show', ['name' => $comment->user->name]) }}" class="text-dark">

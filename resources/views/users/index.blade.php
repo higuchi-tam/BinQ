@@ -28,11 +28,7 @@
             @foreach ($all_users as $user)
             <div class="c-3col__item">
                 <figure class="p-user__news--img">
-                    @if ($user->profile_photo)
-                    <img class="round-img" src="{{ asset('storage/user_images/' . $user->profile_photo) }}" width="100" height="100"/>
-                    @else
-                    <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像" width="100" height="100">
-                    @endif
+                    @include('users.icon',['target_user' => $user])
                 </figure>
                 <div class="p-user__news--text">
                     <p class="p-user__news--category">
@@ -51,9 +47,9 @@
             @endforeach
         </div>
 
-            <div class="p-article__paginate">
-                {{ $all_users -> links() }}
-            </div>
+        <div class="p-article__paginate">
+            {{ $all_users -> links() }}
+        </div>
     </section>
 
     @include('layouts.sidebar')

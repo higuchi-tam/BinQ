@@ -1,11 +1,7 @@
 <div class="p-user_detail__userContainer">
     <figure class="p-user_detail__userImg">
         <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
-            @if ($user->profile_photo)
-            <img class="round-img" src="{{ asset('storage/user_images/' . $user->profile_photo) }}" />
-            @else
-            <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像">
-            @endif
+            @include('users.icon',['target_user' => $user])
         </a>
     </figure>
     <div class="p-user_detail__wrap">
@@ -13,7 +9,7 @@
             <div class="p-user_detail__name">
                 {{ $user->name }}
             </div>
-             <ul class="l-footer__snsList p-user_detail__snsList">
+            <ul class="l-footer__snsList p-user_detail__snsList">
                 <li class="l-footer__snsItem p-user_detail__snsItem">
                     <a href="{{ $user->twitter_url}}" target="blank"><img src="/images/tw.svg" alt=""></a>
                 </li>

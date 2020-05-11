@@ -16,11 +16,7 @@
             @method('PATCH')
             <div class="u-mb20">
                 <h2 class="p-form__title">プロフィール編集画面</h2><br>
-                @if ($user->profile_photo)
-                <p>
-                    <img src="{{ asset('storage/user_images/' . $user->profile_photo) }}" alt="avatar" />
-                </p>
-                @endif
+                @include('users.icon',['target_user' => $user])
                 <input type="file" name="profile_photo" value="{{ old('profile_photo',$user->id) }}"
                     accept="image/jpeg,image/gif,image/png" />
             </div>
@@ -42,7 +38,7 @@
                 <div class="u-mb10">
                     <label for="comment">コメント</label><br>
                     <textarea autofocus="autofocus" class="p-form__item p-form__comment" type="text"
-                         name="comment">{{ old('comment',$user->comment) }}</textarea>
+                        name="comment">{{ old('comment',$user->comment) }}</textarea>
                 </div>
 
                 <div class="u-mb10">
@@ -59,8 +55,8 @@
 
                 <div class="u-mb10">
                     <label for="password_confirmation">パスワードの確認</label><br>
-                    <input autofocus="autofocus" value="{{ old('password',$user->password) }}"
-                    class="p-form__item" type="password" name="password_confirmation" />
+                    <input autofocus="autofocus" value="{{ old('password',$user->password) }}" class="p-form__item"
+                        type="password" name="password_confirmation" />
                 </div>
 
                 <div class="u-mb10">
@@ -71,20 +67,20 @@
 
                 <div class="u-mb10">
                     <label for="twitter_url">Twitter</label><br>
-                    <input autofocus="autofocus" class="p-form__item" type="text" value="{{ old('twitter_url',$user->twitter_url) }}"
-                        name="twitter_url" />
+                    <input autofocus="autofocus" class="p-form__item" type="text"
+                        value="{{ old('twitter_url',$user->twitter_url) }}" name="twitter_url" />
                 </div>
 
                 <div class="u-mb10">
                     <label for="facebook_url">Facebook</label><br>
-                    <input autofocus="autofocus" class="p-form__item" type="text" value="{{ old('facebook_url',$user->facebook_url) }}"
-                        name="facebook_url" />
+                    <input autofocus="autofocus" class="p-form__item" type="text"
+                        value="{{ old('facebook_url',$user->facebook_url) }}" name="facebook_url" />
                 </div>
 
                 <div class="u-mb10">
                     <label for="instagram_url">Instagram</label><br>
-                    <input autofocus="autofocus" class="p-form__item" type="text" value="{{ old('instagram_url',$user->instagram_url) }}"
-                        name="instagram_url" />
+                    <input autofocus="autofocus" class="p-form__item" type="text"
+                        value="{{ old('instagram_url',$user->instagram_url) }}" name="instagram_url" />
                 </div>
 
 
