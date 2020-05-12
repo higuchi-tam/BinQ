@@ -1,7 +1,7 @@
 <div class="c-3col__item">
     <figure class="p-top__news--img">
         {{-- TODO:動的に切り替える --}}
-        <img src="{{ asset('/images/blank_profile.png') }}" alt="記事のメイン画像">
+        @include('articles.img')
     </figure>
 
     {{-- いいねボタン --}}
@@ -46,11 +46,4 @@
 
 
     </div>
-
-    {{--    記事の内容--}}
-    <div class="p-top__news--body">
-        {!! $article->body !!}
-    </div>
-
-
 </div>
