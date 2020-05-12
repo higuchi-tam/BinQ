@@ -175,6 +175,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $user = Auth::user();
+        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $auth_user = Auth::user();
         $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
 
@@ -184,6 +185,7 @@ class ArticleController extends Controller
         return view('articles.show', [
             'article' => $article,
             'user' => $user,
+            'users' => $users,
             'auth_user' => $auth_user,
             'articles' => $articles,
             'comments' => $comments,
