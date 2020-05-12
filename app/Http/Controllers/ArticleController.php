@@ -163,7 +163,7 @@ class ArticleController extends Controller
         //不要な画像削除する（Controller内で定義した関数を呼び出す）
         $this->deleteImg($article);
 
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.show', $article->id);
     }
 
     public function destroy(Article $article)
