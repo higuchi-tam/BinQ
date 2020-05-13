@@ -1,11 +1,6 @@
 <div class="p-comment">
-    <div>
-        <form action="{{ route('comments.store' , $article->id) }}" method="POST">
-            @csrf
-            <textarea class="p-comment__textarea" name="comment" id="" cols="30" rows="10"
-                placeholder="コメントする...">{{ old('comment') }}</textarea>
-            <button type="submit" class="p-comment__submit">送信</button>
-        </form>
+    <div class="p-comment__header">
+        <span><img src="{{asset('images/comment.svg')}}" alt=""></span>コメント
     </div>
     <div class="p-comment__items">
         @foreach ($comments as $comment)
@@ -85,5 +80,13 @@
                 </ul>
             </footer>
         </div>
+    </div>
+    <div class="p-comment__input">
+        <form action="{{ route('comments.store' , $article->id) }}" method="POST">
+            @csrf
+            <textarea class="p-comment__textarea" name="comment" id="" cols="30" rows="10"
+                placeholder="コメントする...">{{ old('comment') }}</textarea>
+            <button type="submit" class="p-comment__submit">送信</button>
+        </form>
     </div>
 </div>
