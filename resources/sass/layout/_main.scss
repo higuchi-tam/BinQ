@@ -43,27 +43,14 @@
 	}
 }
 
-// #app{
-//     display: flex;
-// 	justify-content: center;
-// 	margin: 0 auto;
-// 	@include mq(lg) {
-// 		display: block;
-// 		justify-content: center;
-// 	}
-// 	&--main {
-// 		width: 73rem;
-// 		margin-right: 2rem;
-// 		@include mq(lg) {
-// 			margin: 0 auto;
-// 		}
-// 		@include mq(md) {
-// 			width: 100%;
-// 		}
-// 	}
-
-// }
-
 .red-text{
     background-image: url("/images/like-icon.svg");
+}
+
+.l-article_post{
+	width: 68rem;
+	&__sidebar{
+		padding: 12rem 0 0 3.2rem;
+		height: 100%;
+	}
 }

@@ -1,0 +1,21 @@
+// =========================================
+// Project Form
+// =========================================
+
+.p-article_sidebar{
+    &__btns{
+        display: flex;
+    }
+    &__btn{
+        position: sticky;
+        top: 20rem;
+        padding: 0.6rem 1.8rem;
+        border-radius: 0.4rem;
+        background: none;
+        border: 1px solid $baseColor;
+        color: $baseColor;
+        &--open{
+            margin-left: 1.6rem;
+        }
+    }
+}

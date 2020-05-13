@@ -1,0 +1,55 @@
+.p-article_show{
+    width: 680px;
+    border-bottom: 1px solid #ccc;
+    &__title{
+        font-size: 2.4rem;
+        line-height: 1.7;
+        margin-bottom: 2.4rem;
+    }
+    &__tag_date{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__tag{
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        a{
+            color: $baseColor;
+            font-size: 1.2rem;
+        }
+    }
+    &__date{
+        display: flex;
+        span{
+            width: 1.4rem;
+            height: 1.4rem;
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
+    }
+    &__updated{
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        margin-right: 1.6rem;
+    }
+    &__created{
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+    }
+    &__img{
+        display: flex;
+        justify-content: center;
+        height: 68rem;
+        margin-top: 1.2rem;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    &__body{
+        margin-top: 4rem;
+    }
+
+}

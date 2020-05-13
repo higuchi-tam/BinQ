@@ -5,22 +5,10 @@
 {{-- @include('layouts.sidebar') --}}
 
 @section('content')
-<div class="l-container">
-    <div class="row">
-        <div>
-            <div>
-                <div>
-                    @include('error_card_list')
-                    <div>
-                        <form method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
-                            @method('PATCH')
-                            @include('articles.form')
-                            <button type="submit" class="">更新する</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="l-2col">
+    {{-- メイン読み込み --}}
+    @include('articles.form',['type' => 'edit'])
+    {{-- サイドバー読み込み --}}
+    @include('articles.sidebar',['type' => 'edit'])
 </div>
 @endsection

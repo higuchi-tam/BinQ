@@ -15,6 +15,7 @@ require("./components/dropdown");
 require("./components/createImgBtn");
 require("./components/uploadImg");
 require("./components/comment");
+require("./components/formSubmit");
 
 //vueコンポーネントを使用する
 const app = new Vue({
@@ -40,7 +41,7 @@ $(document).ready(() => {
             window.editor = new Quill(e, {
                 modules: {
                     toolbar: [
-                        [{ header: [1, 2, false] }],
+                        [{ header: [1, 2, 3, false] }],
                         ['bold', 'italic', 'underline',],
                         ['link'],
                         ['blockquote'],
@@ -82,4 +83,5 @@ $(document).ready(() => {
     });
     //画像追加ボタンDOM生成
     createImgBtnDom();
+    $('.js-quill-editor').css('height', '55rem');
 });

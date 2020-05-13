@@ -40,7 +40,7 @@
 		margin-right: 2rem;
 		@include mq(md) {
 			width: 45%;
-			margin-bottom: 4rem;
+			margin-bottom: 5rem;
 			&:nth-child(2n) {
 				margin-right: 0;
 			}
@@ -61,7 +61,7 @@
 	}
 	&__news--userImg {
 		margin: 0;
-		width: 4rem;
+		width: 5rem;
 		img {
 			border-radius: 100%;
 		}
