@@ -55,7 +55,7 @@
                         @endif
                         <input id="content" name="body" type="hidden" value="">
                     </div>
-                    <input type="hidden" id="js-postType" name="postType" value="">
+                    <input type="hidden" id="js-postType" name="open_flg" value="">
         </form>
     </div>
 </section>

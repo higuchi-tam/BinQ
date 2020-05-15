@@ -11,6 +11,7 @@ class Article extends Model
     protected $fillable = [
         'title',
         'body',
+        'open_flg'
     ];
 
     public function user(): BelongsTo //user()はリレーションメソッド
