@@ -27,6 +27,14 @@
                             @endif
                             <img src="{{ asset('images/close.svg') }}" alt="">
                         </div>
+                        <div class="p-form__image__modal" id="js-image__modal">
+                            <img id="js-resize__img" src="" alt="">
+                            <input type="hidden" id="upload-image-x" name="profileImageX" value="0" />
+                            <input type="hidden" id="upload-image-y" name="profileImageY" value="0" />
+                            <input type="hidden" id="upload-image-w" name="profileImageW" value="0" />
+                            <input type="hidden" id="upload-image-h" name="profileImageH" value="0" />
+                            <button type="button" class="p-form__image__modal__btn" id="js-resize__btn">OK</button>
+                        </div>
                     </div>
 
                     <div class="p-form__title">

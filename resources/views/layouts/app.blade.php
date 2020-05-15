@@ -11,7 +11,6 @@
     {{-- TODO:本番環境ではsecure_assetに切り替える --}}
     <link href="{{ asset('css/common.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
-
 </head>
 
 <body>

@@ -52,6 +52,27 @@
                 height: 1.5rem;
             }
         }
+        &__modal{
+            width: 50rem;
+            height: 50rem;
+            position: fixed;
+            background: #333;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            &__btn{
+                width: 20rem;
+                height: 4rem;
+                background: #fff;
+                position: absolute;
+                bottom: 0.8rem;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
     }
     &__title {
         width: 100%;

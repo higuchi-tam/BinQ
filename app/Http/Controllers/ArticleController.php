@@ -19,6 +19,8 @@ use Symfony\Component\ErrorHandler\Debug;
 use function Psy\debug;
 use Illuminate\Support\Facades\Storage;
 
+use Image;
+use App\Http\Controllers\Input;
 
 class ArticleController extends Controller
 {
@@ -234,6 +236,12 @@ class ArticleController extends Controller
         $articleId = $request->article_id;
         $isDelete = $request->isDelete;
 
+        $x = intval($request->{'crop-x'});
+        $y = intval($request->{'crop-y'});
+        $w = intval($request->{'crop-w'});
+        $h = intval($request->{'crop-h'});
+
+
         //記事本文画像の場合
         if ($postType === "body") {
             $Articleimg = new ArticleImg;
@@ -249,8 +257,6 @@ class ArticleController extends Controller
         } else if ($postType === "header") {
             //現在使用している画像ファイルを削除する
             $article = Article::find($articleId);
-            Log::debug('$article');
-            Log::debug($article);
 
             Storage::delete('public/' . $article->img);
 
@@ -258,8 +264,22 @@ class ArticleController extends Controller
             if ($isDelete) {
                 $article->img = null;
             } else {
-                $path = $request->file->store('public/article_header_imgs');
-                $article->img = str_replace('public/', '', $path);
+                $path = $request->file->store('public/temporary');
+                $temporaryPath =  str_replace('public/', '', $path);
+                $newPath = str_replace('public/temporary', '', 'article_header_imgs' . $path);
+
+                Log::debug('$path');
+                Log::debug($path);
+                Log::debug('$temporaryPath');
+                Log::debug($temporaryPath);
+                Log::debug('$newPath');
+                Log::debug($newPath);
+
+                $image = Image::make(storage_path("app/public/$temporaryPath"))->crop($w, $h, $x, $y);
+                $image->save(storage_path("app/public/$newPath"));
+
+                $article->img = $newPath;
+                Storage::delete($path);
             }
 
             $article->save();

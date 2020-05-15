@@ -16,6 +16,7 @@ require("./components/createImgBtn");
 require("./components/uploadImg");
 require("./components/comment");
 require("./components/formSubmit");
+require("./components/resizeImg");
 
 //vueコンポーネントを使用する
 const app = new Vue({
