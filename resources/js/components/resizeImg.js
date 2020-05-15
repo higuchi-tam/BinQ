@@ -4,11 +4,16 @@ export function initCropper(options) {
     // 初期設定
     let initOptions =
     {
+        //オプション(公式ドキュメントはこちら: https://github.com/fengyuanchen/cropperjs#options)
         aspectRatio: 1 / 1,
-        viewMode: 1,
+        viewMode: 3,
         dragMode: 'move',
         cropBoxMovable: false,
         cropBoxResizable: false,
+        modal: false,
+        background: false,
+        autoCropArea:1,
+        
         crop: function(e) {
             var cropData = $('#js-resize__img').cropper('getData');
         self.$x.val(Math.floor(cropData.x));
@@ -16,11 +21,6 @@ export function initCropper(options) {
         self.$w.val(Math.floor(cropData.width));
         self.$h.val(Math.floor(cropData.height));
         },
-        // zoomable:false,
-        minCropBoxWidth:375,
-        minCropBoxHeight:375,
-        maxCropBoxWidth:375,
-        maxCropBoxHeight:375
     }
 
     // 初期設定をセットする
@@ -29,9 +29,6 @@ export function initCropper(options) {
     // 画像をセットし、cropperを表示
     self.$cropTarget.cropper('replace', URL.createObjectURL(self.file));
     self.$cropModal.show();
-
-    //連続して同じ画像を選択できるように（onChangeイベントなので）、inputタグの中身をリセット
-    self.$headerImgFile.val('');
         
 }
 
@@ -46,8 +43,18 @@ export function setCropData(options) {
     self.formData.append('crop-w', self.w);
     self.formData.append('crop-h', self.h);
 
+    resetCropData(self);
+}
+
+export function resetCropData(options) {
+    let self = options; 
+
     self.$cropModal.hide();
     self.$cropTarget.cropper('reset');
     self.$cropTarget.cropper('clear');
     self.$cropTarget.cropper('destroy');
+
+    //連続して同じ画像を選択できるように（onChangeイベントなので）、inputタグの中身をリセット
+    self.$headerImgFile.val('');
+    
 }
