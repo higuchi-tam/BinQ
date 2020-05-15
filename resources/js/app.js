@@ -17,6 +17,7 @@ require("./components/uploadImg");
 require("./components/comment");
 require("./components/formSubmit");
 require("./components/resizeImg");
+require("./components/exitPopup");
 
 //vueコンポーネントを使用する
 const app = new Vue({
