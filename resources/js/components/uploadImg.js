@@ -1,12 +1,17 @@
 import jquery from "jquery";
 window.$ = jquery;
+
 require("cropper");
+import { initCropper, setCropData } from './resizeImg';
 
 $(function () {
+    //複数の関数で使用する変数の宣言
+    let _options = {
+        articleId : $('#js-articleId__for-ajax').attr('data-article__id'),
+        $prevArea : $('#js-img__prevArea'),
+        $delete : $('#js-img__delete'),
+    }
     
-    let articleId = $('#js-articleId__for-ajax').attr('data-article__id');
-    const $prevArea = $('#js-img__prevArea');
-    const $delete = $('#js-img__delete')
     //==========================================================
     //記事本文の画像投稿
     //==========================================================≈
@@ -16,20 +21,20 @@ $(function () {
         let postType = "body";
     
         formData.append('file', file);
-        formData.append('article_id', articleId);
+        formData.append('article_id', _options.articleId);
         formData.append('postType', postType);
     
-    $.ajax({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        url: '/articles/ajaxImgUpload',
-        type: 'POST',
-        dataType: 'json',
-        processData: false,
-        contentType: false,
-        data: formData,
-    })
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: '/articles/ajaxImgUpload',
+            type: 'POST',
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            data: formData,
+        })
         // Ajaxリクエストが成功した場合
         .done(function (data) {
             //現在のカーソル位置を特定し、そこに画像を挿入する
@@ -40,94 +45,64 @@ $(function () {
             editor.updateContents(
                 new Delta()
                 .retain(editor.getSelection().index)
-                    .insert('\n')
-                    .insert({
-                        image: '/storage/'+data
-                    })
-                    .insert('\n')
-                    );
-                    editor.setSelection(Number(newPosition) + 1,0);
+                .insert('\n')
+                .insert({
+                    image: '/storage/'+data
                 })
-                // Ajaxリクエストが失敗した場合
-                .fail(function (data) {
-                    let status = data.status;
+                .insert('\n')
+            );
+            editor.setSelection(Number(newPosition) + 1,0);
+        })
+        // Ajaxリクエストが失敗した場合
+        .fail(function (data) {
+            let status = data.status;
             let errMessage;
 
             switch (status) {
                 case 413:
                     errMessage = 'アップロード上限は2MBです';
                     break;
-                    case 422:
-                        errMessage = 'アップロードできるのは画像のみです';
+                case 422:
+                    errMessage = 'アップロードできるのは画像のみです';
                     break;
-                    default:
-                        errMessage = 'アップロードに失敗しました。もう一度やり直してください';
-                    }
+                default:
+                    errMessage = 'アップロードに失敗しました。もう一度やり直してください';
+            }
             alert(errMessage);
         })
     })
     //==========================================================
     //記事のヘッダー画像登録
     //==========================================================
-    $(document).on('change', '#js-upload-mainImg', function (e) {
-        let file = this.files[0];
-        let formData = new FormData();
-        let postType = "header";
-    
-        let $x = $('#upload-image-x');
-        let $y = $('#upload-image-y');
-        let $w = $('#upload-image-w');
-        let $h = $('#upload-image-h');
-
-         // 初期設定
-        let options =
-        {
-            aspectRatio: 1 / 1,
-            viewMode: 1,
-            dragMode: 'move',
-            cropBoxMovable: false,
-            cropBoxResizable: false,
-            crop: function(e) {
-                var cropData = $('#js-resize__img').cropper('getData');
-            $x.val(Math.floor(cropData.x));
-            $y.val(Math.floor(cropData.y));
-            $w.val(Math.floor(cropData.width));
-            $h.val(Math.floor(cropData.height));
-            },
-            // zoomable:false,
-            minCropBoxWidth:375,
-            minCropBoxHeight:375,
-            maxCropBoxWidth:375,
-            maxCropBoxHeight:375
+    $(document).on('change', '#js-upload-mainImg', function () {
+        let initOptions = {
+            file : this.files[0],
+            formData : new FormData(),
+            postType : "header",
+            $cropTarget : $('#js-resize__img'),
+            $cropModal : $('#js-image__modal'),
+            $headerImgFile: $('#js-upload-mainImg'),
+            $x : $('#upload-image-x'),
+            $y : $('#upload-image-y'),
+            $w : $('#upload-image-w'),
+            $h : $('#upload-image-h'),
         }
-
-        // 初期設定をセットする
-        $('#js-resize__img').cropper(options);
-        $('#js-resize__img').cropper('setData(options)');
-        console.log('ここ');
-        $('#js-resize__img').cropper('replace', URL.createObjectURL(this.files[0]));
-        $('#js-image__modal').show();
-        $('#js-upload-mainImg').val('');
         
+        // cropprerの初期化・表示
+        initCropper(initOptions);
         
         // OKボタン押したら処理再開
         $('#js-resize__btn').one('click', function () {
-            let x = $x.val();
-            let y = $y.val();
-            let w = $w.val();
-            let h = $h.val();
-            
-            formData.append('file', file);
-            formData.append('article_id', articleId);
-            formData.append('postType', postType);
-            formData.append('crop-x', x);
-            formData.append('crop-y', y);
-            formData.append('crop-w', w);
-            formData.append('crop-h', h);
-            $('#js-image__modal').hide();
-            $('#js-resize__img').cropper('reset');
-            $('#js-resize__img').cropper('clear');
-            $('#js-resize__img').cropper('destroy');
+            let addOptions = {
+                x: initOptions.$x.val(),
+                y: initOptions.$y.val(),
+                w: initOptions.$w.val(),
+                h: initOptions.$h.val(),
+            }
+
+            let setCropOptions = $.extend(_options, initOptions, addOptions);
+
+            setCropData(setCropOptions);
 
             $.ajax({
                 headers: {
@@ -138,15 +113,15 @@ $(function () {
                 dataType: 'json',
                 processData: false,
                 contentType: false,
-                data: formData,
+                data: initOptions.formData,
             })
             // Ajaxリクエストが成功した場合
             .done(function (data) {
-                $prevArea.css({
+                _options.$prevArea.css({
                     'background-image': 'url("/storage/' + data + '")',
                 });
-                $prevArea.addClass('hasImg');
-                $delete.addClass('hasImg');
+                _options.$prevArea.addClass('hasImg');
+                _options.$delete.addClass('hasImg');
             })
             // Ajaxリクエストが失敗した場合
             .fail(function (data) {
@@ -157,16 +132,16 @@ $(function () {
                     case 413:
                         errMessage = 'アップロード上限は2MBです';
                         break;
-                        case 422:
-                            errMessage = 'アップロードできるのは画像のみです';
-                            break;
-                            default:
-                                errMessage = 'アップロードに失敗しました。もう一度やり直してください';
-                            }
-                            alert(errMessage);
-                        })
-                    })
-                })
+                    case 422:
+                        errMessage = 'アップロードできるのは画像のみです';
+                        break;
+                    default:
+                            errMessage = 'アップロードに失敗しました。もう一度やり直してください';
+                    }
+                    alert(errMessage);
+            })
+        })
+    })
     //==========================================================
     //記事のヘッダー画像削除
     //==========================================================
@@ -175,8 +150,8 @@ $(function () {
         let postType = "header";
         
         let postData = {
-            "article_id" : articleId,
-            "postType":postType,
+            "article_id": _options.articleId,
+            "postType": postType,
             "isDelete": isDelete,
         };
         
@@ -191,11 +166,11 @@ $(function () {
         })
         // Ajaxリクエストが成功した場合
         .done(function (data) {
-            $prevArea.css({
+            _options.$prevArea.css({
                 'background-image': 'url("/images/image-plus.svg")',
             });
-            $prevArea.removeClass('hasImg');
-            $delete.removeClass('hasImg');
+            _options.$prevArea.removeClass('hasImg');
+            _options.$delete.removeClass('hasImg');
         })
         // Ajaxリクエストが失敗した場合
         .fail(function (data) {
@@ -213,6 +188,6 @@ $(function () {
                     errMessage = 'アップロードに失敗しました。もう一度やり直してください';
                 }
                 alert(errMessage);
-            })
+        })
     });
 })
