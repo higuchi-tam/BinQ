@@ -68,7 +68,7 @@ export default {
       return JSON.stringify(this.tags);
     }
   },
-  created() {
+  mounted() {
     this.hideTagInput();
   }
 };
