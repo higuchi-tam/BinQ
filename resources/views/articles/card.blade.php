@@ -19,19 +19,19 @@
     </div>
 
     {{-- タグ表示 --}}
-    @foreach($article->tags as $tag)
-    @if($loop->first)
+    {{-- @if($loop->first) --}}
     <div class="card-body pt-0 pb-4 pl-3">
         <div class="p-card__tag">
-            @endif
+            {{-- @endif --}}
+            @foreach($article->tags as $tag)
             <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="border p-1 mr-1 mt-1 text-muted">
                 {{ $tag->hashtag }}
             </a>
-            @if($loop->last)
+            @endforeach
+            {{-- @if($loop->last) --}}
         </div>
     </div>
-    @endif
-    @endforeach
+    {{-- @endif --}}
 
     {{-- 投稿者の情報 --}}
     <div class="p-top__news--user">
@@ -41,7 +41,7 @@
         <div class="p-top__news--userTxt">
             <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
                 {{ $article->user->name }}
-                <p class="p-top__news--date"> {{ $article->created_at->format('Y/m/d') }}</p>
+                <p class="p-top__news--date"> {{ $article->created_at->format('Y/m/d') }}</p></a>
         </div>
 
 
