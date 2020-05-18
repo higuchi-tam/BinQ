@@ -1,10 +1,8 @@
 <section class="l-article_post">
     @include('error_card_list')
     <div>
-        @if($type === "edit")
         <form method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
             @method('PATCH')
-            @endif
             @csrf
             <input type="hidden" id="js-articleId__for-ajax" data-article__id="{{$article->id ?? ''}}"
                 data-cursor__index="">
@@ -45,7 +43,7 @@
                     </div>
 
                     <div class="p-form__title">
-                        <textarea name="title" placeholder="タイトル記入欄">{{ $article->title ?? old('title') }}</textarea>
+                        <textarea name="title" placeholder="タイトル記入欄">{{ old('title') ?? $article->title }}</textarea>
                     </div>
 
                     <div class="p-form__tag">
@@ -55,14 +53,14 @@
 
 
                     <div class="p-form__textarea">
-                        @if($type === "edit")
-                        <div class="js-quill-editor" data-target="#content" style="height: 150px;">{!! old('body') ??
-                            $article->body !!}
+                        {{-- oldがあれば表示、ない場合、編集画面ならDBの情報を表示 --}}
+                        <div class="js-quill-editor" data-target="#content" style="height: 150px;">{!! old('body') ??($type === "edit")?$article->body:"" !!}
                         </div>
-                        @endif
                         <input id="content" name="body" type="hidden" value="">
                     </div>
                     <input type="hidden" id="js-postType" name="open_flg" value="">
         </form>
     </div>
+    {{-- モーダル読み込み --}}
+    @include('articles.modal')
 </section>

@@ -103,11 +103,15 @@ class ArticleController extends Controller
         $user = Auth::user();
         $auth_user = Auth::user();
 
+        $article = new Article();
+        $article->user_id = $user->id;
+        $article->save();
 
         return view('articles.create', [
             'allTagNames' => $allTagNames,
             'user' => $user,
             'auth_user' => $auth_user,
+            'article' => $article,
         ]);
     }
 
@@ -162,10 +166,10 @@ class ArticleController extends Controller
             $article->tags()->attach($tag);
         });
 
+
         //不要な画像削除する（Controller内で定義した関数を呼び出す）
         $this->deleteImg($article);
-
-        return redirect()->route('articles.show', $article->id);
+        return redirect()->back()->with('flash_message', '200');
     }
 
     public function destroy(Article $article)
