@@ -1,6 +1,9 @@
 .p-article_show{
     width: 680px;
     border-bottom: 1px solid #ccc;
+    &__inner{
+        position: relative;
+    }
     &__title{
         font-size: 2.4rem;
         line-height: 1.7;

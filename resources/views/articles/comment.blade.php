@@ -4,10 +4,10 @@
     </div>
     <div class="p-comment__items">
         @foreach ($comments as $comment)
-        <div class="p-comment__item js-comment__item">
+        <div class="p-comment__item u-pr50 js-comment__item">
 
             {{-- 投稿者の情報 --}}
-            <div class="p-top__news--user">
+            <div class="p-top__news--user u-mb20">
                 <figure class="p-top__news--userImg">
                     @include('users.icon',['target_user' => $comment->user])
                 </figure>
@@ -59,23 +59,23 @@
         @endforeach
     </div>
 
-    <div class="p-comment__modal" id="js-comment__modal">
-        <div class="p-comment__modal__bg js-comment__modal__close"></div>
+    <div class="p-comment__modal" id="js-article__modal">
+        <div class="p-comment__modal__bg js-article__modal__close"></div>
         <div class="p-comment__modal__inner">
-            <header class="p-comment__modal__header"> コメントの削除</header>
-            <div class="p-comment__modal__main">コメントを削除します。よろしいですか？</div>
+            <header class="p-comment__modal__header">記事の削除</header>
+            <div class="p-comment__modal__main">記事タイトル<br>「{{ $article->title }}」<br>を削除します。<br>よろしいですか？</div>
             <footer class="p-comment__modal__footer">
                 <ul class="p-comment__modal__btns">
                     <li>
                         <button type="button"
-                            class="p-comment__modal__btn p-comment__modal__btn--cancel js-comment__modal__close">
+                            class="p-comment__modal__btn p-comment__modal__btn--cancel js-article__modal__close">
                             キャンセル
                         </button>
 
                     </li>
                     <li>
                         <a href="javascript:void(0)" class="p-comment__modal__btn p-comment__modal__btn--delete"
-                            id="js-comment__modal__delete">削除</a>
+                            id="js-article__modal__delete">削除</a>
                     </li>
                 </ul>
             </footer>
