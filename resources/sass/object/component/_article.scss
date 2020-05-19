@@ -4,6 +4,9 @@
 // =========================================
 
 .c-article {
+	padding-bottom: 4rem;
+	margin-bottom: 4rem;
+    border-bottom: 1px solid #ccc;
 	&__item {
 		display: flex;
 	}

@@ -1,13 +1,16 @@
 .p-article_show{
     width: 680px;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
     &__inner{
         position: relative;
+        border-bottom: 1px solid #ccc;
     }
     &__title{
-        font-size: 2.4rem;
+        font-size: 3.2rem;
         line-height: 1.7;
         margin-bottom: 2.4rem;
+        letter-spacing: 0.96px;
+        font-weight: bold;  
     }
     &__tag_date{
         display: flex;
@@ -19,7 +22,7 @@
         align-items: center;
         a{
             color: $baseColor;
-            font-size: 1.2rem;
+            font-size: 1.6rem;
         }
     }
     &__date{
@@ -34,25 +37,44 @@
     &__updated{
         display: flex;
         align-items: center;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         margin-right: 1.6rem;
     }
     &__created{
         display: flex;
         align-items: center;
-        font-size: 12px;
+        font-size: 1.6rem;
     }
     &__img{
         display: flex;
         justify-content: center;
-        height: 68rem;
+        // height: 68rem;
         margin-top: 1.2rem;
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        img{
+            width: 100%;
+        }
     }
     &__body{
         margin-top: 4rem;
     }
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__like{
+        display: flex;
+        align-items: center;
+    }
+    &__sns{
 
+    }
+    &__snsList{
+        display: flex;
+        list-style: none;
+        align-items: center;
+        font-size: 1.4rem;
+    }
+    &__snsItem{
+        margin-left: 1.5rem;
+    }
 }

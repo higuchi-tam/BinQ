@@ -1,8 +1,11 @@
 <div class="p-comment">
     <div class="p-comment__header">
-        <span><img src="{{asset('images/comment.svg')}}" alt=""></span>コメント
+        <span><img src="{{asset('images/comment.svg')}}" alt=""></span>コメント一覧
     </div>
     <div class="p-comment__items">
+        @if($comments->count() === 0)
+        <p　class="p-comment__empty">現在コメントはありません</p>
+        @endif
         @foreach ($comments as $comment)
         <div class="p-comment__item u-pr50 js-comment__item">
 
@@ -14,12 +17,13 @@
                 <div class="p-top__news--userTxt">
                     <a href="{{ route('users.show', ['name' => $comment->user->name]) }}" class="text-dark">
                         {{ $comment->user->name }}</a>
-                    <p class="p-top__news--date"> {{ $comment->created_at->format('Y/m/d') }}</p>
+                    <p class="p-top__news--date"> {{ $comment->created_at->format('Y/m/d  h:d') }}</p>
                 </div>
             </div>
 
-
+            {{-- コメント表示エリア --}}
             <div class="p-comment__preview js-comment__preview">{{ $comment->comment }}</div>
+            {{-- コメント編集時のテキストエリア --}}
             <div class="p-comment__editArea js-comment__editArea">
                 <form action="{{ route('comments.update' , $comment->id) }}" method="POST">
                     @csrf
@@ -37,6 +41,11 @@
                     </ul>
                 </form>
             </div>
+
+            {{-- コメントの編集・削除ボタン --}}
+            <div class="p-comment__icon js-comment__icon">
+                <img src="/images/action-icon.svg" alt="" width="15" height="15">
+            </div>
             <div class="p-comment__actions js-comment__action">
                 <ul>
                     <li>
@@ -51,9 +60,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="p-comment__icon js-comment__icon">
-                <img src="/images/action-icon.svg" alt="" width="15" height="15">
-            </div>
+            {{-- コメント編集・削除ボタン表示時の、キャンセル用オーバーレイ --}}
             <div class="p-comment__action__overlay js-comment__action__overlay"></div>
         </div>
         @endforeach
@@ -81,6 +88,11 @@
             </footer>
         </div>
     </div>
+
+    <div class="p-comment__header">
+        <span><img src="{{asset('images/scissors-logo-menu.svg')}}" alt=""></span>コメントを投稿する
+    </div>
+    {{-- コメント入力欄 --}}
     <div class="p-comment__input">
         <form action="{{ route('comments.store' , $article->id) }}" method="POST">
             @csrf

@@ -54,7 +54,8 @@
 
                     <div class="p-form__textarea">
                         {{-- oldがあれば表示、ない場合、編集画面ならDBの情報を表示 --}}
-                        <div class="js-quill-editor" data-target="#content" style="height: 150px;">{!! old('body') ??($type === "edit")?$article->body:"" !!}
+                        <div class="js-quill-editor" data-target="#content" style="height: 150px;">{!! old('body') ??
+                            $article->body ?? "" !!}
                         </div>
                         <input id="content" name="body" type="hidden" value="">
                     </div>

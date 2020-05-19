@@ -1,27 +1,28 @@
 @extends('layouts.app')
 
 @include('layouts.header')
-{{-- @include('layouts.top_baner') --}}
 @include('layouts.footer')
-{{-- @include('layouts.sidebar') --}}
 
 @section('content')
 <div class="l-2col">
-    <section class="">
+    <section class="l-2col--main u-mb80">
         <div class="p-article_show">
             <div class="p-article_show__inner">
 
                 <div class="p-article_show__title">{{ $article->title }}</div>
 
                 {{-- 編集・削除ボタン --}}
+                @if( Auth::id() === $article->user->id )
                 <div class="p-article__actions js-article__action">
                     <ul>
                         <li>
-                            <a href="{{ route('articles.edit',$article->id) }}" class="p-article__action js-article__editBtn">編集</a>
+                            <a href="{{ route('articles.edit',$article->id) }}"
+                                class="p-article__action js-article__editBtn">編集</a>
                         </li>
                         <li class="p-article__action__list">
 
-                            <form action="{{ route('articles.destroy',$article->id) }}" method="POST" id="js-action__form">
+                            <form action="{{ route('articles.destroy',$article->id) }}" method="POST"
+                                id="js-action__form">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="p-article__action js-article__deleteBtn">削除</button>
@@ -47,16 +48,18 @@
                                         class="p-comment__modal__btn p-comment__modal__btn--cancel js-comment__modal__close">
                                         キャンセル
                                     </button>
-            
+
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="p-comment__modal__btn p-comment__modal__btn--delete"
+                                    <a href="javascript:void(0)"
+                                        class="p-comment__modal__btn p-comment__modal__btn--delete"
                                         id="js-comment__modal__delete">削除</a>
                                 </li>
                             </ul>
                         </footer>
                     </div>
                 </div>
+                @endif
                 {{-- タグ表示 --}}
                 <div class="p-article_show__tag_date">
                     <div class="p-article_show__tag">
@@ -79,12 +82,31 @@
                     </div>
                 </div>
 
-                <div class="p-article_show__img" style="background-image:url('{{asset('/storage/'.$article->img)}}')">
-                </div>
+                <div class="p-article_show__img"><img src="{{asset('/storage/'.$article->img)}}" alt=""></div>
                 <div class="p-article_show__body">{!! $article->body !!}</div>
             </div>
         </div>
+        <div class="p-article_show__footer">
+            <div class="p-article_show__like">
+                <article-like :initial-is-liked-by='@json($article->isLikedBy(Auth::user()))'
+                    :initial-count-likes='@json($article->count_likes)' :authorized='@json(Auth::check())'
+                    endpoint="{{ route('articles.like', ['article' => $article]) }}">
+                </article-like>
+            </div>
+            <ul class="p-article_show__snsList">
+                <li>SHARE</li>
+                <li class="p-article_show__snsItem">
+                    <a href="http://twitter.com/share?url=シェアするURL&text=文言" target="_blank">
+                        <img src="/images/tw-article-footer.svg" alt=""></a>
 
+                </li>
+                <li class="p-article_show__snsItem">
+                    <a href="http://www.facebook.com/share.php?{URL}" rel="nofollow" target="_blank">
+                        <img src="/images/fb-article-footer.svg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+        @include('users.user_article')
         @include('articles.comment')
     </section>
     {{-- サイドバー読み込み --}}

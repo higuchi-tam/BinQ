@@ -12,9 +12,8 @@
 }
 
 .l-2col {
-	// width: 100rem;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
     margin: 0 auto;
     max-width: 100rem;
 	@include mq(lg) {
@@ -22,7 +21,7 @@
 		justify-content: center;
 	}
 	&--main {
-		width: 73rem;
+		width: 68rem;
 		margin-right: 2rem;
 		@include mq(lg) {
 			margin: 0 auto;
