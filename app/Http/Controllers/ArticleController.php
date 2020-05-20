@@ -54,10 +54,16 @@ class ArticleController extends Controller
     public function index(User $user)
     {
         //allメソッドでモデルの全データをコレクションで返す。
-        $articles = Article::orderBy('created_at', 'desc')->paginate(9);
+        $articles = Article::orderBy('created_at', 'desc')
+            ->where('open_flg', 0)
+            ->paginate(9);
         $user = Auth::user();
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $auth_user = Auth::user();
+
+        $allTagNames = Tag::all()->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
 
         // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
         // キーを定義することでビューファイル側で$articleという変数が使用できる
@@ -66,6 +72,7 @@ class ArticleController extends Controller
             'user' => $user,
             'users'  => $users,
             'auth_user' => $auth_user,
+            'allTagNames' => $allTagNames,
         ]);
     }
 
@@ -169,7 +176,7 @@ class ArticleController extends Controller
 
         //不要な画像削除する（Controller内で定義した関数を呼び出す）
         $this->deleteImg($article);
-        return redirect()->back()->with('flash_message', '200');
+        return redirect()->route('articles.edit', $article->id)->with('flash_message', '200');
     }
 
     public function destroy(Article $article)

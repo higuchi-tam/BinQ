@@ -1496,7 +1496,7 @@ input {
 .l-header {
   width: 1000px;
   height: 100px;
-  margin: 0 auto;
+  margin: 0 auto 3rem;
 }
 
 @media screen and (max-width: 1028px) {
@@ -1531,10 +1531,6 @@ input {
     font-size: 5.47588005vw;
     padding-left: 3vw;
   }
-}
-
-.l-header__menuWrap {
-  width: 20rem;
 }
 
 .l-header__nav {
@@ -1643,33 +1639,60 @@ input {
 }
 
 .l-header__item--register {
-  padding: 1rem;
-  background: #a73b65;
+  padding: 1rem 2.5rem;
   border: 1px solid #a73b65;
-  border-radius: .3rem;
-  color: #fff;
+  border-radius: 3rem;
+  color: #a73b65;
   transition: all .3s;
 }
 
-.l-header__item--register:hover {
-  background: #fff;
+.l-header__item--register:visited {
   color: #a73b65;
+}
+
+.l-header__item--register:hover {
+  background: #a73b65;
+  color: #fff;
+}
+
+.l-header__img img {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
 }
 
 .l-header__dropdown--menu {
   border-radius: 5px;
-  width: 12rem;
+  width: 18rem;
   display: none;
   position: absolute;
   right: 0;
-  padding: 1rem;
   list-style: none;
-  background: #a73b65;
+  background: #fff;
+  margin-top: 2rem;
   z-index: 990;
 }
 
+.l-header__dropdown--menu:before {
+  position: absolute;
+  right: 1.8rem;
+  top: -0.5rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  content: "";
+  background-color: #fff;
+  border-right: 0.1rem solid rgba(34, 34, 34, 0.1);
+  border-bottom: 0.1rem solid rgba(34, 34, 34, 0.1);
+  transform: rotate(-135deg);
+}
+
 .l-header__button {
-  color: #fff;
+  padding: 1rem 2rem;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #444;
+  text-align: left;
   cursor: pointer;
   background: none;
   border: none;
@@ -1686,8 +1709,6 @@ input {
 }
 
 .l-header__userImg {
-  width: 5rem;
-  height: 5rem;
   border-radius: 100%;
 }
 
@@ -2133,6 +2154,7 @@ input {
 .c-button__likeWrap {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .c-button__like {
@@ -2265,7 +2287,7 @@ input {
 .c-3col__item {
   width: 31%;
   margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
 }
 
 .c-3col__item:nth-child(3n) {
@@ -2353,6 +2375,10 @@ input {
   text-align: left;
 }
 
+.p-article__action:visited {
+  color: #a73b65;
+}
+
 .p-article__action__list {
   border-top: 1px solid #f2f2f2;
 }
@@ -2417,6 +2443,7 @@ input {
 }
 
 .p-modal__footer {
+  height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2481,6 +2508,7 @@ input {
 .p-article_show__title {
   font-size: 3.2rem;
   line-height: 1.7;
+  padding-top: 2rem;
   margin-bottom: 2.4rem;
   letter-spacing: 0.96px;
   font-weight: bold;
@@ -2494,16 +2522,17 @@ input {
 .p-article_show__tag {
   height: 4rem;
   display: flex;
-  align-items: center;
 }
 
 .p-article_show__tag a {
   color: #444;
   font-size: 1.6rem;
+  margin-left: 1rem;
 }
 
 .p-article_show__date {
   display: flex;
+  flex-direction: column;
 }
 
 .p-article_show__date span {
@@ -2517,7 +2546,6 @@ input {
   display: flex;
   align-items: center;
   font-size: 1.6rem;
-  margin-right: 1.6rem;
 }
 
 .p-article_show__created {
@@ -2638,6 +2666,11 @@ input {
 .p-card__tag a {
   color: #444;
   font-size: 1.2rem;
+}
+
+.p-card__tag {
+  margin-bottom: 1rem;
+  height: 2rem;
 }
 
 .p-comment__header {
@@ -3197,13 +3230,21 @@ input {
 
 .p-top__news--img {
   width: 100%;
-  margin: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: -webkit-center;
 }
 
 .p-top__news--img img {
   width: 100%;
+}
+
+.p-top__news--text {
+  margin-bottom: 1rem;
+  height: 6.4rem;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .p-top__news--user {
@@ -3713,23 +3754,34 @@ input {
 .p-tab__wrap {
   list-style: none;
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   padding: 0;
+}
+
+.p-tab__item {
+  border: 1px solid #444;
+}
+
+.p-tab__item:not(:last-child) {
+  border-right: none;
 }
 
 .p-tab__link {
   display: block;
-  width: 15rem;
+  width: 12rem;
   padding: 1rem;
   text-align: center;
   font-size: 1.4rem;
-  border: 1px solid #444;
   color: #444;
 }
 
 .tab-active {
   color: #fff;
   background: #444;
+}
+
+.tab-active:visited {
+  color: #fff;
 }
 
 .p-top__item {
@@ -3930,20 +3982,20 @@ input {
 
 .p-user_article__wrap {
   padding: 1rem 0;
+  margin-left: 4rem;
 }
 
 .p-user_article__user {
   display: flex;
   flex-direction: column;
   list-style: none;
-  margin-left: 3rem;
 }
 
 .p-user_article__name {
   font-weight: bold;
   font-size: 1.6rem;
   margin-right: 2rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .p-user_article__userTitle {
@@ -3992,6 +4044,8 @@ input {
   display: flex;
   width: 74rem;
   margin-right: 1rem;
+  margin-bottom: 8rem;
+  position: relative;
 }
 
 @media screen and (max-width: 768px) {
@@ -4001,8 +4055,12 @@ input {
 }
 
 .p-user_detail__wrap {
-  padding: 1rem 0;
+  margin-left: 4rem;
   font-size: 1.2rem;
+}
+
+.p-user_detail__wrap ul li {
+  list-style: none;
 }
 
 .p-user_detail__name {
@@ -4014,6 +4072,7 @@ input {
 .p-user_detail__nameWrap {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .p-user_detail__userImg img {
@@ -4035,10 +4094,12 @@ input {
 
 .p-user_detail__userTitle {
   margin: 0 0 1rem 0;
+  font-size: 1.4rem;
 }
 
 .p-user_detail__comment {
   margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
 .p-user_detail__tab {
@@ -4061,6 +4122,11 @@ input {
   border: 1px solid #999;
 }
 
+.p-user_detail__topicWrap {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
 .p-user_detail__topicWrap a {
   color: #a73b65;
 }
@@ -4073,6 +4139,12 @@ input {
   margin-right: 1rem;
 }
 
+.p-user_detail__url span {
+  background: #fff;
+  padding: 3px 12px;
+  border-radius: 10px;
+}
+
 .p-user_detail__url a {
   color: #a73b65;
 }
@@ -4083,6 +4155,13 @@ input {
   border: 1px solid #444;
   color: #444;
   border-radius: .5rem;
+}
+
+.p-user_detail__follow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }
 
 .p-user__side {
@@ -4150,6 +4229,7 @@ input {
 .p-user__news--cardTitle {
   margin-bottom: 2rem;
   font-weight: bold;
+  font-size: 1.6rem;
 }
 
 .p-user__news--img {

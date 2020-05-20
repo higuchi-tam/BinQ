@@ -5,7 +5,7 @@
 .l-header {
     width: 1000px;
     height: 100px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
     @include mq(lg) {
         width: 100%;
         padding: 0 5vw;
@@ -27,7 +27,6 @@
         }
     }
     &__menuWrap {
-        width: 20rem;
     }
     &__nav {
         display: flex;
@@ -112,33 +111,61 @@
             }
         }
         &--register{
-            padding: 1rem;
-            background: $accentColor;
+            padding: 1rem 2.5rem;
             border: 1px solid $accentColor;
-            border-radius: .3rem;
-            color: #fff;
+            border-radius: 3rem;
+            color: $accentColor;
             transition: all .3s;
-            &:hover{
-                background: #fff;
+            &:visited{
                 color: $accentColor;
             }
+            &:hover{
+                background: $accentColor;
+                color: #fff
+            }
+        }
+    }
+    &__img{
+        img{
+            border-radius: 50%;
+            width: 5rem;
+            height: 5rem;
         }
     }
     &__dropdown {
         &--menu {
             border-radius: 5px;
-            width: 12rem;
+            width: 18rem;
             display: none;
             position: absolute;
             right: 0;
-            padding: 1rem;
             list-style: none;
-            background: $accentColor;
+            background: #fff;
+            margin-top: 2rem;
             z-index: 990;
+            &:before{
+                position: absolute;
+                right: 1.8rem;
+                top: -0.5rem;
+                width: 0.8rem;
+                height: 0.8rem;
+                content: "";
+                background-color: #fff;
+                border-right: 0.1rem solid rgba(34, 34, 34, 0.1);
+                border-bottom: 0.1rem solid rgba(34, 34, 34, 0.1);
+                transform: rotate(-135deg);
+            }
+        }
+        &--item{
         }
     }
     &__button {
-        color: #fff;
+        padding: 1rem 2rem;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: #444;
+        text-align: left;
         cursor: pointer;
         background: none;
         border: none;
@@ -153,8 +180,6 @@
         }
     }
     &__userImg{
-        width: 5rem;
-        height: 5rem;
         border-radius: 100%;
     }
 }

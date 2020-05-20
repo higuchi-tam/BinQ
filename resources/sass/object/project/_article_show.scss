@@ -8,6 +8,7 @@
     &__title{
         font-size: 3.2rem;
         line-height: 1.7;
+        padding-top: 2rem;
         margin-bottom: 2.4rem;
         letter-spacing: 0.96px;
         font-weight: bold;  
@@ -19,14 +20,15 @@
     &__tag{
         height: 4rem;
         display: flex;
-        align-items: center;
         a{
             color: $baseColor;
             font-size: 1.6rem;
+            margin-left: 1rem;
         }
     }
     &__date{
         display: flex;
+        flex-direction: column;
         span{
             width: 1.4rem;
             height: 1.4rem;
@@ -38,7 +40,6 @@
         display: flex;
         align-items: center;
         font-size: 1.6rem;
-        margin-right: 1.6rem;
     }
     &__created{
         display: flex;

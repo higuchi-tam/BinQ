@@ -7,7 +7,7 @@
     <section class="u-mb80">
 
         @include('users.user')
-        @include('users.tabs', ['currentPage' => "index"])
+        @include('users.tabs', ['currentPage' => "draft"])
 
         <div class="c-3col__container u-mb40 l-container">
             @foreach($articles as $article)

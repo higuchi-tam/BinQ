@@ -16,18 +16,18 @@
     }
     &__wrap{
         padding: 1rem 0;
+        margin-left: 4rem;
     }
     &__user{
         display: flex;
         flex-direction: column;
         list-style: none;
-        margin-left: 3rem;
     }
     &__name{
         font-weight: bold;
         font-size: 1.6rem;
         margin-right: 2rem;
-        padding-bottom: 1rem;
+        margin-bottom: 1rem;
     }
     &__userTitle{
         margin-bottom:0.5rem;

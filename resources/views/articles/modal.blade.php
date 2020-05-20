@@ -11,14 +11,14 @@
                 <li>
                     <a href="http://twitter.com/share?url=シェアするURL&text=文言" target="_blank"
                         class="p-modal__btn p-modal__btn--tw js-popup">
-                        <span><img src="/images/tw-share.svg" alt=""></span>ツイートする
+                        <span><img src="/images/tw-modal.svg" alt=""></span>ツイートする
                     </a>
 
                 </li>
                 <li>
                     <a href="http://www.facebook.com/share.php?{URL}" rel="nofollow" target="_blank"
                         class="p-modal__btn p-modal__btn--fb js-popup">
-                        <span><img src="/images/fb-share.svg" alt=""></span>シェアする</a>
+                        <span><img src="/images/fb-modal.svg" alt=""></span>シェアする</a>
                 </li>
         </div>
         <footer class="p-modal__footer">

@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li class="l-header__item">
-                    <div class="js-dropdown">
+                    <div class="l-header__img js-dropdown">
                         @include('users.icon',['target_user' => $auth_user])
                     </div>
 

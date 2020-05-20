@@ -64,20 +64,19 @@
                 <div class="p-article_show__tag_date">
                     <div class="p-article_show__tag">
                         @foreach($article->tags as $tag)
-                        <a href="{{ route('tags.show', ['name' => $tag->name]) }}"
-                            class="border p-1 mr-1 mt-1 text-muted">
+                        <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="">
                             {{ $tag->hashtag }}
                         </a>
                         @endforeach
                     </div>
                     <div class="p-article_show__date">
-                        <div class="p-article_show__updated">
-                            <span><img src="{{ asset('images/reload.svg') }}" alt=""></span>最終更新：
-                            {{ $article->updated_at->format('Y.m.d') }}
-                        </div>
                         <div class="p-article_show__created">
                             <span><img src="{{ asset('images/post.svg') }}" alt=""></span>投稿日：
                             {{ $article->created_at->format('Y.m.d') }}
+                        </div>
+                        <div class="p-article_show__updated">
+                            <span><img src="{{ asset('images/reload.svg') }}" alt=""></span>最終更新：
+                            {{ $article->updated_at->format('Y.m.d') }}
                         </div>
                     </div>
                 </div>
