@@ -29,6 +29,14 @@ class ArticleController extends Controller
         $this->authorizeResource(Article::class, 'article');
     }
 
+    private function getAllTagNames()
+    {
+        $allTagNames = Tag::all()->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
+        return $allTagNames;
+    }
+
     //不要画像削除メソッド（Controller内で呼び出す）
     public function deleteImg($article)
     {
@@ -61,9 +69,8 @@ class ArticleController extends Controller
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $auth_user = Auth::user();
 
-        $allTagNames = Tag::all()->map(function ($tag) {
-            return ['text' => $tag->name];
-        });
+        $allTagNames = $this->getAllTagNames();
+        $tags = Tag::all();
 
         // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
         // キーを定義することでビューファイル側で$articleという変数が使用できる
@@ -73,6 +80,7 @@ class ArticleController extends Controller
             'users'  => $users,
             'auth_user' => $auth_user,
             'allTagNames' => $allTagNames,
+            'tags' => $tags,
         ]);
     }
 
@@ -84,11 +92,14 @@ class ArticleController extends Controller
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
 
+        $tags = Tag::all();
+
         return view('articles.indexLikes', [
             'user' => $user,
             'auth_user' => $auth_user,
             'articles' => $articles,
             'users'  => $users,
+            'tags'  => $tags,
         ]);
     }
 
@@ -104,9 +115,7 @@ class ArticleController extends Controller
 
     public function create()
     {
-        $allTagNames = Tag::all()->map(function ($tag) {
-            return ['text' => $tag->name];
-        });
+        $allTagNames = $this->getAllTagNames();
         $user = Auth::user();
         $auth_user = Auth::user();
 
@@ -142,9 +151,8 @@ class ArticleController extends Controller
         $tagNames = $article->tags->map(function ($tag) {
             return ['text' => $tag->name];
         });
-        $allTagNames = Tag::all()->map(function ($tag) {
-            return ['text' => $tag->name];
-        });
+        $allTagNames = $this->getAllTagNames();
+        $tags = Tag::all();
         $user = Auth::user();
         $auth_user = Auth::user();
 
@@ -156,6 +164,7 @@ class ArticleController extends Controller
             'allTagNames' => $allTagNames,
             'user' => $user,
             'auth_user' => $auth_user,
+            'tags' => $tags,
         ]);
     }
 
@@ -193,8 +202,6 @@ class ArticleController extends Controller
         $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
 
         $comments = $article->comments()->get();
-        Log::debug('$comments');
-        Log::debug($comments);
         return view('articles.show', [
             'article' => $article,
             'user' => $user,

@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Article;
+use App\Tag;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use Image;
 
 class UserController extends Controller
 {
@@ -34,12 +38,15 @@ class UserController extends Controller
         $articles = Article::orderBy('created_at', 'desc')->where('open_flg', 0)->paginate(9);
         $auth_user = Auth::user();
 
+        $tags = Tag::all();
+
         return view('users.index', [
             'all_users'  => $all_users,
             'user' => $user,
             'users' => $users,
             'articles' => $articles,
             'auth_user' => $auth_user,
+            'tags' => $tags,
         ]);
     }
 
@@ -210,5 +217,44 @@ class UserController extends Controller
         $request->user()->followings()->detach($user);
 
         return ['name' => $name];
+    }
+
+    public function ajaxImgUpload(Request $request)
+    {
+        Log::debug('<<<<<<<< User imgupload ajax>>>>>>>>>>>>>');
+        Log::debug('$request');
+        Log::debug($request);
+
+        $userId = $request->user_id;
+        $isDelete = $request->isDelete;
+
+        $x = intval($request->{'crop-x'});
+        $y = intval($request->{'crop-y'});
+        $w = intval($request->{'crop-w'});
+        $h = intval($request->{'crop-h'});
+
+        //現在使用している画像ファイルを削除する
+        $user = User::find($userId);
+        Storage::delete('public/' . $user->profile_photo);
+
+        //削除か更新かで処理を変える
+        if ($isDelete) {
+            $user->profile_photo = null;
+        } else {
+            $path = $request->file->store('public/temporary');
+            $temporaryPath =  str_replace('public/', '', $path);
+            $newPath = str_replace('public/temporary', '', 'user_images' . $path);
+
+            $image = Image::make(storage_path("app/public/$temporaryPath"))->crop($w, $h, $x, $y);
+            $image->save(storage_path("app/public/$newPath"));
+
+            $user->profile_photo = $newPath;
+        }
+        Storage::deleteDirectory("/public/temporary");
+
+        $user->save();
+        $response = $user->profile_photo;
+
+        return response()->json($response);
     }
 }

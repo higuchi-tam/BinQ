@@ -36,12 +36,18 @@ export function setCropData(options) {
     let self = options; 
 
     self.formData.append('file', self.file);
-    self.formData.append('article_id', self.articleId);
     self.formData.append('postType', self.postType);
     self.formData.append('crop-x', self.x);
     self.formData.append('crop-y', self.y);
     self.formData.append('crop-w', self.w);
     self.formData.append('crop-h', self.h);
+    
+    //プロフィール編集ならユーザーIDを、記事編集なら記事IDを格納
+    if (self.isUserEdit) {
+        self.formData.append('user_id', self.userId);
+    } else {
+        self.formData.append('article_id', self.articleId);
+    }
 
     resetCropData(self);
 }

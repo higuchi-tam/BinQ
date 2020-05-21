@@ -23,6 +23,12 @@
             width: 68rem;
             height: 68rem;
         }
+        &--user{
+            &.hasImg{
+                width: 30rem;
+                height: 30rem;
+            }
+        }
         &__area{
             display: inline-block;
             width: 100%;
@@ -92,6 +98,7 @@
     &__title {
         width: 100%;
         margin-bottom: 2rem;
+        font-size: 2rem;
         textarea {
             width: 100%;
             border: none;
@@ -99,6 +106,9 @@
             font-size: 2.4rem;
             background: none;
         }
+    }
+    &__wrap{
+        font-size: 1.6rem;
     }
     &__tag{
         margin-bottom: 4rem;

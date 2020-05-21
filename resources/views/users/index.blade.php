@@ -13,17 +13,9 @@
         <div class="p-user__news--titleWrap u-mb20">
             <h3 class="p-user__news--title c-contents__title">美容師一覧</h3>
         </div>
-
-        <div class="p-user__tab">
-            <ul class="p-user__tab--list">
-                <li class="p-user__tab--item is-active">人気美容師</li>
-                <li class="p-user__tab--item">人気記事</li>
-                <li class="p-user__tab--item">最近の記事</li>
-                <li class="p-user__tab--item">カテゴリ</li>
-                <li class="p-user__tab--item">カテゴリ</li>
-            </ul>
+        <div class="l-tabs">
+            @include('layouts.tabs',['currentPage'=> "users.index"])
         </div>
-
         <div class="c-3col__container u-mb40 l-container">
             @foreach ($all_users as $user)
             <div class="c-3col__item">

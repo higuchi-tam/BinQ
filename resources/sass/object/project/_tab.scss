@@ -6,7 +6,7 @@
     &__wrap{
         list-style: none;
         display: flex;
-        margin-bottom: 4rem;
+        margin-bottom: 8rem;
         padding: 0;
 
     }
@@ -23,13 +23,13 @@
         text-align: center;
         font-size: 1.4rem;
         color: $baseColor;
+        &.tab-active{
+            color: #fff;
+            background:$baseColor;
+            &:visited{
+                color: #fff;
+            }
+        }
     }
     
-}
-.tab-active{
-    color: #fff;
-    background:$baseColor;
-    &:visited{
-        color: #fff;
-    }
 }

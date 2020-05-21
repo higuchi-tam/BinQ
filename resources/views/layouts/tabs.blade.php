@@ -1,34 +1,26 @@
 <ul class="p-tab__wrap">
     <li class="p-tab__item">
-        <a class="p-tab__link {{ $currentPage === "index"  ? 'tab-active' : '' }}"
-            href="{{ route('users.show', ['name' => $user->name]) }}">
-            投稿
+        <a class="p-tab__link {{ $currentPage === "articles.index"  ? 'tab-active' : '' }}"
+            href="{{ route('articles.index', ['name' => $user->name]) }}">
+            最新の記事
         </a>
     </li>
     <li class="p-tab__item">
-        <a class="p-tab__link {{ $currentPage === "follow" ? 'tab-active' : '' }}"
-            href="{{ route('users.followings', ['name' => $user->name]) }}">
-            フォロー
+        <a class="p-tab__link {{ $currentPage === "users.index" ? 'tab-active' : '' }}" href="/users">
+            人気の美容師
         </a>
     </li>
     <li class="p-tab__item">
-        <a class="p-tab__link {{ $currentPage === "follower" ? 'tab-active' : '' }}"
-            href="{{ route('users.followers', ['name' => $user->name]) }}">
-            フォロワー
+        <a class="p-tab__link {{ $currentPage === "likeIndex" ? 'tab-active' : '' }}" href="/likeIndex">
+            人気の記事
         </a>
     </li>
-    @if( Auth::id() === $user->id )
-    <li class="p-tab__item">
-        <a class="p-tab__link {{ $currentPage === "likes" ? 'tab-active' : '' }}"
-            href="{{ route('users.likes', ['name' => $user->name]) }}">
-            いいね
-        </a>
+</ul>
+<ul class="p-categoryTab">
+    @foreach($tags as $tag)
+    <li class="p-categoryTab__item">
+        <a href="{{ route('tags.show',$tag->name) }}"
+            class="p-categoryTab__link {{ $currentPage === $tag->name ? 'tab-active' : '' }}">{{ $tag->hashtag }}</a>
     </li>
-    <li class="p-tab__item">
-        <a class="p-tab__link {{ $currentPage === "draft" ? 'tab-active' : '' }}"
-            href="{{ route('users.draft', ['name' => $user->name]) }}">
-            下書き
-        </a>
-    </li>
-    @endif
+    @endforeach
 </ul>

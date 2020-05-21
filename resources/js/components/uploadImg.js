@@ -8,6 +8,7 @@ $(function () {
     //複数の関数で使用する変数の宣言
     let _options = {
         articleId : $('#js-articleId__for-ajax').attr('data-article__id'),
+        userId : $('#js-userId__for-ajax').val(),
         $prevArea : $('#js-img__prevArea'),
         $delete: $('#js-img__delete'),
         $x : $('#upload-image-x'),
@@ -82,7 +83,7 @@ $(function () {
 //記事のヘッダー画像登録
 //==========================================================
 
-$(document).on('change', '#js-upload-mainImg', function () {
+$(document).on('change', '#js-upload-mainImg,#js-upload-userImg', function () {
     let initOptions = {
         file : this.files[0],
         postType : "header",
@@ -111,11 +112,12 @@ $('#js-resize__cancel').on('click', function () {
     
 // OKボタン押したら処理再開
 $('#js-resize__ok').on('click', function () {
-
+    
     let options = {
         file: document.getElementById('js-upload-mainImg').files[0],
         formData : new FormData(),
         articleId: _options.articleId,
+        userId: _options.userId,
         postType: "header",
         x : _options.$x.val(),
         y : _options.$y.val(),
@@ -124,6 +126,9 @@ $('#js-resize__ok').on('click', function () {
         $cropTarget : _options.$cropTarget,
         $cropModal : _options.$cropModal,
         $headerImgFile: _options.$headerImgFile,
+
+        //プロフィール編集かコンテンツ編集かどうかの判定
+        isUserEdit : $('#js-edit_user')
     }
 
     //トリミングしたデータをformDataにセットする
@@ -133,7 +138,7 @@ $('#js-resize__ok').on('click', function () {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: '/articles/ajaxImgUpload',
+        url: options.isUserEdit ? '/users/ajaxImgUpload' :'/articles/ajaxImgUpload',
         type: 'POST',
         dataType: 'json',
         processData: false,
@@ -172,11 +177,15 @@ $('#js-resize__ok').on('click', function () {
 //記事のヘッダー画像削除
 //==========================================================
 $(document).on('click', '#js-img__delete', function () {
+    
+    const isUserEdit = $('#js-edit_user');
+
     let isDelete = 1;
     let postType = "header";
     
     let postData = {
         "article_id": _options.articleId,
+        "user_id": _options.userId,
         "postType": postType,
         "isDelete": isDelete,
     };
@@ -185,7 +194,7 @@ $(document).on('click', '#js-img__delete', function () {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        url: '/articles/ajaxImgUpload',
+        url: isUserEdit ? '/users/ajaxImgUpload' : '/articles/ajaxImgUpload',
         type: 'POST',
         dataType: 'json',
         data: postData,
