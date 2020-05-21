@@ -1,10 +1,6 @@
-@charset "utf-8";
-
 // =========================================
 // Foundation
 // =========================================
-@import "foundation/_mixin.scss";
-@import "foundation/_base.scss";
 
 .l-container {
 	width: 1000px;
@@ -16,9 +12,8 @@
 }
 
 .l-2col {
-	// width: 100rem;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
     margin: 0 auto;
     max-width: 100rem;
 	@include mq(lg) {
@@ -26,7 +21,7 @@
 		justify-content: center;
 	}
 	&--main {
-		width: 73rem;
+		width: 68rem;
 		margin-right: 2rem;
 		@include mq(lg) {
 			margin: 0 auto;
@@ -47,27 +42,14 @@
 	}
 }
 
-// #app{
-//     display: flex;
-// 	justify-content: center;
-// 	margin: 0 auto;
-// 	@include mq(lg) {
-// 		display: block;
-// 		justify-content: center;
-// 	}
-// 	&--main {
-// 		width: 73rem;
-// 		margin-right: 2rem;
-// 		@include mq(lg) {
-// 			margin: 0 auto;
-// 		}
-// 		@include mq(md) {
-// 			width: 100%;
-// 		}
-// 	}
-
-// }
-
 .red-text{
     background-image: url("/images/like-icon.svg");
+}
+
+.l-article_post{
+	width: 68rem;
+	&__sidebar{
+		padding: 9rem 0;
+		height: 100%;
+	}
 }

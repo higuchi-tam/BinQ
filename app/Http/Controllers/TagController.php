@@ -16,10 +16,13 @@ class TagController extends Controller
         $user = Auth::user();
         $auth_user = Auth::user();
 
+        $tags = Tag::all();
 
         return view('tags.show', [
             'user' => $user,
             'auth_user' => $auth_user,
-            'tag' => $tag]);
+            'tag' => $tag,
+            'tags' => $tags
+        ]);
     }
 }

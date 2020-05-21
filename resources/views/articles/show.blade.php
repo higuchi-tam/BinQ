@@ -1,54 +1,114 @@
 @extends('layouts.app')
 
 @include('layouts.header')
-{{-- @include('layouts.top_baner') --}}
 @include('layouts.footer')
-{{-- @include('layouts.sidebar') --}}
 
 @section('content')
-<div class="l-container">
-    @include('articles.card')
+<div class="l-2col">
+    <section class="l-2col--main u-mb80">
+        <div class="p-article_show">
+            <div class="p-article_show__inner">
 
+                <div class="p-article_show__title">{{ $article->title }}</div>
 
-    @if( Auth::id() === $article->user_id )
-    <!-- dropdown -->
-    <div class="js-dropdown">
-        <button>MENUボタン</button>
-    </div>
-    <div>
-        <a href="{{ route("articles.edit", ['article' => $article]) }}">
-            記事を更新する
-        </a>
-        <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $article->id }}">
-            記事を削除する
-        </a>
-    </div>
-    <!-- dropdown -->
+                {{-- 編集・削除ボタン --}}
+                @if( Auth::id() === $article->user->id )
+                <div class="p-article__actions js-article__action">
+                    <ul>
+                        <li>
+                            <a href="{{ route('articles.edit',$article->id) }}"
+                                class="p-article__action js-article__editBtn">編集</a>
+                        </li>
+                        <li class="p-article__action__list">
 
-    <!-- modal -->
-    <div id="modal-delete-{{ $article->id }}" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-                        <span aria-hidden="true">×</span>
-                    </button>
+                            <form action="{{ route('articles.destroy',$article->id) }}" method="POST"
+                                id="js-action__form">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="p-article__action js-article__deleteBtn">削除</button>
+                            </form>
+                        </li>
+                    </ul>
                 </div>
-                <form method="POST" action="{{ route('articles.destroy', ['article' => $article]) }}">
-                    @csrf
-                    @method('DELETE')
-                    <div class="modal-body">
-                        {{ $article->title }}を削除します。よろしいですか？
+
+                <div class="p-article__icon js-article__icon">
+                    <img src="/images/action-icon.svg" alt="" width="15" height="15">
+                </div>
+                {{-- 削除ボタン押したときのモーダル --}}
+                <div class="p-article__action__overlay js-article__action__overlay"></div>
+                <div class="p-comment__modal" id="js-comment__modal">
+                    <div class="p-comment__modal__bg js-comment__modal__close"></div>
+                    <div class="p-comment__modal__inner">
+                        <header class="p-comment__modal__header"> コメントの削除</header>
+                        <div class="p-comment__modal__main">コメントを削除します。よろしいですか？</div>
+                        <footer class="p-comment__modal__footer">
+                            <ul class="p-comment__modal__btns">
+                                <li>
+                                    <button type="button"
+                                        class="p-comment__modal__btn p-comment__modal__btn--cancel js-comment__modal__close">
+                                        キャンセル
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"
+                                        class="p-comment__modal__btn p-comment__modal__btn--delete"
+                                        id="js-comment__modal__delete">削除</a>
+                                </li>
+                            </ul>
+                        </footer>
                     </div>
-                    <div class="modal-footer justify-content-between">
-                        <a class="btn btn-outline-grey" data-dismiss="modal">キャンセル</a>
-                        <button type="submit" class="btn btn-danger">削除する</button>
+                </div>
+                @endif
+                {{-- タグ表示 --}}
+                <div class="p-article_show__tag_date">
+                    <div class="p-article_show__tag">
+                        @foreach($article->tags as $tag)
+                        <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="">
+                            {{ $tag->hashtag }}
+                        </a>
+                        @endforeach
                     </div>
-                </form>
+                    <div class="p-article_show__date">
+                        <div class="p-article_show__created">
+                            <span><img src="{{ asset('images/post.svg') }}" alt=""></span>投稿日：
+                            {{ $article->created_at->format('Y.m.d') }}
+                        </div>
+                        <div class="p-article_show__updated">
+                            <span><img src="{{ asset('images/reload.svg') }}" alt=""></span>最終更新：
+                            {{ $article->updated_at->format('Y.m.d') }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-article_show__img"><img src="{{asset('/storage/'.$article->img)}}" alt=""></div>
+                <div class="p-article_show__body">{!! $article->body !!}</div>
             </div>
         </div>
-    </div>
-    <!-- modal -->
-    @endif
+        <div class="p-article_show__footer">
+            <div class="p-article_show__like">
+                <article-like :initial-is-liked-by='@json($article->isLikedBy(Auth::user()))'
+                    :initial-count-likes='@json($article->count_likes)' :authorized='@json(Auth::check())'
+                    endpoint="{{ route('articles.like', ['article' => $article]) }}">
+                </article-like>
+            </div>
+            <ul class="p-article_show__snsList">
+                <li>SHARE</li>
+                <li class="p-article_show__snsItem">
+                    <a href="http://twitter.com/share?url=シェアするURL&text=文言" target="_blank">
+                        <img src="/images/tw-article-footer.svg" alt=""></a>
+
+                </li>
+                <li class="p-article_show__snsItem">
+                    <a href="http://www.facebook.com/share.php?{URL}" rel="nofollow" target="_blank">
+                        <img src="/images/fb-article-footer.svg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+        @include('users.user_article')
+        @include('articles.comment')
+    </section>
+    {{-- サイドバー読み込み --}}
+    @include('layouts.sidebar')
 </div>
 @endsection

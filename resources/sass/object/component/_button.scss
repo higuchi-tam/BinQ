@@ -1,10 +1,6 @@
-@charset "utf-8";
-
 // =========================================
 // Foundation
 // =========================================
-@import "../../foundation/_mixin.scss";
-@import "../../foundation/_base.scss";
 
 .c-button {
     &__primary {
@@ -113,17 +109,16 @@
         width: 12rem;
         background: $accentColor;
         color: #fff;
-        border: 1px solid $accentColor;
         border-radius: .3rem;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         margin: 0 auto;
         border: 1px solid $accentColor;
         height: 4.5rem;
-        line-height: 4.5rem;
         font-size: 1.2rem;
         font-weight: bold;
-        text-align: center;
         letter-spacing: 0.3rem;
         transition: all 0.3s;
         outline: none;
@@ -136,6 +131,7 @@
     &__likeWrap {
         display: flex;
         align-items: center;
+        margin-bottom: 1rem;
     }
 
     &__like {
@@ -150,22 +146,24 @@
     }
 
     &__sidebar {
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
-        margin: 0 auto;
-        background-color: $accentColor;
+        background-color: #fff;
         border: 1px solid $accentColor;
         border-radius: .3rem;
-        color: #fff;
+        color: $accentColor;
         width: 100%;
-        height: 4.5rem;
+        height: 4rem;
         font-size: 1.2rem;
         font-weight: bold;
-        text-align: center;
-        line-height: 4.5rem;
         margin-bottom: 1rem;
         letter-spacing: 0.3rem;
         transition: all 0.3s;
+        &:visited{
+            color: $accentColor;
+        }
         &::after {
             content: "";
             width: 0.8rem;
@@ -203,4 +201,21 @@
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
+}
+
+.c-ql__imgInsert__label{
+    display: inline-block;
+    height: 100%;
+}
+.c-ql__imgInsert__input{
+    display: none;
+}
+.c-imgInsert__img{
+    display: inline-block;
+    width: 28px;
+    height: 24px;
+    padding: 3px 5px;
+}
+.ql-formats.ql-formats--imgInsert{
+    height: 24px;
 }

@@ -24,21 +24,15 @@
                     </a>
                 </li>
                 <li class="l-header__item">
-                    <div class="js-dropdown">
-                        {{-- <a href="{{ route('users.show', ['name' => $user->name]) }}" class=""> --}}
-                        @if ($auth_user->profile_photo)
-                        <img class="l-header__userImg"
-                            src="{{ asset('storage/user_images/' . $auth_user->profile_photo) }}" />
-                        @else
-                                <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像"> --}}
-                        @endif
-                        {{-- </a> --}}
+                    <div class="l-header__img js-dropdown">
+                        @include('users.icon',['target_user' => $auth_user])
                     </div>
 
                     {{-- ドロップダウンメニュー --}}
                     <ul class="l-header__dropdown--menu">
                         <li class="l-header__dropdown--item">
-                            <a href="{{ route('users.show', ['name' => $auth_user->name]) }}" class="l-header__button">マイページ</a>
+                            <a href="{{ route('users.show', ['name' => $auth_user->name]) }}"
+                                class="l-header__button">マイページ</a>
                         </li>
                         <li class="l-header__dropdown--item">
                             <a href="{{ route("users.edit", ['name' => $user->name]) }}"

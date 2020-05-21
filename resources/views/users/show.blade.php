@@ -7,11 +7,11 @@
     <section class="u-mb80">
 
         @include('users.user')
-        @include('users.tabs', ['hasArticles' => true, 'hasLikes' => false])
+        @include('users.tabs', ['currentPage' => "index"])
 
         <div class="c-3col__container u-mb40 l-container">
             @foreach($articles as $article)
-                @include('articles.card')
+            @include('articles.card')
             @endforeach
         </div>
 

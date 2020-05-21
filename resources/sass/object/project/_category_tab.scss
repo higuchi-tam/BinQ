@@ -1,0 +1,20 @@
+.p-categoryTab{
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    &__item{
+        list-style: none;
+        padding: 1rem 1.5rem;
+        text-align: center;
+        font-size: 1.6rem;
+        color: #777;
+        &:not(:last-child){
+            border-right: none;
+        }
+    }
+    &__link{
+        &.tab-active{
+            color: $accentColor;
+            text-decoration: underline;
+        }
+    }
+}

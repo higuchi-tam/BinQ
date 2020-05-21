@@ -1,23 +1,24 @@
-@charset "utf-8";
-
 // =========================================
 // Project
 // =========================================
-@import "../../foundation/_mixin.scss";
-@import "../../foundation/_base.scss";
 
 .p-user_detail {
 	&__userContainer {
         display: flex;
         width: 74rem;
         margin-right: 1rem;
+        margin-bottom: 8rem;
+        position: relative;
 		@include mq(md) {
 			flex-wrap: wrap;
 		}
     }
     &__wrap{
-        padding: 1rem 0;
+        margin-left: 4rem;
         font-size: 1.2rem;
+        ul li{
+            list-style: none;
+        }
     }
     &__name{
         font-weight: bold;
@@ -27,10 +28,12 @@
     &__nameWrap{
         display: flex;
         align-items: center;
+        margin-bottom: 1rem;
     }
 	&__userImg {
 		img {
-            width: 14rem;
+            width: 13rem;
+            height: 13rem;
             border-radius: 100%;
 		}
 	}
@@ -45,9 +48,11 @@
     }
     &__userTitle{
         margin: 0 0 1rem 0;
+        font-size: 1.4rem;
     }
     &__comment{
         margin-bottom: 1rem;
+        font-size: 1.4rem;
     }
     &__tab{
         width: 74rem;
@@ -67,6 +72,8 @@
         border: 1px solid $blurColor;
     }
     &__topicWrap{
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
         a{
             color: $accentColor;
 
@@ -79,8 +86,13 @@
         margin-right: 1rem;
     }
     &__url{
+        span{
+            background: #fff;
+            padding: 3px 12px;
+            border-radius: 10px
+        }
         a{
-        color: $accentColor;
+            color: $accentColor;
         }
     }
     &__edit{
@@ -89,5 +101,11 @@
         border:1px solid $baseColor;
         color:$baseColor;
         border-radius: .5rem;
+    }
+    &__follow{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
     }
 }
