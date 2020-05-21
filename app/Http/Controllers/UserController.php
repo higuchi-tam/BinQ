@@ -115,30 +115,16 @@ class UserController extends Controller
 
     public function update(UserRequest $request, User $user, string $name)
     {
-
         $user = User::where('name', $name)->first();
-        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
-        $auth_user = Auth::user();
         $user->title = $request->title;
         $user->comment = $request->comment;
         $user->url = $request->url;
         $user->twitter_url = $request->twitter_url;
         $user->facebook_url = $request->facebook_url;
         $user->instagram_url = $request->instagram_url;
-        $articles = $user->articles->sortByDesc('created_at');
-        if ($request->profile_photo !== null) {
-            $request->profile_photo->storeAs('public/user_images', $user->id . '.jpg');
-            $user->profile_photo = $user->id . '.jpg';
-        }
         $user->fill($request->all())->save();
 
-
-        return view('users.show', [
-            'user' => $user,
-            'articles' => $articles,
-            'auth_user' => $auth_user,
-            'users' => $users,
-        ]);
+        return redirect()->route('users.show', $name);
     }
 
     public function likes(string $name)
