@@ -1790,7 +1790,7 @@ input {
 }
 
 .l-tabs {
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
 }
 
 .p-topbaner__container {
@@ -3790,7 +3790,7 @@ input {
 .p-tab__wrap {
   list-style: none;
   display: flex;
-  margin-bottom: 8rem;
+  margin-bottom: 1rem;
   padding: 0;
 }
 
