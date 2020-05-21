@@ -17,7 +17,7 @@
         </div>
 
         <div class="l-tabs">
-            @include('layouts.tabs',['currentPage'=> "articlex.index"])
+            @include('layouts.tabs',['currentPage'=> "articles.index"])
         </div>
 
         <div class="c-3col__container u-mb40 l-container">

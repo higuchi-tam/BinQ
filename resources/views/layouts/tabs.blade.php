@@ -1,7 +1,7 @@
 <ul class="p-tab__wrap">
     <li class="p-tab__item">
         <a class="p-tab__link {{ $currentPage === "articles.index"  ? 'tab-active' : '' }}"
-            href="{{ route('articles.index', ['name' => $user->name]) }}">
+            href="{{ route('articles.index') }}">
             最新の記事
         </a>
     </li>
