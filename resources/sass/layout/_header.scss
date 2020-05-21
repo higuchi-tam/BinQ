@@ -11,10 +11,10 @@
         padding: 0 5vw;
     }
     @include mq(md) {
-        height: 15vw;
     }
     &__title {
         font-size: 3.2rem;
+        line-height: 1;
         a {
             color: #555555;
         }
@@ -22,8 +22,7 @@
             @include fz_vw(32);
         }
         @include mq(md) {
-            @include fz_vw(42);
-            padding-left: 3vw;
+            @include fz_vw(90);
         }
     }
     &__menuWrap {
@@ -91,7 +90,7 @@
                 background: #802d4b;
             }
             @include mq(md) {
-                height: 2.5rem;
+                display: none;
             }
             img {
                 width: 2rem;
