@@ -5,7 +5,7 @@
 .l-header {
     width: 1000px;
     height: 100px;
-    margin: 0 auto 3rem;
+    margin: 0 auto;
     @include mq(lg) {
         width: 100%;
         padding: 0 5vw;
@@ -13,16 +13,16 @@
     @include mq(md) {
     }
     &__title {
-        font-size: 3.2rem;
+        font-size: 4rem;
         line-height: 1;
         a {
             color: #555555;
         }
-        @include mq(lg) {
-            @include fz_vw(32);
-        }
-        @include mq(md) {
-            @include fz_vw(90);
+        // @include mq(lg) {
+        //     @include fz_vw(32);
+        // }
+        @include mq(sp-only) {
+            font-size: 10.6vw;
         }
     }
     &__menuWrap {
@@ -47,7 +47,6 @@
         }
     }
     &__item {
-        // width: 50%;
         height: 100%;
         text-align: center;
         transition: all 0.3s;
@@ -58,6 +57,9 @@
         }
         &:first-child{
             margin-right: 4rem;
+            @include mq(sp-only) {
+            margin-right: 2rem;
+            }
             &:hover {
                 text-decoration: underline;
             }
@@ -115,6 +117,10 @@
             border-radius: 3rem;
             color: $accentColor;
             transition: all .3s;
+            @include mq(sp-only) {
+                font-size: 1.2rem;
+                padding: .8rem 2rem;
+            }
             &:visited{
                 color: $accentColor;
             }
@@ -155,7 +161,8 @@
                 transform: rotate(-135deg);
             }
         }
-        &--item{
+        &--postText{
+            color: #444;
         }
     }
     &__button {
@@ -176,6 +183,18 @@
         &:hover {
             text-decoration: underline;
             translate: all 0.3s;
+        }
+        &--post{
+            display: none;
+            @include mq(md) {
+                display: flex;
+            }
+            img{
+                @include mq(md) {
+                    width: 2rem;
+                }
+
+            }
         }
     }
     &__userImg{

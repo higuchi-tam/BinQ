@@ -19,6 +19,7 @@ require("./components/modalArticle");
 require("./components/formSubmit");
 require("./components/resizeImg");
 require("./components/exitPopup");
+require("./components/getUserDetailHeight");
 
 //vueコンポーネントを使用する
 const app = new Vue({

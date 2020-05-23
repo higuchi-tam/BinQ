@@ -1,16 +1,30 @@
 <div class="p-user_detail__userContainer">
-    <figure class="p-user_detail__userImg">
-        <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
-            @include('users.icon',['target_user' => $user])
-        </a>
-    </figure>
-
-    <div class="p-user_detail__wrap">
+    <div id="js-detail__top" class="p-user_detail__top">
+        <figure class="p-user_detail__userImg">
+            <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
+                @include('users.icon',['target_user' => $user])
+            </a>
+        </figure>
+        <div class="p-user_detail__name">
+            {{ $user->name }}
+        </div>
+        {{-- フォローボタンorプロフィール編集ボタン --}}
+        @auth
+        @if( Auth::id() !== $user->id )
+        <div class="p-user_detail__follow">
+            <follow-button class="ml-auto" :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
+                :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['name' => $user->name]) }}">
+            </follow-button>
+        </div>
+        @elseif( Auth::id() == $user->id )
+        <a href="{{ route("users.edit", ['name' => $user->name]) }}" class="p-user_detail__edit">変更</a>
+        @endif
+        @endauth
+    </div>
+    <div id="js-detail__top-right" class="p-user_detail__top-right">
         <ul>
             <li class="p-user_detail__nameWrap">
-                <div class="p-user_detail__name">
-                    {{ $user->name }}
-                </div>
+
                 <ul class="l-footer__snsList p-user_detail__snsList">
                     <li class="l-footer__snsItem p-user_detail__snsItem">
                         <a href="{{ $user->twitter_url}}" target="blank"><img src="/images/tw.svg" alt=""></a>
@@ -23,15 +37,16 @@
                     </li>
                 </ul>
 
-                {{-- プロフィール編集 --}}
-                @if( Auth::id() == $user->id )
-                <a href="{{ route("users.edit", ['name' => $user->name]) }}" class="p-user_detail__edit">変更</a>
-                @endif
+
 
             </li>
             　　<li class="p-user_detail__userTitle">
                 {{ $user->title }}
             </li>
+        </ul>
+    </div>
+    <div id="js-detail__bottom" class="p-user_detail__bottom">
+        <ul>
             <li class="p-user_detail__topicWrap">
                 <span class="p-user_detail__topicNum">記事数　<span>{{ $myArticles->count() }}</span></span>
                 <span class="p-user_detail__followNum">
@@ -54,11 +69,6 @@
             </li>
         </ul>
     </div>
-    @if( Auth::id() !== $user->id )
-    <div class="p-user_detail__follow">
-        <follow-button class="ml-auto" :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
-            :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['name' => $user->name]) }}">
-        </follow-button>
-    </div>
-    @endif
+
+
 </div>

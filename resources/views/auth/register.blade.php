@@ -15,7 +15,7 @@
 
             <form method="POST" action="{{ route('register') }}" class="p-register--border u-mb20">
                 @csrf
-                <div class="p-login__formGroup">
+                <div class="p-login__formGroup u-mb20">
                     <p class="p-register__formTxt">メールアドレス</p>
                     <input class="p-login__formItem" placeholder="メールアドレス" autocomplete="email" type="email"
                         name="email" value="{{ old('email') }}" required>
@@ -25,14 +25,14 @@
                     <strong>{{ $errors->first('email') }}</strong>
                 </span>
                 @endif
-                <div class="p-login__formGroup">
+                <div class="p-login__formGroup u-mb20">
                     　<p class="p-register__formTxt">ユーザーネーム（任意）</p>
                     <input class="p-login__formItem" placeholder="ユーザーネーム" type="text" name="name"
                         value="{{ old('name') }}" required autofocus>
-                    <small>英数字5〜16文字(登録後の変更はできません)</small>
+                    <small class="p-register__formSubTxt">英数字5〜16文字<br class="sp">(登録後の変更はできません)</small>
                 </div>
 
-                <div class="p-login__formGroup">
+                <div class="p-login__formGroup u-mb20">
                     　<p class="p-register__formTxt">パスワード</p>
                     <input class="p-login__formItem" placeholder="パスワード" autocomplete="off" type="password"
                         name="password" required>
@@ -42,7 +42,7 @@
                     <strong>{{ $errors->first('password') }}</strong>
                 </span>
                 @endif
-                <div class="p-login__formGroup">
+                <div class="p-login__formGroup u-mb20">
                     　<p class="p-register__formTxt">パスワード（確認）</p>
                     <input class="p-login__formItem" placeholder="パスワードの確認" autocomplete="off" type="password"
                         name="password_confirmation" required>
@@ -60,11 +60,12 @@
             <div class="c-button__sns p-register--border">
                 <p class="p-register__snsTtile">ソーシャルアカウントで登録</p>
                 <a href="" class="c-button__sns--tw">Twitterで登録</a>
-                <a href="" class="c-button__sns--ins u-mb20">Instagramで登録</a>
+                <a href="/login/facebook" class="c-button__sns--fb">Facebookで登録</a>
+                <a href="/login/google" class="c-button__sns--gg u-mb20">Googleで登録</a>
             </div>
 
             <p class="p-register__loginLink">
-                アカウントをお持ちですか？
+                アカウントをお持ちですか？<br>
                 <a href="/login">ログインする</a>
             </p>
         </div>
