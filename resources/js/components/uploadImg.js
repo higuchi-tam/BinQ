@@ -18,6 +18,7 @@ $(function () {
         $cropTarget : $('#js-resize__img'),
         $cropModal : $('#js-image__modal'),
         $headerImgFile: $('#js-upload-mainImg'),
+        isUserEdit: $('#js-edit_user').length
     }
     
 //==========================================================
@@ -128,7 +129,7 @@ $('#js-resize__ok').on('click', function () {
         $headerImgFile: _options.$headerImgFile,
 
         //プロフィール編集かコンテンツ編集かどうかの判定
-        isUserEdit : $('#js-edit_user')
+        isUserEdit: _options.isUserEdit
     }
 
     //トリミングしたデータをformDataにセットする

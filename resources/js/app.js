@@ -87,5 +87,5 @@ $(document).ready(() => {
     });
     //画像追加ボタンDOM生成
     createImgBtnDom();
-    $('.js-quill-editor').css('height', '55rem');
+    $('.js-quill-editor').css('max-height', '55rem');
 });

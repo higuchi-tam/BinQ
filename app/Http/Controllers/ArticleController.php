@@ -121,6 +121,7 @@ class ArticleController extends Controller
 
         $article = new Article();
         $article->user_id = $user->id;
+        $article->open_flg = 1;
         $article->save();
 
         return view('articles.create', [

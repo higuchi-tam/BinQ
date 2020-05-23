@@ -1790,12 +1790,19 @@ input {
 }
 
 .l-article_post {
-  width: 68rem;
+  max-width: 68rem;
 }
 
 .l-article_post__sidebar {
   padding: 9rem 0;
   height: 100%;
+}
+
+@media screen and (max-width: 1028px) {
+  .l-article_post__sidebar {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .l-sidebar {
@@ -3075,8 +3082,10 @@ input {
   border: none;
   background-color: none;
   background-size: cover;
-  width: 68rem;
-  height: 68rem;
+  max-width: 68rem;
+  max-height: 68rem;
+  width: 91.4vw;
+  height: 91.4vw;
 }
 
 .p-form__image--user.hasImg {
@@ -3133,9 +3142,23 @@ input {
   background: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .p-form__image__modal {
+    width: 30rem;
+    height: 37.5rem;
+  }
+}
+
 .p-form__image__modal__inner {
   width: 37.5rem;
   height: 37.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-form__image__modal__inner {
+    width: 30rem;
+    height: 30rem;
+  }
 }
 
 .p-form__image__modal__btns {
