@@ -7,12 +7,19 @@
 		text-align: left;
 		margin: 0;
 	}
+	&__formSubTxt{
+		font-size: 1.14rem;
+	}
 	&__radioWrap {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-bottom: 1rem;
 		a {
-			color: #aaaaaa;
+			color: #a73b65;
+			&:visited{
+				color: #a73b65;
+			}
 			&:hover {
 				text-decoration: underline;
 			}
@@ -21,7 +28,6 @@
 
 	&__radionItem {
 		position: relative;
-		left: 1rem;
 	}
 
 	&--border {
@@ -31,9 +37,11 @@
 	&__snsTtile {
 		font-size: 1.6rem;
 		font-weight: bold;
+		margin-bottom: 1rem;
 	}
 
 	&__loginLink {
+		font-size: 1.4rem;
 		a {
 			color: #aaaaaa;
 			&:hover {

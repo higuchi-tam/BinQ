@@ -47,26 +47,33 @@
     }
     &__sns {
         text-align: center;
-        &--tw {
+        margin-bottom: 2rem;
+        a{
             display: block;
-            background-color: #1da1f2;
             color: #fff;
             height: 4.5rem;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
             line-height: 4.5rem;
             margin-bottom: 1rem;
             border-radius: 0.3rem;
+            background-repeat: no-repeat;
         }
-        &--ins {
-            display: block;
-            background: linear-gradient(45deg, #4c64d3, #cf2e92 70%);
-            color: #fff;
-            height: 4.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            line-height: 4.5rem;
-            border-radius: 0.3rem;
+        &--tw {
+            background-color: #1da1f2;
+            background-image: url('/images/tw-modal.svg');
+            background-position: 1.5rem 1.2rem;
+        }
+        &--fb {
+            background-color: #3C5A99;
+            background-image: url('/images/fb-login.svg');
+            background-position: 0 -0.2rem;
+            background-size: 5rem;
+        }
+        &--gg {
+            background-color: #DD5144;
+            background-image: url('/images/google.svg');
+            background-position: 1.4rem 1.1rem;
         }
     }
 
@@ -79,7 +86,7 @@
         background-color: $accentColor;
         color: #fff;
         height: 4.5rem;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         font-weight: bold;
         line-height: 4.5rem;
         -webkit-appearance: none;
@@ -94,7 +101,7 @@
         background-color: $accentColor;
         color: #fff;
         height: 4.5rem;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         font-weight: bold;
         line-height: 4.5rem;
         -webkit-appearance: none;

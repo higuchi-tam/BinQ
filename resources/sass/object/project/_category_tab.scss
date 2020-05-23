@@ -1,6 +1,11 @@
 .p-categoryTab{
     display: flex;
     border-bottom: 1px solid #ddd;
+     @include mq(md) {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+		}
     &__item{
         list-style: none;
         padding: 1rem 1.5rem;

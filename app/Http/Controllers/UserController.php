@@ -124,7 +124,7 @@ class UserController extends Controller
         $user->instagram_url = $request->instagram_url;
         $user->fill($request->all())->save();
 
-        return redirect()->route('users.show', $name);
+        return redirect()->route('users.show', $user->name);
     }
 
     public function likes(string $name)

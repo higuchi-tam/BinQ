@@ -8,7 +8,11 @@
         display: flex;
         margin-bottom: 1rem;
         padding: 0;
-
+        @include mq(md) {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+		}
     }
     &__item{
         border: 1px solid $baseColor;

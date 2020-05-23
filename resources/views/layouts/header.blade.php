@@ -35,6 +35,12 @@
                                 class="l-header__button">マイページ</a>
                         </li>
                         <li class="l-header__dropdown--item">
+                            <a class="l-header__button l-header__button--post" href="{{ route('articles.create')}}">
+                                <img src="/images/scissors-logo-sp.svg" alt="">
+                                <span class="l-header__dropdown--postText">投稿</span>
+                            </a>
+                        </li>
+                        <li class="l-header__dropdown--item">
                             <a href="{{ route("users.edit", ['name' => $user->name]) }}"
                                 class="l-header__button">アカウント設定</a>
                         </li>
