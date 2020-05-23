@@ -3,7 +3,7 @@
 // =========================================
 
 .l-sidebar{
-    width: 30rem;
+    max-width: 30rem;
     padding: 3rem 0 0 6rem;
     @include mq(md) {
         padding: 0;
