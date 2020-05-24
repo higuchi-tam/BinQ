@@ -1,14 +1,17 @@
 .p-article_show{
-    width: 680px;
+    max-width: 68rem;
     margin-bottom: 2rem;
     &__inner{
         position: relative;
         border-bottom: 1px solid #ccc;
     }
+    &__titleWrap{
+        display: flex;
+        justify-content: space-between;
+    }
     &__title{
         font-size: 3.2rem;
         line-height: 1.7;
-        padding-top: 2rem;
         margin-bottom: 2.4rem;
         letter-spacing: 0.96px;
         font-weight: bold;  
@@ -16,6 +19,9 @@
     &__tag_date{
         display: flex;
         justify-content: space-between;
+        @include mq(md) {
+        flex-direction: column;
+    	}
     }
     &__tag{
         height: 4rem;
@@ -24,6 +30,9 @@
             color: $baseColor;
             font-size: 1.6rem;
             margin-left: 1rem;
+            &:first-child{
+                margin-left: 0;
+            }
         }
     }
     &__date{
@@ -49,13 +58,13 @@
     &__img{
         display: flex;
         justify-content: center;
-        // height: 68rem;
         margin-top: 1.2rem;
         img{
             width: 100%;
         }
     }
     &__body{
+        border-top: 1px solid #ccc;
         margin-top: 4rem;
     }
     &__footer{

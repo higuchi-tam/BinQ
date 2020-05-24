@@ -1755,7 +1755,7 @@ input {
   .l-2col {
     display: block;
     justify-content: center;
-    padding: 0 1.6rem;
+    padding: 0 5vw;
   }
 }
 
@@ -2439,9 +2439,8 @@ input {
 }
 
 .p-article__icon {
-  position: absolute;
-  right: 1.5rem;
-  top: 0;
+  padding-top: 0.8rem;
+  padding-left: 1rem;
 }
 
 .p-modal__bg {
@@ -2536,7 +2535,7 @@ input {
 }
 
 .p-article_show {
-  width: 680px;
+  max-width: 68rem;
   margin-bottom: 2rem;
 }
 
@@ -2545,10 +2544,14 @@ input {
   border-bottom: 1px solid #ccc;
 }
 
+.p-article_show__titleWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
 .p-article_show__title {
   font-size: 3.2rem;
   line-height: 1.7;
-  padding-top: 2rem;
   margin-bottom: 2.4rem;
   letter-spacing: 0.96px;
   font-weight: bold;
@@ -2557,6 +2560,12 @@ input {
 .p-article_show__tag_date {
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .p-article_show__tag_date {
+    flex-direction: column;
+  }
 }
 
 .p-article_show__tag {
@@ -2568,6 +2577,10 @@ input {
   color: #444;
   font-size: 1.6rem;
   margin-left: 1rem;
+}
+
+.p-article_show__tag a:first-child {
+  margin-left: 0;
 }
 
 .p-article_show__date {
@@ -2605,6 +2618,7 @@ input {
 }
 
 .p-article_show__body {
+  border-top: 1px solid #ccc;
   margin-top: 4rem;
 }
 
@@ -3814,6 +3828,11 @@ input {
   top: 1.6rem;
 }
 
+.js-quill-editor.ql-container.ql-snow {
+  height: 30rem;
+  max-height: 55rem;
+}
+
 .p-register__formTxt {
   text-align: left;
   margin: 0;
@@ -4092,7 +4111,7 @@ input {
 
 .p-user_article__userContainer {
   display: flex;
-  width: 68rem;
+  max-width: 68rem;
   margin-right: 1rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -4108,6 +4127,12 @@ input {
 .p-user_article__wrap {
   padding: 1rem 0;
   margin-left: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-user_article__wrap {
+    margin-left: 0;
+  }
 }
 
 .p-user_article__user {

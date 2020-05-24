@@ -5,7 +5,7 @@
 .p-user_article {
 	&__userContainer {
         display: flex;
-        width: 68rem;
+        max-width: 68rem;
         margin-right: 1rem;
         padding-top: 5rem;
         padding-bottom: 5rem;
@@ -17,6 +17,9 @@
     &__wrap{
         padding: 1rem 0;
         margin-left: 4rem;
+        @include mq(md) {
+			margin-left: 0;
+		}
     }
     &__user{
         display: flex;

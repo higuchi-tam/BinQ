@@ -295,7 +295,6 @@ class ArticleController extends Controller
                 Log::debug($newPath);
 
                 $image = Image::make(storage_path("app/public/$temporaryPath"))->crop($w, $h, $x, $y);
-                Log::debug('ここまで');
                 $image->save(storage_path("app/public/$newPath"));
 
                 $article->img = $newPath;

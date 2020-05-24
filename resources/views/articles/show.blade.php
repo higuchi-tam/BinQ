@@ -8,10 +8,16 @@
     <section class="l-2col--main u-mb80">
         <div class="p-article_show">
             <div class="p-article_show__inner">
+                <div class="p-article_show__titleWrap">
+                    <div class="p-article_show__title">{{ $article->title }}</div>
 
-                <div class="p-article_show__title">{{ $article->title }}</div>
-
-                {{-- 編集・削除ボタン --}}
+                    {{-- 編集・削除ボタン --}}
+                    @if( Auth::id() === $article->user->id )
+                    <div class="p-article__icon js-article__icon">
+                        <img src="/images/action-icon.svg" alt="" width="15" height="15">
+                    </div>
+                    @endif
+                </div>
                 @if( Auth::id() === $article->user->id )
                 <div class="p-article__actions js-article__action">
                     <ul>
@@ -31,9 +37,6 @@
                     </ul>
                 </div>
 
-                <div class="p-article__icon js-article__icon">
-                    <img src="/images/action-icon.svg" alt="" width="15" height="15">
-                </div>
                 {{-- 削除ボタン押したときのモーダル --}}
                 <div class="p-article__action__overlay js-article__action__overlay"></div>
                 <div class="p-comment__modal" id="js-comment__modal">
