@@ -109,8 +109,8 @@
                                 value="{{ old('facebook_url',$user->facebook_url) }}" name="facebook_url" />
                         </div>
 
-                        <div class="u-mb20">
-                            <label for="instagram_url">Instagram</label><br>
+                        <div class="u-mb40">
+                            <label for="instagram_url">Google</label><br>
                             <input autofocus="autofocus" class="p-form__item" type="text"
                                 value="{{ old('instagram_url',$user->instagram_url) }}" name="instagram_url" />
                         </div>

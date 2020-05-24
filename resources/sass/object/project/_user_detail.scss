@@ -29,10 +29,6 @@
         height: fit-content;
     }
     &__bottom{
-        margin-left: 17rem;
-        @include mq(md) {
-            margin-left: 0;
-        }
     }
     &__name{
         font-weight: bold;

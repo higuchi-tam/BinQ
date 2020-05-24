@@ -112,7 +112,13 @@ export default {
 .vue-tags-input .ti-tag::before {
   content: "#";
 }
-
+li.ti-item.ti-valid {
+  font-size: 14px;
+  padding: 5px;
+}
+li.ti-item.ti-valid.ti-selected-item {
+  background: #a73b65;
+}
 .vue-tags-input .ti-autocomplete {
   display: none;
 }

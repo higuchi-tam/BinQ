@@ -98,9 +98,14 @@
                 border-radius: 5px;
                 margin-right: 1rem;
                 font-size: 1.6rem;
+                border: none;
+                cursor: pointer;
                 &.ok{
                     background: $accentColor;
                     color: #fff;
+                    &:hover{
+                        background:#802d4b;
+                    }
                 }
             }
         }
@@ -149,7 +154,7 @@
     }
     &__container{
         width: 300px;
-        margin: 0 auto;
+        margin: 0 auto 8rem;
 
     }
     &__label{

@@ -3189,11 +3189,17 @@ input {
   border-radius: 5px;
   margin-right: 1rem;
   font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
 }
 
 .p-form__image__modal__btn.ok {
   background: #a73b65;
   color: #fff;
+}
+
+.p-form__image__modal__btn.ok:hover {
+  background: #802d4b;
 }
 
 .p-form__title {
@@ -3249,7 +3255,7 @@ input {
 
 .p-form__container {
   width: 300px;
-  margin: 0 auto;
+  margin: 0 auto 8rem;
 }
 
 .p-form__label {
@@ -3890,7 +3896,7 @@ input {
 .p-tab__wrap {
   list-style: none;
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   padding: 0;
 }
 
@@ -4225,16 +4231,6 @@ input {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.p-user_detail__bottom {
-  margin-left: 17rem;
-}
-
-@media screen and (max-width: 768px) {
-  .p-user_detail__bottom {
-    margin-left: 0;
-  }
 }
 
 .p-user_detail__name {
