@@ -1,6 +1,5 @@
 
 function setBottomMarginTop() {
-    console.log('発動');
     let topHeight = $('#js-detail__top').innerHeight();
     let topRightHeight = $('#js-detail__top-right').outerHeight();
     const $bottom = $('#js-detail__bottom');

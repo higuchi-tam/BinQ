@@ -7,15 +7,19 @@
       placeholder="タグを5個まで入力できます"
       :autocomplete-items="filteredItems"
       :add-only-from-autocomplete="true"
+      :autocomplete-always-open="true"
       :add-on-key="[13, 32]"
       :max-tags="maxTags"
       @tags-changed="tagChanged"
+      @focus="showAutoComplete"
     />
+    <div id="js-tag_overlay" class="vue-tag-input-overlay" @click="hideAutoComplete"></div>
   </div>
 </template>
 
 <script>
 import VueTagsInput from "@johmun/vue-tags-input";
+
 export default {
   components: {
     VueTagsInput
@@ -56,6 +60,14 @@ export default {
     checkTag(obj) {
       if (this.tags.length >= 5) alert("タグは5つまでです");
       else obj.addTag();
+    },
+    showAutoComplete() {
+      $(".ti-autocomplete").show();
+      $("#js-tag_overlay").show();
+    },
+    hideAutoComplete() {
+      $(".ti-autocomplete").hide();
+      $("#js-tag_overlay").hide();
     }
   },
   computed: {
@@ -73,6 +85,7 @@ export default {
   }
 };
 </script>
+
 <style lang="css" scoped>
 .vue-tags-input {
   max-width: inherit;
@@ -98,5 +111,18 @@ export default {
 }
 .vue-tags-input .ti-tag::before {
   content: "#";
+}
+
+.vue-tags-input .ti-autocomplete {
+  display: none;
+}
+
+.vue-tag-input-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
 }
 </style>
