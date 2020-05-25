@@ -17,7 +17,10 @@ Auth::routes();
 Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/', 'ArticleController@index')->name('articles.index');
+//TOPページ
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/articles', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/articles', 'ArticleController')->only(['show']);
 Route::get('/likeIndex', 'ArticleController@likeIndex')->name('likeIdex');
@@ -26,6 +29,7 @@ Route::prefix('articles')->name('articles.')->group(function () {
     Route::delete('/{article}/like', 'ArticleController@unlike')->name('unlike')->middleware('auth');
     Route::get('/card_side', 'ArticleController@card_side')->name('card_side');
     Route::post('/ajaxImgUpload', 'ArticleController@ajaxImgUpload')->name('ajaxImgUpload');
+    Route::post('/ajaxUpdate', 'ArticleController@ajaxUpdate')->name('ajaxUpdate');
 });
 //コメント
 Route::post('/comment/{article_id}/store', 'CommentsController@store')->name('comments.store');

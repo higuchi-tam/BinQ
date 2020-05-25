@@ -1,3 +1,7 @@
+@extends('layouts.app')
+@include('layouts.header')
+@include('layouts.footer')
+
 @section('top_baner')
 <div class="">
     <div class="p-topbaner__container">

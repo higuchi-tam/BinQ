@@ -2,7 +2,11 @@
 
 <nav class="l-header">
     <div class="l-header__nav">
-        <h1 class="l-header__title"><a href="/">BinQ</a></h1>
+        <h1 class="l-header__title">
+            @auth<a href="{{ route('articles.index') }}">BinQ</a>@endauth
+            @guest<a href="{{ route('home') }}">BinQ</a>@endguest
+
+        </h1>
         <span class="navbar-toggler-icon"></span>
         <div class="l-header__menuWrap" id="">
             <ul class="l-header__menu">
@@ -41,7 +45,7 @@
                             </a>
                         </li>
                         <li class="l-header__dropdown--item">
-                            <a href="{{ route("users.edit", ['name' => $user->name]) }}"
+                            <a href="{{ route("users.edit", ['name' => $auth_user->name]) }}"
                                 class="l-header__button">アカウント設定</a>
                         </li>
                         <li class="l-header__dropdown--item">

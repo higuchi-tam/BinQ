@@ -1791,23 +1791,31 @@ input {
 
 .l-article_post {
   max-width: 68rem;
+  width: 100%;
 }
 
 .l-article_post__sidebar {
-  padding: 9rem 0;
-  height: 100%;
+  padding: 9rem 0 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
 }
 
 @media screen and (max-width: 1028px) {
   .l-article_post__sidebar {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 2rem;
+    top: auto;
+    padding: 0;
   }
 }
 
 .l-sidebar {
-  max-width: 30rem;
   padding: 3rem 0 0 6rem;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -1818,7 +1826,14 @@ input {
 
 @media screen and (max-width: 1028px) {
   .l-sidebar {
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
   }
 }
 
@@ -1916,6 +1931,10 @@ input {
 }
 
 @media screen and (max-width: 768px) {
+  .p-topbaner__mainImg {
+    margin-bottom: 3rem;
+  }
+
   .p-topbaner__mainImg img {
     position: relative;
     padding-left: 8vw;
@@ -1947,7 +1966,8 @@ input {
 
 .c-btn__round {
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: bold;
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -1967,6 +1987,10 @@ input {
   top: 50%;
   right: 2rem;
   margin-top: -4px;
+}
+
+.c-btn__round:visited {
+  color: #ffffff;
 }
 
 .c-btn__round:hover {
@@ -2656,10 +2680,31 @@ input {
   background: none;
   border: 1px solid #444;
   color: #444;
+  font-size: 1.4rem;
 }
 
 .p-article_sidebar__btn--open {
   margin-left: 1.6rem;
+}
+
+.p-article_sidebar__msg {
+  font-weight: bold;
+  color: #a73b65;
+  position: absolute;
+  top: 6.5rem;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1028px) {
+  .p-article_sidebar__msg {
+    font-size: 1.2rem;
+    position: static;
+  }
+}
+
+.p-article_sidebar__msg--saving {
+  display: none;
+  color: #ccc;
 }
 
 .pagination {
@@ -2750,6 +2795,14 @@ input {
 
 .p-categoryTab__item:not(:last-child) {
   border-right: none;
+}
+
+.p-categoryTab__link {
+  color: #777;
+}
+
+.p-categoryTab__link:visited {
+  color: #777;
 }
 
 .p-categoryTab__link.tab-active {
@@ -3208,6 +3261,12 @@ input {
   font-size: 2rem;
 }
 
+@media screen and (max-width: 768px) {
+  .p-form__title {
+    margin-bottom: 1rem;
+  }
+}
+
 .p-form__title textarea {
   width: 100%;
   border: none;
@@ -3222,6 +3281,12 @@ input {
 
 .p-form__tag {
   margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-form__tag {
+    margin-bottom: 1rem;
+  }
 }
 
 .p-form__tag vue-tags-input {
@@ -3835,7 +3900,7 @@ input {
 }
 
 .js-quill-editor.ql-container.ql-snow {
-  height: 30rem;
+  min-height: 30rem;
   max-height: 55rem;
 }
 
