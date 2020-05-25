@@ -62,6 +62,9 @@
             </div>
             {{-- コメント編集・削除ボタン表示時の、キャンセル用オーバーレイ --}}
             <div class="p-comment__action__overlay js-comment__action__overlay"></div>
+            <comment-like :initial-is-liked-by='@json($comment->isLikedBy(Auth::user()))'
+                :initial-count-likes='@json($comment->count_likes)' :authorized='@json(Auth::check())'
+                endpoint="{{ route('comments.like', ['comment' => $comment]) }}"></comment-like>
         </div>
         @endforeach
     </div>

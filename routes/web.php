@@ -32,9 +32,13 @@ Route::prefix('articles')->name('articles.')->group(function () {
     Route::post('/ajaxUpdate', 'ArticleController@ajaxUpdate')->name('ajaxUpdate');
 });
 //コメント
-Route::post('/comment/{article_id}/store', 'CommentsController@store')->name('comments.store');
-Route::post('/comment/{id}/delete', 'CommentsController@destroy')->name('comments.destroy');
-Route::post('/comment/{id}/update', 'CommentsController@update')->name('comments.update');
+Route::prefix('comment')->name('comments.')->group(function () {
+    Route::post('/{article_id}/store', 'CommentsController@store')->name('store');
+    Route::post('/{id}/delete', 'CommentsController@destroy')->name('destroy');
+    Route::post('/{id}/update', 'CommentsController@update')->name('update');
+    Route::put('/{comment}/like', 'CommentsController@like')->name('like')->middleware('auth');
+    Route::delete('/{comment}/like', 'CommentsController@unlike')->name('unlike')->middleware('auth');
+});
 
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 

@@ -1689,6 +1689,7 @@ input {
 
 .l-header__dropdown--postText {
   color: #444;
+  padding-left: 1rem;
 }
 
 .l-header__button {
@@ -1698,6 +1699,7 @@ input {
   height: 100%;
   color: #444;
   text-align: left;
+  font-size: 1.4rem;
   cursor: pointer;
   background: none;
   border: none;
@@ -1825,7 +1827,7 @@ input {
 }
 
 @media screen and (max-width: 1028px) {
-  .l-sidebar {
+  .l-sidebar__article {
     display: flex;
     justify-content: center;
     height: 80px;
@@ -1844,7 +1846,7 @@ input {
 .p-topbaner__container {
   width: 100%;
   max-width: 120rem;
-  margin: 0 auto;
+  margin: 0 auto 10rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2693,6 +2695,7 @@ input {
   position: absolute;
   top: 6.5rem;
   font-size: 1.4rem;
+  display: none;
 }
 
 @media screen and (max-width: 1028px) {
@@ -4289,6 +4292,7 @@ input {
 .p-user_detail__top {
   display: flex;
   position: relative;
+  max-width: 45rem;
 }
 
 .p-user_detail__top-right {

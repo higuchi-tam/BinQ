@@ -61,4 +61,34 @@ class CommentsController extends Controller
         $comment->delete();
         return redirect()->back();
     }
+
+    public function like(Request $request, Comment $comment)
+    {
+        Log::debug('<<<<  comment like  >>>>>>');
+        Log::debug('request');
+        Log::debug($request);
+
+        $comment->likes()->detach($request->user()->id);
+        $comment->likes()->attach($request->user()->id);
+        $auth_user = Auth::user();
+
+        return [
+            'id' => $comment->id,
+            'countLikes' => $comment->count_likes,
+            'auth_user' => $auth_user,
+        ];
+    }
+
+    public function unlike(Request $request, Comment $comment)
+    {
+        Log::debug('<<<<  comment unlike  >>>>>>');
+        Log::debug('request');
+        Log::debug($request);
+        $comment->likes()->detach($request->user()->id);
+
+        return [
+            'id' => $comment->id,
+            'countLikes' => $comment->count_likes,
+        ];
+    }
 }
