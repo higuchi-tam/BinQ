@@ -114,6 +114,9 @@
         width: 100%;
         margin-bottom: 2rem;
         font-size: 2rem;
+        @include mq(md) {
+            margin-bottom: 1rem;
+        }
         textarea {
             width: 100%;
             border: none;
@@ -127,6 +130,9 @@
     }
     &__tag{
         margin-bottom: 4rem;
+        @include mq(md) {
+            margin-bottom: 1rem;
+        }
         vue-tags-input{
             border: none;
         }

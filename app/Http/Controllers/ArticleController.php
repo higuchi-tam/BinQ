@@ -119,6 +119,7 @@ class ArticleController extends Controller
         $user = Auth::user();
         $auth_user = Auth::user();
 
+        //インスタンスをnewし、下書き状態でviewへ渡す
         $article = new Article();
         $article->user_id = $user->id;
         $article->open_flg = 1;
@@ -306,5 +307,31 @@ class ArticleController extends Controller
         }
 
         return response()->json($response);
+    }
+    public function ajaxUpdate(Request $request, Article $article)
+    {
+        Log::debug('<<< ajaxupdate >>>>');
+        Log::debug('<<< $request >>>>');
+        Log::debug($request);
+
+        $tags = $request->tags;
+
+        $article = Article::find($request->article_id);
+        $article->fill($request->all())
+            ->save();
+
+        if ($tags) {
+            $article->tags()->detach();
+            $request->tags->each(function ($tagName) use ($article) {
+                $tag = Tag::firstOrCreate(['name' => $tagName]);
+                $article->tags()->attach($tag);
+            });
+        }
+
+        //不要な画像削除する（Controller内で定義した関数を呼び出す）
+        $this->deleteImg($article);
+
+        $updated_at = $article->updated_at->format('H:i');
+        return response()->json($updated_at);
     }
 }

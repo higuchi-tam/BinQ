@@ -20,6 +20,7 @@ require("./components/formSubmit");
 require("./components/resizeImg");
 require("./components/exitPopup");
 require("./components/getUserDetailHeight");
+require("./components/autoSave");
 
 //vueコンポーネントを使用する
 const app = new Vue({
@@ -39,7 +40,8 @@ Quill.prototype.getHtml = function() {
 }
 
 $(document).ready(() => {
-        $('.js-quill-editor').each((index, e) => {
+    const $Editor = $('.js-quill-editor');
+        $Editor.each((index, e) => {
             const $target  = $($(e).data('target'))
             window.Delta = Quill.import('delta');
             window.editor = new Quill(e, {
@@ -87,6 +89,5 @@ $(document).ready(() => {
     });
     //画像追加ボタンDOM生成
     createImgBtnDom();
-    $('.js-quill-editor').css('height', '30rem');
-    $('.js-quill-editor').css('max-height', '55rem');
 });
+

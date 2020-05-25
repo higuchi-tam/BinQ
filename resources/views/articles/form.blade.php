@@ -43,7 +43,8 @@
                     </div>
 
                     <div class="p-form__title">
-                        <textarea name="title" placeholder="タイトル記入欄">{{ old('title') ?? $article->title }}</textarea>
+                        <textarea id="js-title" name="title"
+                            placeholder="タイトル記入欄">{{ old('title') ?? $article->title }}</textarea>
                     </div>
 
                     <div class="p-form__tag">
@@ -54,10 +55,10 @@
 
                     <div class="p-form__textarea">
                         {{-- oldがあれば表示、ない場合、編集画面ならDBの情報を表示 --}}
-                        <div class="js-quill-editor" data-target="#content" style="height: 150px;">{!! old('body') ??
+                        <div class="js-quill-editor" data-target="#content">{!! old('body') ??
                             $article->body ?? "" !!}
                         </div>
-                        <input id="content" name="body" type="hidden" value="">
+                        <input id="content" class="js-body" name="body" type="hidden" value="">
                     </div>
                     <input type="hidden" id="js-postType" name="open_flg" value="">
         </form>

@@ -48,12 +48,19 @@
 
 .l-article_post{
 	max-width: 68rem;
+	width: 100%;
 	&__sidebar{
-		padding: 9rem 0;
-		height: 100%;
+		padding: 9rem 0 0;
+		position: sticky;
+		top: 1rem;
 		@include mq(lg) {
 			display: flex;
 			justify-content: center;
+			flex-direction: column;
+			position: fixed;
+			bottom: 2rem;
+			top: auto;
+			padding: 0;
 		}
 	}
 }

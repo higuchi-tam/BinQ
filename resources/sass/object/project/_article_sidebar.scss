@@ -14,8 +14,24 @@
         background: none;
         border: 1px solid $baseColor;
         color: $baseColor;
+        font-size: 1.4rem;
         &--open{
             margin-left: 1.6rem;
+        }
+    }
+    &__msg{
+        font-weight: bold;
+        color: $accentColor;
+        position: absolute;
+        top: 6.5rem;
+        font-size: 1.4rem;
+        @include mq(lg) {
+            font-size: 1.2rem;
+            position: static;
+        }
+        &--saving{
+            display: none;
+            color: #ccc;
         }
     }
 }
