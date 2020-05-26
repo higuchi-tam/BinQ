@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
 @include('layouts.header' ,['hasArticles' => true, 'hasLikes' => false])
-{{-- @include('layouts.top_baner') --}}
 @include('layouts.footer')
-{{-- @include('layouts.sidebar') --}}
-
 
 @section('content')
 
@@ -29,9 +26,7 @@
 
 
         {{-- ページネーション --}}
-        <div class="p-article__paginate">
-            {{ $articles -> links() }}
-        </div>
+        @include('layouts.paginate')
     </section>
 
     {{-- サイドバー読み込み --}}
