@@ -1978,6 +1978,16 @@ input {
   }
 }
 
+.p-topbaner__sp {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .p-topbaner__sp {
+    display: block;
+  }
+}
+
 .p-topbaner__articles {
   width: 100rem;
   margin: 0 auto;
@@ -2023,6 +2033,7 @@ input {
   display: inline-block;
   flex-shrink: 0;
   margin-right: 5rem;
+  max-width: 28rem;
 }
 
 .p-topbaner__linkBtn {

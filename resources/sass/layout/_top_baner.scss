@@ -100,6 +100,12 @@
             display: none;
         }
     }
+    &__sp{
+        display: none;
+        @include mq(md){
+            display: block;
+        }
+    }
     &__articles{
         width: 100rem;
         margin: 0 auto;
@@ -141,6 +147,7 @@
         display: inline-block;
         flex-shrink: 0;
         margin-right: 5rem;
+        max-width: 28rem;
     }
     &__linkBtn{
         width: 30%;

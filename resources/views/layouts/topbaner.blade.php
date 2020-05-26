@@ -20,12 +20,8 @@
     {{-- PC用 --}}
     {{-- <div class="p-topbaner__articles pc"> --}}
     @include('layouts.top.pc')
-    <div class="c-3col__container u-mb40 l-container">
-        {{-- 記事表示生成　新しい順に表示 --}}
-        @foreach($articles as $article)
-        @include('articles.card')
-        @endforeach
-    </div>
+    @include('layouts.top.sp')
+
     {{-- @include('articles.card') --}}
     {{-- </div> --}}
     {{-- SP用 --}}
