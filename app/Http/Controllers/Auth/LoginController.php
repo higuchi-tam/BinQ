@@ -51,6 +51,35 @@ class LoginController extends Controller
     }
 
     /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+        // ここから
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            $intended = $_SERVER['HTTP_REFERER'];
+        } else {
+            $intended = '/';
+        }
+        session(['url.intended' => $intended]);
+        // ここまで追加
+        return view('auth.login');
+    }
+
+    protected function authenticated()
+    {
+        $intended = session('url.intended');
+        if (parse_url($intended, PHP_URL_PATH) == '/') {
+            $id = Auth::user()->id;
+            return redirect()->route('profile.show', $id)->with('flash_message', 'ログインしました');
+        } else {
+            return redirect($intended)->with('flash_message', 'ログインしました');
+        }
+    }
+
+    /**
      * OAuth認証先にリダイレクト
      *
      * @param str $provider
@@ -91,7 +120,8 @@ class LoginController extends Controller
                 $user->profile_photo = $providerUser->getAvatar();
                 $user->save();
 
-                return redirect()->route('users.index')->with('flash_message', 'ログインしました。');
+                // return redirect()->route('users.index')->with('flash_message', 'ログインしました。');
+                return $this->authenticated();
             } else {
                 return redirect()->route('articles.index')->with('flash_message', '登録しました。プロフィールの編集をしましょう！');
             }
