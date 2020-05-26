@@ -1,7 +1,7 @@
-<section class="l-sidebar">
+<section class="l-sidebar l-sidebar__article ">
     <div class="l-article_post__sidebar">
         <div class="p-article_sidebar__msg" id="js-save__msg">
-            <span id="js-save__time">18:00</span> 下書き保存しました
+            <span id="js-save__time"></span> 下書き保存しました
         </div>
         <div class="p-article_sidebar__msg p-article_sidebar__msg--saving" id="js-save__msg--saving">
             下書き保存中...
