@@ -1,78 +1,151 @@
 // =========================================
 // Foundation
 // =========================================
-
-.p-topbaner__container{
-    width: 100%;
-    max-width: 120rem;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    letter-spacing: 0.5rem;
-    @include mq(md){
-        flex-direction: column-reverse;
-
-    }
-}
-.p-topbaner__titleWrap{
-    width: 26rem;
-    margin: 0 auto;
-    position: relative;
-    left: 2vw;
-    @include mq(xl){
-    width: 26rem;
-    margin: 0 auto;
-    position: static;
-    }
-    @include mq(lg){
-        width: 60vw;
-        padding-left: 8vw;
-    }
-    @include mq(md){
+.p-topbaner{
+    &__container{
         width: 100%;
-        margin-bottom: 8rem;
-    }
-}
-.p-topbaner__title{
-    font-size: 4.2rem;
-    margin-bottom: 3rem;
-    @include mq(lg){
-        @include fz_vw(36);
-    }
-    @include mq(md){
-        @include fz_vw(72);
-        margin-bottom: 1rem;
-    }
-}
-.p-topbaner__titleSub{
-    font-size: 1.6rem;
-    letter-spacing: 0.2rem;
-    margin-bottom: 5rem;
-    @include mq(lg){
-        @include fz_vw(16);
-        letter-spacing: 0.1rem;
-    }
-    @include mq(md){
-        @include fz_vw(28);
-        letter-spacing: 0.3rem;
-        margin-bottom: 2rem;
-    }
-
-}
-
-.p-topbaner__mainImg{
-    position: relative;
-    right: 0;
-    @include mq(md){
-        margin-bottom: 3rem;
-        img{
-            position: relative;
-            padding-left: 8vw;
+        max-width: 120rem;
+        margin: 0 auto 10rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        letter-spacing: 0.5rem;
+        
+        @include mq(md){
+            flex-direction: column-reverse;
+            
         }
     }
-}
+    &__titleWrap{
+        width: 26rem;
+        margin: 0 auto;
+        position: relative;
+        left: 2vw;
+        @include mq(xl){
+            width: 26rem;
+            margin: 0 auto;
+            position: static;
+        }
+        @include mq(lg){
+            width: 60vw;
+            padding-left: 8vw;
+        }
+        @include mq(md){
+            width: 100%;
+            margin-bottom: 8rem;
+        }
+    }
+    &__title{
+        font-size: 4.2rem;
+        margin-bottom: 3rem;
+        @include mq(lg){
+            @include fz_vw(36);
+        }
+        @include mq(md){
+            @include fz_vw(72);
+            margin-bottom: 1rem;
+        }
+    }
+    &__titleSub{
+        font-size: 1.6rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 5rem;
+        @include mq(lg){
+            @include fz_vw(16);
+            letter-spacing: 0.1rem;
+        }
+        @include mq(md){
+            @include fz_vw(28);
+            letter-spacing: 0.3rem;
+            margin-bottom: 2rem;
+        }
+        
+    }
 
+    &__mainImg{
+        position: relative;
+        right: 0;
+        @include mq(md){
+            margin-bottom: 3rem;
+            img{
+                position: relative;
+                padding-left: 8vw;
+            }
+        }
+    }
+    &__slidePrev{
+        width: 4rem;
+        height: 4rem;
+        margin-right: 2rem;
+        cursor: pointer;
+        &.is-inactive{
+            pointer-events: none;
+            opacity: 0.4;
+        }
+    }
+    &__slideNext{
+        width: 4rem;
+        height: 4rem;
+        margin-left: 2rem;
+        cursor: pointer;
+        &.is-inactive{
+            pointer-events: none;
+            opacity: 0.4;
+        }
+    }
+    &__pc{
+        width: 100rem;
+        margin: 0 auto;
+        @include mq(md){
+            display: none;
+        }
+    }
+    &__articles{
+        width: 100rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        margin-bottom: 6rem;
+    }
+    &__articles__inner{
+        
+        overflow: scroll;
+    }
+    &__articleSlider{
+        display: flex;
+        transition: transform 0.5s;
+    }
+
+    &__articleItem{
+        display: inline-block;
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+    &__users{
+        width: 100rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        margin-bottom: 6rem;
+    }
+     &__users__inner{
+        overflow: scroll;
+    }
+    &__usersSlider{
+        display: flex;
+        transition: transform 0.5s;
+    }
+
+    &__usersItem{
+        display: inline-block;
+        flex-shrink: 0;
+        margin-right: 5rem;
+    }
+    &__linkBtn{
+        width: 30%;
+        margin: 0 auto 8rem;
+    }
+}
 
 //==================================
 // ボタン

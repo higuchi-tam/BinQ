@@ -23,6 +23,7 @@
     &__top{
         display: flex;
         position: relative;
+        max-width: 45rem;
     }
     &__top-right{
         font-size: 1.2rem;

@@ -19,6 +19,7 @@ Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCal
 
 //TOPページ
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/posts', 'PostsController@index')->name('posts');
 
 Route::get('/articles', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');

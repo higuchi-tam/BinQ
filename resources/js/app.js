@@ -4,6 +4,7 @@ import Vue from "vue";
 import ArticleLike from "./components/ArticleLike";
 import ArticleTagsInput from "./components/ArticleTagsInput";
 import FollowButton from "./components/FollowButton";
+import CommentLike from "./components/CommentLike";
 import jquery from "jquery";
 window.$ = jquery;
 import Quill from 'quill';
@@ -21,6 +22,8 @@ require("./components/resizeImg");
 require("./components/exitPopup");
 require("./components/getUserDetailHeight");
 require("./components/autoSave");
+require("./components/topPageArticleSlider");
+require("./components/topPageUserSlider");
 
 //vueコンポーネントを使用する
 const app = new Vue({
@@ -28,7 +31,8 @@ const app = new Vue({
     components: {
         ArticleLike,
         ArticleTagsInput,
-        FollowButton
+        FollowButton,
+        CommentLike
     }
 });
 
