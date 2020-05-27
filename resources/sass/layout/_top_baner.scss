@@ -171,7 +171,11 @@
     }
     &__linkBtn{
         width: 30%;
-        margin: 0 auto 8rem;
+        margin: 0 auto 10rem;
+        @include mq(md){
+            width: auto;
+            max-width: 30rem;
+        }
     }
 }
 

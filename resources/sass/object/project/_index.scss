@@ -12,16 +12,24 @@
 		font-size: 3.8rem;
 		margin: 0;
 		@include mq(md) {
-			font-size: 2.8rem;
+			font-size: 3.2rem;
 			font-weight: normal;
 		}
 	}
 	&__news--titleSub {
-		font-size: 1.4rem;
+		font-size: 1.8rem;
 		margin: 0;
-		padding-left: 2rem;
 		position: relative;
 		top: 0.3rem;
+		@include mq(md) {
+			padding-left: 0;
+		}
+	}
+	&__news--titleSub--step {
+		padding-left: 2rem;
+		@include mq(md) {
+			padding-left: 0;
+		}
 	}
 	&-news__card {
 		display: flex;
@@ -131,10 +139,26 @@
 		width: 100%;
 		height: 65rem;
 		background: #efefef;
+		padding: 0 2rem 4rem;
+		margin-bottom: 14rem;
+		text-align: center;
 		@include mq(md) {
 			height: auto;
+			display: flex;
+  			flex-direction: column;
+		}
+		@include mq(lg) {
+			margin-bottom: 0;
 		}
 	}
+	&__step__inner{
+		display: inline-block;
+		margin: 0 auto 2rem;
+		width: 100%;
+		@include mq(md) {
+  			width: auto;
+		}	
+	} 
 	&-step__card {
 		display: flex;
 		justify-content: center;
@@ -145,24 +169,22 @@
 	}
 	&__step--item {
 		width: 24rem;
-		margin-top: -8rem;
 		@include mq(md) {
 			width: 100%;
+			margin-bottom: 3rem;
 			display: flex;
 			align-items: center;
 		}
 	}
 	&__step--imgWrap {
+		margin-bottom: 3.5rem;
 		@include mq(md) {
-			margin-bottom: 3rem;
+			margin-bottom: 0;
+			position: relative;
 		}
 	}
 	&__step--img {
-		margin: 0;
 		width: 100%;
-		@include mq(md) {
-			margin-bottom: 2rem;
-		}
 		img {
 			max-width: 100%;
 			@include mq(md) {
@@ -172,6 +194,10 @@
 	}
 	&__step--text {
 		text-align: center;
+		font-size: 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		@include mq(md) {
 			text-align: left;
 			font-size: 1.6rem;
@@ -184,35 +210,44 @@
 		display: flex;
 		align-items: center;
 		padding-top: 7rem;
+		margin-bottom: 4rem;
 		@include mq(md) {
-			padding-top: 2rem;
+			align-items: flex-start;
+			padding-top: 4rem;
 			padding-bottom: 5rem;
+			margin-bottom: 0;
+			flex-direction: column;
 		}
 	}
 	&__figure--number {
 		font-size: 4.2rem;
 		font-weight: bold;
-		width: 100%;
-		position: relative;
-		top: 10rem;
+		position: absolute;
 		z-index: 2;
 		@include mq(md) {
 			@include fz_vw(32);
-			top: 11vw;
+			top: 3vw;
 		}
 	}
 
 	&__step--btn {
 		position: relative;
-		top: -3rem;
 		margin-bottom: 3rem;
+		width: 30rem;
+		margin: 0 auto;
+		  @include mq(md) {
+			width: 100%;
+			max-width: 30rem;
+		}
 	}
 	//==================================
 	// About Section
 	//==================================
 	&__about {
 		background: #fff;
-		margin: 6rem auto;
+		margin: 0 auto 6rem;
+		padding: 0 2rem;
+		margin-bottom: 8rem;
 		img {
 			margin-bottom: 2rem;
 		}
@@ -227,6 +262,7 @@
 		}
 		@include mq(md) {
 			width: 100%;
+			margin-bottom: 3rem;
 		}
 	}
 	&__about--titleWrap {
@@ -235,7 +271,7 @@
 	}
 	&__about--img {
 		width: 100%;
-		margin: 0;
+		margin-bottom: 3rem;
 		text-align: center;
 		img {
 			margin: 0 auto;
@@ -250,18 +286,27 @@
 		top: 3rem;
 	}
 	&__about--textTop {
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		font-weight: bold;
+		margin-bottom: 2rem;
 	}
 	&__about--textLeft {
 		text-align: left;
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 		letter-spacing: 0.2rem;
 		@include mq(md) {
 			text-align: center;
 		}
 	}
 
+	//==================================
+	// Start Section
+	//==================================
+	&__start{
+		display: flex;
+		justify-content: center;
+		padding: 0 2rem;
+	}
 	//============
 	// 矢印　▶︎
 	//============

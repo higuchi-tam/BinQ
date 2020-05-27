@@ -17,73 +17,65 @@
         </div>
 
     </div>
-    {{-- PC用 --}}
-    {{-- <div class="p-topbaner__articles pc"> --}}
+
     @include('layouts.top.pc')
     @include('layouts.top.sp')
 
-    {{-- @include('articles.card') --}}
-    {{-- </div> --}}
-    {{-- SP用 --}}
-    {{-- <div class="p-topbaner__articles sp">
-        @include('layouts.top.sp')
-    </div> --}}
-
-
-
 </section>
-<section class="p-top__step u-mb80 l-container">
-    <div class="p-top__step--titleWrap l-container">
-        <h3 class="p-top__news--title">Step</h3>
-        <p class="p-top__news--titleSub">3ステップでカンタンにつながる。</p>
-    </div>
-    <div class="p-top-step__card u-mb40 l-container">
-
-        <div class="p-top__step--item">
-            <div class="p-top__step--imgWrap">
-                <p class="p-top__figure--number">01.</p>
-                <figure class="p-top__step--img">
-                    <img src="{{ asset('images/home/01.png') }}" alt="記事のメイン画像">
-                </figure>
-            </div>
-            <p class="p-top__step--text">新規登録</p>
+<section class="p-top__step l-container">
+    <div class="p-top__step__inner">
+        <div class="p-top__step--titleWrap l-container">
+            <h3 class="p-top__news--title">Step</h3>
+            <p class="p-top__news--titleSub p-top__news--titleSub--step">3ステップでカンタンにつながる。</p>
         </div>
+        <div class="p-top-step__card u-mb40 l-container">
 
-        <figure class="p-top__arrow">
-            <img src="{{ asset('images/arrow.png') }}" alt="矢印">
-        </figure>
-
-        <div class="p-top__step--item">
-            <div class="p-top__step--imgWrap">
-                <figure class="p-top__step--img">
-                    <p class="p-top__figure--number">02.</p>
-                    <img src="{{ asset('images/home/02.png') }}" alt="記事のメイン画像">
-                </figure>
+            <div class="p-top__step--item">
+                <div class="p-top__step--imgWrap">
+                    <p class="p-top__figure--number">01.</p>
+                    <figure class="p-top__step--img">
+                        <img src="{{ asset('images/home/01.png') }}" alt="記事のメイン画像">
+                    </figure>
+                </div>
+                <p class="p-top__step--text">新規登録</p>
             </div>
-            <p class="p-top__step--text">ログイン</p>
-        </div>
 
-        <figure class="p-top__arrow">
-            <img src="{{ asset('images/arrow.png') }}" alt="矢印">
-        </figure>
+            <figure class="p-top__arrow">
+                <img src="{{ asset('images/arrow.png') }}" alt="矢印">
+            </figure>
 
-        <div class="p-top__step--item">
-            <div class="p-top__step--imgWrap">
-                <figure class="p-top__step--img">
-                    <p class="p-top__figure--number">03.</p>
-                    <img src="{{ asset('images/home/03.png') }}" alt="記事のメイン画像">
-                </figure>
+            <div class="p-top__step--item">
+                <div class="p-top__step--imgWrap">
+                    <figure class="p-top__step--img">
+                        <p class="p-top__figure--number">02.</p>
+                        <img src="{{ asset('images/home/02.png') }}" alt="記事のメイン画像">
+                    </figure>
+                </div>
+                <p class="p-top__step--text">ログイン</p>
             </div>
-            <p class="p-top__step--text">記事投稿して<br>美容師でつながろう！</p>
-        </div>
 
+            <figure class="p-top__arrow">
+                <img src="{{ asset('images/arrow.png') }}" alt="矢印">
+            </figure>
+
+            <div class="p-top__step--item">
+                <div class="p-top__step--imgWrap">
+                    <figure class="p-top__step--img">
+                        <p class="p-top__figure--number">03.</p>
+                        <img src="{{ asset('images/home/03.png') }}" alt="記事のメイン画像">
+                    </figure>
+                </div>
+                <p class="p-top__step--text">記事投稿して<br>美容師でつながろう！</p>
+            </div>
+
+        </div>
     </div>
     <div class="c-button__sns p-top__step--btn">
         <a href="" class="c-button__primary">新規会員登録</a>
     </div>
 </section>
 
-<section class="p-top__about u-mb80 l-container">
+<section class="p-top__about l-container">
     <div class="p-top__about--titleWrap l-container">
         <h3 class="p-top__news--title u-mb20">About BinQ</h3>
         <p class="p-top__news--titleSub">”BinQ”は、<br>
@@ -130,7 +122,9 @@
     </div>
 
 </section>
-<div class="c-button__sns u-mb100">
-    <a href="" class="c-button__primary">今すぐはじめる</a>
-</div>
+<section class="p-top__start l-container">
+    <div class="c-button__sns u-mb100">
+        <a href="" class="c-button__primary">今すぐはじめる</a>
+    </div>
+</section>
 @endsection
