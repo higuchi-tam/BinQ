@@ -43,16 +43,14 @@
                             </p>
                             <p class="p-user__news--cardTitle"> {{ $user->name}}</p>
                         </div>
-                        <div class="c-button__sns">
-                            {{-- @if( Auth::id() !== $user->id ) --}}
-                            <follow-button class="ml-auto"
-                                :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
-                                :authorized='@json(Auth::check())'
-                                endpoint="{{ route('users.follow', ['name' => $user->name]) }}">
-                            </follow-button>
-                            {{-- @endif --}}
-                        </div>
                     </a>
+                    <div class="c-button__sns">
+                        <follow-button class="ml-auto"
+                            :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
+                            :authorized='@json(Auth::check())'
+                            endpoint="{{ route('users.follow', ['name' => $user->name]) }}">
+                        </follow-button>
+                    </div>
                 </li>
                 @endforeach
             </ul>

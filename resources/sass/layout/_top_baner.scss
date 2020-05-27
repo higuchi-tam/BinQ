@@ -134,8 +134,7 @@
         margin-bottom: 6rem;
     }
     &__articles__inner{
-        
-        overflow: scroll;
+        overflow: hidden;
     }
     &__articleSlider{
         display: flex;
@@ -156,7 +155,7 @@
         margin-bottom: 6rem;
     }
      &__users__inner{
-        overflow: scroll;
+        overflow: hidden;
     }
     &__usersSlider{
         display: flex;

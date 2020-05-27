@@ -2010,7 +2010,7 @@ input {
 }
 
 .p-topbaner__articles__inner {
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .p-topbaner__articleSlider {
@@ -2034,7 +2034,7 @@ input {
 }
 
 .p-topbaner__users__inner {
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .p-topbaner__usersSlider {
@@ -3806,8 +3806,14 @@ input {
 .p-top__about {
   background: #fff;
   margin: 0 auto 6rem;
-  padding: 0 2rem;
+  padding: 7rem 2rem;
   margin-bottom: 8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-top__about {
+    padding: 0 2rem;
+  }
 }
 
 .p-top__about img {
