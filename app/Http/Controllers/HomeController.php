@@ -34,6 +34,9 @@ class HomeController extends Controller
 
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->take(11)->get();
 
+        if ($auth_user) {
+            return redirect()->route('users.index');
+        }
         return view('layouts.topbaner', [
             'auth_user' => $auth_user,
             'articles' => $articles,

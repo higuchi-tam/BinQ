@@ -18,8 +18,6 @@ Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 //TOPページ
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/posts', 'PostsController@index')->name('posts');
 
 Route::get('/articles', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
@@ -61,3 +59,5 @@ Route::prefix('users')->name('users.')->group(function () {
 });
 
 Route::get('/post', 'PostsController@index')->name('post.index');
+
+Route::get('/', 'HomeController@index')->name('home');
