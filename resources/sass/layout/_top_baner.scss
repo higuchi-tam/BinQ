@@ -96,14 +96,34 @@
     &__pc{
         width: 100rem;
         margin: 0 auto;
-        @include mq(md){
+        @include mq(lg){
             display: none;
         }
     }
     &__sp{
         display: none;
-        @include mq(md){
+        padding: 0 2rem;
+        @include mq(lg){
             display: block;
+        }
+    }
+    &__sp--articles{
+        .c-3col__item{
+            &:nth-child(n+5){
+                @include mq(lg){
+                    display: none;
+                }
+            }
+        }
+        
+    }
+    &__sp--users{
+        .c-3col__item{
+            &:nth-child(n+5){
+                @include mq(lg){
+                    display: none;
+                }
+            }
         }
     }
     &__articles{

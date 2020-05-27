@@ -3,9 +3,9 @@
 // ============================================
 const $slider = $('#js-slider--art');
 const $slideItem = $('.js-slide__item--art');
-let sliderWidth = $slider.innerWidth();
-let slideItemMarginRight = parseInt($slideItem.css('margin-right'));
-let slideItemWidth = (sliderWidth - slideItemMarginRight * 2) / 3;
+let sliderWidth;
+let slideItemMarginRight;
+let slideItemWidth;
 
 const $prevBtn = $('#js-slide__prev--art');
 const $nextBtn = $('#js-slide__next--art');
@@ -22,7 +22,14 @@ let endPage = slideItemPages;
 // 関数定義
 // ============================================
 function init() {
-    setInActiveClass(); 
+    setInActiveClass();
+    setSlideItemWidth();
+}
+
+function setSlideItemWidth() {
+    sliderWidth = $slider.innerWidth();
+    slideItemMarginRight = parseInt($slideItem.css('margin-right'));
+    slideItemWidth = (sliderWidth - slideItemMarginRight * 2) / 3;
     $slideItem.css('width', slideItemWidth);
 }
 
@@ -44,7 +51,9 @@ function setSlideItem() {
 // ============================================
 // controller
 // ============================================
-$(window).onload = init();
+$(window).on("load resize", function () {
+    init();
+})
 
 $(document).on('click', '#js-slide__next--art', function () {
     currentIndex++

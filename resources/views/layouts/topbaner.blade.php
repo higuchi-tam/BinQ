@@ -3,7 +3,7 @@
 @include('layouts.footer')
 
 @section('top_baner')
-<div class="">
+<section class="">
     <div class="p-topbaner__container">
         <div class="p-topbaner__titleWrap">
             <h2 class="p-topbaner__title">美容師で、<br>つながる。</h2>
@@ -31,7 +31,7 @@
 
 
 
-</div>
+</section>
 <section class="p-top__step u-mb80 l-container">
     <div class="p-top__step--titleWrap l-container">
         <h3 class="p-top__news--title">Step</h3>

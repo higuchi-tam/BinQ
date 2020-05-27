@@ -1,8 +1,11 @@
+// ============================================
+// 変数宣言
+// ============================================
 const $slider = $('#js-slider--usr');
 const $slideItem = $('.js-slide__item--usr');
-let sliderWidth = $slider.innerWidth();
-let slideItemMarginRight = parseInt($slideItem.css('margin-right'));
-let slideItemWidth = (sliderWidth - slideItemMarginRight * 2) / 3;
+let sliderWidth;
+let slideItemMarginRight;
+let slideItemWidth;
 
 const $prevBtn = $('#js-slide__prev--usr');
 const $nextBtn = $('#js-slide__next--usr');
@@ -15,12 +18,20 @@ let slideItemPages = Math.ceil(slideItemCount / 3);
 let startPage = 1;
 let endPage = slideItemPages;
 
-setInActiveClass(); 
+// ============================================
+// 関数定義
+// ============================================
+function init() {
+    setInActiveClass();
+    setSlideItemWidth();
+}
 
-console.log('slideItemCount');
-console.log(slideItemCount);
-console.log('slideItemPages');
-console.log(slideItemPages);
+function setSlideItemWidth() {
+    sliderWidth = $slider.innerWidth();
+    slideItemMarginRight = parseInt($slideItem.css('margin-right'));
+    slideItemWidth = (sliderWidth - slideItemMarginRight * 2) / 3;
+    $slideItem.css('width', slideItemWidth);
+}
 
 function setInActiveClass() {
     $nextBtn.removeClass('is-inactive');
@@ -33,30 +44,24 @@ function setInActiveClass() {
     }
 }
 
+// ============================================
+// controller
+// ============================================
+$(window).on("load resize", function () {
+    init();
+})
+
 $(document).on('click', '#js-slide__next--usr', function () {
-    console.log('nextBtn');
     currentIndex++
     setInActiveClass();
 
     currentPosition -= sliderWidth + slideItemMarginRight; 
-    console.log('currentPosition');
-    console.log(currentPosition);
     $slider.css('transform','translateX('+ currentPosition +'px)')
 })
 $(document).on('click', '#js-slide__prev--usr', function () {
-    console.log('prevBtn');
     currentIndex--
     setInActiveClass();
 
     currentPosition += sliderWidth + slideItemMarginRight; 
-    console.log('currentPosition');
-    console.log(currentPosition);
     $slider.css('transform','translateX('+ currentPosition +'px)')
 })
-
-
-console.log(sliderWidth);
-console.log(slideItemWidth);
-console.log(slideItemMarginRight);
-console.log(typeof(slideItemMarginRight));
-$slideItem.css('width', slideItemWidth);
