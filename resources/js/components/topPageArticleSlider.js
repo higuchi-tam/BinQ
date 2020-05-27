@@ -1,3 +1,5 @@
+$(function () {
+    
 // ============================================
 // 変数宣言
 // ============================================
@@ -22,6 +24,7 @@ let endPage = slideItemPages;
 // 関数定義
 // ============================================
 function init() {
+    console.log('init');
     setInActiveClass();
     setSlideItemWidth();
 }
@@ -68,4 +71,6 @@ $(document).on('click', '#js-slide__prev--art', function () {
 
     currentPosition += sliderWidth + slideItemMarginRight; 
     setSlideItem();
+})
+
 })

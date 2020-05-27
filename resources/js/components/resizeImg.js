@@ -42,8 +42,6 @@ export function setCropData(options) {
     self.formData.append('crop-w', self.w);
     self.formData.append('crop-h', self.h);
     
-    console.log('self.isUserEdit');
-    console.log(self.isUserEdit);
     //プロフィール編集ならユーザーIDを、記事編集なら記事IDを格納
     if (self.isUserEdit) {
         self.formData.append('user_id', self.userId);

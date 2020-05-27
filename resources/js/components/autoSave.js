@@ -31,8 +31,6 @@ function ajaxDraftSave() {
 }
 
     function saveEvent() {
-        console.log('change！！！');
-        
         let title = $title.val();
         let body = $body.val();
         
@@ -43,9 +41,6 @@ function ajaxDraftSave() {
             "article_id": $('#js-articleId__for-ajax').attr('data-article__id'),
         };
         
-        console.log(postData);
-        
-
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -57,7 +52,6 @@ function ajaxDraftSave() {
         })
             // Ajaxリクエストが成功した場合
             .done(function (data) {
-                console.log(data);
                 $savingTime.css('display', 'none');
                 $saveMsg.css('display','block');
                 $saveTime.text(data);

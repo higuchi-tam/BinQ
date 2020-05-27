@@ -2,7 +2,7 @@
 @include('layouts.header')
 @include('layouts.footer')
 
-@section('top_baner')
+@section('content')
 <section class="">
     <div class="p-topbaner__container">
         <div class="p-topbaner__titleWrap">

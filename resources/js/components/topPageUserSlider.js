@@ -1,3 +1,4 @@
+$(function () {
 // ============================================
 // 変数宣言
 // ============================================
@@ -64,4 +65,5 @@ $(document).on('click', '#js-slide__prev--usr', function () {
 
     currentPosition += sliderWidth + slideItemMarginRight; 
     $slider.css('transform','translateX('+ currentPosition +'px)')
+})
 })
