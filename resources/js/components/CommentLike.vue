@@ -46,8 +46,14 @@ export default {
   methods: {
     clickLike() {
       if (!this.authorized) {
-        alert("いいね機能はログイン中のみ使用できます");
-        return;
+        let confirm_result = window.confirm(
+          "いいね機能はログイン中のみ使用できます。ログイン画面へいきますか？"
+        );
+        if (confirm_result) {
+          window.location.href = "/login";
+        } else {
+          return false;
+        }
       }
 
       this.isLikedBy ? this.unlike() : this.like();

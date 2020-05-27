@@ -15,13 +15,13 @@ import axios from 'axios';//追記
       />
     </button>
     <transition name="fade">
-    <span class="c-button__like--count"> {{ countLikes }}</span>
-  </transition>
+      <span class="c-button__like--count">{{ countLikes }}</span>
+    </transition>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   props: {
@@ -38,8 +38,8 @@ export default {
       default: false
     },
     endpoint: {
-      type: String,
-    },
+      type: String
+    }
   },
   data() {
     return {
@@ -50,8 +50,14 @@ export default {
   methods: {
     clickLike() {
       if (!this.authorized) {
-        alert("いいね機能はログイン中のみ使用できます");
-        return;
+        let confirm_result = window.confirm(
+          "いいね機能はログイン中のみ使用できます。ログイン画面へいきますか？"
+        );
+        if (confirm_result) {
+          window.location.href = "/login";
+        } else {
+          return false;
+        }
       }
 
       this.isLikedBy ? this.unlike() : this.like();
@@ -67,7 +73,7 @@ export default {
 
       this.isLikedBy = false;
       this.countLikes = response.data.countLikes;
-    },
-  },
+    }
+  }
 };
 </script>

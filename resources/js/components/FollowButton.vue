@@ -1,9 +1,9 @@
 <template>
-    <div>
-      <button class="c-button__follow" :class="buttonColor" @click="clickFollow">
-        <span>{{ buttonText }}</span>
-      </button>
-    </div>
+  <div>
+    <button class="c-button__follow" :class="buttonColor" @click="clickFollow">
+      <span>{{ buttonText }}</span>
+    </button>
+  </div>
 </template>
 
 <script>
@@ -42,8 +42,14 @@ export default {
   methods: {
     clickFollow() {
       if (!this.authorized) {
-        alert("フォロー機能はログイン中のみ使用できます");
-        return;
+        let confirm_result = window.confirm(
+          "フォロー機能はログイン中のみ使用できます。ログイン画面へいきますか？"
+        );
+        if (confirm_result) {
+          window.location.href = "/login";
+        } else {
+          return false;
+        }
       }
 
       this.isFollowedBy ? this.unfollow() : this.follow();
