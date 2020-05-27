@@ -72,8 +72,8 @@ class LoginController extends Controller
     {
         $intended = session('url.intended');
         if (parse_url($intended, PHP_URL_PATH) == '/') {
-            $id = Auth::user()->id;
-            return redirect()->route('profile.show', $id)->with('flash_message', 'ログインしました');
+            $name = Auth::user()->name;
+            return redirect()->route('users.show', $name)->with('flash_message', 'ログインしました');
         } else {
             return redirect($intended)->with('flash_message', 'ログインしました');
         }
