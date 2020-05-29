@@ -4637,7 +4637,7 @@ input {
   border: 1px solid #444;
   color: #444;
   border-radius: .5rem;
-  height: -webkit-fill-available;
+  height: 25px;
   position: absolute;
   top: 0;
   right: 0;
