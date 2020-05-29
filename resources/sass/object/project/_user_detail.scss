@@ -73,6 +73,8 @@
         position: absolute;
         top: 0;
         right: 0;
+        display: inline-block;
+        line-height: 1.8;
         @include mq(smd) {
             top: -8.5rem;
         }
