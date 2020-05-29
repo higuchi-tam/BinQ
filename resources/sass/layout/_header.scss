@@ -133,6 +133,9 @@
             width: 5rem;
             height: 5rem;
         }
+        &.is-active{
+            background: none;
+        }
     }
     &__dropdown {
         &--menu {
