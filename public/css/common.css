@@ -1702,6 +1702,7 @@ input {
 
 .l-header__dropdown--item.post {
   height: 4.2rem;
+  display: none;
 }
 
 @media screen and (max-width: 475px) {

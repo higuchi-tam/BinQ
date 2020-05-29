@@ -166,6 +166,7 @@
             }
             &.post{
                 height: 4.2rem;
+                display: none;
                 @include mq(smd) {
                     height: 6.7rem;
                 }
