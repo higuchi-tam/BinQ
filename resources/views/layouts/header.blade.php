@@ -38,7 +38,7 @@
                             <a href="{{ route('users.show', ['name' => $auth_user->name]) }}"
                                 class="l-header__button">マイページ</a>
                         </li>
-                        <li class="l-header__dropdown--item">
+                        <li class="l-header__dropdown--item post">
                             <a class="l-header__button l-header__button--post" href="{{ route('articles.create')}}">
                                 <img src="/images/scissors-logo-sp.svg" alt="">
                                 <span class="l-header__dropdown--postText">投稿</span>

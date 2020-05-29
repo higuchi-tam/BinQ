@@ -1696,6 +1696,10 @@ input {
   border-bottom: 1px solid #eee;
 }
 
+.l-header__dropdown--item.post {
+  height: 6.7rem;
+}
+
 .l-header__dropdown--bg {
   display: none;
   position: fixed;

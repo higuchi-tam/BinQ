@@ -161,6 +161,9 @@
             &:last-child{
                 border-bottom: 1px solid #eee;
             }
+            &.post{
+                height: 6.7rem;
+            }
         }
         &--bg{
             display: none;
