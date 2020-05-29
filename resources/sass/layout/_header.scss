@@ -165,7 +165,10 @@
                 border-bottom: 1px solid #eee;
             }
             &.post{
-                height: 6.7rem;
+                height: 4.2rem;
+                @include mq(smd) {
+                    height: 6.7rem;
+                }
             }
         }
         &--bg{

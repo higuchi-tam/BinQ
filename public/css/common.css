@@ -1701,7 +1701,13 @@ input {
 }
 
 .l-header__dropdown--item.post {
-  height: 6.7rem;
+  height: 4.2rem;
+}
+
+@media screen and (max-width: 475px) {
+  .l-header__dropdown--item.post {
+    height: 6.7rem;
+  }
 }
 
 .l-header__dropdown--bg {
