@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @include('layouts.header')
-{{-- @include('layouts.top_baner') --}}
 @include('layouts.footer')
 
 @section('content')

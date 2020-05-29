@@ -28,12 +28,12 @@
                     </a>
                 </li>
                 <li class="l-header__item">
-                    <div class="l-header__img js-dropdown">
+                    <div class="l-header__img is-inactive" id="js-drawer__click-target">
                         @include('users.icon',['target_user' => $auth_user])
                     </div>
 
                     {{-- ドロップダウンメニュー --}}
-                    <ul class="l-header__dropdown--menu">
+                    <ul class="l-header__dropdown--menu" id="js-drawer__menu">
                         <li class="l-header__dropdown--item">
                             <a href="{{ route('users.show', ['name' => $auth_user->name]) }}"
                                 class="l-header__button">マイページ</a>
@@ -45,10 +45,13 @@
                             </a>
                         </li>
                         <li class="l-header__dropdown--item">
-                            <a href="{{ route("users.edit", ['name' => $auth_user->name]) }}"
-                                class="l-header__button">アカウント設定</a>
+                            <a href="{{ route('articles.index') }}" class="l-header__button">最新の記事</a>
+                            <a href="{{ route('users.index') }}" class="l-header__button">人気の美容師</a>
+                            <a href="{{ route('likeIndex') }}" class="l-header__button">人気の記事</a>
                         </li>
                         <li class="l-header__dropdown--item">
+                            <a href="{{ route("users.edit", ['name' => $auth_user->name]) }}"
+                                class="l-header__button">アカウント設定</a>
                             <button form="logout-button" type="submit" class="l-header__button">
                                 ログアウト
                             </button>
@@ -65,4 +68,5 @@
         </div>
     </div>
 </nav>
+<div class="l-header__dropdown--bg" id="js-drawer__bg"></div>
 @endsection

@@ -4,6 +4,10 @@
     &__inner{
         position: relative;
         border-bottom: 1px solid #ccc;
+        width: 68rem;
+        @include mq(md) {
+            width: auto;
+    	}
     }
     &__titleWrap{
         display: flex;
@@ -83,6 +87,9 @@
         list-style: none;
         align-items: center;
         font-size: 1.4rem;
+        margin-left: 10px;
+        width: 160px;
+        flex-shrink: 0;
     }
     &__snsItem{
         margin-left: 1.5rem;

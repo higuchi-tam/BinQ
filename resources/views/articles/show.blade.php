@@ -94,6 +94,7 @@
                     :initial-count-likes='@json($article->count_likes)' :authorized='@json(Auth::check())'
                     endpoint="{{ route('articles.like', ['article' => $article]) }}">
                 </article-like>
+                <a href="/likes/articles/{{ $article->id }}" class="c-likeList">いいねした人一覧</a>
             </div>
             <ul class="p-article_show__snsList">
                 <li>SHARE</li>

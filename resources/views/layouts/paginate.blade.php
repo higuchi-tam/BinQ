@@ -1,3 +1,3 @@
 <div class="p-article__paginate">
-    {{ $articles -> links() }}
+    {{ $target -> links() }}
 </div>

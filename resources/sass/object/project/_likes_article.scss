@@ -1,0 +1,20 @@
+// =========================================
+// Project
+// =========================================
+.p-likesArticle{
+    &__target{
+        border-bottom: 2px solid #ccc;
+    }
+    &__users{
+        margin-top: 2rem;
+        .p-user_like__userContainer{
+            padding: 2rem 13rem 2rem 0;
+            border-bottom: 1px solid #ccc;
+            @include mq(smd) {
+                flex-direction: column;
+                padding-right: 0;
+	    	}
+        }
+    }
+
+}

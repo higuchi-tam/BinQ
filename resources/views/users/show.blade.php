@@ -15,10 +15,10 @@
             @endforeach
         </div>
 
+        {{-- @include('layouts.paginate',['target' => $articles]) --}}
         <div class="p-article__paginate">
-            {{-- {{ $articles -> links() }} --}}
+            {{ $articles -> links() }}
         </div>
-
     </section>
 
     @include('layouts.sidebar')

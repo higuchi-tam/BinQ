@@ -1664,7 +1664,7 @@ input {
 
 .l-header__dropdown--menu {
   border-radius: 5px;
-  width: 18rem;
+  width: 22rem;
   display: none;
   position: absolute;
   right: 0;
@@ -1674,17 +1674,36 @@ input {
   z-index: 990;
 }
 
-.l-header__dropdown--menu:before {
-  position: absolute;
-  right: 1.8rem;
-  top: -0.5rem;
-  width: 0.8rem;
-  height: 0.8rem;
-  content: "";
-  background-color: #fff;
-  border-right: 0.1rem solid rgba(34, 34, 34, 0.1);
-  border-bottom: 0.1rem solid rgba(34, 34, 34, 0.1);
-  transform: rotate(-135deg);
+@media screen and (max-width: 475px) {
+  .l-header__dropdown--menu {
+    position: fixed;
+    left: 0;
+    width: auto;
+  }
+}
+
+.l-header__dropdown--item {
+  border-top: 1px solid #eee;
+}
+
+@media screen and (max-width: 475px) {
+  .l-header__dropdown--item {
+    padding: 1rem 0;
+  }
+}
+
+.l-header__dropdown--item:last-child {
+  border-bottom: 1px solid #eee;
+}
+
+.l-header__dropdown--bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
 }
 
 .l-header__dropdown--postText {
@@ -1708,6 +1727,12 @@ input {
   -moz-appearance: none;
   appearance: none;
   translate: all 0.3s;
+}
+
+@media screen and (max-width: 475px) {
+  .l-header__button {
+    padding: 1.2rem 2rem;
+  }
 }
 
 .l-header__button:hover {
@@ -1818,11 +1843,13 @@ input {
 .l-sidebar {
   padding: 3rem 0 0 6rem;
   margin: 0 auto;
+  width: 26rem;
 }
 
 @media screen and (max-width: 768px) {
   .l-sidebar {
     padding: 0;
+    width: 100%;
   }
 }
 
@@ -2509,6 +2536,13 @@ input {
   }
 }
 
+.c-likeList {
+  font-size: 12px;
+  margin-left: 8px;
+  padding-bottom: 10px;
+  text-decoration: underline;
+}
+
 .c-members {
   padding-bottom: 4rem;
   margin-bottom: 4rem;
@@ -2693,6 +2727,13 @@ input {
 .p-article_show__inner {
   position: relative;
   border-bottom: 1px solid #ccc;
+  width: 68rem;
+}
+
+@media screen and (max-width: 768px) {
+  .p-article_show__inner {
+    width: auto;
+  }
 }
 
 .p-article_show__titleWrap {
@@ -2788,6 +2829,9 @@ input {
   list-style: none;
   align-items: center;
   font-size: 1.4rem;
+  margin-left: 10px;
+  width: 160px;
+  flex-shrink: 0;
 }
 
 .p-article_show__snsItem {
@@ -3896,6 +3940,26 @@ input {
   }
 }
 
+.p-likesArticle__target {
+  border-bottom: 2px solid #ccc;
+}
+
+.p-likesArticle__users {
+  margin-top: 2rem;
+}
+
+.p-likesArticle__users .p-user_like__userContainer {
+  padding: 2rem 13rem 2rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+@media screen and (max-width: 475px) {
+  .p-likesArticle__users .p-user_like__userContainer {
+    flex-direction: column;
+    padding-right: 0;
+  }
+}
+
 .p-login__container {
   margin-bottom: 5rem;
   padding-top: 3rem;
@@ -4653,6 +4717,98 @@ input {
     right: 0;
     transform: translateY(-50%);
   }
+}
+
+.p-user_like__userContainer {
+  display: flex;
+  max-width: 68rem;
+  margin-right: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .p-user_like__userContainer {
+    flex-wrap: wrap;
+  }
+}
+
+.p-user_like__wrap {
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 475px) {
+  .p-user_like__wrap {
+    margin-left: 0;
+  }
+}
+
+.p-user_like__user {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.p-user_like__name {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.p-user_like__userTitle {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.p-user_like__comment {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.p-user_like__userImg {
+  margin-right: 4rem;
+}
+
+.p-user_like__userImg img {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .p-user_like__userImg img {
+    width: 16.9vw;
+    height: 16.9vw;
+    min-width: 7rem;
+    min-height: 7rem;
+  }
+}
+
+.p-user_like__snsList {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.p-user_like__snsItem {
+  padding-left: 0;
+  padding-left: 1.5rem;
+  transition: 0.3s;
+}
+
+.p-user_like__snsItem:first-child {
+  padding-left: 0;
+}
+
+.p-user_like__follow {
+  position: absolute;
+  top: 2rem;
+  right: 0;
 }
 
 .p-user__side {

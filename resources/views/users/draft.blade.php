@@ -16,7 +16,7 @@
         </div>
 
         <div class="p-article__paginate">
-            {{-- {{ $articles -> links() }} --}}
+            {{ $articles -> links() }}
         </div>
 
     </section>

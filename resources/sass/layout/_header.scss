@@ -18,9 +18,6 @@
         a {
             color: #555555;
         }
-        // @include mq(lg) {
-        //     @include fz_vw(32);
-        // }
         @include mq(sp-only) {
             font-size: 10.6vw;
         }
@@ -140,7 +137,7 @@
     &__dropdown {
         &--menu {
             border-radius: 5px;
-            width: 18rem;
+            width: 22rem;
             display: none;
             position: absolute;
             right: 0;
@@ -148,18 +145,31 @@
             background: #fff;
             margin-top: 2rem;
             z-index: 990;
-            &:before{
-                position: absolute;
-                right: 1.8rem;
-                top: -0.5rem;
-                width: 0.8rem;
-                height: 0.8rem;
-                content: "";
-                background-color: #fff;
-                border-right: 0.1rem solid rgba(34, 34, 34, 0.1);
-                border-bottom: 0.1rem solid rgba(34, 34, 34, 0.1);
-                transform: rotate(-135deg);
+            @include mq(smd) {
+                position: fixed;
+                left: 0;
+                width: auto;
+
             }
+        }
+        &--item{
+            border-top: 1px solid #eee;
+
+            @include mq(smd) {
+                padding: 1rem 0;
+            }
+            &:last-child{
+                border-bottom: 1px solid #eee;
+            }
+        }
+        &--bg{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
         }
         &--postText{
             color: #444;
@@ -182,6 +192,9 @@
         -moz-appearance: none;
         appearance: none;
         translate: all 0.3s;
+        @include mq(smd) {
+            padding: 1.2rem 2rem;
+        }
         &:hover {
             text-decoration: underline;
             translate: all 0.3s;

@@ -22,7 +22,7 @@ Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCal
 Route::get('/articles', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/articles', 'ArticleController')->only(['show']);
-Route::get('/likeIndex', 'ArticleController@likeIndex')->name('likeIdex');
+Route::get('/likeIndex', 'ArticleController@likeIndex')->name('likeIndex');
 Route::prefix('articles')->name('articles.')->group(function () {
     Route::put('/{article}/like', 'ArticleController@like')->name('like')->middleware('auth');
     Route::delete('/{article}/like', 'ArticleController@unlike')->name('unlike')->middleware('auth');
@@ -47,7 +47,7 @@ Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{name}/edit', 'UserController@edit')->name('edit');
     Route::patch('/{name}/update', 'UserController@update')->name('update');
     Route::get('/{name}/likes', 'UserController@likes')->name('likes');
-    Route::get('/{name}/draft', 'UserController@draft')->name('draft');
+    Route::get('/{name}/draft', 'UserController@draft')->name('draft')->middleware('auth');
     Route::get('/{name}/followings', 'UserController@followings')->name('followings');
     Route::get('/{name}/followers', 'UserController@followers')->name('followers');
     Route::post('/ajaxImgUpload', 'UserController@ajaxImgUpload')->name('ajaxImgUpload');
@@ -56,6 +56,11 @@ Route::prefix('users')->name('users.')->group(function () {
         Route::put('/{name}/follow', 'UserController@follow')->name('follow');
         Route::delete('/{name}/follow', 'UserController@unfollow')->name('unfollow');
     });
+});
+
+Route::prefix('likes')->name('likes.')->group(function () {
+    Route::get('/articles/{id}', 'LikesController@articles')->name('articles');
+    Route::get('/comments/{id}', 'LikesController@comments')->name('comments');
 });
 
 Route::get('/post', 'PostsController@index')->name('post.index');

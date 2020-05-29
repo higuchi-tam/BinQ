@@ -24,9 +24,8 @@
             @endforeach
         </div>
 
-
         {{-- ページネーション --}}
-        @include('layouts.paginate')
+        @include('layouts.paginate',['target'=>$articles])
     </section>
 
     {{-- サイドバー読み込み --}}

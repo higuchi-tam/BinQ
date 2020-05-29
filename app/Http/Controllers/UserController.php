@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Article;
 use App\Tag;
+use App\Like;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,38 +16,36 @@ use Image;
 
 class UserController extends Controller
 {
-    //コントローラ全体で使用　自分の記事数取得（公開中のみ）
-    private function articleOpenCount($name)
+    public function __construct()
     {
-        $self = User::where('name', $name)->first();
-        return $self->articles->sortByDesc('created_at')->where('open_flg', 0);
+        $this->sidebarArticles = Article::withCount('likes')->orderBy('likes_count', 'desc')->where('open_flg', 0)->take(5)->get();
+        $this->sidebarUsers = User::withCount('followers')->orderBy('followers_count', 'desc')->take(5)->get();
     }
 
-    //コントローラ全体で使用　自分の記事取得（下書きのみ）
-    private function articleDraftCount($name)
+    //コントローラ全体で使用　自分の記事数取得（公開中のみ）
+    private function getBaseArticles($name)
     {
-        $self = User::where('name', $name)->first();
-        return $self->articles->sortByDesc('created_at')->where('open_flg', 1);
+        $user = User::where('name', $name)->first();
+        $baseArticles = Article::where('user_id', $user->id)
+            ->where('open_flg', 0)->orderBy('created_at', 'desc');
+        return $baseArticles;
     }
 
     public function index(User $user,  Article $article)
     {
         $user = Auth::user();
-        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $all_users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(9);
-        //記事は、公開中のみ
-        $articles = Article::orderBy('created_at', 'desc')->where('open_flg', 0)->paginate(9);
         $auth_user = Auth::user();
-
         $tags = Tag::all();
 
         return view('users.index', [
             'all_users'  => $all_users,
             'user' => $user,
-            'users' => $users,
-            'articles' => $articles,
             'auth_user' => $auth_user,
             'tags' => $tags,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -57,28 +56,22 @@ class UserController extends Controller
         $all_users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(9);
         $auth_user = Auth::user();
 
+        $baseArticles = $this->getBaseArticles($name);
         //記事は、下書きのみ
-        $myArticles = $this->articleOpenCount($name);
-        $articles = $this->articleDraftCount($name);
+        $totalArticles = $baseArticles->get();
+        $articles = Article::where('user_id', $user->id)->where('open_flg', 1)->orderBy('created_at', 'desc')->paginate(9);
+        Log::debug($articles);
 
         return view('users.draft', [
             'all_users'  => $all_users,
             'user' => $user,
             'users' => $users,
             'articles' => $articles,
-            'myArticles' => $myArticles,
+            'totalArticles' => $totalArticles,
             'auth_user' => $auth_user,
-        ]);
-    }
-    public function user_side(User $user)
-    {
-
-        $user = Auth::user();
-        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
-
-        return view('users.user_side', [
-            'users'  => $users,
-            'user' => $user,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -88,16 +81,22 @@ class UserController extends Controller
         $auth_user = Auth::user();
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
 
-        $myArticles = $this->articleOpenCount($name);
+        $baseArticles = $this->getBaseArticles($name)->where('open_flg', 0);
+
+        $totalArticles = $baseArticles->get();
+        $articles = $baseArticles->paginate(9);
 
         return view('users.show', [
             'user' => $user,
             'users' => $users,
             //自分の記事一覧 = $myArticles
-            'articles' => $myArticles,
+            'totalArticles' => $totalArticles,
             'article' => $article,
             'auth_user' => $auth_user,
-            'myArticles' => $myArticles,
+            'articles' => $articles,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -133,15 +132,24 @@ class UserController extends Controller
         $auth_user = Auth::user();
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
 
-        $articles = $user->likes->where('open_flg', 0)->sortByDesc('created_at');
-        $myArticles = $this->articleOpenCount($name);
+        // $articles = $user->likes->where('open_flg', 0)->sortByDesc('created_at')->paginate(9);
+
+        $likeIds = Like::where('likes.user_id', $user->id)->get('article_id');
+        $articles = Article::whereIn('id', $likeIds)->paginate(9);
+
+        $baseArticles = $this->getBaseArticles($name);
+        $totalArticles = $baseArticles->get();
+        $totalArticles = $baseArticles->get();
 
         return view('users.likes', [
             'user' => $user,
             'auth_user' => $auth_user,
             'users'  => $users,
             'articles' => $articles,
-            'myArticles' => $myArticles,
+            'totalArticles' => $totalArticles,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -150,14 +158,21 @@ class UserController extends Controller
         $user = User::where('name', $name)->first();
         $auth_user = Auth::user();
         $followings = $user->followings->sortByDesc('created_at');
-        $myArticles = $this->articleOpenCount($name);
 
+        $baseArticles = $this->getBaseArticles($name);
+
+        $totalArticles = $baseArticles->get();
+        $articles = $baseArticles->paginate(9);
 
         return view('users.followings', [
             'user' => $user,
             'auth_user' => $auth_user,
             'followings' => $followings,
-            'myArticles' => $myArticles,
+            'articles' => $articles,
+            'totalArticles' => $totalArticles,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -166,14 +181,21 @@ class UserController extends Controller
         $user = User::where('name', $name)->first();
         $auth_user = Auth::user();
         $followers = $user->followers->sortByDesc('created_at');
-        $myArticles = $this->articleOpenCount($name);
 
+        $baseArticles = $this->getBaseArticles($name);
+
+        $totalArticles = $baseArticles->get();
+        $articles = $baseArticles->paginate(9);
 
         return view('users.followers', [
             'user' => $user,
             'followers' => $followers,
             'auth_user' => $auth_user,
-            'myArticles' => $myArticles,
+            'articles' => $articles,
+            'totalArticles' => $totalArticles,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 

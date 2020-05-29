@@ -22,10 +22,16 @@ use Illuminate\Support\Facades\Storage;
 use Image;
 use App\Http\Controllers\Input;
 
+$sA = new ArticleController();
+
+
 class ArticleController extends Controller
 {
+
     public function __construct()
     {
+        $this->sidebarArticles = Article::withCount('likes')->orderBy('likes_count', 'desc')->where('open_flg', 0)->take(5)->get();
+        $this->sidebarUsers = User::withCount('followers')->orderBy('followers_count', 'desc')->take(5)->get();
         $this->authorizeResource(Article::class, 'article');
     }
 
@@ -66,9 +72,7 @@ class ArticleController extends Controller
             ->where('open_flg', 0)
             ->paginate(9);
         $user = Auth::user();
-        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $auth_user = Auth::user();
-
         $allTagNames = $this->getAllTagNames();
         $tags = Tag::all();
 
@@ -77,10 +81,12 @@ class ArticleController extends Controller
         return view('articles.index', [
             'articles' => $articles,
             'user' => $user,
-            'users'  => $users,
             'auth_user' => $auth_user,
             'allTagNames' => $allTagNames,
             'tags' => $tags,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -89,8 +95,7 @@ class ArticleController extends Controller
 
         $user = Auth::user();
         $auth_user = Auth::user();
-        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
-        $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
+        $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->where('open_flg', 0)->paginate(9);
 
         $tags = Tag::all();
 
@@ -98,8 +103,10 @@ class ArticleController extends Controller
             'user' => $user,
             'auth_user' => $auth_user,
             'articles' => $articles,
-            'users'  => $users,
             'tags'  => $tags,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -158,8 +165,6 @@ class ArticleController extends Controller
         $user = Auth::user();
         $auth_user = Auth::user();
 
-
-
         return view('articles.edit', [
             'article' => $article,
             'tagNames' => $tagNames,
@@ -211,6 +216,9 @@ class ArticleController extends Controller
             'auth_user' => $auth_user,
             'articles' => $articles,
             'comments' => $comments,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 

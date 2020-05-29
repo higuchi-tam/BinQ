@@ -5,9 +5,11 @@
 .l-sidebar{
     padding: 3rem 0 0 6rem;
     margin: 0 auto;
+    width: 26rem;
 
     @include mq(md) {
         padding: 0;
+        width: 100%;
 	}
     &__article{
         @include mq(lg){

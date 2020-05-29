@@ -35,5 +35,9 @@
       @endforeach
     </div>
   </section>
+
+  {{-- サイドバー読み込み --}}
+  @include('layouts.sidebar')
+
 </div>
 @endsection

@@ -48,7 +48,7 @@
     <div id="js-detail__bottom" class="p-user_detail__bottom">
         <ul>
             <li class="p-user_detail__topicWrap">
-                <span class="p-user_detail__topicNum">記事数　<span>{{ $myArticles->count() }}</span></span>
+                <span class="p-user_detail__topicNum">記事数　<span>{{ $totalArticles->count() }}</span></span>
                 <span class="p-user_detail__followNum">
                     <a href="{{ route('users.followings', ['name' => $user->name]) }}" class="text-muted">
                         {{ $user->count_followings }} フォロー
