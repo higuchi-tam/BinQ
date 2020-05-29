@@ -1740,6 +1740,10 @@ input {
   translate: all 0.3s;
 }
 
+.l-header__button:visited {
+  color: #444;
+}
+
 .l-header__button--post {
   display: none;
 }

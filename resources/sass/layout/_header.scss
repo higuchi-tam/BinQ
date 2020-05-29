@@ -199,6 +199,9 @@
             text-decoration: underline;
             translate: all 0.3s;
         }
+        &:visited{
+            color: #444;
+        }
         &--post{
             display: none;
             @include mq(md) {
