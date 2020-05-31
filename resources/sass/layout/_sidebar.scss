@@ -7,7 +7,7 @@
     margin: 0 auto;
     width: 26rem;
 
-    @include mq(md) {
+    @include mq(lg) {
         padding: 0;
         width: 100%;
 	}
