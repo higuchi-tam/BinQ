@@ -179,7 +179,7 @@ $('#js-resize__ok').on('click', function () {
 //==========================================================
 $(document).on('click', '#js-img__delete', function () {
     
-    const isUserEdit = $('#js-edit_user');
+    const isUserEdit = $('#js-edit_user').length;
 
     let isDelete = 1;
     let postType = "header";

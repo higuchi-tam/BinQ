@@ -1702,7 +1702,6 @@ input {
 
 .l-header__dropdown--item.post {
   height: 4.2rem;
-  display: none;
 }
 
 @media screen and (max-width: 475px) {
@@ -1760,19 +1759,11 @@ input {
 }
 
 .l-header__button--post {
-  display: none;
+  display: flex;
 }
 
-@media screen and (max-width: 768px) {
-  .l-header__button--post {
-    display: flex;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .l-header__button--post img {
-    width: 2rem;
-  }
+.l-header__button--post img {
+  width: 2rem;
 }
 
 .l-header__userImg {

@@ -166,7 +166,6 @@
             }
             &.post{
                 height: 4.2rem;
-                display: none;
                 @include mq(smd) {
                     height: 6.7rem;
                 }
@@ -213,15 +212,9 @@
             color: #444;
         }
         &--post{
-            display: none;
-            @include mq(md) {
                 display: flex;
-            }
             img{
-                @include mq(md) {
-                    width: 2rem;
-                }
-
+                width: 2rem;
             }
         }
     }
