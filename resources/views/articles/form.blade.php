@@ -1,7 +1,7 @@
 <section class="l-article_post">
     @include('error_card_list')
     <div>
-        <form method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
+        <form id="article_form" method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
             @method('PATCH')
             @csrf
             <input type="hidden" id="js-articleId__for-ajax" data-article__id="{{$article->id ?? ''}}"
@@ -60,7 +60,6 @@
                         </div>
                         <input id="content" class="js-body" name="body" type="hidden" value="">
                     </div>
-                    <input type="hidden" id="js-postType" name="open_flg" value="">
         </form>
     </div>
     {{-- モーダル読み込み --}}

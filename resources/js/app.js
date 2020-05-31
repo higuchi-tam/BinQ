@@ -17,7 +17,6 @@ require("./components/createImgBtn");
 require("./components/uploadImg");
 require("./components/modalComment");
 require("./components/modalArticle");
-require("./components/formSubmit");
 require("./components/resizeImg");
 require("./components/exitPopup");
 require("./components/getUserDetailHeight");
