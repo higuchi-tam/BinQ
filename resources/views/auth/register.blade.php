@@ -1,12 +1,8 @@
 @extends('layouts.app')
-{{-- @include('layouts.header') --}}
-{{-- @include('layouts.footer') --}}
 @section('content')
 <div class="l-container">
     <div class="p-login__container">
         <h2 class="p-login__mainTitle">BinQ</h2>
-
-        @include('error_card_list')
 
         <div class="p-login__form">
             <div class="p-login__titleWrap">
@@ -19,12 +15,12 @@
                     <p class="p-register__formTxt">メールアドレス</p>
                     <input class="p-login__formItem" placeholder="メールアドレス" autocomplete="email" type="email"
                         name="email" value="{{ old('email') }}" required>
+                    @if ($errors->has('email'))
+                    <div class="c-error__msg">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </div>
+                    @endif
                 </div>
-                @if ($errors->has('email'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-                @endif
                 <div class="p-login__formGroup u-mb20">
                     　<p class="p-register__formTxt">ユーザーネーム（任意）</p>
                     <input class="p-login__formItem" placeholder="ユーザーネーム" type="text" name="name"
@@ -36,12 +32,12 @@
                     　<p class="p-register__formTxt">パスワード</p>
                     <input class="p-login__formItem" placeholder="パスワード" autocomplete="off" type="password"
                         name="password" required>
+                    @if ($errors->has('password'))
+                    <div class="c-error__msg">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </div>
+                    @endif
                 </div>
-                @if ($errors->has('password'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-                @endif
                 <div class="p-login__formGroup u-mb20">
                     　<p class="p-register__formTxt">パスワード（確認）</p>
                     <input class="p-login__formItem" placeholder="パスワードの確認" autocomplete="off" type="password"

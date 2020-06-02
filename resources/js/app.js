@@ -23,6 +23,7 @@ require("./components/getUserDetailHeight");
 require("./components/autoSave");
 require("./components/topPageArticleSlider");
 require("./components/topPageUserSlider");
+require("./jquery.validate.min");
 
 //vueコンポーネントを使用する
 const app = new Vue({

@@ -11,7 +11,7 @@
         padding-bottom: 5rem;
         position: relative;
 		@include mq(md) {
-			flex-wrap: wrap;
+            flex-direction: column;
 		}
     }
     &__wrap{
@@ -65,8 +65,7 @@
     }
     &__follow{
         position: absolute;
-        top: 50%;
+        top: 5rem;
         right: 0;
-        transform: translateY(-50%);
     }
 }

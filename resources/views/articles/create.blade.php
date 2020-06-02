@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @include('layouts.header')
-
 @section('content')
 <div class="l-2col">
         {{-- メイン読み込み --}}

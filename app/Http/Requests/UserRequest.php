@@ -36,9 +36,9 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'ユーザー名',
-            'email' => 'アドレス',
+            'email' => 'メールアドレス',
             'password' => 'パスワード',
-            'password_confirmation' =>'パスワード再入力'
+            'password_confirmation' => 'パスワード再入力'
         ];
     }
 }

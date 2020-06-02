@@ -2546,6 +2546,12 @@ input {
   }
 }
 
+.c-error__msg {
+  font-size: 1.2rem;
+  color: red;
+  text-align: left;
+}
+
 .c-likeList {
   font-size: 12px;
   margin-left: 8px;
@@ -3519,7 +3525,25 @@ input {
 }
 
 .p-form__label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.p-form__required {
   display: inline-block;
+  background: #a73b65;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin-left: 5px;
+  line-height: 1.615;
+}
+
+.p-form__required--optional {
+  background: #999;
+  color: #fff;
 }
 
 .p-form__item {
@@ -3529,6 +3553,7 @@ input {
 
 .p-form__comment {
   min-height: 10rem;
+  font-size: 1.6rem;
 }
 
 .p-form__submit {
@@ -4009,6 +4034,7 @@ input {
 .p-login__formGroup {
   width: 100%;
   font-size: 1.6rem;
+  margin-bottom: 1rem;
 }
 
 .p-login__formItem {
@@ -4036,10 +4062,6 @@ input {
 
 .p-login__formItem::placeholder {
   color: #aaaaaa;
-}
-
-.p-login__formItem:nth-child(1) {
-  margin-bottom: 1rem;
 }
 
 .p-login__passRemind {
@@ -4199,6 +4221,8 @@ input {
 
 .p-register__formSubTxt {
   font-size: 1.14rem;
+  display: block;
+  text-align: left;
 }
 
 .p-register__radioWrap {
@@ -4479,7 +4503,7 @@ input {
 
 @media screen and (max-width: 768px) {
   .p-user_article__userContainer {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 }
 
@@ -4544,9 +4568,8 @@ input {
 
 .p-user_article__follow {
   position: absolute;
-  top: 50%;
+  top: 5rem;
   right: 0;
-  transform: translateY(-50%);
 }
 
 .p-user_detail__userContainer {

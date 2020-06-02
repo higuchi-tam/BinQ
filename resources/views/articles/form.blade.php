@@ -1,11 +1,10 @@
 <section class="l-article_post">
-    @include('error_card_list')
     <div>
         <form id="article_form" method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
             @method('PATCH')
             @csrf
             <input type="hidden" id="js-articleId__for-ajax" data-article__id="{{$article->id ?? ''}}"
-                data-cursor__index="">
+                data-cursor__index="" name="articleId" value="{{$article->id}}">
 
             {{-- 画像があれば画像表示、なければアイコン表示 --}}
             @if($article->img)
@@ -45,6 +44,16 @@
                     <div class="p-form__title">
                         <textarea id="js-title" name="title"
                             placeholder="タイトル記入欄">{{ old('title') ?? $article->title }}</textarea>
+                        @error('title')
+                        <div class="c-error__msg">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
+                        @error('body')
+                        <div class="c-error__msg">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
                     </div>
 
                     <div class="p-form__tag">

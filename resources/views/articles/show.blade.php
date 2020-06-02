@@ -2,6 +2,7 @@
 
 @include('layouts.header')
 @include('layouts.footer')
+@include('layouts.meta_sns')
 
 @section('content')
 <div class="l-2col">
