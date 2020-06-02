@@ -5,5 +5,5 @@
 <meta property="og:site_name" content="BinQ" />
 <meta property="og:image" content="{{ $article->img }}" />
 
-<meta name="twitter:card" content="Summary with Large Image" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nishimachikid" />

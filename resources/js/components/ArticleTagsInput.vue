@@ -130,5 +130,6 @@ li.ti-item.ti-valid.ti-selected-item {
   right: 0;
   left: 0;
   display: none;
+  z-index: 3;
 }
 </style>
