@@ -3,7 +3,7 @@
 <meta property="og:title" content="{{ $article->title }}" />
 <meta property="og:description" content="{{ $article->body }}" />
 <meta property="og:site_name" content="BinQ" />
-<meta property="og:image" content="{{"/storage/".$article->img}}" />
+<meta property="og:image" content="{{asset('/storage/'.$article->img)}}" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nishimachikid" />
