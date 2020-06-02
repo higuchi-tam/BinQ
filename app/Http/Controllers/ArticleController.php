@@ -126,33 +126,13 @@ class ArticleController extends Controller
         $user = Auth::user();
         $auth_user = Auth::user();
 
-        //インスタンスをnewし、下書き状態でviewへ渡す
+        //インスタンスをnewし、下書き状態で編集画面のviewへ渡す
         $article = new Article();
         $article->user_id = $user->id;
         $article->open_flg = 1;
         $article->save();
 
-        return view('articles.create', [
-            'allTagNames' => $allTagNames,
-            'user' => $user,
-            'auth_user' => $auth_user,
-            'article' => $article,
-        ]);
-    }
-
-    public function store(ArticleRequest $request, Article $article)
-    {
-        Log::debug('<<< store >>>>');
-        Log::debug('<<< $request >>>>');
-        Log::debug($request);
-
-        $article->user_id = $request->user()->id;
-        $article->save();
-        $request->tags->each(function ($tagName) use ($article) {
-            $tag = Tag::firstOrCreate(['name' => $tagName]);
-            $article->tags()->attach($tag);
-        });
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.edit', $article->id);
     }
 
     public function edit(Article $article)
@@ -189,9 +169,9 @@ class ArticleController extends Controller
             $article->tags()->attach($tag);
         });
 
-
         //不要な画像削除する（Controller内で定義した関数を呼び出す）
         $this->deleteImg($article);
+
         return redirect()->route('articles.edit', $article->id)->with('flash_message', '200');
     }
 
@@ -219,15 +199,6 @@ class ArticleController extends Controller
             //サイドバー用
             'sidebarArticles' => $this->sidebarArticles,
             'sidebarUsers' => $this->sidebarUsers,
-        ]);
-    }
-
-    public function detail(Article $article)
-    {
-        $user = Auth::user();
-        return view('articles.detail', [
-            'article' => $article,
-            'user' => $user,
         ]);
     }
 
