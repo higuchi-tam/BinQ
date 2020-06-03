@@ -17,4 +17,4 @@
 <meta property="og:url" content="https://binq.kiwatchi.com/articles/91" />
 <meta property="og:title" content="サルワカの殿堂入り記事集" />
 <meta property="og:description" content="これまで公開してきた200以上の記事の中で、特に人気のあったものを紹介します。" />
-<meta property="og:image" content="https://saruwakakun.com/images/example.png" />
+<meta property="og:image" content="https://binq.kiwatchi.com/images/blank_profile.png" />
