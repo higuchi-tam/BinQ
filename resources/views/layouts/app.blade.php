@@ -6,7 +6,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @yield('meta_sns')
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kiwatchi1991" />
+    <meta property="og:url" content="https://binq.kiwatchi.com/articles/91" />
+    <meta property="og:title" content="サルワカの殿堂入り記事集" />
+    <meta property="og:description" content="これまで公開してきた200以上の記事の中で、特に人気のあったものを紹介します。" />
+    <meta property="og:image" content="https://binq.kiwatchi.com/images/blank_profile.png" />
+    {{-- @yield('meta_sns') --}}
     <!--CSS -->
     <!-- Styles -->
     {{-- TODO:本番環境ではsecure_assetに切り替える --}}
