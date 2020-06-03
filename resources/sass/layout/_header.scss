@@ -152,7 +152,7 @@
                 position: fixed;
                 left: 0;
                 width: auto;
-
+                height: 100%;
             }
         }
         &--item{
@@ -163,6 +163,9 @@
             }
             &:last-child{
                 border-bottom: 1px solid #eee;
+                @include mq(smd) {
+                border-bottom: none;
+            }
             }
             &.post{
                 height: 4.2rem;
