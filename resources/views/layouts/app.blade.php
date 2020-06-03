@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@kiwatchi1991" />
     <meta property="og:url" content="https://binq.kiwatchi.com/articles/91" />
     <meta property="og:title" content="サルワカの殿堂入り記事集" />
