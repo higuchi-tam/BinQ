@@ -52,6 +52,8 @@
                         <li class="l-header__dropdown--item">
                             <a href="{{ route("users.edit", ['name' => $auth_user->name]) }}"
                                 class="l-header__button">アカウント設定</a>
+                        </li>
+                        <li class="l-header__dropdown--item">
                             <button form="logout-button" type="submit" class="l-header__button">
                                 ログアウト
                             </button>
