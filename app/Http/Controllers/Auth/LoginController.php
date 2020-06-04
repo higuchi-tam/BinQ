@@ -134,6 +134,8 @@ class LoginController extends Controller
                 $new->profile_photo = $avatar;
                 $new->save();
 
+                Auth::login($new);
+
                 return redirect()->route('users.edit', $providerUser->getId());
             }
         } else {
