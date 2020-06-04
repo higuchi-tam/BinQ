@@ -24,11 +24,10 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required | string | regex:/^[a-zA-Z0-9-_]+$/ | min:3 | max:16 | unique:users',
             'email' => 'required',
             'password' => 'required',
             'password_confirmation' => 'required',
-            // 'title' =>
         ];
     }
 

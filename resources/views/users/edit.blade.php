@@ -58,10 +58,13 @@
                         <div class="p-form__wrap">
 
                             <div class="u-mb20">
-                                <label for="name" class="p-form__label">ユーザー名<span
+                                <label for="name" class="p-form__label">ユーザーID<span
                                         class="p-form__required">必須</span></label>
-                                <input autofocus="autofocus" class="p-form__item" type="text"
-                                    value="{{ old('name',$user->name) }}" name="name" />
+                                <div class="p-form__idWrapper">
+                                    <span>@ </span><input autofocus="autofocus" class="p-form__item p-form__item--id"
+                                        type="text" value="{{ old('name',$user->name) }}" name="name" />
+                                </div>
+                                <span class="p-form__subtext">※ユーザーIDがマイページのURLとなります</span>
                                 @error('name')
                                 <div class="c-error__msg">
                                     <strong>{{ $message }}</strong>
@@ -70,10 +73,11 @@
                             </div>
 
                             <div class="u-mb20">
-                                <label for="title" class="p-form__label">肩書き<span
+                                <label for="title" class="p-form__label">ユーザー名<span
                                         class="p-form__required p-form__required--optional">任意</span>
                                 </label> <input autofocus="autofocus" class="p-form__item" type="text"
                                     value="{{ old('title',$user->title) }}" name="title" />
+                                <span class="p-form__subtext">※ユーザー名がない場合、ユーザーIDを表示します</span>
                                 @error('title')
                                 <div class="c-error__msg">
                                     <strong>{{ $message }}</strong>
@@ -97,25 +101,6 @@
                                     <strong>{{ $message }}</strong>
                                 </div>
                                 @enderror
-                            </div>
-
-                            <div class="u-mb20">
-                                <label for="password" class="p-form__label">パスワード<span
-                                        class="p-form__required">必須</span>
-                                </label> <input autofocus="autofocus" class="p-form__item" type="password"
-                                    value="{{ old('password',$user->password) }}" name="password" />
-                                @error('password')
-                                <div class="c-error__msg">
-                                    <strong>{{ $message }}</strong>
-                                </div>
-                                @enderror
-                            </div>
-
-                            <div class="u-mb20">
-                                <label for="password_confirmation" class="p-form__label">パスワードの確認<span
-                                        class="p-form__required">必須</span>
-                                </label> <input autofocus="autofocus" value="{{ old('password',$user->password) }}"
-                                    class="p-form__item" type="password" name="password_confirmation" />
                             </div>
 
                             <div class="u-mb20">

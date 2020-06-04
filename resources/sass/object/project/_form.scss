@@ -172,11 +172,11 @@
         display: inline-block;
         background: $accentColor;
         color: #fff;
-        font-size: 13px;
+        font-size: 11px;
         border-radius: 3px;
-        padding: 0 5px;
+        padding: 0 0.5rem;
         margin-left: 5px;
-        line-height: 1.615;
+        line-height: 1.7;
         &--optional{
             background: #999;
             color: #fff;
@@ -185,6 +185,21 @@
     &__item{
         width: 100%;
         padding: .5rem;
+        border: 1px solid #ccc;
+        &--id{
+            margin: 0 0 0 auto;
+            box-sizing: border-box;
+            width: 92%;
+            display: inline-block;
+        }
+    }
+    &__subtext{
+        font-size: 1.2rem;
+    }
+    &__idWrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     &__comment{
         min-height: 10rem;

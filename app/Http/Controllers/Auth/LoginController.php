@@ -104,29 +104,40 @@ class LoginController extends Controller
             return redirect('/login')->with('flash_message', '予期せぬエラーが発生しました');
         }
         if ($email = $providerUser->getEmail()) {
-            $registerdFlg = User::where(['email' => $providerUser->getEmail()])->first();
-            Log::debug('$providerUser');
-            Log::debug($providerUser->getAvatar());
-            Auth::login(User::firstOrCreate([
-                'email' => $email
-            ], [
-                'name' => $providerUser->getName(),
-                'profile_photo' => $providerUser->getAvatar()
-            ]));
-            if ($registerdFlg) {
+            //SNSアカウントからEmailが取得できた場合
+
+            //登録済みかどうか判断
+            $registerdUser = User::where(['email' => $providerUser->getEmail()])->first();
+
+            if ($registerdUser) {
+                // 登録済みの場合
+
+                Auth::login($registerdUser);
                 //ログインするたびに最新の情報を取得して更新
                 $user = Auth::user();
-                $user->name = $providerUser->getName();
+                $user->name = $providerUser->getId();
+                $user->title = $providerUser->getName();
                 $user->profile_photo = $providerUser->getAvatar();
                 $user->save();
 
-                // return redirect()->route('users.index')->with('flash_message', 'ログインしました。');
                 return $this->authenticated();
             } else {
-                return redirect()->route('articles.index')->with('flash_message', '登録しました。プロフィールの編集をしましょう！');
+                // 登録済みでない場合
+                $id = $providerUser->getId();
+                $name = $providerUser->getName();
+                $avatar = $providerUser->getAvatar();
+
+                $new = new User();
+                $new->email = $email;
+                $new->name = $id;
+                $new->title = $name;
+                $new->profile_photo = $avatar;
+                $new->save();
+
+                return redirect()->route('users.edit', $providerUser->getId());
             }
         } else {
-            return redirect('/login')->with('flash_message', 'メールアドレスが取得できませんでした');
+            return redirect('/login');
         }
     }
 }

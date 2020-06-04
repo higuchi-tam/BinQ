@@ -3050,6 +3050,7 @@ input {
   padding: 8px;
   font-size: 16px;
   margin-top: 1.6rem;
+  border: 1px solid #cccccc;
 }
 
 .p-comment__submit {
@@ -3552,11 +3553,11 @@ input {
   display: inline-block;
   background: #a73b65;
   color: #fff;
-  font-size: 13px;
+  font-size: 11px;
   border-radius: 3px;
-  padding: 0 5px;
+  padding: 0 0.5rem;
   margin-left: 5px;
-  line-height: 1.615;
+  line-height: 1.7;
 }
 
 .p-form__required--optional {
@@ -3567,6 +3568,24 @@ input {
 .p-form__item {
   width: 100%;
   padding: .5rem;
+  border: 1px solid #ccc;
+}
+
+.p-form__item--id {
+  margin: 0 0 0 auto;
+  box-sizing: border-box;
+  width: 92%;
+  display: inline-block;
+}
+
+.p-form__subtext {
+  font-size: 1.2rem;
+}
+
+.p-form__idWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .p-form__comment {
@@ -4084,7 +4103,7 @@ input {
 }
 
 .p-login__passRemind {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #aaaaaa;
   display: block;
   text-align: left;
@@ -4097,7 +4116,7 @@ input {
 
 .p-login__signUp {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 .p-login__signUp a {
@@ -4236,6 +4255,12 @@ input {
 .p-register__formTxt {
   text-align: left;
   margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.p-register__atSign {
+  margin-right: 0.5rem;
 }
 
 .p-register__formSubTxt {
@@ -4263,8 +4288,46 @@ input {
   text-decoration: underline;
 }
 
-.p-register__radionItem {
+.p-register__checkbox {
+  display: none;
+}
+
+.p-register__checkbox:checked + .p-register__checkboxLabel::before {
+  background: #a73b65;
+  border: none;
+}
+
+.p-register__checkbox:checked + .p-register__checkboxLabel::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  transform: rotate(45deg);
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+.p-register__checkboxLabel {
   position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+}
+
+.p-register__checkboxLabel:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 .p-register--border {

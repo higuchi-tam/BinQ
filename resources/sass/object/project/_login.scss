@@ -54,11 +54,12 @@
 	}
 
 	&__passRemind {
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 		color: #aaaaaa;
 		display: block;
 		text-align: left;
 		margin-bottom: 2rem;
+
 		&:hover {
 			text-decoration: underline;
 		}
@@ -66,7 +67,7 @@
 
 	&__signUp {
 		margin: 0;
-		font-size: 1.1rem;
+		font-size: 1.4rem;
 		a {
 			color: #aaaaaa;
 		}

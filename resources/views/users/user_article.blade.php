@@ -32,15 +32,15 @@
             </li>
         </ul>
 
-        @if( Auth::id() !== $article->user->id )
         <div class="p-user_article__follow">
-            <follow-button class="ml-auto" :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
-                :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['name' => $user->name]) }}">
+            @if( Auth::id() !== $article->user->id )
+            <follow-button class="ml-auto" :initial-is-followed-by='@json($article->user->isFollowedBy(Auth::user()))'
+                :authorized='@json(Auth::check())'
+                endpoint="{{ route('users.follow', ['name' => $article->user->name]) }}">
             </follow-button>
+            @endif
+
         </div>
-        @endif
-
-
 
     </div>
 </div>

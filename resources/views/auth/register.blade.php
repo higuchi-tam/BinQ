@@ -12,7 +12,7 @@
             <form method="POST" action="{{ route('register') }}" class="p-register--border u-mb20">
                 @csrf
                 <div class="p-login__formGroup u-mb20">
-                    <p class="p-register__formTxt">メールアドレス</p>
+                    <p class="p-register__formTxt">メールアドレス<span class="p-form__required">必須</span></p>
                     <input class="p-login__formItem" placeholder="メールアドレス" autocomplete="email" type="email"
                         name="email" value="{{ old('email') }}" required>
                     @if ($errors->has('email'))
@@ -22,14 +22,22 @@
                     @endif
                 </div>
                 <div class="p-login__formGroup u-mb20">
-                    　<p class="p-register__formTxt">ユーザーネーム（任意）</p>
-                    <input class="p-login__formItem" placeholder="ユーザーネーム" type="text" name="name"
-                        value="{{ old('name') }}" required autofocus>
-                    <small class="p-register__formSubTxt">英数字5〜16文字<br class="sp">(登録後の変更はできません)</small>
+                    　<p class="p-register__formTxt">ユーザーID<span class="p-form__required">必須</span></p>
+                    <div class="p-form__idWrapper">
+                        <span class="p-register__atSign">@ </span>
+                        <input class="p-login__formItem" placeholder="ユーザーID(英数字5~16文字)" type="text" name="name"
+                            value="{{ old('name') }}" required autofocus>
+                    </div>
+                    {{-- <small class="p-register__formSubTxt">英数字5〜16文字</small> --}}
+                    @if ($errors->has('name'))
+                    <div class="c-error__msg">
+                        <strong>{{ $errors->first('name') }}</strong>
+                    </div>
+                    @endif
                 </div>
 
                 <div class="p-login__formGroup u-mb20">
-                    　<p class="p-register__formTxt">パスワード</p>
+                    　<p class="p-register__formTxt">パスワード<span class="p-form__required">必須</span></p>
                     <input class="p-login__formItem" placeholder="パスワード" autocomplete="off" type="password"
                         name="password" required>
                     @if ($errors->has('password'))
@@ -39,13 +47,15 @@
                     @endif
                 </div>
                 <div class="p-login__formGroup u-mb20">
-                    　<p class="p-register__formTxt">パスワード（確認）</p>
+                    　<p class="p-register__formTxt">パスワード（確認）<span class="p-form__required">必須</span></p>
                     <input class="p-login__formItem" placeholder="パスワードの確認" autocomplete="off" type="password"
                         name="password_confirmation" required>
                 </div>
                 <div class="p-login__formGroup p-register__radioWrap">
-                    <input class="p-register__radionItem" autocomplete="off" type="checkbox" required>
-                    　<p class=""><a href="">利用規約</a>に同意する</p>
+                    <input id="p-register__agree" class="p-register__checkbox" autocomplete="off" type="checkbox"
+                        required>
+                    <label class="p-register__checkboxLabel" for="p-register__agree"></label>
+                    　<p class=""><a href="" target="_blank">利用規約</a>に同意する</p>
                 </div>
 
                 <div class="actions u-mb20">
