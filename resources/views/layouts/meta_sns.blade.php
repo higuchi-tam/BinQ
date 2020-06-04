@@ -4,4 +4,4 @@
 <meta property="og:title" content="美容師で、つながる。" />
 <meta property="og:description" content="新しい、美容師のSNS" />
 <meta property="og:site_name" content="BinQ" />
-<meta property="og:image" content="https://binq.kiwatchi.com/images/twitter_card.png" />
+<meta property="og:image" content="https://binq.kiwatchi.com/images/twitter_card2.png" />
