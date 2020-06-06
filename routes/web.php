@@ -74,3 +74,8 @@ Route::get('/changeEmail/failed', 'ChangeEmailController@failed')->name('changeE
 Route::get('/changeEmail/complete', 'ChangeEmailController@complete')->name('changeEmail.complete');
 Route::get('/reset/{token}', 'ChangeEmailController@reset');
 Route::post('/email', 'ChangeEmailController@sendChangeEmailLink');
+
+//パスワード変更
+Route::get('/changepassword', 'changePasswordController@index');
+Route::post('/changepassword', 'changePasswordController@changePassword')->name('changepassword');
+Route::get('/changepassword/complete', 'changePasswordController@complete')->name('changePassword.complete');
