@@ -1,6 +1,6 @@
 <div class="p-user_article__userContainer">
     <figure class="p-user_article__userImg">
-        <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
+        <a href="{{ route('users.show', ['name' => $article->user->userId]) }}" class="text-dark">
             @include('users.icon',['target_user' => $article->user])
         </a>
     </figure>
