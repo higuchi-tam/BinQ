@@ -2,7 +2,7 @@
 <meta name="twitter:site" content="@nichimachikid" />
 @if($type === "article")
 <meta property="og:url" content="{{ route('articles.show',$article->id) }}" />
-<meta property="og:title" content="{{ $article->tilte }}" />
+<meta property="og:title" content="{{ $article->title }}" />
 <meta property="og:description" content="{{ strip_tags($article->body) }}" />
 @elseif($type === "top")
 <meta property="og:url" content="https://binq.kiwatchi.com/" />
