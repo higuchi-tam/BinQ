@@ -66,3 +66,11 @@ Route::prefix('likes')->name('likes.')->group(function () {
 Route::get('/post', 'PostsController@index')->name('post.index');
 
 Route::get('/', 'HomeController@index')->name('home');
+
+// メールアドレス確認メールを送信
+Route::get('/changeEmail', 'ChangeEmailController@index')->name('changeEmail.index');
+Route::get('/changeEmail/sent', 'ChangeEmailController@sent')->name('changeEmail.sent');
+Route::get('/changeEmail/failed', 'ChangeEmailController@failed')->name('changeEmail.failed');
+Route::get('/changeEmail/complete', 'ChangeEmailController@complete')->name('changeEmail.complete');
+Route::get('/reset/{token}', 'ChangeEmailController@reset');
+Route::post('/email', 'ChangeEmailController@sendChangeEmailLink');

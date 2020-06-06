@@ -20,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'userId', 'email', 'password',
     ];
 
     /**
@@ -41,9 +41,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * パスワードリセット通知の送信をオーバーライド
+     *
+     * @param  string  $token
+     * @return void
+     */
     public function sendPasswordResetNotification($token)
     {
-        $this->notify(new PasswordResetNotification($token, new BareMail()));
+        $this->notify(new PasswordResetNotification($token));
     }
 
     public function articles(): HasMany
@@ -86,5 +92,4 @@ class User extends Authenticatable
     {
         return $this->Where('id', '<>', $user_id)->paginate(12);
     }
-
 }

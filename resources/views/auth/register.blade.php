@@ -6,7 +6,7 @@
 
         <div class="p-login__form">
             <div class="p-login__titleWrap">
-                <h3 class="p-login__titleTxt">BinQに登録する</h3>
+                <h3 class="p-login__titleTxt"><a href="/">BinQに登録する</a></h3>
             </div>
 
             <form method="POST" action="{{ route('register') }}" class="p-register--border u-mb20">

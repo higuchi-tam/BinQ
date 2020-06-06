@@ -3,7 +3,7 @@
 @section('content')
 <div class="l-container">
     <div class="p-login__container">
-        <h2 class="p-login__mainTitle">BinQ</h2>
+        <h2 class="p-login__mainTitle"><a href="/">BinQ</a></h2>
 
 
         <div class="p-login__form">

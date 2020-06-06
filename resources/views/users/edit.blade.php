@@ -7,7 +7,7 @@
     <div class="p-form__container">
 
         <form id="js-edit_user" class="edit_user" enctype="multipart/form-data"
-            action="{{ route('users.update', ['name' => $user->name]) }}" accept-charset="UTF-8" method="post">
+            action="{{ route('users.update', ['name' => $user->userId]) }}" accept-charset="UTF-8" method="post">
             <input name="utf8" type="hidden" value="✓" />
             <input type="hidden" name="id" value="{{ $user->id }}" id="js-userId__for-ajax" />
             {{csrf_field()}}
@@ -62,10 +62,10 @@
                                         class="p-form__required">必須</span></label>
                                 <div class="p-form__idWrapper">
                                     <span>@ </span><input autofocus="autofocus" class="p-form__item p-form__item--id"
-                                        type="text" value="{{ old('name',$user->name) }}" name="name" />
+                                        type="text" value="{{ old('userId',$user->userId) }}" name="userId" />
                                 </div>
                                 <span class="p-form__subtext">※ユーザーIDがマイページのURLとなります</span>
-                                @error('name')
+                                @error('userId')
                                 <div class="c-error__msg">
                                     <strong>{{ $message }}</strong>
                                 </div>
@@ -76,9 +76,9 @@
                                 <label for="title" class="p-form__label">ユーザー名<span
                                         class="p-form__required p-form__required--optional">任意</span>
                                 </label> <input autofocus="autofocus" class="p-form__item" type="text"
-                                    value="{{ old('title',$user->title) }}" name="title" />
+                                    value="{{ old('name',$user->name) }}" name="name" />
                                 <span class="p-form__subtext">※ユーザー名がない場合、ユーザーIDを表示します</span>
-                                @error('title')
+                                @error('name')
                                 <div class="c-error__msg">
                                     <strong>{{ $message }}</strong>
                                 </div>

@@ -101,9 +101,9 @@ class UserController extends Controller
     }
 
 
-    public function edit(string $name)
+    public function edit(string $userId)
     {
-        $user = User::where('name', $name)->first();
+        $user = User::where('userId', $userId)->first();
         $auth_user = Auth::user();
 
         return view('users.edit', [
@@ -112,18 +112,19 @@ class UserController extends Controller
         ]);
     }
 
-    public function update(UserRequest $request, User $user, string $name)
+    public function update(UserRequest $request, User $user, string $userId)
     {
-        $user = User::where('name', $name)->first();
-        $user->title = $request->title;
+        $user = User::where('userId', $userId)->first();
+        $user->userId = $request->userId;
+        $user->name = $request->name;
         $user->comment = $request->comment;
         $user->url = $request->url;
         $user->twitter_url = $request->twitter_url;
         $user->facebook_url = $request->facebook_url;
         $user->instagram_url = $request->instagram_url;
-        $user->fill($request->all())->save();
+        $user->save();
 
-        return redirect()->route('users.show', $user->name);
+        return redirect()->route('users.show', $user->userId);
     }
 
     public function likes(string $name)

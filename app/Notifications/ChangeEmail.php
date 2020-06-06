@@ -7,10 +7,10 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class PasswordResetNotification extends Notification
+class ChangeEmail extends Notification
 {
     use Queueable;
-    protected $title = 'パスワードリセット 通知';
+    public $token;
 
     /**
      * Create a new notification instance.
@@ -42,12 +42,11 @@ class PasswordResetNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject($this->title)
-            ->view(
-                'emails.passwordreset',
-                [
-                    'reset_url' => url('password/reset', $this->token),
-                ]
+            ->subject('メールアドレス変更') // 件名
+            ->view('emails.changeEmail') // メールテンプレートの指定
+            ->action(
+                'メールアドレス変更',
+                url('reset', $this->token) //アクセスするURL
             );
     }
 

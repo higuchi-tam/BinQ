@@ -3384,6 +3384,7 @@ input {
   width: 100%;
   padding: 1rem;
   margin-bottom: 4rem;
+  border: 1px solid #ccc;
 }
 
 .p-form__image {

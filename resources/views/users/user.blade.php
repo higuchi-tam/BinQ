@@ -17,7 +17,7 @@
             </follow-button>
         </div>
         @elseif( Auth::id() == $user->id )
-        <a href="{{ route("users.edit", ['name' => $user->name]) }}" class="p-user_detail__edit">変更</a>
+        <a href="{{ route("users.edit", ['name' => $user->userId]) }}" class="p-user_detail__edit">変更</a>
         @endif
         @endauth
     </div>
