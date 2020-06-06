@@ -1,0 +1,151 @@
+// =========================================
+// Project
+// =========================================
+
+.p-user_detail {
+	&__userContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 6rem 0 8rem 0;
+        position: relative;
+        padding-left: 13.5rem;
+        @include mq(smd) {
+            padding-top: 6.5rem;
+            padding-left: 0;
+        }
+        ul li{
+            list-style: none;
+        }
+		@include mq(md) {
+			flex-wrap: wrap;
+		}
+    }
+    &__top{
+        display: flex;
+        position: relative;
+        max-width: 45rem;
+    }
+    &__top-right{
+        font-size: 1.2rem;
+        height: fit-content;
+    }
+    &__bottom{
+    }
+    &__name{
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-right: 2rem;
+    }
+    &__nameWrap{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        list-style: none;
+        @include mq(md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+	&__userImg {
+        flex-shrink: 1;
+        position: absolute;
+        top: 0;
+        left: -13.5rem;
+        @include mq(smd) {
+            top: -13rem;
+            left: 0;
+        }
+		img {
+            width: 10.5rem;
+            height: 10.5rem;
+            max-width: 13rem;
+            max-height: 13rem;
+            border-radius: 100%;
+		}
+    }
+     &__edit{
+        padding: .3rem 1rem;
+        background: #fff;
+        border:1px solid $baseColor;
+        color:$baseColor;
+        border-radius: .5rem;
+        height: 25px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        line-height: 1.8;
+        @include mq(smd) {
+            top: -8.5rem;
+        }
+    }
+	&__snsList {
+		list-style: none;
+        position: relative;
+        margin: 0;
+        margin-right: 2rem;
+	}
+	&__snsItem {
+		padding-left: 0;
+    }
+    &__userTitle{
+        margin: 0 0 1rem 0;
+        font-size: 1.4rem;
+        list-style: none;
+    }
+    &__comment{
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+    &__tab{
+        width: 74rem;
+        margin-right: 1rem;
+        margin-bottom: 4rem;
+    }
+    &__list{
+        list-style: none;
+        display: flex;
+        width: 100%;
+        padding: 0;
+    }
+    &__item{
+        width: calc(100%/3);
+        text-align: center;
+        padding: 1rem 0;
+        border: 1px solid $blurColor;
+    }
+    &__topicWrap{
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        a{
+            color: $accentColor;
+
+        }
+    }
+    &__topicNum{
+        margin-right: 1rem;
+    }
+    &__followNum{
+        margin-right: 1rem;
+    }
+    &__url{
+        span{
+            background: #fff;
+            padding: 3px 12px;
+            border-radius: 10px
+        }
+        a{
+            color: $accentColor;
+        }
+    }
+   
+    &__follow{
+        margin: 0 0 0 auto;
+        @include mq(smd) {
+            position: absolute;
+            top: -7.5rem;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+}

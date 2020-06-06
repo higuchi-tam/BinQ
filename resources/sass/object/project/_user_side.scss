@@ -1,0 +1,42 @@
+// =========================================
+// Project Form
+// =========================================
+
+.p-user{
+    &__side{
+        display: flex;
+        margin-bottom: 2rem;
+        &:last-child{
+            margin-bottom: 3rem;
+        }
+        &--img{
+            display: inherit;
+            a{
+                width: 5rem;
+                height: 5rem;
+                display: inline-block;
+            }
+            img{
+                width: 5rem;
+                height: 5rem;
+                border-radius: 50%;
+            }
+        }
+        &--text{
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        &--title{
+            font-size: 1.6rem;
+            color: $baseColor;
+        }
+    }
+
+    &__tag{
+        a{
+        color: $baseColor;
+        font-size: 1.2rem;
+        }
+    }
+}

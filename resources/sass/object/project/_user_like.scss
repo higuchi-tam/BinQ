@@ -1,0 +1,73 @@
+.p-user_like{
+    &__userContainer {
+        display: flex;
+        max-width: 68rem;
+        margin-right: 1rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        position: relative;
+		@include mq(md) {
+			flex-wrap: wrap;
+		}
+    }
+    &__wrap{
+        padding: 1rem 0;
+        @include mq(smd) {
+			margin-left: 0;
+		}
+    }
+    &__user{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+    }
+    &__name{
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+    }
+    &__userTitle{
+        margin-bottom:0.5rem;
+        font-size: 1.4rem;
+    }
+    &__comment{
+        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
+    }
+	&__userImg {
+        margin-right: 4rem;
+        img {
+            width: 13rem;
+            height: 13rem;
+            border-radius: 100%;
+            @include mq(md) {
+                width: 16.9vw;
+                height: 16.9vw;
+                min-width: 7rem;
+                min-height: 7rem;
+            }
+		}
+	}
+	&__snsList {
+        list-style: none;
+        position: relative;
+        margin: 0;
+        margin-right: 2rem;
+        display: flex;
+        align-items: center;
+	}
+	&__snsItem {
+        padding-left: 0;
+        padding-left: 1.5rem;
+        transition: 0.3s;
+        &:first-child{
+            padding-left: 0;
+        }
+    }
+    &__follow{
+        position: absolute;
+        top: 2rem;
+        right: 0;
+    }
+}

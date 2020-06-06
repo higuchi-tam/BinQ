@@ -4,6 +4,7 @@ import Vue from "vue";
 import ArticleLike from "./components/ArticleLike";
 import ArticleTagsInput from "./components/ArticleTagsInput";
 import FollowButton from "./components/FollowButton";
+import CommentLike from "./components/CommentLike";
 import jquery from "jquery";
 window.$ = jquery;
 import Quill from 'quill';
@@ -11,9 +12,18 @@ import createImgBtnDom from './components/createImgBtn';
 
 // import DropDown from "./components/dropdown.js";
 
-require("./components/dropdown");
+require("./components/drawerMenu");
 require("./components/createImgBtn");
 require("./components/uploadImg");
+require("./components/modalComment");
+require("./components/modalArticle");
+require("./components/resizeImg");
+require("./components/exitPopup");
+require("./components/getUserDetailHeight");
+require("./components/autoSave");
+require("./components/topPageArticleSlider");
+require("./components/topPageUserSlider");
+require("./jquery.validate.min");
 
 //vueコンポーネントを使用する
 const app = new Vue({
@@ -21,7 +31,8 @@ const app = new Vue({
     components: {
         ArticleLike,
         ArticleTagsInput,
-        FollowButton
+        FollowButton,
+        CommentLike
     }
 });
 
@@ -33,13 +44,14 @@ Quill.prototype.getHtml = function() {
 }
 
 $(document).ready(() => {
-        $('.js-quill-editor').each((index, e) => {
+    const $Editor = $('.js-quill-editor');
+        $Editor.each((index, e) => {
             const $target  = $($(e).data('target'))
             window.Delta = Quill.import('delta');
             window.editor = new Quill(e, {
                 modules: {
                     toolbar: [
-                        [{ header: [1, 2, false] }],
+                        [{ header: [1, 2, 3, false] }],
                         ['bold', 'italic', 'underline',],
                         ['link'],
                         ['blockquote'],
@@ -82,3 +94,4 @@ $(document).ready(() => {
     //画像追加ボタンDOM生成
     createImgBtnDom();
 });
+

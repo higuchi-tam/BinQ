@@ -1,0 +1,29 @@
+.p-categoryTab{
+    display: flex;
+    border-bottom: 1px solid #ddd;
+     @include mq(md) {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+		}
+    &__item{
+        list-style: none;
+        padding: 1rem 1.5rem;
+        text-align: center;
+        font-size: 1.6rem;
+        color: #777;
+        &:not(:last-child){
+            border-right: none;
+        }
+    }
+    &__link{
+        color: #777;
+        &:visited{
+            color: #777;
+        }
+        &.tab-active{
+            color: $accentColor;
+            text-decoration: underline;
+        }
+    }
+}

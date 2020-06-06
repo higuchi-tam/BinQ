@@ -1,10 +1,6 @@
-@charset "utf-8";
-
 // =========================================
 // Foundation
 // =========================================
-@import "../foundation/_mixin.scss";
-@import "../foundation/_base.scss";
 
 .l-footer {
 	width: 100%;
@@ -71,6 +67,7 @@
 	&__listUp {
 		display: flex;
 		align-items: flex-end;
+		list-style: none;
 		a {
 			color: #fff;
 			font-size: 1.2rem;

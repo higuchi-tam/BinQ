@@ -1,0 +1,100 @@
+.p-modal{
+    &__bg{
+        background: #333;
+        opacity: .7;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    &__inner{
+        width: 90vw;
+        max-width: 45rem;
+        top: 50%;
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 1.5rem;
+    }
+    &__header{
+        padding: 1.6rem;
+        background: #f7f9f9;
+        border-bottom: 1px solid #f2f2f2;
+        font-size: 1.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+    &__main{
+        font-size: 1.6rem;
+        height: 15rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid #f2f2f2;
+    }
+    &__mainText{
+        margin-bottom: 2rem;
+    }
+    &__footer{
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #f7f9f9;
+        border-radius: 0 0 1.5rem 1.5rem;
+    }
+   
+    &__btns{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        justify-content: space-between;
+        width: 25.5rem;
+        }
+        &__btn{
+            padding: 0.6rem 0.8rem;
+            border-radius: 4px;
+            border: none;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            border-radius: 0.5rem;
+            background: $blurColor;
+            color: #fff;
+            &:visited{
+                color: #fff;
+            }
+            span{
+                margin-right: 0.5rem;
+            }
+            img{
+                width: 2rem;
+                height: 2rem;
+            }
+            &--tw{
+                color: #fff;
+            }
+            &--fb{
+                width: 115px;
+                display: flex;
+                justify-content: space-around;
+            }
+            &--close{
+                background: #fff;
+                color: #333;
+                border: 1px solid #ccc;
+                padding: 0.5rem 2rem;
+                &:visited{
+                    color: #333;
+                }
+            }
+        }
+
+}

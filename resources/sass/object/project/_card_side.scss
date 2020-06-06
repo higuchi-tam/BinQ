@@ -1,0 +1,47 @@
+// =========================================
+// Project Form
+// =========================================
+
+.p-card{
+    &__side{
+        display: flex;
+        margin-bottom: 2rem;
+        &:last-child{
+            margin-bottom: 3rem;
+        }
+        &--img{
+            display: inherit;
+            a{
+                width: 7rem;
+                height: 7rem;
+                display: inline-block;
+
+            }
+            img{
+                width: 7rem;
+                height: 7rem;
+            }
+        }
+        &--text{
+            margin-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &--title{
+            font-size: 1.6rem;
+            color: $baseColor;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+
+    &__tag{
+        a{
+        color: $baseColor;
+        font-size: 1.2rem;
+        }
+    }
+}

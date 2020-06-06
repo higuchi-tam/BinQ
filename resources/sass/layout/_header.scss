@@ -1,42 +1,38 @@
-@charset "utf-8";
-
 // =========================================
 // Foundation
 // =========================================
-@import "foundation/_mixin.scss";
-@import "foundation/_base.scss";
 
 .l-header {
     width: 1000px;
     height: 100px;
     margin: 0 auto;
+    padding-top: 3rem;
     @include mq(lg) {
         width: 100%;
-        padding: 0 5vw;
+        padding: 3rem 8vw 0;
     }
     @include mq(md) {
-        height: 15vw;
     }
     &__title {
-        font-size: 3.2rem;
+        font-size: 4rem;
+        line-height: 1;
         a {
             color: #555555;
         }
-        @include mq(lg) {
-            @include fz_vw(32);
-        }
-        @include mq(md) {
-            @include fz_vw(42);
-            padding-left: 3vw;
+        @include mq(sp-only) {
+            font-size: 10.6vw;
         }
     }
     &__menuWrap {
-        width: 20rem;
+        display: flex;
+        align-items: center;
     }
     &__nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        height: 4rem;
     }
     &__menu {
         width: 100%;
@@ -53,17 +49,21 @@
         }
     }
     &__item {
-        // width: 50%;
         height: 100%;
         text-align: center;
         transition: all 0.3s;
         box-sizing: border-box;
         position: relative;
+        align-items: center;
+        display: flex;
         &:hover {
             cursor: pointer;
         }
         &:first-child{
             margin-right: 4rem;
+            @include mq(smd) {
+                margin-right: 2.65vw;
+            }
             &:hover {
                 text-decoration: underline;
             }
@@ -96,7 +96,7 @@
                 background: #802d4b;
             }
             @include mq(md) {
-                height: 2.5rem;
+                display: none;
             }
             img {
                 width: 2rem;
@@ -116,33 +116,101 @@
             }
         }
         &--register{
-            padding: 1rem;
-            background: $accentColor;
+            padding: 1rem 2.5rem;
             border: 1px solid $accentColor;
-            border-radius: .3rem;
-            color: #fff;
+            border-radius: 3rem;
+            color: $accentColor;
             transition: all .3s;
-            &:hover{
-                background: #fff;
+            @include mq(sp-only) {
+                font-size: 1.2rem;
+                padding: .8rem 2rem;
+            }
+            &:visited{
                 color: $accentColor;
             }
+            &:hover{
+                background: $accentColor;
+                color: #fff
+            }
+        }
+        &--login{
+            @include mq(sp-only) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    &__img{
+        img{
+            border-radius: 50%;
+            width: 5rem;
+            height: 5rem;
+        }
+        &.is-active{
+            background: none;
         }
     }
     &__dropdown {
         &--menu {
             border-radius: 5px;
-            width: 12rem;
+            width: 22rem;
             display: none;
             position: absolute;
             right: 0;
-            padding: 1rem;
+            top: 4rem;
             list-style: none;
-            background: $accentColor;
+            background: #fff;
+            margin-top: 2rem;
             z-index: 990;
+            @include mq(smd) {
+                position: fixed;
+                top: 7rem;
+                left: 0;
+                width: auto;
+                height: 100%;
+            }
+        }
+        &--item{
+            border-top: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            @include mq(smd) {
+                padding: 1rem 0;
+            }
+            &:last-child{
+                border-bottom: 1px solid #eee;
+                @include mq(smd) {
+                border-bottom: none;
+            }
+            }
+            &.post{
+                height: 4.2rem;
+                @include mq(smd) {
+                    height: 6.7rem;
+                }
+            }
+        }
+        &--bg{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+        }
+        &--postText{
+            color: #444;
+            padding-left: 1rem;
         }
     }
     &__button {
-        color: #fff;
+        margin: 0 auto 0 0;
+        padding: 1rem 2rem;
+        display: inline-block;
+        width: 100%;
+        color: #444;
+        text-align: left;
+        font-size: 1.4rem;
         cursor: pointer;
         background: none;
         border: none;
@@ -151,14 +219,25 @@
         -moz-appearance: none;
         appearance: none;
         translate: all 0.3s;
+        @include mq(smd) {
+            padding: 1.2rem 2rem;
+            width: auto;
+        }
         &:hover {
             text-decoration: underline;
             translate: all 0.3s;
         }
+        &:visited{
+            color: #444;
+        }
+        &--post{
+                display: flex;
+            img{
+                width: 2rem;
+            }
+        }
     }
     &__userImg{
-        width: 5rem;
-        height: 5rem;
         border-radius: 100%;
     }
 }

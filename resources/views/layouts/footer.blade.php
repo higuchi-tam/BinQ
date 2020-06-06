@@ -5,13 +5,14 @@
             <p class="l-footer__title">BinQ</p>
             <ul class="l-footer__snsList">
                 <li class="l-footer__snsItem">
-                    <a href="https://twitter.com/nishimachikid" target="blank"><img src="/images/tw.svg" alt=""></a>
+                    <a href="https://twitter.com/nishimachikid" target="blank"><img src="/images/tw.svg"
+                            alt="twitterアイコン"></a>
                 </li>
                 <li class="l-footer__snsItem">
-                    <a href="/images/fv.svg"><img src="/images/fb.svg" alt=""></a>
+                    <a href="/images/fv.svg"><img src="/images/fb.svg" alt="facebookアイコン"></a>
                 </li>
                 <li class="l-footer__snsItem">
-                    <a href="/images/ins.svg"><img src="/images/ins.svg" alt=""></a>
+                    <a href="/images/ins.svg"><img src="/images/ins.svg" alt="Instagramアイコン"></a>
                 </li>
             </ul>
         </div>
@@ -24,6 +25,6 @@
         </div>
     </div>
     <p class="l-footer__text--under">©︎BinQ</p>
-  </div>
+    </div>
 </footer>
 @endsection

@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UserRequest extends FormRequest
 {
@@ -21,14 +23,11 @@ class UserRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Request $request)
     {
         return [
-            'name' => 'required',
+            'userId' => 'required | string | regex:/^[a-zA-Z0-9-_]+$/ | min:3 | max:16 | unique:users',
             'email' => 'required',
-            'password' => 'required',
-            'password_confirmation' => 'required',
-            // 'title' =>
         ];
     }
 
@@ -36,9 +35,9 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'ユーザー名',
-            'email' => 'アドレス',
+            'email' => 'メールアドレス',
             'password' => 'パスワード',
-            'password_confirmation' =>'パスワード再入力'
+            'password_confirmation' => 'パスワード再入力'
         ];
     }
 }

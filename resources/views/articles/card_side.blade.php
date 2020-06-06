@@ -1,8 +1,7 @@
-<div class="p-card__side">
+<li class="p-card__side">
     <figure class="p-card__side--img">
         {{-- TODO:動的に切り替える --}}
-        <a class="p-card__side--title"
-            href="{{ route('articles.show', ['article' => $article]) }}">
+        <a href="{{ route('articles.show', ['article' => $article]) }}">
             <img src="{{ asset('/images/blank_profile.png') }}" alt="記事のメイン画像">
         </a>
 
@@ -18,5 +17,4 @@
             </article-like>
         </div>
     </div>
-</div>
-
+</li>

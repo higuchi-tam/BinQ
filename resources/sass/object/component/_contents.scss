@@ -1,17 +1,13 @@
-@charset "utf-8";
-
 // =========================================
 // Foundation
 // =========================================
-@import "../../foundation/_mixin.scss";
-@import "../../foundation/_base.scss";
 
 .c-3col {
 	&__container {
 		width: 74rem;
 		display: flex;
+		justify-content: space-between;
         flex-wrap: wrap;
-		margin-right: 1rem;
 		@include mq(lg) {
             width: 100%;
 
@@ -20,7 +16,7 @@
 	&__item {
 		width: 31%;
         margin-right: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 6rem;
 		&:nth-child(3n) {
 			margin-right: 0;
 			@include mq(md) {
@@ -40,6 +36,5 @@
 
 .c-contents__title {
 	@include mq(lg) {
-		padding: 0 1rem;
 	}
 }

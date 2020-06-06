@@ -1,23 +1,19 @@
 @extends('layouts.app')
 
-{{-- @include('layouts.header') --}}
-{{-- @include('layouts.footer') --}}
-
 @section('content')
 <div class="l-container">
     <div class="p-login__container">
-        <h2 class="p-login__mainTitle">BinQ</h2>
+        <h2 class="p-login__mainTitle"><a href="/">BinQ</a></h2>
 
-        @include('error_card_list') {{--この行を追加--}}
 
         <div class="p-login__form">
             <div class="p-login__titleWrap">
                 <h3 class="p-login__titleTxt">ログイン</h3>
             </div>
             <div class="c-button__sns">
-                <a href="" class="c-button__sns--tw">Twitterでログイン</a>
-                <a href="" class="c-button__sns--ins">Instagramでログイン</a>
-                {{-- <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="c-button__sns--ins">Googleでログイン</a> --}}
+                <a href="/login/twitter" class="c-button__sns--tw">Twitterでログイン</a>
+                <a href="/login/facebook" class="c-button__sns--fb">Facebookでログイン</a>
+                <a href="/login/google" class="c-button__sns--gg">Googleでログイン</a>
             </div>
             <div class="p-login__addressWrap">
                 <h4 class="p-login__addressTitle">メールアドレスでログイン</h4>
@@ -27,10 +23,20 @@
                     <div class="p-login__formGroup">
                         <input id="email" type="email" class="p-login__formItem" name="email" placeholder="メールアドレス"
                             value="{{ old('email') }}" required autofocus>
+                        @error('email')
+                        <div class="c-error__msg">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="p-login__formGroup">
                         <input id="password" type="password" class="p-login__formItem" name="password"
                             placeholder="パスワード" required>
+                        @error('password')
+                        <div class="c-error__msg">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
                     </div>
 
                     <input type="hidden" name="remember" id="remember" value="on">

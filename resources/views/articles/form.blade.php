@@ -1,27 +1,76 @@
-@csrf
-<input type="hidden" id="js-articleId__for-ajax" data-article__id="{{$article->id ?? ''}}" data-cursor__index="">
-<div id="js-img__prevArea" class="p-form__image"
-    style="background-image: url('/{{($article->img)?"storage/".$article->img:"images/blank_profile.png"}}') ">
-    <label for="js-upload-mainImg" class="p-form__image__area"><input type="file" id="js-upload-mainImg"
-            class="p-form__image__input"></label>
-</div>
-<div class="p-form__image__deleteBtn" id="js-img__delete">
-    削除する
-</div>
+<section class="l-article_post">
+    <div>
+        <form id="article_form" method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
+            @method('PATCH')
+            @csrf
+            <input type="hidden" id="js-articleId__for-ajax" data-article__id="{{$article->id ?? ''}}"
+                data-cursor__index="" name="articleId" value="{{$article->id}}">
 
-<div class="p-form__title">
-    <input type="text" name="title" placeholder="記事タイトル" required value="{{ $article->title ?? old('title') }}">
-</div>
+            {{-- 画像があれば画像表示、なければアイコン表示 --}}
+            @if($article->img)
+            <div id="js-img__prevArea" class="p-form__image hasImg"
+                style="background-image:url('{{"/storage/".$article->img}}');">
+                @else
+                <div id="js-img__prevArea" class="p-form__image"
+                    style="background-image: url('/images/image-plus.svg');">
+                    @endif
+                    <label for="js-upload-mainImg" class="p-form__image__area"><input type="file" id="js-upload-mainImg"
+                            class="p-form__image__input"></label>
+                    {{-- 画像があればhasImgクラス付与 --}}
+                    @if($article->img)
+                    <div class="p-form__image__deleteBtn hasImg" id="js-img__delete">
+                        @else
+                        <div class="p-form__image__deleteBtn" id="js-img__delete">
+                            @endif
+                            <img src="{{ asset('images/close.svg') }}" alt="閉じるボタン">
+                        </div>
+                        <div class="p-form__image__modal" id="js-image__modal">
+                            <div class="p-form__image__modal__inner">
+                                <img id="js-resize__img" src="" alt="">
+                                <input type="hidden" id="upload-image-x" name="profileImageX" value="0" />
+                                <input type="hidden" id="upload-image-y" name="profileImageY" value="0" />
+                                <input type="hidden" id="upload-image-w" name="profileImageW" value="0" />
+                                <input type="hidden" id="upload-image-h" name="profileImageH" value="0" />
+                            </div>
+                            <div class="p-form__image__modal__btns">
+                                <button type="button" class="p-form__image__modal__btn"
+                                    id="js-resize__cancel">キャンセル</button>
+                                <button type="button" class="p-form__image__modal__btn ok"
+                                    id="js-resize__ok">OK</button>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="p-form__tag">
-    <article-tags-input :initial-tags='@json($tagNames ?? [])' :autocomplete-items='@json($allTagNames ?? [])'
-        class="p-form">
-    </article-tags-input>
-</div>
+                    <div class="p-form__title">
+                        <textarea id="js-title" name="title"
+                            placeholder="タイトル記入欄">{{ old('title') ?? $article->title }}</textarea>
+                        @error('title')
+                        <div class="c-error__msg">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
+                        @error('body')
+                        <div class="c-error__msg">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="p-form__tag">
+                        <article-tags-input :initial-tags='@json($tagNames ?? [])' class="p-form"
+                            :autocomplete-items='@json($allTagNames ?? [])'></article-tags-input>
+                    </div>
 
 
-<div class="p-form__textarea">
-    <div class="js-quill-editor" data-target="#content" style="height: 150px;">{!! $article->body ?? old('body') !!}
+                    <div class="p-form__textarea">
+                        {{-- oldがあれば表示、ない場合、編集画面ならDBの情報を表示 --}}
+                        <div class="js-quill-editor" data-target="#content">{!! old('body') ??
+                            $article->body ?? "" !!}
+                        </div>
+                        <input id="content" class="js-body" name="body" type="hidden" value="">
+                    </div>
+        </form>
     </div>
-    <input id="content" name="body" type="hidden" value="">
-</div>
+    {{-- モーダル読み込み --}}
+    @include('articles.modal')
+</section>

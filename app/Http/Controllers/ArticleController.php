@@ -19,12 +19,28 @@ use Symfony\Component\ErrorHandler\Debug;
 use function Psy\debug;
 use Illuminate\Support\Facades\Storage;
 
+use Image;
+use App\Http\Controllers\Input;
+
+$sA = new ArticleController();
+
 
 class ArticleController extends Controller
 {
+
     public function __construct()
     {
+        $this->sidebarArticles = Article::withCount('likes')->orderBy('likes_count', 'desc')->where('open_flg', 0)->take(5)->get();
+        $this->sidebarUsers = User::withCount('followers')->orderBy('followers_count', 'desc')->take(5)->get();
         $this->authorizeResource(Article::class, 'article');
+    }
+
+    private function getAllTagNames()
+    {
+        $allTagNames = Tag::all()->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
+        return $allTagNames;
     }
 
     //不要画像削除メソッド（Controller内で呼び出す）
@@ -52,18 +68,25 @@ class ArticleController extends Controller
     public function index(User $user)
     {
         //allメソッドでモデルの全データをコレクションで返す。
-        $articles = Article::orderBy('created_at', 'desc')->paginate(9);
+        $articles = Article::orderBy('created_at', 'desc')
+            ->where('open_flg', 0)
+            ->paginate(9);
         $user = Auth::user();
-        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $auth_user = Auth::user();
+        $allTagNames = $this->getAllTagNames();
+        $tags = Tag::all();
 
         // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
         // キーを定義することでビューファイル側で$articleという変数が使用できる
         return view('articles.index', [
             'articles' => $articles,
             'user' => $user,
-            'users'  => $users,
             'auth_user' => $auth_user,
+            'allTagNames' => $allTagNames,
+            'tags' => $tags,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -72,14 +95,18 @@ class ArticleController extends Controller
 
         $user = Auth::user();
         $auth_user = Auth::user();
-        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
-        $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
+        $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->where('open_flg', 0)->paginate(9);
+
+        $tags = Tag::all();
 
         return view('articles.indexLikes', [
             'user' => $user,
             'auth_user' => $auth_user,
             'articles' => $articles,
-            'users'  => $users,
+            'tags'  => $tags,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -95,33 +122,17 @@ class ArticleController extends Controller
 
     public function create()
     {
-        $allTagNames = Tag::all()->map(function ($tag) {
-            return ['text' => $tag->name];
-        });
+        $allTagNames = $this->getAllTagNames();
         $user = Auth::user();
         $auth_user = Auth::user();
 
-
-        return view('articles.create', [
-            'allTagNames' => $allTagNames,
-            'user' => $user,
-            'auth_user' => $auth_user,
-        ]);
-    }
-
-    public function store(ArticleRequest $request, Article $article)
-    {
-        Log::debug('<<< store >>>>');
-        Log::debug('<<< $request >>>>');
-        Log::debug($request);
-
-        $article->user_id = $request->user()->id;
+        //インスタンスをnewし、下書き状態で編集画面のviewへ渡す
+        $article = new Article();
+        $article->user_id = $user->id;
+        $article->open_flg = 1;
         $article->save();
-        $request->tags->each(function ($tagName) use ($article) {
-            $tag = Tag::firstOrCreate(['name' => $tagName]);
-            $article->tags()->attach($tag);
-        });
-        return redirect()->route('articles.index');
+
+        return redirect()->route('articles.edit', $article->id);
     }
 
     public function edit(Article $article)
@@ -129,13 +140,10 @@ class ArticleController extends Controller
         $tagNames = $article->tags->map(function ($tag) {
             return ['text' => $tag->name];
         });
-        $allTagNames = Tag::all()->map(function ($tag) {
-            return ['text' => $tag->name];
-        });
+        $allTagNames = $this->getAllTagNames();
+        $tags = Tag::all();
         $user = Auth::user();
         $auth_user = Auth::user();
-
-
 
         return view('articles.edit', [
             'article' => $article,
@@ -143,6 +151,7 @@ class ArticleController extends Controller
             'allTagNames' => $allTagNames,
             'user' => $user,
             'auth_user' => $auth_user,
+            'tags' => $tags,
         ]);
     }
 
@@ -163,7 +172,7 @@ class ArticleController extends Controller
         //不要な画像削除する（Controller内で定義した関数を呼び出す）
         $this->deleteImg($article);
 
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.edit', $article->id)->with('flash_message', '200');
     }
 
     public function destroy(Article $article)
@@ -175,26 +184,21 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $user = Auth::user();
+        $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
         $auth_user = Auth::user();
         $articles = Article::withCount('likes')->orderBy('likes_count', 'desc')->paginate(9);
 
-        Log::debug('$article');
-        Log::debug($article);
-        Log::debug($article->uesr);
+        $comments = $article->comments()->get();
         return view('articles.show', [
             'article' => $article,
             'user' => $user,
+            'users' => $users,
             'auth_user' => $auth_user,
             'articles' => $articles,
-        ]);
-    }
-
-    public function detail(Article $article)
-    {
-        $user = Auth::user();
-        return view('articles.detail', [
-            'article' => $article,
-            'user' => $user,
+            'comments' => $comments,
+            //サイドバー用
+            'sidebarArticles' => $this->sidebarArticles,
+            'sidebarUsers' => $this->sidebarUsers,
         ]);
     }
 
@@ -231,6 +235,12 @@ class ArticleController extends Controller
         $articleId = $request->article_id;
         $isDelete = $request->isDelete;
 
+        $x = intval($request->{'crop-x'});
+        $y = intval($request->{'crop-y'});
+        $w = intval($request->{'crop-w'});
+        $h = intval($request->{'crop-h'});
+
+
         //記事本文画像の場合
         if ($postType === "body") {
             $Articleimg = new ArticleImg;
@@ -246,8 +256,6 @@ class ArticleController extends Controller
         } else if ($postType === "header") {
             //現在使用している画像ファイルを削除する
             $article = Article::find($articleId);
-            Log::debug('$article');
-            Log::debug($article);
 
             Storage::delete('public/' . $article->img);
 
@@ -255,8 +263,22 @@ class ArticleController extends Controller
             if ($isDelete) {
                 $article->img = null;
             } else {
-                $path = $request->file->store('public/article_header_imgs');
-                $article->img = str_replace('public/', '', $path);
+                $path = $request->file->store('public/temporary');
+                $temporaryPath =  str_replace('public/', '', $path);
+                $newPath = str_replace('public/temporary', '', 'article_header_imgs' . $path);
+
+                Log::debug('$path');
+                Log::debug($path);
+                Log::debug('$temporaryPath');
+                Log::debug($temporaryPath);
+                Log::debug('$newPath');
+                Log::debug($newPath);
+
+                $image = Image::make(storage_path("app/public/$temporaryPath"))->crop($w, $h, $x, $y);
+                $image->save(storage_path("app/public/$newPath"));
+
+                $article->img = $newPath;
+                Storage::delete($path);
             }
 
             $article->save();
@@ -264,5 +286,31 @@ class ArticleController extends Controller
         }
 
         return response()->json($response);
+    }
+    public function ajaxUpdate(Request $request, Article $article)
+    {
+        Log::debug('<<< ajaxupdate >>>>');
+        Log::debug('<<< $request >>>>');
+        Log::debug($request);
+
+        $tags = $request->tags;
+
+        $article = Article::find($request->article_id);
+        $article->fill($request->all())
+            ->save();
+
+        if ($tags) {
+            $article->tags()->detach();
+            $request->tags->each(function ($tagName) use ($article) {
+                $tag = Tag::firstOrCreate(['name' => $tagName]);
+                $article->tags()->attach($tag);
+            });
+        }
+
+        //不要な画像削除する（Controller内で定義した関数を呼び出す）
+        $this->deleteImg($article);
+
+        $updated_at = $article->updated_at->format('H:i');
+        return response()->json($updated_at);
     }
 }

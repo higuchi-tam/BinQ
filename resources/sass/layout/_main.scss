@@ -1,32 +1,27 @@
-@charset "utf-8";
-
 // =========================================
 // Foundation
 // =========================================
-@import "foundation/_mixin.scss";
-@import "foundation/_base.scss";
 
 .l-container {
 	width: 1000px;
 	margin: 0 auto;
 	@include mq(lg) {
 		width: 100%;
-		padding: 0 1rem;
 	}
 }
 
 .l-2col {
-	// width: 100rem;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
     margin: 0 auto;
     max-width: 100rem;
 	@include mq(lg) {
 		display: block;
 		justify-content: center;
+		padding: 0 5vw;
 	}
 	&--main {
-		width: 73rem;
+		width: 68rem;
 		margin-right: 2rem;
 		@include mq(lg) {
 			margin: 0 auto;
@@ -47,27 +42,25 @@
 	}
 }
 
-// #app{
-//     display: flex;
-// 	justify-content: center;
-// 	margin: 0 auto;
-// 	@include mq(lg) {
-// 		display: block;
-// 		justify-content: center;
-// 	}
-// 	&--main {
-// 		width: 73rem;
-// 		margin-right: 2rem;
-// 		@include mq(lg) {
-// 			margin: 0 auto;
-// 		}
-// 		@include mq(md) {
-// 			width: 100%;
-// 		}
-// 	}
-
-// }
-
 .red-text{
     background-image: url("/images/like-icon.svg");
+}
+
+.l-article_post{
+	max-width: 68rem;
+	width: 100%;
+	&__sidebar{
+		padding: 9rem 0 0;
+		position: sticky;
+		top: 1rem;
+		@include mq(lg) {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			position: fixed;
+			bottom: 2rem;
+			top: auto;
+			padding: 0;
+		}
+	}
 }

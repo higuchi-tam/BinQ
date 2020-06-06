@@ -1,0 +1,16 @@
+<svg id="fb" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #0869FB;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle id="楕円形_28" data-name="楕円形 28" class="cls-1" cx="15" cy="15" r="15"/>
+  <path id="パス_231" data-name="パス 231" class="cls-2" d="M2667.33,3821.58h1.17v-1.99a16.324,16.324,0,0,0-1.71-.09,2.688,2.688,0,0,0-2.87,2.94v1.65H2662v2.23h1.92v5.71h2.29v-5.71h1.94l0.29-2.24h-2.22v-1.42A0.925,0.925,0,0,1,2667.33,3821.58Z" transform="translate(-2650 -3811)"/>
+</svg>

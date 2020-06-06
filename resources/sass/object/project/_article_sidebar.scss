@@ -1,0 +1,38 @@
+// =========================================
+// Project Form
+// =========================================
+
+.p-article_sidebar{
+    &__btns{
+        display: flex;
+    }
+    &__btn{
+        position: sticky;
+        top: 20rem;
+        padding: 0.6rem 1.8rem;
+        border-radius: 0.4rem;
+        background: none;
+        border: 1px solid $baseColor;
+        color: $baseColor;
+        font-size: 1.4rem;
+        &--open{
+            margin-left: 1.6rem;
+        }
+    }
+    &__msg{
+        font-weight: bold;
+        color: $accentColor;
+        position: absolute;
+        top: 6.5rem;
+        font-size: 1.4rem;
+        display: none;
+        @include mq(lg) {
+            font-size: 1.2rem;
+            position: static;
+        }
+        &--saving{
+            display: none;
+            color: #ccc;
+        }
+    }
+}

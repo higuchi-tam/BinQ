@@ -6,13 +6,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    @yield('meta_sns')
     <!--CSS -->
     <!-- Styles -->
     {{-- TODO:本番環境ではsecure_assetに切り替える --}}
     <link href="{{ asset('css/common.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.bubble.css">
-
 </head>
 
 <body>
@@ -26,8 +26,6 @@
             @yield('content')
         </div>
         @yield('footer')
-
-
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>

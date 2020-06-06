@@ -2,14 +2,17 @@
 
 <nav class="l-header">
     <div class="l-header__nav">
-        <h1 class="l-header__title"><a href="/">BinQ</a></h1>
-        <span class="navbar-toggler-icon"></span>
+        <h1 class="l-header__title">
+            @auth<a href="{{ route('articles.index') }}">BinQ</a>@endauth
+            @guest<a href="{{ route('home') }}">BinQ</a>@endguest
+
+        </h1>
         <div class="l-header__menuWrap" id="">
             <ul class="l-header__menu">
 
                 @guest
                 <li class="l-header__item">
-                    <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+                    <a class="l-header__item--login" href="{{ route('login') }}">ログイン</a>
                 </li>
                 <li class="l-header__item">
                     <a class="l-header__item--register" href="{{ route('register') }}">ユーザー登録</a> {{--この行を変更--}}
@@ -19,29 +22,34 @@
                 @auth
                 <li class="l-header__item">
                     <a class="l-header__item--post" href="{{ route('articles.create')}}">
-                        <img src="/images/scissors-logo.svg" alt="">
+                        <img src="/images/scissors-logo.svg" alt="投稿">
                         <span class="l-header__item--postText">投稿</span>
                     </a>
                 </li>
                 <li class="l-header__item">
-                    <div class="js-dropdown">
-                        {{-- <a href="{{ route('users.show', ['name' => $user->name]) }}" class=""> --}}
-                        @if ($auth_user->profile_photo)
-                        <img class="l-header__userImg"
-                            src="{{ asset('storage/user_images/' . $auth_user->profile_photo) }}" />
-                        @else
-                                <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像"> --}}
-                        @endif
-                        {{-- </a> --}}
+                    <div class="l-header__img is-inactive" id="js-drawer__click-target">
+                        @include('users.icon',['target_user' => $auth_user])
                     </div>
 
                     {{-- ドロップダウンメニュー --}}
-                    <ul class="l-header__dropdown--menu">
+                    <ul class="l-header__dropdown--menu" id="js-drawer__menu">
                         <li class="l-header__dropdown--item">
-                            <a href="{{ route('users.show', ['name' => $auth_user->name]) }}" class="l-header__button">マイページ</a>
+                            <a href="{{ route('users.show', ['name' => $auth_user->userId]) }}"
+                                class="l-header__button">マイページ</a>
+                        </li>
+                        <li class="l-header__dropdown--item post">
+                            <a class="l-header__button l-header__button--post" href="{{ route('articles.create')}}">
+                                <img src="/images/scissors-logo-sp.svg" alt="投稿">
+                                <span class="l-header__dropdown--postText">投稿</span>
+                            </a>
                         </li>
                         <li class="l-header__dropdown--item">
-                            <a href="{{ route("users.edit", ['name' => $user->name]) }}"
+                            <a href="{{ route('articles.index') }}" class="l-header__button">最新の記事</a>
+                            <a href="{{ route('users.index') }}" class="l-header__button">人気の美容師</a>
+                            <a href="{{ route('likeIndex') }}" class="l-header__button">人気の記事</a>
+                        </li>
+                        <li class="l-header__dropdown--item">
+                            <a href="{{ route("users.edit", ['name' => $auth_user->userId]) }}"
                                 class="l-header__button">アカウント設定</a>
                         </li>
                         <li class="l-header__dropdown--item">
@@ -61,4 +69,5 @@
         </div>
     </div>
 </nav>
+<div class="l-header__dropdown--bg" id="js-drawer__bg"></div>
 @endsection

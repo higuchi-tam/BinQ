@@ -1,19 +1,12 @@
-<div class="p-card__side">
-    <figure class="p-card__side--img">
-        @if ($user->profile_photo)
-        <a href="{{ route('users.show', ['name' => $user->name]) }}">
-        <img class="round-img" src="{{ asset('storage/user_images/' . $user->profile_photo) }}" />
+<li class="p-user__side">
+    <figure class="p-user__side--img">
+        <a href="{{ route('users.show', ['name' => $user->userId]) }}">
+            @include('users.icon',['target_user' => $user])
         </a>
-        @else
-        <a href="{{ route('users.show', ['name' => $user->name]) }}">
-        <img src="{{ asset('/images/blank_profile.png') }}" alt="記事投稿者のプロフィール画像">
-        </a>
-        @endif
     </figure>
-    <div class="p-card__side--text">
-        <a class="p-card__side--title"
-            href="{{ route('users.show', ['name' => $user->name]) }}">{{ $user->name }}
+    <div class="p-user__side--text">
+        <a class="p-user__side--title"
+            href="{{ route('users.show', ['name' => $user->userId]) }}">{{ $user->name?$user->name:$user->userId }}
         </a>
     </div>
-</div>
-
+</li>

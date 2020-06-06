@@ -1,32 +1,76 @@
-@charset "utf-8";
-
 // =========================================
 // Foundation
 // =========================================
-@import "../../foundation/_mixin.scss";
-@import "../../foundation/_base.scss";
 
 .p-register {
 	&__formTxt {
 		text-align: left;
 		margin: 0;
+		display: flex;
+ 		align-items: center;
+	}
+	&__atSign{
+		margin-right: 0.5rem;
+	}
+	&__formSubTxt{
+		font-size: 1.14rem;
+		display: block;
+		text-align: left;
 	}
 	&__radioWrap {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-bottom: 1rem;
 		a {
-			color: #aaaaaa;
+			color: #a73b65;
+			&:visited{
+				color: #a73b65;
+			}
 			&:hover {
 				text-decoration: underline;
 			}
 		}
 	}
 
-	&__radionItem {
-		position: relative;
-		left: 1rem;
+	&__checkbox {
+		display: none;
+		&:checked + .p-register__checkboxLabel::before{
+			background: $accentColor;
+			border: none;
+		}
+		&:checked + .p-register__checkboxLabel::after{
+			content: "";
+			display: block;
+			position: absolute;
+			top: 2px;
+			left: 5px;
+			width: 4px;
+			height: 8px;
+			transform: rotate(45deg);
+			border-bottom: 1px solid #fff;
+			border-right: 1px solid #fff;
+		}
 	}
+	&__checkboxLabel{
+		position: relative;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		margin-right: 0.5rem;
+		&:before{
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 15px;
+			height: 15px;
+			border-radius: 4px;
+			border: 1px solid #ccc;
+		}
+	}
+
 
 	&--border {
 		border-bottom: 1px solid #aaaaaa;
@@ -35,9 +79,11 @@
 	&__snsTtile {
 		font-size: 1.6rem;
 		font-weight: bold;
+		margin-bottom: 1rem;
 	}
 
 	&__loginLink {
+		font-size: 1.4rem;
 		a {
 			color: #aaaaaa;
 			&:hover {

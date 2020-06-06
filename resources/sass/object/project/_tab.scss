@@ -1,31 +1,39 @@
-@charset "utf-8";
-
 // =========================================
 // Project
 // =========================================
-@import "../../foundation/_mixin.scss";
-@import "../../foundation/_base.scss";
 
 .p-tab{
     &__wrap{
         list-style: none;
         display: flex;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
         padding: 0;
-
+        @include mq(md) {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+		}
+    }
+    &__item{
+        border: 1px solid $baseColor;
+        &:not(:last-child){
+            border-right: none;
+        }
     }
     &__link{
         display: block;
-        width: 15rem;
-        padding: 1rem ;
+        width: 12rem;
+        padding: 1.5rem 1rem;
         text-align: center;
         font-size: 1.4rem;
-        border: 1px solid $baseColor;
         color: $baseColor;
-
+        &.tab-active{
+            color: #fff;
+            background:$baseColor;
+            &:visited{
+                color: #fff;
+            }
+        }
     }
-}
-.tab-active{
-    color: #fff;
-    background:$baseColor;
+    
 }

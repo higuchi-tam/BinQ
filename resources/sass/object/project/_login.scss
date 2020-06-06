@@ -1,19 +1,17 @@
-@charset "utf-8";
-
 // =========================================
 // Foundation
 // =========================================
-@import "../../foundation/_mixin.scss";
-@import "../../foundation/_base.scss";
 
 .p-login {
 	&__container {
 		margin-bottom: 5rem;
+		padding-top: 3rem;
 	}
 
 	&__mainTitle {
 		text-align: center;
 		font-size: 3.2rem;
+		margin-bottom: 2rem;
 	}
 
 	&__form {
@@ -24,40 +22,44 @@
 		padding: 2rem;
 	}
 
+	&__titleWrap {
+		margin-bottom: 1.5rem;
+	}
 	&__titleTxt {
 		font-size: 2.4rem;
 	}
 
 	&__addressWrap {
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
 	}
 
 	&__addressTitle {
 		font-size: 1.4rem;
+		margin-bottom: 1.5rem;
 	}
 	&__formGroup {
 		width: 100%;
+		font-size: 1.6rem;
+		margin-bottom: 1rem;
 	}
 	&__formItem {
 		width: 100%;
 		padding: 0.5rem 1rem;
+		border:none;
 		border: 1px solid #e1e5e7;
-		font-size: 1.2rem;
+		font-size: 1.6rem;
 		&::placeholder {
 			color: #aaaaaa;
-		}
-
-		&:nth-child(1) {
-			margin-bottom: 1rem;
 		}
 	}
 
 	&__passRemind {
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 		color: #aaaaaa;
 		display: block;
 		text-align: left;
 		margin-bottom: 2rem;
+
 		&:hover {
 			text-decoration: underline;
 		}
@@ -65,7 +67,7 @@
 
 	&__signUp {
 		margin: 0;
-		font-size: 1.1rem;
+		font-size: 1.4rem;
 		a {
 			color: #aaaaaa;
 		}

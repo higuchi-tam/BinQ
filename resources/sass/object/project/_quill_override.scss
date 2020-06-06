@@ -1,0 +1,100 @@
+.p-article_show__body,.ql-snow .ql-editor{
+    font-size: 14px;
+    padding: 1.2rem 3.2rem 1.2rem 0;
+    table th {
+        background-color: #93a1a1;
+        color: #eee8d5;
+    }
+    table tr:nth-child(even) {
+        background-color: #eee8d5;
+    } 
+    h1 {
+        counter-reset: chapter;
+        font-size: 2.4rem;
+        display: inline-block;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #000;
+        margin-top: 5.6rem 0;
+    }
+    h2 {
+        counter-reset: sub-chapter;
+        display: inline-block;
+        font-size: 2rem;
+        padding-bottom: 0.7rem;
+        margin-top: 4rem;
+    }
+    h3 {
+        counter-reset: section;
+        text-decoration: underline;
+        display: inline-block;
+        font-size: 1.8rem;
+        margin-top: 2.4rem;
+        padding-bottom: 1rem;
+        text-decoration: none;
+    }
+    blockquote{
+        position: relative;
+        padding: 4.2rem 6.5rem;
+        font-size: 1.4rem;
+        background: #ffffff;
+        margin-top: 4rem;
+        border-left: none;
+        &::before{
+            content: "";
+            position: absolute;
+            background-image: url('/images/quotation.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            top: 2rem;
+            left: 2rem;
+            width: 3rem;
+            height: 2.2rem;
+            transform: scale(-1, -1);
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            background-image: url('/images/quotation.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 2.2rem;
+            }
+    }
+    p{
+        margin-top: 4rem;
+        font-size: 1.6rem;
+        line-height: 1.7;
+    }
+    img{
+        margin: 0 auto;
+    }
+}
+.ql-snow .ql-editor *:first-child{
+    margin-top: 0;
+}
+.ql-toolbar.ql-snow{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0.8rem 0.8rem 0.8rem 0;
+}
+
+.ql-container.ql-snow{
+    border:none;
+}
+
+.ql-snow .ql-picker-label{
+    padding-left: 0;
+}
+.ql-editor.ql-blank::before{
+    font-style: initial;
+    left: 0;
+    top: 1.6rem;
+}
+
+.js-quill-editor.ql-container.ql-snow{
+    min-height: 30rem;
+    max-height: 55rem;
+}
