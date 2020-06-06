@@ -115,7 +115,8 @@ class LoginController extends Controller
                 Auth::login($registerdUser);
                 //ログインするたびに最新の情報を取得して更新
                 $user = Auth::user();
-                $user->userId = $providerUser->getNickname();
+                $user->userId =
+                    $providerUser->getNickname() ? $providerUser->getNickname() : $providerUser->getId();
                 $user->name = $providerUser->getName();
                 $user->profile_photo = $providerUser->getAvatar();
                 $user->save();
@@ -123,7 +124,7 @@ class LoginController extends Controller
                 return $this->authenticated();
             } else {
                 // 登録済みでない場合
-                $id = $providerUser->getNickname();
+                $id = $providerUser->getNickname() ? $providerUser->getNickname() : $providerUser->getId();
                 $name = $providerUser->getName();
                 $avatar = $providerUser->getAvatar();
 
