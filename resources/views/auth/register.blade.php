@@ -25,13 +25,13 @@
                     　<p class="p-register__formTxt">ユーザーID<span class="p-form__required">必須</span></p>
                     <div class="p-form__idWrapper">
                         <span class="p-register__atSign">@ </span>
-                        <input class="p-login__formItem" placeholder="ユーザーID(英数字5~16文字)" type="text" name="name"
-                            value="{{ old('name') }}" required autofocus>
+                        <input class="p-login__formItem" placeholder="ユーザーID(英数字5~16文字)" type="text" name="userId"
+                            value="{{ old('userId') }}" required autofocus>
                     </div>
                     {{-- <small class="p-register__formSubTxt">英数字5〜16文字</small> --}}
-                    @if ($errors->has('name'))
+                    @if ($errors->has('userId'))
                     <div class="c-error__msg">
-                        <strong>{{ $errors->first('name') }}</strong>
+                        <strong>{{ $errors->first('userId') }}</strong>
                     </div>
                     @endif
                 </div>

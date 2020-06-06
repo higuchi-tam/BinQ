@@ -22,7 +22,7 @@
                         @else
                         <div class="p-form__image__deleteBtn" id="js-img__delete">
                             @endif
-                            <img src="{{ asset('images/close.svg') }}" alt="">
+                            <img src="{{ asset('images/close.svg') }}" alt="閉じるボタン">
                         </div>
                         <div class="p-form__image__modal" id="js-image__modal">
                             <div class="p-form__image__modal__inner">

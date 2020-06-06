@@ -1455,6 +1455,7 @@ input {
 .l-footer__listUp {
   display: flex;
   align-items: flex-end;
+  list-style: none;
 }
 
 .l-footer__listUp a {
@@ -1702,6 +1703,7 @@ input {
 @media screen and (max-width: 475px) {
   .l-header__dropdown--menu {
     position: fixed;
+    top: 7rem;
     left: 0;
     width: auto;
     height: 100%;
@@ -4407,7 +4409,7 @@ input {
 .p-tab__link {
   display: block;
   width: 12rem;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
   font-size: 1.4rem;
   color: #444;

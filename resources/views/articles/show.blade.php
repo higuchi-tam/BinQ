@@ -15,7 +15,7 @@
                     {{-- 編集・削除ボタン --}}
                     @if( Auth::id() === $article->user->id )
                     <div class="p-article__icon js-article__icon">
-                        <img src="/images/action-icon.svg" alt="" width="15" height="15">
+                        <img src="/images/action-icon.svg" alt="編集・削除ボタン" width="15" height="15">
                     </div>
                     @endif
                 </div>
@@ -75,17 +75,17 @@
                     </div>
                     <div class="p-article_show__date">
                         <div class="p-article_show__created">
-                            <span><img src="{{ asset('images/post.svg') }}" alt=""></span>投稿日：
+                            <span><img src="{{ asset('images/post.svg') }}" alt="投稿日"></span>投稿日：
                             {{ $article->created_at->format('Y.m.d') }}
                         </div>
                         <div class="p-article_show__updated">
-                            <span><img src="{{ asset('images/reload.svg') }}" alt=""></span>最終更新：
+                            <span><img src="{{ asset('images/reload.svg') }}" alt="最終更新"></span>最終更新：
                             {{ $article->updated_at->format('Y.m.d') }}
                         </div>
                     </div>
                 </div>
 
-                <div class="p-article_show__img"><img src="{{asset('/storage/'.$article->img)}}" alt=""></div>
+                <div class="p-article_show__img"><img src="{{asset('/storage/'.$article->img)}}" alt="記事のヘッダー画像"></div>
                 <div class="p-article_show__body">{!! $article->body !!}</div>
             </div>
         </div>
@@ -101,12 +101,12 @@
                 <li>SHARE</li>
                 <li class="p-article_show__snsItem">
                     <a href="http://twitter.com/share?url=シェアするURL&text=文言" target="_blank">
-                        <img src="/images/tw-article-footer.svg" alt=""></a>
+                        <img src="/images/tw-article-footer.svg" alt="twitterシェア"></a>
 
                 </li>
                 <li class="p-article_show__snsItem">
                     <a href="http://www.facebook.com/share.php?{URL}" rel="nofollow" target="_blank">
-                        <img src="/images/fb-article-footer.svg" alt=""></a>
+                        <img src="/images/fb-article-footer.svg" alt="facebookシェア"></a>
                 </li>
             </ul>
         </div>

@@ -162,6 +162,7 @@
             z-index: 990;
             @include mq(smd) {
                 position: fixed;
+                top: 7rem;
                 left: 0;
                 width: auto;
                 height: 100%;

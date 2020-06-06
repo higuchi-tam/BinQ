@@ -10,14 +10,14 @@
             <ul class="p-modal__btns js-popup">
                 <li>
                     <a href="http://twitter.com/share?url={{route('articles.show',$article->id)}}">
-                        <span><img src="/images/tw-modal.svg" alt=""></span>ツイートする
+                        <span><img src="/images/tw-modal.svg" alt="ツイートする"></span>ツイートする
                     </a>
 
                 </li>
                 <li>
                     <a href="http://www.facebook.com/share.php?{URL}" rel="nofollow" target="_blank"
                         class="p-modal__btn p-modal__btn--fb js-popup">
-                        <span><img src="/images/fb-modal.svg" alt=""></span>シェアする</a>
+                        <span><img src="/images/fb-modal.svg" alt="シェアする"></span>シェアする</a>
                 </li>
             </ul>
         </div>

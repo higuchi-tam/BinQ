@@ -5,7 +5,7 @@
     </div>
 
     <div class="p-topbaner__articles pc">
-        <img src="/images/slide_prev.svg" alt="" class="p-topbaner__slidePrev" id="js-slide__prev--art">
+        <img src="/images/slide_prev.svg" alt="戻るボタン" class="p-topbaner__slidePrev" id="js-slide__prev--art">
         <div class="p-topbaner__articles__inner">
             <ul class="p-topbaner__articleSlider" id="js-slider--art">
                 {{-- 記事表示生成　新しい順に表示 --}}
@@ -16,7 +16,7 @@
                 @endforeach
             </ul>
         </div>
-        <img src="/images/slide_next.svg" alt="" class="p-topbaner__slideNext" id="js-slide__next--art">
+        <img src="/images/slide_next.svg" alt="次へボタン" class="p-topbaner__slideNext" id="js-slide__next--art">
     </div>
     <div class="p-topbaner__linkBtn">
         <a href="/likeIndex" class="c-button__primary">人気記事一覧</a>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="p-topbaner__users pc">
-        <img src="/images/slide_prev.svg" alt="" class="p-topbaner__slidePrev" id="js-slide__prev--usr">
+        <img src="/images/slide_prev.svg" alt="戻るボタン" class="p-topbaner__slidePrev" id="js-slide__prev--usr">
         <div class="p-topbaner__users__inner">
             <ul class="p-topbaner__usersSlider" id="js-slider--usr">
                 {{-- 記事表示生成　新しい順に表示 --}}
@@ -55,7 +55,7 @@
                 @endforeach
             </ul>
         </div>
-        <img src="/images/slide_next.svg" alt="" class="p-topbaner__slideNext" id="js-slide__next--usr">
+        <img src="/images/slide_next.svg" alt="次へボタン" class="p-topbaner__slideNext" id="js-slide__next--usr">
     </div>
     <div class="p-topbaner__linkBtn">
         <a href="/users" class="c-button__primary">人気の美容師一覧</a>

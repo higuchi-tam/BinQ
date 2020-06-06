@@ -1,6 +1,6 @@
 <div class="p-comment">
     <div class="p-comment__header">
-        <span><img src="{{asset('images/comment.svg')}}" alt=""></span>コメント一覧
+        <span><img src="{{asset('images/comment.svg')}}" alt="アイコン"></span>コメント一覧
     </div>
     <div class="p-comment__items">
         @if($comments->count() === 0)
@@ -44,7 +44,7 @@
 
             {{-- コメントの編集・削除ボタン --}}
             <div class="p-comment__icon js-comment__icon">
-                <img src="/images/action-icon.svg" alt="" width="15" height="15">
+                <img src="/images/action-icon.svg" alt="編集・削除ボタン" width="15" height="15">
             </div>
             <div class="p-comment__actions js-comment__action">
                 <ul>
@@ -94,7 +94,7 @@
     </div>
 
     <div class="p-comment__header">
-        <span><img src="{{asset('images/scissors-logo-menu.svg')}}" alt=""></span>コメントを投稿する
+        <span><img src="{{asset('images/scissors-logo-menu.svg')}}" alt="コメントを投稿する"></span>コメントを投稿する
     </div>
     {{-- コメント入力欄 --}}
     <div class="p-comment__input">

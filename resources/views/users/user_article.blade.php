@@ -19,14 +19,16 @@
             <li>
                 <ul class="p-user_article__snsList">
                     <li class="p-user_article__snsItem">
-                        <a href="{{ $article->user->twitter_url}}" target="blank"><img src="/images/tw.svg" alt=""></a>
+                        <a href="{{ $article->user->twitter_url}}" target="blank"><img src="/images/tw.svg"
+                                alt="twitterアイコン"></a>
                     </li>
                     <li class="p-user_article__snsItem">
-                        <a href="{{ $article->user->facebook_url}}" target="blank"><img src="/images/fb.svg" alt=""></a>
+                        <a href="{{ $article->user->facebook_url}}" target="blank"><img src="/images/fb.svg"
+                                alt="facebookアイコン"></a>
                     </li>
                     <li class="p-user_article__snsItem">
                         <a href="{{ $article->user->instagram_url}}" target="blank"><img src="/images/ins.svg"
-                                alt=""></a>
+                                alt="Instagramアイコン"></a>
                     </li>
                 </ul>
             </li>

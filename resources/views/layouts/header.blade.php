@@ -22,7 +22,7 @@
                 @auth
                 <li class="l-header__item">
                     <a class="l-header__item--post" href="{{ route('articles.create')}}">
-                        <img src="/images/scissors-logo.svg" alt="">
+                        <img src="/images/scissors-logo.svg" alt="投稿">
                         <span class="l-header__item--postText">投稿</span>
                     </a>
                 </li>
@@ -34,12 +34,12 @@
                     {{-- ドロップダウンメニュー --}}
                     <ul class="l-header__dropdown--menu" id="js-drawer__menu">
                         <li class="l-header__dropdown--item">
-                            <a href="{{ route('users.show', ['name' => $auth_user->name]) }}"
+                            <a href="{{ route('users.show', ['name' => $auth_user->userId]) }}"
                                 class="l-header__button">マイページ</a>
                         </li>
                         <li class="l-header__dropdown--item post">
                             <a class="l-header__button l-header__button--post" href="{{ route('articles.create')}}">
-                                <img src="/images/scissors-logo-sp.svg" alt="">
+                                <img src="/images/scissors-logo-sp.svg" alt="投稿">
                                 <span class="l-header__dropdown--postText">投稿</span>
                             </a>
                         </li>
@@ -49,7 +49,7 @@
                             <a href="{{ route('likeIndex') }}" class="l-header__button">人気の記事</a>
                         </li>
                         <li class="l-header__dropdown--item">
-                            <a href="{{ route("users.edit", ['name' => $auth_user->name]) }}"
+                            <a href="{{ route("users.edit", ['name' => $auth_user->userId]) }}"
                                 class="l-header__button">アカウント設定</a>
                         </li>
                         <li class="l-header__dropdown--item">

@@ -16,8 +16,6 @@
         <div class="p-top__news--item">
             <figure class="p-top__news--img">
                 <img src="{{ asset('/images/blank_profile.png') }}" alt="記事のメイン画像">
-                {{-- イイネボタン --}}
-                <img src="" alt="">
             </figure>
             <div class="p-top__news--text">
                 <p class="p-top__news--category">CATEGORY</p>

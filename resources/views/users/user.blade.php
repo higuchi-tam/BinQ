@@ -1,7 +1,7 @@
 <div class="p-user_detail__userContainer">
     <div id="js-detail__top" class="p-user_detail__top">
         <figure class="p-user_detail__userImg">
-            <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
+            <a href="{{ route('users.show', ['name' => $user->userId]) }}" class="text-dark">
                 @include('users.icon',['target_user' => $user])
             </a>
         </figure>
@@ -13,7 +13,7 @@
         @if( Auth::id() !== $user->id )
         <div class="p-user_detail__follow">
             <follow-button class="ml-auto" :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
-                :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['name' => $user->name]) }}">
+                :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['name' => $user->userId]) }}">
             </follow-button>
         </div>
         @elseif( Auth::id() == $user->id )
@@ -27,13 +27,16 @@
 
                 <ul class="l-footer__snsList p-user_detail__snsList">
                     <li class="l-footer__snsItem p-user_detail__snsItem">
-                        <a href="{{ $user->twitter_url}}" target="blank"><img src="/images/tw.svg" alt=""></a>
+                        <a href="{{ $user->twitter_url}}" target="blank"><img src="/images/tw.svg"
+                                alt="twitterアイコン"></a>
                     </li>
                     <li class="l-footer__snsItem">
-                        <a href="{{ $user->facebook_url}}" target="blank"><img src="/images/fb.svg" alt=""></a>
+                        <a href="{{ $user->facebook_url}}" target="blank"><img src="/images/fb.svg"
+                                alt="facebookアイコン"></a>
                     </li>
                     <li class="l-footer__snsItem">
-                        <a href="{{ $user->instagram_url}}" target="blank"><img src="/images/ins.svg" alt=""></a>
+                        <a href="{{ $user->instagram_url}}" target="blank"><img src="/images/ins.svg"
+                                alt="Instagramアイコン"></a>
                     </li>
                 </ul>
 
@@ -50,12 +53,12 @@
             <li class="p-user_detail__topicWrap">
                 <span class="p-user_detail__topicNum">記事数　<span>{{ $totalArticles->count() }}</span></span>
                 <span class="p-user_detail__followNum">
-                    <a href="{{ route('users.followings', ['name' => $user->name]) }}" class="text-muted">
+                    <a href="{{ route('users.followings', ['name' => $user->userId]) }}" class="text-muted">
                         {{ $user->count_followings }} フォロー
                     </a>
                 </span>
                 <span class="p-user_detail__followerNum">
-                    <a href="{{ route('users.followers', ['name' => $user->name]) }}" class="text-muted">
+                    <a href="{{ route('users.followers', ['name' => $user->userId]) }}" class="text-muted">
                         {{ $user->count_followers }} フォロワー
                     </a>
                 </span>

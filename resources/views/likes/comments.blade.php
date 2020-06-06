@@ -48,7 +48,7 @@
 
                 {{-- コメントの編集・削除ボタン --}}
                 <div class="p-comment__icon js-comment__icon">
-                    <img src="/images/action-icon.svg" alt="" width="15" height="15">
+                    <img src="/images/action-icon.svg" alt="編集・削除ボタン" width="15" height="15">
                 </div>
                 <div class="p-comment__actions js-comment__action">
                     <ul>

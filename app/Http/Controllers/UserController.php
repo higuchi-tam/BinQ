@@ -23,9 +23,9 @@ class UserController extends Controller
     }
 
     //コントローラ全体で使用　自分の記事数取得（公開中のみ）
-    private function getBaseArticles($name)
+    private function getBaseArticles($userId)
     {
-        $user = User::where('name', $name)->first();
+        $user = User::where('userId', $userId)->first();
         $baseArticles = Article::where('user_id', $user->id)
             ->where('open_flg', 0)->orderBy('created_at', 'desc');
         return $baseArticles;
@@ -75,13 +75,13 @@ class UserController extends Controller
         ]);
     }
 
-    public function show(string $name, Article $article)
+    public function show(string $userId, Article $article)
     {
-        $user = User::where('name', $name)->first();
+        $user = User::where('userId', $userId)->first();
         $auth_user = Auth::user();
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->paginate(5);
 
-        $baseArticles = $this->getBaseArticles($name)->where('open_flg', 0);
+        $baseArticles = $this->getBaseArticles($userId)->where('open_flg', 0);
 
         $totalArticles = $baseArticles->get();
         $articles = $baseArticles->paginate(9);
