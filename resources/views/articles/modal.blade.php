@@ -5,12 +5,11 @@
     <div class="p-modal__inner">
         <header class="p-modal__header">記事が公開されました</header>
         <div class="p-modal__main">
-            <p> 公開した記事をシェアしましょう！</p>
+            <p class="p-modal__mainText"> 公開した記事をシェアしましょう！</p>
 
             <ul class="p-modal__btns js-popup">
                 <li>
-                    <a href="http://twitter.com/share?url=シェアするURL&text=文言" target="_blank"
-                        class="p-modal__btn p-modal__btn--tw js-popup">
+                    <a href="http://twitter.com/share?url={{route('articles.show',$article->id)}}">
                         <span><img src="/images/tw-modal.svg" alt=""></span>ツイートする
                     </a>
 
@@ -20,6 +19,7 @@
                         class="p-modal__btn p-modal__btn--fb js-popup">
                         <span><img src="/images/fb-modal.svg" alt=""></span>シェアする</a>
                 </li>
+            </ul>
         </div>
         <footer class="p-modal__footer">
             <a href="{{ route('articles.show',$article->id) }}"

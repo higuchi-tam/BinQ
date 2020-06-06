@@ -34,7 +34,7 @@
                 {{-- 記事表示生成　新しい順に表示 --}}
                 @foreach ($users as $user)
                 <li class="p-topbaner__usersItem js-slide__item--usr">
-                    <a href="{{ route('users.show',$user->name) }}">
+                    <a href="{{ route('users.show',$user->userId) }}">
                         <figure class="p-user__news--img">
                             @include('users.icon',['target_user' => $user])
                         </figure>
@@ -48,7 +48,7 @@
                         <follow-button class="ml-auto"
                             :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))'
                             :authorized='@json(Auth::check())'
-                            endpoint="{{ route('users.follow', ['name' => $user->name]) }}">
+                            endpoint="{{ route('users.follow', ['name' => $user->userId]) }}">
                         </follow-button>
                     </div>
                 </li>

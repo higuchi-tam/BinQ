@@ -20,8 +20,8 @@ Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCal
 //TOPページ
 
 Route::get('/articles', 'ArticleController@index')->name('articles.index');
-Route::resource('/articles', 'ArticleController')->only(['show']);
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
+Route::resource('/articles', 'ArticleController')->only(['show']);
 Route::get('/likeIndex', 'ArticleController@likeIndex')->name('likeIndex');
 Route::prefix('articles')->name('articles.')->group(function () {
     Route::put('/{article}/like', 'ArticleController@like')->name('like')->middleware('auth');

@@ -115,8 +115,8 @@ class LoginController extends Controller
                 Auth::login($registerdUser);
                 //ログインするたびに最新の情報を取得して更新
                 $user = Auth::user();
-                $user->name = $providerUser->getId();
-                $user->title = $providerUser->getName();
+                $user->userId = $providerUser->getId();
+                $user->name = $providerUser->getName();
                 $user->profile_photo = $providerUser->getAvatar();
                 $user->save();
 
@@ -129,8 +129,8 @@ class LoginController extends Controller
 
                 $new = new User();
                 $new->email = $email;
-                $new->name = $id;
-                $new->title = $name;
+                $new->userId = $id;
+                $new->name = $name;
                 $new->profile_photo = $avatar;
                 $new->save();
 

@@ -1747,7 +1747,6 @@ input {
   padding: 1rem 2rem;
   display: inline-block;
   width: 100%;
-  height: 100%;
   color: #444;
   text-align: left;
   font-size: 1.4rem;
@@ -2673,21 +2672,25 @@ input {
 }
 
 .p-modal__inner {
-  width: 47rem;
+  width: 90vw;
+  max-width: 45rem;
   top: 50%;
   background: #fff;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 1.5rem;
 }
 
 .p-modal__header {
   padding: 1.6rem;
+  background: #f7f9f9;
   border-bottom: 1px solid #f2f2f2;
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 1.5rem 1.5rem 0 0;
 }
 
 .p-modal__main {
@@ -2700,13 +2703,18 @@ input {
   border-bottom: 1px solid #f2f2f2;
 }
 
+.p-modal__mainText {
+  margin-bottom: 2rem;
+}
+
 .p-modal__footer {
   height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-bottom: 1px solid #f2f2f2;
+  background: #f7f9f9;
+  border-radius: 0 0 1.5rem 1.5rem;
 }
 
 .p-modal__btns {
@@ -2751,6 +2759,17 @@ input {
   width: 115px;
   display: flex;
   justify-content: space-around;
+}
+
+.p-modal__btn--close {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 0.5rem 2rem;
+}
+
+.p-modal__btn--close:visited {
+  color: #333;
 }
 
 .p-article_show {

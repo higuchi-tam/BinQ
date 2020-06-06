@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @include('layouts.header')
-@include('layouts.footer')
 
 @section('content')
 <div class="l-2col">
