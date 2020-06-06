@@ -156,6 +156,7 @@
             display: none;
             position: absolute;
             right: 0;
+            top: 4rem;
             list-style: none;
             background: #fff;
             margin-top: 2rem;
@@ -170,7 +171,8 @@
         }
         &--item{
             border-top: 1px solid #eee;
-
+            display: flex;
+            flex-direction: column;
             @include mq(smd) {
                 padding: 1rem 0;
             }
@@ -202,6 +204,7 @@
         }
     }
     &__button {
+        margin: 0 auto 0 0;
         padding: 1rem 2rem;
         display: inline-block;
         width: 100%;
@@ -218,6 +221,7 @@
         translate: all 0.3s;
         @include mq(smd) {
             padding: 1.2rem 2rem;
+            width: auto;
         }
         &:hover {
             text-decoration: underline;

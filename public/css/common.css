@@ -1694,6 +1694,7 @@ input {
   display: none;
   position: absolute;
   right: 0;
+  top: 4rem;
   list-style: none;
   background: #fff;
   margin-top: 2rem;
@@ -1712,6 +1713,8 @@ input {
 
 .l-header__dropdown--item {
   border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 475px) {
@@ -1756,6 +1759,7 @@ input {
 }
 
 .l-header__button {
+  margin: 0 auto 0 0;
   padding: 1rem 2rem;
   display: inline-block;
   width: 100%;
@@ -1775,6 +1779,7 @@ input {
 @media screen and (max-width: 475px) {
   .l-header__button {
     padding: 1.2rem 2rem;
+    width: auto;
   }
 }
 

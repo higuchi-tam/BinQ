@@ -11,7 +11,7 @@
                 <h3 class="p-login__titleTxt">ログイン</h3>
             </div>
             <div class="c-button__sns">
-                <a href="" class="c-button__sns--tw">Twitterでログイン</a>
+                <a href="/login/twitter" class="c-button__sns--tw">Twitterでログイン</a>
                 <a href="/login/facebook" class="c-button__sns--fb">Facebookでログイン</a>
                 <a href="/login/google" class="c-button__sns--gg">Googleでログイン</a>
             </div>
