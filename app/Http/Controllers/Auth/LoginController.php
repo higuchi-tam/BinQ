@@ -123,7 +123,7 @@ class LoginController extends Controller
                 return $this->authenticated();
             } else {
                 // 登録済みでない場合
-                $id = $providerUser->getIdStr();
+                $id = $providerUser->getNickname();
                 $name = $providerUser->getName();
                 $avatar = $providerUser->getAvatar();
 
