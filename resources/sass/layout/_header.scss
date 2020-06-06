@@ -6,9 +6,10 @@
     width: 1000px;
     height: 100px;
     margin: 0 auto;
+    padding-top: 3rem;
     @include mq(lg) {
         width: 100%;
-        padding: 0 5vw;
+        padding: 3rem 8vw 0;
     }
     @include mq(md) {
     }
@@ -23,11 +24,15 @@
         }
     }
     &__menuWrap {
+        display: flex;
+        align-items: center;
     }
     &__nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        height: 4rem;
     }
     &__menu {
         width: 100%;
@@ -49,13 +54,15 @@
         transition: all 0.3s;
         box-sizing: border-box;
         position: relative;
+        align-items: center;
+        display: flex;
         &:hover {
             cursor: pointer;
         }
         &:first-child{
             margin-right: 4rem;
-            @include mq(sp-only) {
-            margin-right: 2rem;
+            @include mq(smd) {
+                margin-right: 2.65vw;
             }
             &:hover {
                 text-decoration: underline;
@@ -124,6 +131,11 @@
             &:hover{
                 background: $accentColor;
                 color: #fff
+            }
+        }
+        &--login{
+            @include mq(sp-only) {
+                font-size: 1.2rem;
             }
         }
     }

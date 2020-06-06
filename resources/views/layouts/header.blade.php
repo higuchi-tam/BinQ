@@ -7,13 +7,12 @@
             @guest<a href="{{ route('home') }}">BinQ</a>@endguest
 
         </h1>
-        <span class="navbar-toggler-icon"></span>
         <div class="l-header__menuWrap" id="">
             <ul class="l-header__menu">
 
                 @guest
                 <li class="l-header__item">
-                    <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+                    <a class="l-header__item--login" href="{{ route('login') }}">ログイン</a>
                 </li>
                 <li class="l-header__item">
                     <a class="l-header__item--register" href="{{ route('register') }}">ユーザー登録</a> {{--この行を変更--}}
