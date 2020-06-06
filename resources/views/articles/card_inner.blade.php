@@ -34,7 +34,7 @@
         @include('users.icon',['target_user' => $article->user])
     </figure>
     <div class="p-top__news--userTxt">
-        <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
+        <a href="{{ route('users.show', ['name' => $article->user->userId]) }}" class="text-dark">
             {{ $article->user->name }}
             <p class="p-top__news--date"> {{ $article->created_at->format('Y/m/d') }}</p></a>
     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('layouts.header')
 @include('layouts.footer')
-@include('layouts.meta_sns')
+@include('layouts.meta_sns',['type'=>'top'] )
 
 @section('content')
 <section class="">
