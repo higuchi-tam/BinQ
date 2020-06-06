@@ -9,7 +9,7 @@
 @endif
 
 <meta property="og:site_name" content="BinQ" />
-<meta property="og:image" content="https://binq.kiwatchi.com/images/twitter_card2.png" />
+<meta property="og:image" content="https://binq.kiwatchi.com/images/twitter_card4.png" />
 {{-- twitter設定 --}}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@nichimachikid" />
