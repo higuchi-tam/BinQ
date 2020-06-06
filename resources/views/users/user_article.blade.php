@@ -36,7 +36,7 @@
             @if( Auth::id() !== $article->user->id )
             <follow-button class="ml-auto" :initial-is-followed-by='@json($article->user->isFollowedBy(Auth::user()))'
                 :authorized='@json(Auth::check())'
-                endpoint="{{ route('users.follow', ['name' => $article->user->name]) }}">
+                endpoint="{{ route('users.follow', ['name' => $article->user->userId]) }}">
             </follow-button>
             @endif
 
