@@ -249,11 +249,11 @@
 	//==================================
 	&__about {
 		background: #fff;
-		margin: 0 auto 6rem;
+		margin: 4rem auto 8rem;
 		padding: 7rem 2rem;
-		margin-bottom: 8rem;
 		@include mq(md) {
-			padding: 0 2rem;
+			padding: 4rem 2rem 4rem;
+			margin-top: 0;
 		}
 		img {
 			margin-bottom: 2rem;
@@ -274,7 +274,7 @@
 	}
 	&__about--titleWrap {
 		text-align: center;
-		margin: 4rem 0;
+		margin: 0 0 4rem;
 	}
 	&__about--img {
 		width: 100%;
