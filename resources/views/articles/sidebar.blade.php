@@ -10,7 +10,7 @@
             <button type="submit" class="p-article_sidebar__btn js-form__submit js-popup" name="open_flg" value="0"
                 form="article_form">下書き保存</button>
             <button type="submit" class="p-article_sidebar__btn p-article_sidebar__btn--open js-form__submit js-popup"
-                name="open_flg" value="0" form="article_form">{{($type === "create")?"保存して公開":"更新して公開"}}</button>
+                name="open_flg" value="0" form="article_form">保存して公開</button>
         </div>
     </div>
 </section>
