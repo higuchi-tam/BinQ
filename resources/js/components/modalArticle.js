@@ -56,7 +56,6 @@ $(document)
 })
 //アクションの削除を押したとき
     .on('click', '.js-article__deleteBtn', function (e) {
-    console.log('clickされた');
     e.stopPropagation();
     e.preventDefault();
     $modal.show();
