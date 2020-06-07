@@ -43,14 +43,14 @@
 
                 <div class="u-mb40">
                     <label for="email" class="p-setting__label">メールアドレス<span class="p-setting__toEdit"><a
-                                href="">変更</a></span>
+                                href="{{ route('changeEmail.index') }}">変更</a></span>
                     </label>
                     <div>{{ $user->email }}</div>
 
                 </div>
                 <div class="u-mb40">
                     <label for="email" class="p-setting__label">パスワード<span class="p-setting__toEdit"><a
-                                href="">変更</a></span>
+                                href="{{ route('changepassword') }}">変更</a></span>
                     </label>
                     <div>********</div>
 
