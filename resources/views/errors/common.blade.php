@@ -42,7 +42,7 @@ $message = 'エラー';
 break;
 }
 }else{
-
+$message = 'アクセスしようとしたページは表示できませんでした。';
 }
 @endphp
 <div class="p-error">
