@@ -3386,10 +3386,12 @@ input {
 .p-error__msg {
   font-size: 2.4rem;
   text-align: center;
+  padding: 0 2rem;
 }
 
 .p-error__status {
   font-size: 4.5rem;
+  margin-bottom: 1rem;
 }
 
 .p-form__container {
