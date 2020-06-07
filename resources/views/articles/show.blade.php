@@ -102,12 +102,13 @@
             <ul class="p-article_show__snsList">
                 <li>SHARE</li>
                 <li class="p-article_show__snsItem">
-                    <a href="http://twitter.com/share?url=シェアするURL&text=文言" target="_blank">
+                    <a href="http://twitter.com/share?url={{route('articles.show',$article->id)}}" target="_blank">
                         <img src="/images/tw-article-footer.svg" alt="twitterシェア"></a>
 
                 </li>
                 <li class="p-article_show__snsItem">
-                    <a href="http://www.facebook.com/share.php?{URL}" rel="nofollow" target="_blank">
+                    <a href="http://www.facebook.com/share.php?{{route('articles.show',$article->id)}}" rel="nofollow"
+                        target="_blank">
                         <img src="/images/fb-article-footer.svg" alt="facebookシェア"></a>
                 </li>
             </ul>
