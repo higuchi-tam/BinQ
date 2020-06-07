@@ -41,11 +41,16 @@ default:
 $message = 'エラー';
 break;
 }
+}else{
+
 }
 @endphp
-<div class="c-error">
+<div class="p-error">
 
-    <h1 class="c-error__msg"><span class="c-error__status">{{ $status_code }}</span> <br> {{ $message }}</h1>
+    <h2 class="p-error__msg">
+        <div class="p-error__status">{{ $status_code }}</div>
+        <div class="">{{ $message }}</div>
+    </h2>
 </div>
 
 @endsection

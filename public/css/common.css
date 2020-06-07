@@ -3383,6 +3383,15 @@ input {
   border: 1px solid #ccc;
 }
 
+.p-error__msg {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.p-error__status {
+  font-size: 4.5rem;
+}
+
 .p-form__container {
   margin: 0 auto 8rem;
   background: #fff;
