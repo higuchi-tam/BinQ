@@ -1,0 +1,56 @@
+.p-setting{
+    &__container{
+        margin: 0 auto 8rem;
+        background: #fff;
+        max-width: 60rem;
+    }
+    &__inner{
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 0 1rem 4rem;
+        font-size: 1.6rem;
+    }
+
+    &__title {
+        width: 100%;
+        margin-bottom: 4rem;
+        font-size: 3rem;
+        font-weight: normal;
+        text-align: center;
+    }
+    &__img{
+        border-radius: 50%;
+        overflow: hidden;
+        width: 150px;
+        margin: 0 auto 3rem;
+    }
+    &__label{
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+        font-weight: bold;
+    }
+    &__subtext{
+        font-size: 1.2rem;
+        color: $blurColor;
+    }
+    &__toEdit{
+        font-size: 1.4rem;
+        margin-left: 1rem;
+        font-weight: normal;
+        color: $accentColor;
+        a{
+            text-decoration: underline;
+            &:visited{
+                color: $accentColor;
+            }
+        }
+    }
+    &__delete{
+        border-top: 1px solid #eee;
+        padding-top: 4rem;
+    }
+    &__nomsg{
+        color: $blurColor;
+    }
+}

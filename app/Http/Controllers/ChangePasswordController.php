@@ -13,14 +13,22 @@ class ChangePasswordController extends Controller
      */
     public function index()
     {
-        return view('auth.changePassword.index');
+        $auth_user = Auth::user();
+
+        return view('auth.changePassword.index', [
+            'auth_user' => $auth_user
+        ]);
     }
     /**
      * パスワード変更完了 表示
      */
     public function complete()
     {
-        return view('auth.changePassword.complete');
+        $auth_user = Auth::user();
+
+        return view('auth.changePassword.complete', [
+            'auth_user' => $auth_user
+        ]);
     }
 
     /**

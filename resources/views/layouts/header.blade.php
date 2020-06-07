@@ -49,7 +49,7 @@
                             <a href="{{ route('likeIndex') }}" class="l-header__button">人気の記事</a>
                         </li>
                         <li class="l-header__dropdown--item">
-                            <a href="{{ route("users.edit", ['name' => $auth_user->userId]) }}"
+                            <a href="{{ route("users.setting", ['name' => $auth_user->userId]) }}"
                                 class="l-header__button">アカウント設定</a>
                         </li>
                         <li class="l-header__dropdown--item">

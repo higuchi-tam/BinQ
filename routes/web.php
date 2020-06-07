@@ -45,12 +45,16 @@ Route::prefix('users')->name('users.')->group(function () {
     Route::get('/', 'UserController@index')->name('index');
     Route::get('/{name}', 'UserController@show')->name('show');
     Route::get('/{name}/edit', 'UserController@edit')->name('edit');
+    Route::get('/{name}/setting', 'UserController@setting')->name('setting');
     Route::patch('/{name}/update', 'UserController@update')->name('update');
     Route::get('/{name}/likes', 'UserController@likes')->name('likes');
     Route::get('/{name}/draft', 'UserController@draft')->name('draft')->middleware('auth');
     Route::get('/{name}/followings', 'UserController@followings')->name('followings');
     Route::get('/{name}/followers', 'UserController@followers')->name('followers');
     Route::post('/ajaxImgUpload', 'UserController@ajaxImgUpload')->name('ajaxImgUpload');
+    Route::post('/{name}/delete', 'UserController@delete')->name('delete');
+    Route::get('/{name}/delete/confirm', 'UserController@deleteConfirm')->name('delete.confirm');
+    Route::get('/delete/complete', 'UserController@deleteComplete')->name('delete.complete');
 
     Route::middleware('auth')->group(function () {
         Route::put('/{name}/follow', 'UserController@follow')->name('follow');

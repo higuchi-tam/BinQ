@@ -1312,10 +1312,6 @@ img {
   height: auto;
 }
 
-label {
-  cursor: pointer;
-}
-
 strong {
   font-weight: bold;
 }
@@ -3387,6 +3383,20 @@ input {
   border: 1px solid #ccc;
 }
 
+.p-form__container {
+  margin: 0 auto 8rem;
+  background: #fff;
+  max-width: 60rem;
+}
+
+.p-form__inner {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding: 0 1rem 4rem;
+  font-size: 1.6rem;
+}
+
 .p-form__image {
   background-repeat: no-repeat;
   background-size: cover;
@@ -3415,6 +3425,7 @@ input {
 .p-form__image--user.hasImg {
   width: 30rem;
   height: 30rem;
+  border-radius: 50%;
 }
 
 .p-form__image__area {
@@ -3438,8 +3449,8 @@ input {
   background: #ccc;
   border-radius: 50%;
   position: absolute;
-  top: 2.5rem;
-  right: 2.5rem;
+  top: -2rem;
+  right: -2rem;
 }
 
 .p-form__image__deleteBtn.hasImg {
@@ -3532,10 +3543,6 @@ input {
   background: none;
 }
 
-.p-form__wrap {
-  font-size: 1.6rem;
-}
-
 .p-form__tag {
   margin-bottom: 4rem;
 }
@@ -3573,11 +3580,6 @@ input {
   cursor: pointer;
   background: #fff;
   color: #a73b65;
-}
-
-.p-form__container {
-  width: 300px;
-  margin: 0 auto 8rem;
 }
 
 .p-form__label {
@@ -4387,6 +4389,70 @@ input {
 
 .p-register__loginLink a:hover {
   text-decoration: underline;
+}
+
+.p-setting__container {
+  margin: 0 auto 8rem;
+  background: #fff;
+  max-width: 60rem;
+}
+
+.p-setting__inner {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+  font-size: 1.6rem;
+}
+
+.p-setting__title {
+  width: 100%;
+  margin-bottom: 4rem;
+  font-size: 3rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+.p-setting__img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  margin: 0 auto 3rem;
+}
+
+.p-setting__label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+.p-setting__subtext {
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.p-setting__toEdit {
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  font-weight: normal;
+  color: #a73b65;
+}
+
+.p-setting__toEdit a {
+  text-decoration: underline;
+}
+
+.p-setting__toEdit a:visited {
+  color: #a73b65;
+}
+
+.p-setting__delete {
+  border-top: 1px solid #eee;
+  padding-top: 4rem;
+}
+
+.p-setting__nomsg {
+  color: #999;
 }
 
 .p-tab__wrap {

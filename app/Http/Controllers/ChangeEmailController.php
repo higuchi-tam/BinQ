@@ -15,9 +15,33 @@ class ChangeEmailController extends Controller
 {
     public function index()
     {
-        return view('auth.changeEmail.index');
+        $auth_user = Auth::user();
+        return view('auth.changeEmail.index', [
+            'auth_user' => $auth_user
+        ]);
     }
 
+    public function sent()
+    {
+        $auth_user = Auth::user();
+        return view('auth.changeEmail.sent', [
+            'auth_user' => $auth_user
+        ]);
+    }
+    public function complete()
+    {
+        $auth_user = Auth::user();
+        return view('auth.changeEmail.complete', [
+            'auth_user' => $auth_user
+        ]);
+    }
+    public function failed()
+    {
+        $auth_user = Auth::user();
+        return view('auth.changeEmail.failed', [
+            'auth_user' => $auth_user
+        ]);
+    }
     public function sendChangeEmailLink(Request $request)
     {
         $new_email = $request->new_email;
@@ -97,18 +121,5 @@ class ChangeEmailController extends Controller
         // トークンの有効期限は60分に設定
         $expires = 60 * 60;
         return Carbon::parse($createdAt)->addSeconds($expires)->isPast();
-    }
-
-    public function sent()
-    {
-        return view('auth.changeEmail.sent');
-    }
-    public function complete()
-    {
-        return view('auth.changeEmail.complete');
-    }
-    public function failed()
-    {
-        return view('auth.changeEmail.failed');
     }
 }

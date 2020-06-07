@@ -36,7 +36,7 @@ class RegisterController extends Controller
 
     protected function registered(Request $request, $user)
     {
-        return redirect()->route('users.edit', $user->name); //ここに遷移先を入れる
+        return redirect()->route('users.edit', $user->userId); //ここに遷移先を入れる
     }
 
     /**
@@ -74,7 +74,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'userId' => $data['name'],
+            'userId' => $data['userId'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
