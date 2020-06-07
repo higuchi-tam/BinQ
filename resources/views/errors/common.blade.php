@@ -32,10 +32,10 @@ case 419:
 $message = '不正なリクエストです';
 break;
 case 500:
-$message = 'Internal Server Error';
+$message = 'サーバーエラーです。';
 break;
 case 503:
-$message = 'Service Unavailable';
+$message = 'アクセスしようとしたページは表示できませんでした。';
 break;
 default:
 $message = 'エラー';
