@@ -3384,13 +3384,14 @@ input {
 }
 
 .p-error__msg {
-  font-size: 2.4rem;
+  font-size: 2rem;
   text-align: center;
   padding: 0 2rem;
 }
 
 .p-error__status {
-  font-size: 4.5rem;
+  font-size: 4rem;
+  font-weight: normal;
   margin-bottom: 1rem;
 }
 
