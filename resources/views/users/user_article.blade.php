@@ -18,18 +18,24 @@
             </li>
             <li>
                 <ul class="p-user_article__snsList">
+                    @if($article->user->twitter_url)
                     <li class="p-user_article__snsItem">
                         <a href="{{ $article->user->twitter_url}}" target="blank"><img src="/images/tw.svg"
                                 alt="twitterアイコン"></a>
                     </li>
+                    @endif
+                    @if($article->user->facebook_url)
                     <li class="p-user_article__snsItem">
                         <a href="{{ $article->user->facebook_url}}" target="blank"><img src="/images/fb.svg"
                                 alt="facebookアイコン"></a>
                     </li>
+                    @endif
+                    @if($article->user->instagram_url)
                     <li class="p-user_article__snsItem">
                         <a href="{{ $article->user->instagram_url}}" target="blank"><img src="/images/ins.svg"
                                 alt="Instagramアイコン"></a>
                     </li>
+                    @endif
                 </ul>
             </li>
         </ul>
