@@ -40,16 +40,16 @@
 
                 {{-- 削除ボタン押したときのモーダル --}}
                 <div class="p-article__action__overlay js-article__action__overlay"></div>
-                <div class="p-comment__modal" id="js-comment__modal">
-                    <div class="p-comment__modal__bg js-comment__modal__close"></div>
+                <div class="p-comment__modal" id="js-article__modal">
+                    <div class="p-comment__modal__bg js-article__modal__close"></div>
                     <div class="p-comment__modal__inner">
-                        <header class="p-comment__modal__header"> コメントの削除</header>
-                        <div class="p-comment__modal__main">コメントを削除します。よろしいですか？</div>
+                        <header class="p-comment__modal__header">記事の削除</header>
+                        <div class="p-comment__modal__main">記事を削除します。よろしいですか？</div>
                         <footer class="p-comment__modal__footer">
                             <ul class="p-comment__modal__btns">
                                 <li>
                                     <button type="button"
-                                        class="p-comment__modal__btn p-comment__modal__btn--cancel js-comment__modal__close">
+                                        class="p-comment__modal__btn p-comment__modal__btn--cancel js-article__modal__close">
                                         キャンセル
                                     </button>
 
@@ -57,7 +57,7 @@
                                 <li>
                                     <a href="javascript:void(0)"
                                         class="p-comment__modal__btn p-comment__modal__btn--delete"
-                                        id="js-comment__modal__delete">削除</a>
+                                        id="js-article__modal__delete">削除</a>
                                 </li>
                             </ul>
                         </footer>
@@ -85,7 +85,9 @@
                     </div>
                 </div>
 
-                <div class="p-article_show__img"><img src="{{asset('/storage/'.$article->img)}}" alt="記事のヘッダー画像"></div>
+                <div class="p-article_show__img">
+                    @if($article->img)<img src="{{asset('/storage/'.$article->img)}}" alt="記事のヘッダー画像">@endif
+                </div>
                 <div class="p-article_show__body">{!! $article->body !!}</div>
             </div>
         </div>

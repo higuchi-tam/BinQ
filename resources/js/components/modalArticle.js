@@ -37,10 +37,10 @@ function actionClose(option) {
 //クリックイベントまとめ
 $(document)
 //アクションの編集ボタンクリック
-.on('click', '.js-article__editBtn', function () {
-    $preview.hide();
-    $editArea.show();
-})
+// .on('click', '.js-article__editBtn', function () {
+//     $preview.hide();
+//     $editArea.show();
+// })
 //編集時にキャンセルボタンを押したとき
 .on('click', '.js-article__canselBtn', function () {
     $preview.show();
@@ -55,7 +55,8 @@ $(document)
     actionClose();
 })
 //アクションの削除を押したとき
-.on('click', '.js-article__deleteBtn', function (e) {
+    .on('click', '.js-article__deleteBtn', function (e) {
+    console.log('clickされた');
     e.stopPropagation();
     e.preventDefault();
     $modal.show();
