@@ -101,6 +101,16 @@ class UserController extends Controller
     }
 
 
+    public function setting(string $userId)
+    {
+        $user = User::where('userId', $userId)->first();
+        $auth_user = Auth::user();
+
+        return view('users.setting', [
+            'user' => $user,
+            'auth_user' => $auth_user,
+        ]);
+    }
     public function edit(string $userId)
     {
         $user = User::where('userId', $userId)->first();
@@ -265,5 +275,34 @@ class UserController extends Controller
         $response = $user->profile_photo;
 
         return response()->json($response);
+    }
+
+    //削除確認画面表示
+    public function deleteConfirm(Request $request, string $userId)
+    {
+        $user = User::where('userId', $userId)->first(); // softDelete
+        $auth_user = Auth::user();
+
+        return view('users.delete.confirm', [
+            'user' => $user,
+            'auth_user' => $auth_user
+        ]);
+    }
+
+    //削除メソッド
+    public function delete(Request $request, string $userId)
+    {
+        User::where('userId', $userId)->first()->delete(); // softDelete
+
+        return redirect()->route('users.delete.complete');
+    }
+
+    //削除完了画面表示
+    public function deleteComplete(Request $request)
+    {
+        $auth_user = Auth::user();
+        return view('users.delete.complete', [
+            'auth_user' => $auth_user
+        ]);
     }
 }

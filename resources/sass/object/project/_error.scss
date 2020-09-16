@@ -1,0 +1,13 @@
+.p-error{
+    &__msg{
+        font-size: 2rem;
+        text-align: center;
+        padding: 0 2rem;
+    }
+    &__status{
+        font-size: 4rem;
+        font-weight: normal;
+        margin-bottom: 1rem;
+    }
+
+}

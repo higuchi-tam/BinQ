@@ -24,7 +24,6 @@ let endPage = slideItemPages;
 // 関数定義
 // ============================================
 function init() {
-    console.log('init');
     setInActiveClass();
     setSlideItemWidth();
 }

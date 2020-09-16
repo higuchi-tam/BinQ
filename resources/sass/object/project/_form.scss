@@ -3,6 +3,18 @@
 // =========================================
 
 .p-form {
+    &__container{
+        margin: 0 auto 8rem;
+        background: #fff;
+        max-width: 60rem;
+    }
+    &__inner{
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        padding: 0 1rem 4rem;
+        font-size: 1.6rem;
+    }
     &__image{
         background-repeat: no-repeat;
         background-size: cover;
@@ -29,6 +41,7 @@
             &.hasImg{
                 width: 30rem;
                 height: 30rem;
+                border-radius: 50%;
             }
         }
         &__area{
@@ -50,8 +63,8 @@
             background: #ccc;
             border-radius: 50%;
             position: absolute;
-            top: 2.5rem;
-            right: 2.5rem;
+            top: -2rem;
+            right: -2rem;
             &.hasImg{
                 display: flex;
             }
@@ -126,7 +139,6 @@
         }
     }
     &__wrap{
-        font-size: 1.6rem;
     }
     &__tag{
         margin-bottom: 4rem;
@@ -157,11 +169,6 @@
             background: #fff;
             color: $accentColor;
         }
-    }
-    &__container{
-        width: 300px;
-        margin: 0 auto 8rem;
-
     }
     &__label{
         display: flex;

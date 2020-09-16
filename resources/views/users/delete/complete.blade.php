@@ -2,6 +2,6 @@
 @include('layouts.header')
 @include('layouts.footer')
 @section('content')
-
-送信に失敗しました！
+アカウントを削除しました。
+またのご利用をお待ちしております！
 @endsection

@@ -26,18 +26,24 @@
             <li class="p-user_detail__nameWrap">
 
                 <ul class="l-footer__snsList p-user_detail__snsList">
+                    @if($user->twitter_url)
                     <li class="l-footer__snsItem p-user_detail__snsItem">
                         <a href="{{ $user->twitter_url}}" target="blank"><img src="/images/tw.svg"
                                 alt="twitterアイコン"></a>
                     </li>
+                    @endif
+                    @if($user->facebook_url)
                     <li class="l-footer__snsItem">
                         <a href="{{ $user->facebook_url}}" target="blank"><img src="/images/fb.svg"
                                 alt="facebookアイコン"></a>
                     </li>
+                    @endif
+                    @if($user->instagram_url)
                     <li class="l-footer__snsItem">
                         <a href="{{ $user->instagram_url}}" target="blank"><img src="/images/ins.svg"
                                 alt="Instagramアイコン"></a>
                     </li>
+                    @endif
                 </ul>
 
 

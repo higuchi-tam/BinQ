@@ -1,13 +1,8 @@
 @extends('layouts.app')
-
+@include('layouts.header')
+@include('layouts.footer')
 @section('content')
 <div class="container">
-    <!-- フラッシュメッセージ -->
-    @if (session('flash_message'))
-    <div class="flash_message alert-success text-center py-3 my-2">
-        {{ session('flash_message') }}
-    </div>
-    @endif
 
     <div class="p-authChange__container">
         <div class="p-authChange__title">メールアドレス変更</div>
@@ -18,7 +13,6 @@
                 {{ session('status') }}
             </div>
             @endif
-            {{-- You are logged in! --}}
         </div>
 
         <div class="p-authChange__form">

@@ -9,14 +9,15 @@
 
             <ul class="p-modal__btns js-popup">
                 <li>
-                    <a href="http://twitter.com/share?url={{route('articles.show',$article->id)}}">
+                    <a href="http://twitter.com/share?url={{route('articles.show',$article->id)}}" target="_blank"
+                        class="p-modal__btn p-modal__btn--tw">
                         <span><img src="/images/tw-modal.svg" alt="ツイートする"></span>ツイートする
                     </a>
 
                 </li>
                 <li>
-                    <a href="http://www.facebook.com/share.php?{URL}" rel="nofollow" target="_blank"
-                        class="p-modal__btn p-modal__btn--fb js-popup">
+                    <a href="http://www.facebook.com/share.php?{{route('articles.show',$article->id)}}" rel="nofollow"
+                        target="_blank" class="p-modal__btn p-modal__btn--fb js-popup">
                         <span><img src="/images/fb-modal.svg" alt="シェアする"></span>シェアする</a>
                 </li>
             </ul>
