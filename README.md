@@ -1,78 +1,135 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+###### tags: `BinQ`
+# BinQ 
+美容業界に特化したオープンな情報共有サービス
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## サービスの概要
 
-## About Laravel
+### 制作背景
+* 美容師が技術やノウハウを自由に共有できるサービスを作りたい
+* 美容師のフリーランス化が進んでおり、技術のノウハウだけでなく、集客スキル、ブランディングスキルのもつ人材の価値が高まる
+* 自分の実績を元にその、スキル・ノウハウを公開・共有することで、収益を作る
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 目的
+* 優れた美容師を世の中に顕在させ、業界を活性化させる
+```
+*美容師同士のオンラインでの共有する場の提供（技術や感性の共有）
+技術・知識のブログ、動画コンテンツによる個人ブランディング（ファン獲得）
+```
+### 目標
+収益を発生させる
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+・ブログ記事等のの延長での有料note記事
+（個人ブランディングの必要性を訴える記事とか自分のホームページ必要ですよ。的な。
+・ワードプレスのテンプレの販売　http://demo.crazy-wp.com/one/
+→美容業界ではまだまだテンプレはブルーオーシャン。
+・美容師が知識や技術を通して、コミュニティを形成することで、将来的なオンラインサロンなどを設立することができる。
+→将来的には、オンラインサロンのプラットフォーム化を目指す
+（店舗以外での収益を獲得をするための手段としての立ち位置を確率していく）
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 作業範囲
+設計・デザイン（外注）・コーディング・テスト
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### デザイン（XD)
+https://xd.adobe.com/view/6c71c529-3c76-4315-815f-31cf02460e9b-3922/
 
-## Laravel Sponsors
+### 納品について
+未定
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 業務要件一覧
+### 現行のサービスの分析
+（新規構築のためなし）
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+### 競合の調査・分析
+![](https://i.imgur.com/x3IhhDU.png)
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### WEBサービス化する範囲の決定
+要件定義書にて定義
 
-## Code of Conduct
+## サイト要件一覧
+### ターゲットユーザー
+スキルやノウハウを発信したい美容師
+コアなファンを増やしたい美容師
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### ターゲットブラウザ・OS
+■Windows
+・ Internet Explorer 11 以上
+・ Google Chrome最新版
 
-## Security Vulnerabilities
+■MacOS
+・ Safari最新版
+■スマートフォン・タブレット
+・ iOS6.01以上 safari（タブレット）
+・【メイン】ios12以上 【サブ】iOS10.02以上　safari（スマートフォン）
+・【メイン】Android8以上 【サブ】Android 5.1.1以上
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## システム要件一覧
+### 機能要件一覧
+#### コンテンツ管理機能
+1. コンテンツ一覧表示
+2. コンテンツ詳細表示
+3. コンテンツ登録
+4. コンテンツ編集
+5. コンテンツ削除
+6. コンテンツ検索
 
-## License
+#### ユーザー管理機能
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. ユーザー登録
+2. ユーザー情報詳細
+3. ユーザー一覧機能
+4. プロフィール登録機能
+5. プロフィール編集機能
+6. ログイン
+7. ログアウト
+8. 退会
+
+#### その他機能
+
+1. 　問い合わせ機能
+2. 　通知機能
+3. 　いいね機能
+4. 　コメント機能
+5. 　フォロー＆フォロワー機能
+
+#### 機能詳細一覧
+![機能一覧](https://i.imgur.com/Vp1rFsI.jpg)
+
+### 非機能要件一覧
+#### 品質・性能要求について
+未確定
+#### 運用・保守について
+製作者が運用
+#### リリースについて
+未確定
+#### セキュリティについて
+契約したサーバーに準ずる
+#### ユーザービリティ・アクセシビリティについて
+配慮、対応する
+
+### インフラ要件
+#### 本番環境・開発環境
+本番環境は未確定、開発環境は用意
+#### サーバー構成やドメインについて
+ドメインサーバーは製作者が取得・契約
+#### データベースについて
+https://hackmd.io/WFpIeIb1SNOx5UpvQq9atg?both
+MySQL
+
+### 開発手法
+開発言語について
+PHP、JavaScript
+
+バージョン管理について
+Bitbucket or Github
+
+## その他
+### スケジュール
+Trelloにて別途管理
+
+### プロジェクト開発体制
+Trelloにて別途管理
+
+### 使用言語の定義
