@@ -18,7 +18,7 @@ class ArticlePolicy
      */
     public function viewAny(?User $user)
     {
-       return true;
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class ArticlePolicy
      */
     public function view(?User $user, Article $article)
     {
-       return true;
+        return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class ArticlePolicy
      */
     public function create(User $user)
     {
-       return true;
+        return true;
     }
 
     /**
@@ -66,7 +66,7 @@ class ArticlePolicy
     public function delete(User $user, Article $article)
     {
         return $user->id === $article->user_id;
-        }
+    }
 
     /**
      * Determine whether the user can restore the article.

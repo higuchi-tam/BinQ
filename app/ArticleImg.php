@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class ArticleImg extends Model
 {
+
     public function articles()
     {
         return $this->belongsToMany('App\Article');
     }
+
 }

@@ -21,7 +21,7 @@ class EmailReset extends Model
      * メールアドレス確定メールを送信
      *
      * @param [type] $token
-     * 
+     *
      */
     public function sendEmailResetNotification($token)
     {
@@ -38,4 +38,5 @@ class EmailReset extends Model
     {
         return $this->new_email;
     }
+
 }

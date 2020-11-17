@@ -17,7 +17,7 @@ class Article extends Model
         'open_flg'
     ];
 
-    public function user(): BelongsTo //user()はリレーションメソッド
+    public function user(): BelongsTo
     {
         //記事と記事を書いたユーザ＝は多対1の関係なのでその場合は「belongsTo」メソッドを使用する。
         return $this->belongsTo('App\User');
