@@ -22,7 +22,6 @@ class PostsController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        //テンプレートのindex.blade.phpを表示します。
         return view('posts.index', [
             // 'posts' => $posts,
             'user' => $user,

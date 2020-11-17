@@ -13,6 +13,8 @@
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
+
 //SNSログイン
 Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
@@ -69,7 +71,6 @@ Route::prefix('likes')->name('likes.')->group(function () {
 
 Route::get('/post', 'PostsController@index')->name('post.index');
 
-Route::get('/', 'HomeController@index')->name('home');
 
 // メールアドレス確認メールを送信
 Route::get('/changeEmail', 'ChangeEmailController@index')->name('changeEmail.index');

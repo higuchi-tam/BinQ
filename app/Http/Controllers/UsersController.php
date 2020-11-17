@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    // ユーザー一覧表示
+    // ユーザー 一覧表示
     public function index(User $user)
     {
         $all_users = $user->getAllUsers(auth()->user()->id);

@@ -76,7 +76,6 @@ class ArticleController extends Controller
         $allTagNames = $this->getAllTagNames();
         $tags = Tag::all();
 
-        // アクションメソッドの第一引数には、ビューファイル名を渡す。第2引数には、ビューファイルに渡す変数の名称と、その変数の値を連想配列型式で指定する。
         // キーを定義することでビューファイル側で$articleという変数が使用できる
         return view('articles.index', [
             'articles' => $articles,

@@ -31,6 +31,7 @@ class HomeController extends Controller
             ->where('open_flg', 0)
             ->take(11)
             ->get();
+
         $users = User::withCount('followers')->orderBy('followers_count', 'desc')->take(11)->get();
 
         if ($auth_user) {

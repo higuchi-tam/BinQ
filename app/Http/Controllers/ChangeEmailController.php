@@ -46,7 +46,6 @@ class ChangeEmailController extends Controller
     {
         $new_email = $request->new_email;
 
-        // トークン生成
         $token = hash_hmac(
             'sha256',
             Str::random(40) . $new_email,

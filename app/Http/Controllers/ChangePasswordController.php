@@ -52,7 +52,6 @@ class ChangePasswordController extends Controller
             'new-password' => 'required|string|min:6|confirmed',
         ]);
 
-        //パスワードを変更
         $user = Auth::user();
         $user->password = bcrypt($request->get('new-password'));
         $user->save();

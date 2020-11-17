@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Log;
 
 class CommentsController extends Controller
 {
-    //コンストラクタ （このクラスが呼ばれると最初にこの処理をする）
     public function __construct()
     {
         // ログインしていなかったらログインページに遷移する（この処理を消すとログインしなくてもページを表示する）

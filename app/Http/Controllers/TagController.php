@@ -30,7 +30,6 @@ class TagController extends Controller
             'auth_user' => $auth_user,
             'tag' => $tag,
             'tags' => $tags,
-            //サイドバー用
             'sidebarArticles' => $this->sidebarArticles,
             'sidebarUsers' => $this->sidebarUsers,
         ]);
